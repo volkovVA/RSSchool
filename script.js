@@ -17,6 +17,7 @@ window.onload = function() {
   createdAudioTags(audioData);
   playPressKey();
   playClickMouse();
+  changeSymbol();
 }
 
 // Generate Piano Keys
@@ -155,3 +156,29 @@ const fullScreen = () => {
     }
   }
 }
+
+// Change Notes/Letters
+
+const changeSymbol = () => {
+  const btnContainer = document.querySelector('.btn-container');
+  const pianoKeys = document.querySelectorAll('.piano-key');
+
+  btnContainer.addEventListener('click', event => {
+
+    Array.from(btnContainer.children).forEach(el => {
+      el.classList.remove('btn-active');
+    });
+    event.target.classList.toggle('btn-active');
+
+    if (btnContainer.children[1].classList.contains('btn-active')) {
+      pianoKeys.forEach(el => {
+        el.classList.add('letter');
+      });
+    } else {
+      pianoKeys.forEach(el => {
+        el.classList.remove('letter');
+      });
+    }
+  });
+}
+
