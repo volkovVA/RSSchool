@@ -12,6 +12,7 @@ const audioData = {
 
 window.onload = function() {
 
+  fullScreen();
   createdPianoKeys(namingKeys);
   createdAudioTags(audioData);
   playPressKey();
@@ -135,4 +136,22 @@ const playClickMouse = () => {
     removePlay(event);
   })
 
+}
+
+// Activating fullscreen mode
+
+const fullScreen = () => {
+  const fullScreenBtn = document.querySelector('.fullscreen');
+
+  fullScreenBtn.addEventListener('click', () => {
+    toggleFullScreen();
+  }, false);
+
+  const toggleFullScreen = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      document.documentElement.requestFullscreen();
+    }
+  }
 }
