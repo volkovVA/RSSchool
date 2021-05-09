@@ -322,3 +322,9 @@ body {
     height: 40px;
   }
 }
+
+/* Add new classes */
+
+.play {
+  transform: scale(0.95);
+}
