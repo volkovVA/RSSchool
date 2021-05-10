@@ -23,7 +23,6 @@ window.onload = function() {
 // Generate Piano Keys
 
 const createdPianoKeys = (data) => {
-
   const piano = document.querySelector('.piano');
   const sharp = document.createElement('div');
   sharp.className = 'keys-sharp';
@@ -44,13 +43,11 @@ const createdPianoKeys = (data) => {
   piano.insertAdjacentHTML('beforeend', html);
   piano.insertAdjacentElement('beforeend', sharp);
   sharp.insertAdjacentHTML('beforeend', htmlSharp);
-
 }
 
 // Generate Audio Tags
 
 const createdAudioTags = (data) => {
-
   const main = document.querySelector('.main');
   const audioBox = document.createElement('div');
   audioBox.className = 'audio';
@@ -78,7 +75,7 @@ const playPressKey = () => {
       if (!audio) return
       audio.currentTime = 0;
       audio.play();
-      key.classList.add('play');
+      key.classList.add('piano-key-active');
     }
   }
 
@@ -86,7 +83,8 @@ const playPressKey = () => {
     isKeyDown = false;
     const key = document.querySelector(`.piano-key[data-key='${event.code}']`);
 
-    key.classList.remove('play');
+    if (!key) return
+    key.classList.remove('piano-key-active');
   }
 
   window.addEventListener('keydown', pressKeyDown);
@@ -105,14 +103,12 @@ const playClickMouse = () => {
     if (!audio) return
     audio.currentTime = 0;
     audio.play();
-    key.classList.add('play');
+    key.classList.add('piano-key-active');
   }
 
   const removePlay = (event) => {
     const key = event.target;
-    if (key.classList.contains = 'play') {
-      key.classList.remove('play');
-    }
+    key.classList.remove('piano-key-active');
   }
 
   piano.addEventListener('mousedown', (event) => {
@@ -137,6 +133,9 @@ const playClickMouse = () => {
     removePlay(event);
   })
 
+  window.addEventListener('mouseup', () => {
+    isMouseDown = false;
+  })
 }
 
 // Activating fullscreen mode
