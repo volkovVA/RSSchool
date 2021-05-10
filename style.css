@@ -87,12 +87,18 @@ body {
 .piano-key {
   position: relative;
   width: 80px;
-  height: 270px;
-  background-color: rgba(255, 255, 255, 0.85);
-  margin: 4px;
-  border-radius: 0px 0px 12px 12px;
+  height: 330px;
   transition: 0.3s;
   cursor: pointer;
+  margin: 1px;
+}
+.piano-key.low {
+  z-index: 1;
+  border-left:1px solid #bbb;
+  border-bottom:1px solid #bbb;
+  border-radius:0 0 5px 5px;
+  box-shadow:-1px 0 0 rgba(255,255,255,0.8) inset,0 0 5px #ccc inset,0 0 3px rgba(0,0,0,0.2);
+  background:linear-gradient(to bottom,#eee 0%,#fff 100%)
 }
 .piano-key:hover {
   background-color: #fff;
@@ -108,23 +114,32 @@ body {
   pointer-events: none;
 }
 .piano-key.sharp {
-  width: 54px;
-  height: 170px;
-  background-color: #313940;
-  border: 0;
-  border-radius: 0px 0px 9px 9px;
+  width: 50px;
+  height: 220px;
   top: 0;
-  z-index: 3;
   pointer-events: auto;
   transform-origin: center top;
   margin: 0px;
+  z-index:2;
+  border:1px solid #000;
+  border-radius:0 0 3px 3px;
+  box-shadow:-1px -1px 2px rgba(255,255,255,0.2) inset,0 -5px 2px 5px rgba(0,0,0,0.6) inset,0 2px 4px rgba(0,0,0,0.5);
+  background:linear-gradient(45deg,#222 0%,#555 100%)
 }
-.piano-key.piano-key-active,
+.piano-key.piano-key-active {
+  border-top:1px solid #777;
+  border-left:1px solid #999;
+  border-bottom:1px solid #999;
+  box-shadow:2px 0 3px rgba(0,0,0,0.1) inset,-5px 5px 20px rgba(0,0,0,0.2) inset,0 0 3px rgba(0,0,0,0.2);
+  background:linear-gradient(to bottom,#fff 0%,#e9e9e9 100%)
+}
 .piano-key.sharp.piano-key-active {
-  transform: scale(0.96);
+  box-shadow:-1px -1px 2px rgba(255,255,255,0.2) inset,0 -2px 2px 3px rgba(0,0,0,0.6) inset,0 1px 2px rgba(0,0,0,0.5);
+  background:linear-gradient(to right,#444 0%,#222 100%)
 }
 .piano-key.none {
-  background-color: transparent;
+  background: transparent;
+  box-shadow: none;
   border: 0;
   border-radius: 0;
   pointer-events: none;
@@ -164,7 +179,7 @@ body {
 
 .piano-key.sharp::before,
 .piano-key.sharp::after {
-  bottom: 175px;
+  bottom: 230px;
   left: 7px;
 }
 .piano-key.letter::before {
@@ -285,17 +300,16 @@ body {
   }
   .piano-key {
     width: 44px;
-    height: 160px;
+    height: 200px;
     border-radius: 0px 0px 8px 8px;
-    border: 2px solid #313940;
   }
   .keys-sharp {
     left: 26px;
     right: 26px;
   }
   .piano-key.sharp {
-    width: 36px;
-    height: 100px;
+    width: 30px;
+    height: 130px;
     border-radius: 0px 0px 6px 6px;
   }
   .piano-key::before,
@@ -309,8 +323,8 @@ body {
   }
   .piano-key.sharp::before,
   .piano-key.sharp::after {
-    bottom: 115px;
-    left: 3px;
+    bottom: 145px;
+    left: 0;
   }
   .btn-container {
     width: 244px;
@@ -321,10 +335,4 @@ body {
     width: 120px;
     height: 40px;
   }
-}
-
-/* Add new classes */
-
-.play {
-  transform: scale(0.95);
 }
