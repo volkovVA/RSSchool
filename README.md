@@ -1,1 +1,0 @@
-https://volkovva.github.io/rsschool-cv/cv
