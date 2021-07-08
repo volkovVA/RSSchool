@@ -25,3 +25,16 @@ Hi! My name is Viacheslav Volkov. 👋 I'm novice developer in the field of Fron
 #### 👦 *Soft Skills*:
 **Organization** | **Analytical Abilities** | **Perseverance** | **Desire to Study**
 ***
+
+### My training pet-projects, test tasks and courses
+
+| Repo              | Live Demo     | Tools and Technologies         | Description           |
+|:-----------------:|:-------------:| ------------------------------ | --------------------- |
+| [BuhOne](https://github.com/volkovVA/buhone) | [Demo](https://volkovva.github.io/buhone/) | `Pug` `SCSS` `JavaScript` `Adaptive` `Modal window` `Accordion` `YandexMap` `BEM` | Test task for the position " HTML-layout designer" |
+| [Autumn](https://github.com/volkovVA/portfolio) | [Demo](https://volkovva.github.io/portfolio/) | `Pug` `SCSS` `JavaScript` `Adaptive` `Vue.js` `Admin panel on Vue` `Slider on Vue` `Vue Flickity slider` `Parallax` `Smooth Scrolling` `Popup` `Preloader` `Jest` `BEM` | Training landing page Autumn. Graduation project in the profession of "Web developer" |
+| [Unvent](https://github.com/volkovVA/unvent) | [Demo](https://volkovva.github.io/unvent/) | `Pug` `SCSS` `JavaScript` `Adaptive` `YandexMap` `Burger Menu` `Swiper Slider` `Fancybox` `BEM` | Test task for the position " HTML-layout designer" |
+| [Virtual Piano](https://github.com/volkovVA/virtual-piano) | [Demo](https://volkovva.github.io/virtual-piano/) | `SCSS` `JavaScript` | JS-project (stage1): virtual-piano task. RS School. JavaScript Training/Front-end 2021Q1 |
+| [Air Asia](https://github.com/volkovVA/air-asia) | [Demo](https://volkovva.github.io/air-asia/index.html) | `Pug` `SCSS` `JavaScript` `Adaptive` `BEM` | A test adaptive multi-page website of tours to Asia. I will check it during my internship at LoftSchool to deepen my knowledge of layout using the Pug template engine and the SCSS preprocessor. |
+
+My profile on Github: [volkovVA](https://github.com/volkovVA), where you can get acquainted with completed projects and tasks. All repositories are described in the readme.
+***
