@@ -57,3 +57,10 @@ My profile on Github: [volkovVA](https://github.com/volkovVA), where you can get
 + Advised, helped in the preparation of projects for defense;
 + I checked the practical tasks of students, reviewed the code, sorted out errors.
 ***
+
+### Education
+
+> [Sukhoi State Technical University of Gomel](https://www.gstu.by/)
+#### Economist Manager
+*1998 - 2004 | Incomplete higher education*
+***
