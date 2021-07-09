@@ -38,3 +38,22 @@ Hi! My name is Viacheslav Volkov. 👋 I'm novice developer in the field of Fron
 
 My profile on Github: [volkovVA](https://github.com/volkovVA), where you can get acquainted with completed projects and tasks. All repositories are described in the readme.
 ***
+
+### Work Experience
+
+> Assistant Mentor  
+> *June 2020 - December 2020* | *LoftSchool (Saint-Petersburg)* | [LoftSchool](https://loftschool.com/)
+
++ Layout of new pages and editing of the layout, adjusting the adaptability of pages for mobile devices, correcting validator errors, eliminating bugs;
++ Technical audit of sites and correction of technical aspects of the site in order to improve its interaction with search engine robots (elimination of broken links, editing robots.txt, identification of insufficient quality pages and their correction);
++ Code optimization in order to speed up the site (image optimization, reducing the size of the DOM structure, removing unused JS code and CSS styles, working with the semantics of the site code);
++ Updating text and graphic content;
++ Performing basic SEO optimization work. Changing meta tags, page titles, editing texts, making changes to the site navigation, optimizing commercial factors and implementing them on existing site pages.
+
+> Webmaster  
+> *December 2020 - May 2021* | *Seoready (Saint-Petersburg)* | [SeoReady](https://seoready.ru/)
+
++ I taught students markup code, HTML semantics and CSS styles, working with Pug and SCSS preprocessors, BEM methodology and BEM naming, JavaScript basics, adaptive layout, basic functionality of working with Git;
++ Advised, helped in the preparation of projects for defense;
++ I checked the practical tasks of students, reviewed the code, sorted out errors.
+***
