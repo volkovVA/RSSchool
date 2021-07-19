@@ -63,7 +63,7 @@ p {
 
 .container {
 margin: 0 auto;
-max-width: 1440px;
+max-width: 1200px;
 width: 95%;
 }
 
@@ -116,6 +116,8 @@ width: 95%;
   content: '';
   position: absolute;
   left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: block;
   width: 20px;
   height: 20px;
@@ -123,22 +125,22 @@ width: 95%;
 }
 
 .contacts__item--mail::before {
-  background-image: url('../images/icon/mail.svg');
+  background-image: url('../images/icon/contacts/mail.svg');
 }
 .contacts__item--phone::before {
-  background-image: url('../images/icon/phone.svg');
+  background-image: url('../images/icon/contacts/phone.svg');
 }
 .contacts__item--linkedin::before {
-  background-image: url('../images/icon/linkedin.svg');
+  background-image: url('../images/icon/contacts/linkedin.svg');
 }
 .contacts__item--geo::before {
-  background-image: url('../images/icon/geo.svg');
+  background-image: url('../images/icon/contacts/geo.svg');
 }
 .contacts__item--telegram::before {
-  background-image: url('../images/icon/telegram.svg');
+  background-image: url('../images/icon/contacts/telegram.svg');
 }
 .contacts__item--github::before {
-  background-image: url('../images/icon/github.svg');
+  background-image: url('../images/icon/contacts/github.svg');
 }
 
 .avatar {
@@ -155,4 +157,105 @@ width: 95%;
   height: 100%;
   object-fit: cover;
   object-position: center;;
+}
+
+/*===== SKILLS ======*/
+
+.section {
+  border-bottom: 2px solid var(--avatar-border-color);
+}
+
+.skills {
+  padding: 30px;
+}
+
+.skills div {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.skills__soft .tag {
+  padding: 4px 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.tag{
+  position: relative;
+  padding: 4px 16px 4px 30px;
+  font-size: 18px;
+  background-color: #a5b5d9;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.tag::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}
+
+.tag--html::before {
+  background-image: url('../images/icon/skills/html.svg');
+}
+.tag--css::before {
+  background-image: url('../images/icon/skills/css.svg');
+}
+.tag--js::before {
+  background-image: url('../images/icon/skills/js.svg');
+}
+.tag--pug::before {
+  background-image: url('../images/icon/skills/pug.svg');
+}
+.tag--sass::before {
+  background-image: url('../images/icon/skills/sass.svg');
+}
+.tag--vue::before {
+  background-image: url('../images/icon/skills/vue.svg');
+}
+.tag--jquery::before {
+  background-image: url('../images/icon/skills/jquery.svg');
+}
+.tag--gulp::before {
+  background-image: url('../images/icon/skills/gulp.svg');
+}
+.tag--webpack::before {
+  background-image: url('../images/icon/skills/webpack.svg');
+}
+.tag--git::before {
+  background-image: url('../images/icon/skills/git.svg');
+}
+.tag--github::before {
+  background-image: url('../images/icon/skills/github.svg');
+}
+.tag--npm::before {
+  background-image: url('../images/icon/skills/npm.svg');
+}
+.tag--yarn::before {
+  background-image: url('../images/icon/skills/yarn.svg');
+}
+.tag--photoshop::before {
+  background-image: url('../images/icon/skills/photoshop.svg');
+}
+.tag--figma::before {
+  background-image: url('../images/icon/skills/figma.svg');
+}
+.tag--vscode::before {
+  background-image: url('../images/icon/skills/vscode.svg');
+}
+.tag--rus::before {
+  background-image: url('../images/icon/skills/rus.ico');
+}
+.tag--eng::before {
+  background-image: url('../images/icon/skills/eng.ico');
 }
