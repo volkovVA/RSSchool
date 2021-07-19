@@ -9,7 +9,7 @@
   --tag-color:            #eaf0fd;
   --light-grey-color:     #8d8d8d;
   --light-color:          #f8f8f8;
-  --hover-volor:          #1f65c0;
+  --hover-color:          #1f65c0;
   --transition: 0.2s;
 }
 
@@ -278,7 +278,7 @@ width: 95%;
 }
 
 .projects__link:hover {
-  color: var(--hover-volor);
+  color: var(--hover-color);
 }
 
 .table__header, .table__rower {
@@ -321,7 +321,7 @@ width: 95%;
 }
 
 .table__link:hover {
-  color: var(--hover-volor);
+  color: var(--hover-color);
 }
 
 .table__text {
@@ -383,7 +383,7 @@ width: 95%;
 }
 
 .experience__link:hover {
-  color: var(--hover-volor);
+  color: var(--hover-color);
 }
 
 .experience__list {
@@ -433,7 +433,7 @@ width: 95%;
 }
 
 .education__link:hover {
-  color: var(--hover-volor)
+  color: var(--hover-color);
 }
 
 .education__specialization {
@@ -446,4 +446,44 @@ width: 95%;
   font-size: 18px;
   font-style: italic;
   color: var(--light-grey-color);
+}
+
+/*===== COURSES =====*/
+
+.courses__title {
+  margin-bottom: 50px;
+}
+
+.courses__list {
+  padding-left: 30px;
+}
+
+.courses__item {
+  list-style-type: disc;
+  margin-bottom: 30px;
+}
+
+.courses__item:last-child {
+  margin-bottom: 0;
+}
+
+.courses__link {
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: underline;
+  transition: var(--transition);
+  margin-bottom: 10px;
+}
+
+.courses__link:hover {
+  color: var(--hover-color);
+}
+
+.courses__link--light {
+  font-weight: 400;
+}
+
+.courses__desc {
+  font-size: 18px;
+  font-style: italic;
 }
