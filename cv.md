@@ -2,7 +2,7 @@
 
 # Viacheslav Volkov (Frontend Developer)
 
-![avatar](avatar/avatar.jpg "demo avatar")
+![avatar](images/avatar/avatar.jpg "demo avatar")
 
 Hi! My name is Viacheslav Volkov. ✋ I'm novice developer in the field of Frontend development and determined to become a full-stack developer. I worked in programming for about a year. I was working as an assistant mentor at the LoftSchool, and then I was working as a webmaster in a website promotion company. I’m originally from Russia but live in Gomel now. I have a passion for excellence and I’m truly committed to producing the best possible results.
 
