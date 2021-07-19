@@ -3,6 +3,9 @@
 :root {
   --main-bg-color: #fff;
   --main-color: #000;
+  --default-color: #fff;
+  --avatar-border-color: #00c5ab;
+  --header-color: #353c4b;
 }
 
 *,
@@ -23,6 +26,7 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;;
   background-color: var(--main-bg-color);
   color: var(--main-color);
+  line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -61,4 +65,94 @@ p {
 margin: 0 auto;
 max-width: 1440px;
 width: 95%;
+}
+
+/*===== HEADER =====*/
+
+.header {
+  color: var(--default-color);
+}
+
+.header__content {
+  background-color: var(--header-color);
+  padding: 30px;
+}
+
+.header__row {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.header__name{
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.header__profession {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--avatar-border-color);
+}
+
+.header__content p:first-of-type {
+  margin-bottom: 26px;
+}
+
+.header__contacts {
+  background-color: var(--main-color);
+  padding: 30px;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 20px 0; 
+}
+
+.contacts__item{
+  position: relative;
+  padding-left: 30px;
+}
+
+.contacts__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}
+
+.contacts__item--mail::before {
+  background-image: url('../images/icon/mail.svg');
+}
+.contacts__item--phone::before {
+  background-image: url('../images/icon/phone.svg');
+}
+.contacts__item--linkedin::before {
+  background-image: url('../images/icon/linkedin.svg');
+}
+.contacts__item--geo::before {
+  background-image: url('../images/icon/geo.svg');
+}
+.contacts__item--telegram::before {
+  background-image: url('../images/icon/telegram.svg');
+}
+.contacts__item--github::before {
+  background-image: url('../images/icon/github.svg');
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  border: 2px solid var(--avatar-border-color);
+  overflow: hidden;
+  margin-right: 30px;
+}
+
+.avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;;
 }
