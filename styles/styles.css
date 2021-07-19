@@ -392,6 +392,10 @@ width: 95%;
   margin-bottom: 60px;
 }
 
+.experience__list:last-child {
+  margin-bottom: 0;
+}
+
 .experience__item {
   list-style-type: disc;
   margin-bottom: 14px;
@@ -399,4 +403,47 @@ width: 95%;
 
 .experience__item:last-child {
   margin-bottom: 0;
+}
+
+/*===== EDUCATION =====*/
+
+.education__title {
+  margin-bottom: 50px;
+}
+
+.education__box {
+  position: relative;
+  padding-left: 26px;
+}
+
+.education__box::before {
+  content: '';
+  position: absolute;
+  height: 90px;
+  width: 4px;
+  left: 0;
+  background-color: var(--light-grey-color);
+}
+
+.education__link {
+  display: inline-block;
+  text-decoration: underline;
+  transition: var(--transition);
+  margin-bottom: 20px;
+}
+
+.education__link:hover {
+  color: var(--hover-volor)
+}
+
+.education__specialization {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--light-grey-color);
+}
+
+.education__desc {
+  font-size: 18px;
+  font-style: italic;
+  color: var(--light-grey-color);
 }
