@@ -487,3 +487,37 @@ width: 95%;
   font-size: 18px;
   font-style: italic;
 }
+
+/*===== FOOTER ======*/
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer__guthub {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+
+.footer__rsschool {
+  display: flex;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+}
+
+.footer__guthub, .footer__rsschool {
+  transition: var(--transition);
+}
+
+.footer__guthub:hover, .footer__rsschool:hover {
+  transform: scale(1.1);
+}
+
+.footer__year {
+  font-weight: 700;
+}
+
