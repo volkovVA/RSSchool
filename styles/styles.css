@@ -2,7 +2,7 @@
   --main-bg-color:        #fff;
   --main-color:           #000;
   --default-color:        #fff;
-  --avatar-border-color:  #00c5ab;
+  --second-color:         #00c5ab;
   --header-color:         #353c4b;
   --tag-color:            #eaf0fd;
   --light-grey-color:     #7a7a7a;
@@ -85,7 +85,7 @@ p {
   height: 360px;
   margin-right: 30px;
   border-radius: 20px;
-  border: 2px solid var(--avatar-border-color);
+  border: 2px solid var(--second-color);
   overflow: hidden;
 }
 
@@ -106,7 +106,7 @@ p {
   font-weight: 500;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: var(--avatar-border-color);
+  background-color: var(--second-color);
 }
 
 .section {
@@ -139,7 +139,7 @@ p {
   margin-bottom: 30px;
   font-size: 28px;
   font-weight: 500;
-  color: var(--avatar-border-color);
+  color: var(--second-color);
 }
 
 .header__content p:first-of-type {
@@ -295,10 +295,155 @@ p {
   background-image: url('../images/icon/skills/eng.ico');
 }
 
+/*===== EXPERIENCE =====*/
+
+.experience__box {
+  position: relative;
+  padding-left: 26px;
+  color: var(--light-grey-color);
+}
+
+.experience__box::before {
+  content: '';
+  position: absolute;
+  height: 50px;
+  width: 4px;
+  left: 0;
+  background-color: var(--light-grey-color);
+}
+
+.experience__position {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.experience__desc {
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.experience__link {
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.experience__link:hover {
+  color: var(--hover-color);
+}
+
+.experience__list {
+  padding-left: 30px;
+  margin-top: 16px;
+  margin-bottom: 46px;
+}
+
+.experience__list:last-child {
+  margin-bottom: 0;
+}
+
+.experience__item {
+  margin-bottom: 14px;
+  list-style-type: disc;
+}
+
+.experience__item:last-child {
+  margin-bottom: 0;
+}
+
+/*===== EDUCATION =====*/
+
+.education__box {
+  position: relative;
+  padding-left: 26px;
+}
+
+.education__image {
+  position: absolute;
+  top: -24%;
+  left: -500%;
+  height: 150%;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.education__box::before {
+  content: '';
+  position: absolute;
+  height: 90px;
+  width: 4px;
+  left: 0;
+  background-color: var(--light-grey-color);
+}
+
+.education__link {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.education__link:hover {
+  color: var(--hover-color);
+}
+
+.education__link:hover + .education__image {
+  left: 40%;
+  opacity: 1;
+}
+
+.education__specialization {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--light-grey-color);
+}
+
+.education__desc {
+  font-size: 18px;
+  font-style: italic;
+  color: var(--light-grey-color);
+}
+
+/*===== COURSES =====*/
+
+.courses__list {
+  padding-left: 30px;
+}
+
+.courses__item {
+  margin-bottom: 24px;
+  list-style-type: disc;
+}
+
+.courses__item:last-child {
+  margin-bottom: 0;
+}
+
+.courses__link {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.courses__link:hover {
+  color: var(--hover-color);
+}
+
+.courses__link--light {
+  font-weight: 400;
+}
+
+.courses__desc {
+  font-size: 18px;
+  font-style: italic;
+}
+
 /*===== PROJECTS =====*/
 
 .projects {
-  border-bottom: 2px solid var(--avatar-border-color);
+  border-bottom: 2px solid var(--second-color);
 }
 
 .projects__text {
@@ -371,143 +516,10 @@ p {
 .table__item {
   margin: 4px 6px;
   padding: 4px 12px;
-  background-color: var(--tag-color);
-  border-radius: 8px;
 }
 
 .table__item:last-child {
   margin-right: 0;
-}
-
-/*===== EXPERIENCE =====*/
-
-.experience__box {
-  position: relative;
-  padding-left: 26px;
-  color: var(--light-grey-color);
-}
-
-.experience__box::before {
-  content: '';
-  position: absolute;
-  height: 50px;
-  width: 4px;
-  left: 0;
-  background-color: var(--light-grey-color);
-}
-
-.experience__position {
-  font-size: 18px;
-  font-style: italic;
-}
-
-.experience__desc {
-  margin-bottom: 30px;
-  font-size: 18px;
-  font-style: italic;
-}
-
-.experience__link {
-  text-decoration: underline;
-  transition: var(--transition);
-}
-
-.experience__link:hover {
-  color: var(--hover-color);
-}
-
-.experience__list {
-  padding-left: 30px;
-  margin-top: 16px;
-  margin-bottom: 46px;
-}
-
-.experience__list:last-child {
-  margin-bottom: 0;
-}
-
-.experience__item {
-  margin-bottom: 14px;
-  list-style-type: disc;
-}
-
-.experience__item:last-child {
-  margin-bottom: 0;
-}
-
-/*===== EDUCATION =====*/
-
-.education__box {
-  position: relative;
-  padding-left: 26px;
-}
-
-.education__box::before {
-  content: '';
-  position: absolute;
-  height: 90px;
-  width: 4px;
-  left: 0;
-  background-color: var(--light-grey-color);
-}
-
-.education__link {
-  display: inline-block;
-  margin-bottom: 20px;
-  text-decoration: underline;
-  transition: var(--transition);
-}
-
-.education__link:hover {
-  color: var(--hover-color);
-}
-
-.education__specialization {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--light-grey-color);
-}
-
-.education__desc {
-  font-size: 18px;
-  font-style: italic;
-  color: var(--light-grey-color);
-}
-
-/*===== COURSES =====*/
-
-.courses__list {
-  padding-left: 30px;
-}
-
-.courses__item {
-  margin-bottom: 24px;
-  list-style-type: disc;
-}
-
-.courses__item:last-child {
-  margin-bottom: 0;
-}
-
-.courses__link {
-  display: inline-block;
-  margin-bottom: 6px;
-  font-weight: 700;
-  text-decoration: underline;
-  transition: var(--transition);
-}
-
-.courses__link:hover {
-  color: var(--hover-color);
-}
-
-.courses__link--light {
-  font-weight: 400;
-}
-
-.courses__desc {
-  font-size: 18px;
-  font-style: italic;
 }
 
 /*===== FOOTER ======*/
