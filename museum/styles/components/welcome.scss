@@ -1,29 +1,29 @@
-.hero {
+.welcome{
   height: 750px;
   background-color: $bg-dark-color;
-  background-image: url("/museum/assets/img/hero/hero.jpg");
+  background-image: url("/museum/assets/img/welcome/welcome.jpg");
   background-position: right center;
   background-repeat: no-repeat;
   @mixin bg-2x {
-    background-image: url('/museum/assets/img/hero/hero@2x.jpg');
+    background-image: url('/museum/assets/img/welcome/welcome@2x.jpg');
   }
   @mixin bg-3x {
-    background-image: url('/museum/assets/img/hero/hero@3x.jpg');
+    background-image: url('/museum/assets/img/welcome/welcome@3x.jpg');
   }
 }
 
-.hero__title {
+.welcome__title {
   padding-top: 114px;
   margin-bottom: 26px;
 }
 
-.hero__text {
+.welcome__text {
   @include font-source(28px, 300, $main-color, 33px);
   letter-spacing: 2px;
   margin-bottom: 76px;
 }
 
-.hero__button {
+.welcome__button {
   padding: 20px 40px;
   @include font-source(22px, 200, $main-color, 26px);
   letter-spacing: 2px;

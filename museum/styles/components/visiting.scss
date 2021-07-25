@@ -1,17 +1,17 @@
-.tour__title {
+.visiting__title {
   padding-bottom: 30px;
   margin-bottom: 103px;
   color: $font-cold-color;
   border-bottom: 3px solid $dark-red-color;
 }
 
-.tour__list {
+.visiting__list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.tour__item {
+.visiting__item {
   margin-bottom: 78px;
   &:nth-child(4),
   &:nth-child(5),
