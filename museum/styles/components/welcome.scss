@@ -2,7 +2,8 @@
   height: 750px;
   background-color: $bg-dark-color;
   background-image: url("/museum/assets/img/welcome/welcome.jpg");
-  background-position: right center;
+  background-size: 61%;
+  background-position: right bottom;
   background-repeat: no-repeat;
   @mixin bg-2x {
     background-image: url('/museum/assets/img/welcome/welcome@2x.jpg');
