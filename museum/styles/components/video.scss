@@ -1,0 +1,14 @@
+.video__content {
+  display: flex;
+  margin-top: 40px;
+}
+
+.video__title {
+  margin-right: 115px;
+  color: $font-cold-color;
+  white-space: nowrap;
+}
+
+.video__text {
+  @include font-source(22px, 300, $default-color, 38px);
+}
