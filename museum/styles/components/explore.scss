@@ -1,0 +1,37 @@
+.explore {
+  background-color: $bg-dark-color;
+}
+
+.explore__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.explore__col:first-child {
+  margin-right: 60px;
+}
+
+.explore__title {
+  display: inline-block;
+  padding-bottom: 36px;
+  margin-bottom: 100px;
+  border-bottom: 3px solid $dark-red-color;
+}
+
+.explore__text {
+  margin-bottom: 25px;
+  @include font-source(22px, 300, $main-color, 38px);
+  &:last-child {
+    margin-bottom: 0;
+  }
+  & span {
+    color: $font-cold-color;
+  }
+}
+
+.explore__image {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
