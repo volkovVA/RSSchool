@@ -162,6 +162,53 @@
         </div>
       </div>
     </section>
+    <section class="tickets">
+      <div class="container">
+        <h2 class="title tickets__title">buy tickets</h2>
+        <div class="tickets__content">
+          <div class="tickets__column">
+            <img class="tickets__image" srcset="./assets/img/tickets/picture@2x.jpg 1.25x, ./assets/img/tickets/picture@3x.jpg 2.25x" src="./assets/img/tickets/picture.jpg" alt="picture tickets">
+          </div>
+          <div class="tickets__column">
+            <div class="tickets__small-column">
+              <h3 class="tickets__type">Ticket Type</h3>
+              <label class="tickets__radio">
+                <input name="radio" type="radio" checked="checked">
+                <span>Permanent exhibition</span>
+              </label>
+              <label class="tickets__radio">
+                <input name="radio" type="radio">
+                <span>Temporary exhibition</span>
+              </label>
+              <label class="tickets__radio">
+                <input name="radio" type="radio">
+                <span>Combined Admission</span>
+              </label>
+            </div>
+            <div class="tickets__small-column">
+              <h3 class="tickets__amount">Amount</h3>
+              <span class="tickets__basic">Basic 18+</span>
+              <div class="tickets__count">
+                <button class="tickets__buttons tickets__buttons--minus" type="button">-</button>
+                <input  class="tickets__number" type="number" min="0" max="100" value="1" readonly>
+                <button class="tickets__buttons tickets__buttons--plus" type="button">+</button>
+              </div>
+              <span class="tickets__senior">Senior 65+</span>
+              <div class="tickets__count">
+                <button class="tickets__buttons tickets__buttons--minus" type="button">-</button>
+                <input  class="tickets__number" type="number" min="0" max="100" value="1" readonly>
+                <button class="tickets__buttons tickets__buttons--plus" type="button">+</button>
+              </div>
+              <div class="tickets__price">
+                <span>Total</span>
+                <span class="tickets__price-number">€220</span>
+              </div>
+              <button class="tickets__button">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
