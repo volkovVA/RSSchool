@@ -412,4 +412,51 @@ template {
   display: none;
 }
 
+.logo__text {
+  font-family: "Forum", "Times New Roman", Times, serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 50px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.logo__icon {
+  width: 49px;
+  height: 26px;
+  margin-right: 20px;
+}
+
+.menu__list {
+  display: flex;
+  align-items: center;
+}
+
+.menu__item {
+  margin-right: 76px;
+}
+.menu__item:last-child {
+  margin-right: 0;
+}
+
+.menu__link {
+  font-size: 22px;
+  font-weight: 200;
+  color: #ffffff;
+  line-height: 50px;
+  letter-spacing: 2px;
+}
+
+.header {
+  padding: 74px 0;
+  background-color: #030303;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /*# sourceMappingURL=style.css.map */

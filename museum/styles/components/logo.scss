@@ -1,0 +1,12 @@
+.logo__text {
+  font-family: "Forum", "Times New Roman", Times, serif;
+  @include font-source(28px, 400, $main-color, 50px);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.logo__icon {
+  width: 49px;
+  height: 26px;
+  margin-right: 20px;
+}
