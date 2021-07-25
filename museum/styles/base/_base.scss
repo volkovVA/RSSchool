@@ -56,3 +56,11 @@ p {
   max-width: 1440px;
   width: 95%;
 }
+
+.title {
+  margin: 0;
+  font-family: "Forum", "Times New Roman", Times, serif;
+  @include font-source(80px, 400, $main-color, 90px);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
