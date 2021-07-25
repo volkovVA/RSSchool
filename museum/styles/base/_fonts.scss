@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-Regular.eot");
+  src: local("Roboto Regular"), local("Roboto-Regular"),
+    url("fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Roboto-Regular.woff2") format("woff2"),
+    url("fonts/Roboto-Regular.woff") format("woff"),
+    url("fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Forum";
+  src: url("fonts/Forum.eot");
+  src: local("Forum"),
+    url("fonts/Forum.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Forum.woff2") format("woff2"),
+    url("fonts/Forum.woff") format("woff"),
+    url("fonts/Forum.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
