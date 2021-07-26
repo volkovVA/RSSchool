@@ -1,0 +1,36 @@
+.contacts__title {
+  padding-bottom: 36px;
+  margin-bottom: 100px;
+  border-bottom: 3px solid $dark-red-color;
+  color: $font-cold-color;
+}
+
+.contacts__box {
+  display: flex;
+}
+
+.contacts__content {
+  flex: 1;
+}
+
+.contacts__map {
+  flex: 2;
+}
+
+.contacts__desc {
+  width: 240px;
+  margin-bottom: 36px;
+  @include font-source(28px, 500, $default-color, 33px);
+}
+
+.contacts__content {
+  @include font-source(22px, 300, $default-color, 26px);
+}
+
+.contacts__text {
+  display: flex;
+  margin-bottom: 20px;
+  & > span {
+    margin-right: 10px;
+  }
+}

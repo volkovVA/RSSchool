@@ -519,6 +519,49 @@ template {
   line-height: 21px;
 }
 
+.contacts__title {
+  padding-bottom: 36px;
+  margin-bottom: 100px;
+  border-bottom: 3px solid #710707;
+  color: #9d8665;
+}
+
+.contacts__box {
+  display: flex;
+}
+
+.contacts__content {
+  flex: 1;
+}
+
+.contacts__map {
+  flex: 2;
+}
+
+.contacts__desc {
+  width: 240px;
+  margin-bottom: 36px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 33px;
+}
+
+.contacts__content {
+  font-size: 22px;
+  font-weight: 300;
+  color: #000000;
+  line-height: 26px;
+}
+
+.contacts__text {
+  display: flex;
+  margin-bottom: 20px;
+}
+.contacts__text > span {
+  margin-right: 10px;
+}
+
 .explore {
   background-color: #030303;
 }
