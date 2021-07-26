@@ -1,3 +1,7 @@
+.video {
+  padding: 91px 0 75px;
+}
+
 .video__content {
   display: flex;
   margin-top: 40px;
@@ -11,5 +15,6 @@
 }
 
 .video__text {
+  padding-top: 8px;
   @include font-source(22px, 300, $default-color, 38px);
 }

@@ -1,4 +1,5 @@
 .explore {
+  padding: 74px 0 75px;
   background-color: $bg-dark-color;
 }
 
@@ -7,18 +8,27 @@
   justify-content: space-between;
 }
 
+.explore__title.border-line:before {
+  width: 96%;
+}
+
 .explore__col {
   flex: 1;
-  height: 700px;
+  height: 715px;
 }
 
 .explore__col:first-child {
-  margin-right: 60px;
+  margin-right: 7px;
+}
+
+.explore__col:last-child {
+  padding-top: 16px;
 }
 
 .explore__text {
-  margin-bottom: 25px;
-  @include font-source(22px, 300, $main-color, 38px);
+  margin-bottom: 27px;
+  padding-right: 60px;
+  @include font-source(22px, 300, $main-color, 38.5px);
   &:last-child {
     margin-bottom: 0;
   }

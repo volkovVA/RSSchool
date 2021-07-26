@@ -1,3 +1,7 @@
+.contacts {
+  padding: 74px 0 75px;
+}
+
 .contacts__title {
   color: $font-cold-color;
 }
@@ -17,7 +21,8 @@
 
 .contacts__desc {
   width: 240px;
-  margin-bottom: 36px;
+  margin-bottom: 38px;
+  padding-top: 10px;
   @include font-source(28px, 500, $default-color, 33px);
 }
 
@@ -30,6 +35,9 @@
   margin-bottom: 20px;
   & > span {
     margin-right: 10px;
+  }
+  & > address {
+    font-style: normal;
   }
 }
 

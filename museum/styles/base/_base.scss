@@ -69,11 +69,11 @@ p {
 
 .title {
   margin: 0;
-  margin-bottom: 100px;
+  margin-bottom: 104px;
   font-family: "Forum", "Times New Roman", Times, serif;
   @include font-source(80px, 400, $main-color, 90px);
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 5.2px;
 }
 
 .border-line {
@@ -81,7 +81,7 @@ p {
   &::before {
     content: '';
     position: absolute;
-    bottom: -30%;
+    bottom: -32%;
     width: 100%;
     height: 3px;
     background-color: $dark-red-color;

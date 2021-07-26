@@ -1,3 +1,7 @@
+.visiting {
+  padding: 74px 0 73px;
+}
+
 .visiting__title {
   color: $font-cold-color;
 }
@@ -10,7 +14,7 @@
 }
 
 .visiting__item {
-  margin-bottom: 78px;
+  margin-bottom: 66px;
   &:nth-child(4),
   &:nth-child(5),
   &:last-child {

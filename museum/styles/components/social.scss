@@ -1,10 +1,11 @@
 .social {
   display: flex;
   align-self: flex-end;
+  padding-bottom: 14px;
 }
 
 .social__item {
-  margin-right: 24px;
+  margin-right: 23px;
   &:last-child {
     margin-right: 0;
   }

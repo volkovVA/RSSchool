@@ -1,9 +1,9 @@
 .player__control {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
   height: 85px;
-  padding: 0 40px;
+  padding: 0 41px;
   background-color: $default-color;
 }
 
@@ -24,6 +24,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 220px;
+  height: 220px;
   transform: translate(-50%, -50%);
 }
 
@@ -34,11 +36,24 @@
   cursor: pointer;
   fill: $player-icon-color;
   transition: fill 0.3s;
+  &:first-child {
+    margin-right: 37px;
+  }
+  &:nth-child(2) {
+    margin-right: 36px;
+  }
+  &:nth-child(3) {
+    margin-right: 39px;
+  }
   &:last-child {
     margin-right: 0;
   }
+  &--speaker, &--full {
+    width: 36px;
+    height: 36px;
+  }
   &--speaker {
-    margin-right: 20px;
+    margin-right: 19px;
   }
   &:hover {
     fill: $player-hover-color;
@@ -72,9 +87,10 @@
 
 .player__progress {
   width: 820px;
-  margin-right: 40px;
+  margin-right: 42px;
 }
 
 .player__volume {
-  margin-right: 48px;
+  width: 154px;
+  margin-right: 51px;
 }

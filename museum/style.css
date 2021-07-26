@@ -69,14 +69,14 @@ p {
 
 .title {
   margin: 0;
-  margin-bottom: 100px;
+  margin-bottom: 104px;
   font-family: "Forum", "Times New Roman", Times, serif;
   font-size: 80px;
   font-weight: 400;
   color: #ffffff;
   line-height: 90px;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 5.2px;
 }
 
 .border-line {
@@ -85,7 +85,7 @@ p {
 .border-line::before {
   content: "";
   position: absolute;
-  bottom: -30%;
+  bottom: -32%;
   width: 100%;
   height: 3px;
   background-color: #710707;
@@ -498,23 +498,23 @@ template {
 .card__title {
   position: relative;
   padding-bottom: 14px;
-  margin-bottom: 21px;
+  margin-bottom: 8px;
   font-family: "Forum", "Times New Roman", Times, serif;
   font-size: 32px;
   font-weight: 400;
   color: #000000;
   line-height: 35px;
   white-space: nowrap;
-  letter-spacing: 2px;
+  letter-spacing: 5.2px;
   text-transform: uppercase;
 }
 .card__title::after {
   content: "";
   display: block;
   position: absolute;
-  bottom: 0;
-  width: 300px;
-  height: 2px;
+  bottom: 3px;
+  width: 302px;
+  height: 3px;
   background-color: #710707;
 }
 
@@ -531,6 +531,14 @@ template {
   font-weight: 200;
   color: #000000;
   line-height: 21px;
+}
+
+.card__desc, .card__text {
+  letter-spacing: 0.2px;
+}
+
+.contacts {
+  padding: 74px 0 75px;
 }
 
 .contacts__title {
@@ -552,7 +560,8 @@ template {
 
 .contacts__desc {
   width: 240px;
-  margin-bottom: 36px;
+  margin-bottom: 38px;
+  padding-top: 10px;
   font-size: 28px;
   font-weight: 500;
   color: #000000;
@@ -573,6 +582,9 @@ template {
 .contacts__text > span {
   margin-right: 10px;
 }
+.contacts__text > address {
+  font-style: normal;
+}
 
 .contacts__link {
   transition: color 0.3s;
@@ -582,6 +594,7 @@ template {
 }
 
 .explore {
+  padding: 74px 0 75px;
   background-color: #030303;
 }
 
@@ -590,21 +603,30 @@ template {
   justify-content: space-between;
 }
 
+.explore__title.border-line:before {
+  width: 96%;
+}
+
 .explore__col {
   flex: 1;
-  height: 700px;
+  height: 715px;
 }
 
 .explore__col:first-child {
-  margin-right: 60px;
+  margin-right: 7px;
+}
+
+.explore__col:last-child {
+  padding-top: 16px;
 }
 
 .explore__text {
-  margin-bottom: 25px;
+  margin-bottom: 27px;
+  padding-right: 60px;
   font-size: 22px;
   font-weight: 300;
   color: #ffffff;
-  line-height: 38px;
+  line-height: 38.5px;
 }
 .explore__text:last-child {
   margin-bottom: 0;
@@ -638,10 +660,9 @@ template {
 
 .player__control {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 85px;
-  padding: 0 40px;
+  padding: 0 41px;
   background-color: #000000;
 }
 
@@ -665,6 +686,8 @@ template {
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 220px;
+  height: 220px;
   transform: translate(-50%, -50%);
 }
 
@@ -676,11 +699,24 @@ template {
   fill: #B3B3B3;
   transition: fill 0.3s;
 }
+.player__icon:first-child {
+  margin-right: 37px;
+}
+.player__icon:nth-child(2) {
+  margin-right: 36px;
+}
+.player__icon:nth-child(3) {
+  margin-right: 39px;
+}
 .player__icon:last-child {
   margin-right: 0;
 }
+.player__icon--speaker, .player__icon--full {
+  width: 36px;
+  height: 36px;
+}
 .player__icon--speaker {
-  margin-right: 20px;
+  margin-right: 19px;
 }
 .player__icon:hover {
   fill: #989898;
@@ -716,20 +752,22 @@ template {
 
 .player__progress {
   width: 820px;
-  margin-right: 40px;
+  margin-right: 42px;
 }
 
 .player__volume {
-  margin-right: 48px;
+  width: 154px;
+  margin-right: 51px;
 }
 
 .social {
   display: flex;
   align-self: flex-end;
+  padding-bottom: 14px;
 }
 
 .social__item {
-  margin-right: 24px;
+  margin-right: 23px;
 }
 .social__item:last-child {
   margin-right: 0;
@@ -755,6 +793,7 @@ template {
 }
 
 .tickets {
+  padding: 74px 0 75px;
   background-color: #000000;
 }
 
@@ -772,12 +811,12 @@ template {
 .tickets__col {
   display: flex;
   flex-direction: column;
-  flex: 1;
   height: 550px;
 }
 
-.tickets__col:first-child {
-  margin-right: 60px;
+.tickets__col:last-child {
+  padding-left: 62px;
+  flex: 1;
 }
 
 .tickets__content {
@@ -801,7 +840,7 @@ template {
 }
 
 .tickets__amount {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   margin-left: auto;
 }
 
@@ -852,7 +891,7 @@ template {
 }
 
 .tickets__basic, .tickets__senior {
-  margin-bottom: 6px;
+  margin-bottom: 13px;
   font-size: 22px;
   font-weight: 300;
   color: #ffffff;
@@ -865,12 +904,12 @@ template {
   align-items: center;
   width: 150px;
   height: 50px;
-  padding: 0 10px;
-  margin-bottom: 50px;
+  padding: 0 10px 0 13px;
+  margin-bottom: 36px;
   border: 4px solid #ffffff;
 }
-.tickets__count:last-child {
-  margin-bottom: 100px;
+.tickets__count--bottom {
+  margin-bottom: 51px;
 }
 
 .tickets__value {
@@ -892,14 +931,14 @@ template {
   cursor: pointer;
 }
 .tickets__buttons--minus {
-  font-size: 44px;
+  font-size: 58px;
 }
 .tickets__buttons--plus {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .tickets__price {
-  margin-bottom: 50px;
+  margin-bottom: 48px;
   font-size: 28px;
   font-weight: 700;
   color: #ffffff;
@@ -908,7 +947,7 @@ template {
 }
 
 .tickets__button {
-  padding: 10px 40px;
+  padding: 11px 33px;
   margin-left: auto;
   font-size: 22px;
   font-weight: 300;
@@ -921,6 +960,10 @@ template {
 }
 .tickets__button:hover {
   background-color: #9d8665;
+}
+
+.video {
+  padding: 91px 0 75px;
 }
 
 .video__content {
@@ -936,10 +979,15 @@ template {
 }
 
 .video__text {
+  padding-top: 8px;
   font-size: 22px;
   font-weight: 300;
   color: #000000;
   line-height: 38px;
+}
+
+.visiting {
+  padding: 74px 0 73px;
 }
 
 .visiting__title {
@@ -954,17 +1002,17 @@ template {
 }
 
 .visiting__item {
-  margin-bottom: 78px;
+  margin-bottom: 66px;
 }
 .visiting__item:nth-child(4), .visiting__item:nth-child(5), .visiting__item:last-child {
   margin-bottom: 0;
 }
 
 .welcome {
-  height: 750px;
+  padding: 76px 0 246px;
   background-color: #030303;
   background-image: url("/museum/assets/img/welcome/welcome.jpg");
-  background-size: 61%;
+  background-size: 63.3%;
   background-position: right bottom;
   background-repeat: no-repeat;
 }
@@ -975,16 +1023,17 @@ template {
 }
 
 .welcome__text {
-  margin-bottom: 76px;
+  margin-bottom: 77px;
   font-size: 28px;
   font-weight: 300;
   color: #ffffff;
   line-height: 33px;
-  letter-spacing: 2px;
+  letter-spacing: 2.2px;
 }
 
 .welcome__button {
-  padding: 20px 40px;
+  display: inline-block;
+  padding: 24px 69px;
   font-size: 22px;
   font-weight: 200;
   color: #ffffff;
@@ -999,7 +1048,7 @@ template {
 }
 
 .footer {
-  padding: 100px 0;
+  padding: 75px 0;
   background-color: #030303;
 }
 
@@ -1010,6 +1059,7 @@ template {
 
 .footer__nav {
   width: 500px;
+  margin-right: 119px;
 }
 
 .footer .nav__list {
@@ -1021,9 +1071,30 @@ template {
 .footer .nav__item {
   margin-right: 0;
 }
+.footer .nav__item:first-child {
+  grid-area: 1/1/2/2;
+}
+.footer .nav__item:nth-child(2) {
+  grid-area: 2/1/3/2;
+}
+.footer .nav__item:nth-child(3) {
+  grid-area: 3/1/4/2;
+}
+.footer .nav__item:nth-child(4) {
+  grid-area: 1/2/2/3;
+  padding-left: 10px;
+}
+.footer .nav__item:nth-child(5) {
+  grid-area: 2/2/3/3;
+  padding-left: 10px;
+}
+.footer .nav__item:last-child {
+  grid-area: 3/2/4/3;
+  padding-left: 10px;
+}
 
 .header {
-  padding: 74px 0;
+  padding-top: 74px;
   background-color: #030303;
 }
 

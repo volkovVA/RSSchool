@@ -15,17 +15,17 @@
 .card__title {
   position: relative;
   padding-bottom: 14px;
-  margin-bottom: 21px;
+  margin-bottom: 8px;
   font-family: "Forum", "Times New Roman", Times, serif;
   @include font-source(32px, 400, $default-color, 35px);
   white-space: nowrap;
-  letter-spacing: 2px;
+  letter-spacing: 5.2px;
   text-transform: uppercase;
   &::after {
     @include pseudo;
-    bottom: 0;
-    width: 300px;
-    height: 2px;
+    bottom: 3px;
+    width: 302px;
+    height: 3px;
     background-color: $dark-red-color;
   }
 }
@@ -37,4 +37,7 @@
 
 .card__text {
   @include font-source(18px, 200, $default-color, 21px);
+}
+.card__desc, .card__text {
+  letter-spacing: 0.2px;
 }

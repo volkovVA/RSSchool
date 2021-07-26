@@ -1,8 +1,8 @@
 .welcome{
-  height: 750px;
+  padding: 76px 0 246px;
   background-color: $bg-dark-color;
   background-image: url("/museum/assets/img/welcome/welcome.jpg");
-  background-size: 61%;
+  background-size: 63.3%;
   background-position: right bottom;
   background-repeat: no-repeat;
   @mixin bg-2x {
@@ -19,13 +19,14 @@
 }
 
 .welcome__text {
-  margin-bottom: 76px;
+  margin-bottom: 77px;
   @include font-source(28px, 300, $main-color, 33px);
-  letter-spacing: 2px;
+  letter-spacing: 2.2px;
 }
 
 .welcome__button {
-  padding: 20px 40px;
+  display: inline-block;
+  padding: 24px 69px;
   @include font-source(22px, 200, $main-color, 26px);
   letter-spacing: 2px;
   background-color: $dark-red-color;
