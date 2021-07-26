@@ -1,17 +1,17 @@
-.menu__list {
+.nav__list {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.menu__item {
+.nav__item {
   margin-right: 76px;
   &:last-child {
     margin-right: 0;
   }
 }
 
-.menu__link {
+.nav__link {
   @include font-source(22px, 200, $main-color, 50px);
   letter-spacing: 2px;
 }

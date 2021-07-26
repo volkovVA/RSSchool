@@ -8,16 +8,16 @@
   justify-content: space-between;
 }
 
-.footer__menu {
+.footer__nav {
   width: 500px;
 }
 
-.footer .menu__list {
+.footer .nav__list {
   display: grid;
   grid-template-columns: 1fr 1fr; 
   grid-template-rows: 1fr 1fr 1fr; 
 }
 
-.footer .menu__item {
+.footer .nav__item {
   margin-right: 0;
 }
