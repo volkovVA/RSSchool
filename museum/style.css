@@ -57,6 +57,12 @@ p {
   margin: 0;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
 .container {
   max-width: 1440px;
   width: 95%;
@@ -479,8 +485,12 @@ template {
 }
 
 .card {
+  position: relative;
   display: block;
   width: 440px;
+}
+.card:hover .card__title::after {
+  width: 100%;
 }
 
 .card__top {
@@ -516,6 +526,7 @@ template {
   width: 302px;
   height: 3px;
   background-color: #710707;
+  transition: width 0.3s;
 }
 
 .card__desc {
@@ -642,7 +653,16 @@ template {
   object-position: center;
 }
 
+.logo:hover .logo__text {
+  color: #9d8665;
+}
+.logo:hover .logo__icon {
+  fill: #9d8665;
+}
+
 .logo__text {
+  display: inline-block;
+  margin: 0;
   font-family: "Forum", "Times New Roman", Times, serif;
   font-size: 28px;
   font-weight: 400;
@@ -650,19 +670,22 @@ template {
   line-height: 50px;
   letter-spacing: 5px;
   text-transform: uppercase;
+  transition: all 0.3s;
 }
 
 .logo__icon {
   width: 49px;
   height: 26px;
   margin-right: 20px;
+  fill: #ffffff;
+  transition: all 0.3s;
 }
 
 .player__control {
   display: flex;
   align-items: center;
   height: 85px;
-  padding: 0 41px;
+  padding: 2px 41px 0 41px;
   background-color: #000000;
 }
 
@@ -682,44 +705,62 @@ template {
   display: flex;
 }
 
-.player__play-icon {
+.player__play-button {
   position: absolute;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.player__play-icon {
   width: 220px;
   height: 220px;
-  transform: translate(-50%, -50%);
+  fill: #ffffff;
+  transition: 0.1s;
+}
+.player__play-icon:hover {
+  transform: scale(1.05);
+}
+.player__play-icon:active {
+  transform: scale(1);
+}
+
+.player__button {
+  margin-right: 40px;
+}
+.player__button:first-child {
+  margin-right: 37px;
+}
+.player__button:nth-child(2) {
+  margin-right: 36px;
+}
+.player__button:nth-child(3) {
+  margin-right: 39px;
+}
+.player__button:last-child {
+  margin-right: 0;
+}
+.player__button--speaker {
+  margin-right: 19px;
 }
 
 .player__icon {
   width: 30px;
   height: 30px;
-  margin-right: 40px;
   cursor: pointer;
   fill: #B3B3B3;
   transition: fill 0.3s;
-}
-.player__icon:first-child {
-  margin-right: 37px;
-}
-.player__icon:nth-child(2) {
-  margin-right: 36px;
-}
-.player__icon:nth-child(3) {
-  margin-right: 39px;
-}
-.player__icon:last-child {
-  margin-right: 0;
 }
 .player__icon--speaker, .player__icon--full {
   width: 36px;
   height: 36px;
 }
-.player__icon--speaker {
-  margin-right: 19px;
-}
 .player__icon:hover {
   fill: #989898;
+}
+.player__icon:active:active {
+  transform: scale(0.9);
 }
 
 .player__progress,
@@ -752,7 +793,7 @@ template {
 
 .player__progress {
   width: 820px;
-  margin-right: 42px;
+  margin-right: 40px;
 }
 
 .player__volume {
@@ -781,15 +822,23 @@ template {
   height: 48px;
   border-radius: 50%;
   border: 1px solid #666666;
-  transition: transform 0.2s;
+  transition: border-color 0.3s;
 }
 .social__link:hover {
-  transform: scale(1.1);
+  border-color: #9d8665;
+}
+.social__link:hover .social__icon {
+  fill: #9d8665;
+}
+.social__link:active {
+  transform: scale(0.95);
 }
 
 .social__icon {
   width: 24px;
   height: 24px;
+  fill: #ffffff;
+  transition: fill 0.3s;
 }
 
 .tickets {
@@ -929,12 +978,19 @@ template {
 .tickets__buttons {
   all: unset;
   cursor: pointer;
+  transition: color 0.3s;
 }
 .tickets__buttons--minus {
   font-size: 58px;
 }
 .tickets__buttons--plus {
   font-size: 28px;
+}
+.tickets__buttons:hover {
+  color: #9d8665;
+}
+.tickets__buttons:active {
+  transform: scale(0.99);
 }
 
 .tickets__price {
@@ -947,7 +1003,7 @@ template {
 }
 
 .tickets__button {
-  padding: 11px 33px;
+  padding: 12px 35px;
   margin-left: auto;
   font-size: 22px;
   font-weight: 300;
@@ -960,6 +1016,9 @@ template {
 }
 .tickets__button:hover {
   background-color: #9d8665;
+}
+.tickets__button:active {
+  transform: scale(0.99);
 }
 
 .video {
@@ -1046,6 +1105,9 @@ template {
 .welcome__button:hover {
   background-color: #9d8665;
 }
+.welcome__button:active {
+  transform: scale(0.99);
+}
 
 .footer {
   padding: 75px 0;
@@ -1126,6 +1188,9 @@ template {
   transition: color 0.3s;
 }
 .nav__link:hover {
+  color: #9d8665;
+}
+.nav__link:active {
   color: #9d8665;
 }
 

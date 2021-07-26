@@ -1,9 +1,8 @@
 .player__control {
   display: flex;
-  // justify-content: space-between;
   align-items: center;
   height: 85px;
-  padding: 0 41px;
+  padding: 2px 41px 0 41px;
   background-color: $default-color;
 }
 
@@ -20,22 +19,29 @@
   display: flex;
 }
 
-.player__play-icon {
+.player__play-button {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 220px;
-  height: 220px;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
-.player__icon {
-  width: 30px;
-  height: 30px;
+.player__play-icon {
+  width: 220px;
+  height: 220px;
+  fill: $main-color;
+  transition: 0.1s;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.player__button {
   margin-right: 40px;
-  cursor: pointer;
-  fill: $player-icon-color;
-  transition: fill 0.3s;
   &:first-child {
     margin-right: 37px;
   }
@@ -48,15 +54,28 @@
   &:last-child {
     margin-right: 0;
   }
+  &--speaker {
+    margin-right: 19px;
+  }
+}
+
+.player__icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  fill: $player-icon-color;
+  transition: fill 0.3s;
   &--speaker, &--full {
     width: 36px;
     height: 36px;
   }
-  &--speaker {
-    margin-right: 19px;
-  }
   &:hover {
     fill: $player-hover-color;
+  }
+  &:active {
+    &:active {
+      transform: scale(0.9);
+    }
   }
 }
 
@@ -87,7 +106,7 @@
 
 .player__progress {
   width: 820px;
-  margin-right: 42px;
+  margin-right: 40px;
 }
 
 .player__volume {

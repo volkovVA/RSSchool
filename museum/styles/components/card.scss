@@ -1,6 +1,12 @@
 .card {
+  position: relative;
   display: block;
   width: 440px;
+  &:hover {
+    .card__title::after {
+      width: 100%;
+    }
+  }
 }
 
 .card__top {
@@ -27,6 +33,7 @@
     width: 302px;
     height: 3px;
     background-color: $dark-red-color;
+    transition: width 0.3s;
   }
 }
 

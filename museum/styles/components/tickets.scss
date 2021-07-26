@@ -121,11 +121,18 @@
 .tickets__buttons {
   all: unset;
   cursor: pointer;
+  transition: color 0.3s;
   &--minus {
     font-size: 58px;
   }
   &--plus {
     font-size: 28px;
+  }
+  &:hover {
+    color: $font-cold-color;
+  }
+  &:active {
+    transform: scale(0.99);
   }
 }
 
@@ -136,7 +143,7 @@
 }
 
 .tickets__button {
-  padding: 11px 33px;
+  padding: 12px 35px;
   margin-left: auto;
   @include font-source(22px, 300, $default-color, 26px);
   letter-spacing: 2px;
@@ -145,6 +152,8 @@
   transition: background-color 0.3s;
   &:hover {
     background-color: $font-cold-color;
-
+  }
+  &:active {
+    transform: scale(0.99);
   }
 }

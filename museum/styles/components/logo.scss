@@ -1,12 +1,26 @@
+.logo {
+  &:hover .logo__text {
+    color: $font-cold-color;
+  }
+  &:hover .logo__icon {
+    fill: $font-cold-color;
+  }
+}
+
 .logo__text {
+  display: inline-block;
+  margin: 0;
   font-family: "Forum", "Times New Roman", Times, serif;
   @include font-source(28px, 400, $main-color, 50px);
   letter-spacing: 5px;
   text-transform: uppercase;
+  transition: all 0.3s;
 }
 
 .logo__icon {
   width: 49px;
   height: 26px;
   margin-right: 20px;
+  fill: $main-color;
+  transition: all 0.3s;
 }

@@ -19,13 +19,21 @@
   height: 48px;
   border-radius: 50%;
   border: 1px solid $border-color;
-  transition: transform 0.2s;
+  transition: border-color 0.3s;
   &:hover {
-    transform: scale(1.1);
+    border-color: $font-cold-color;
+  }
+  &:hover .social__icon {
+    fill: $font-cold-color;
+  }
+  &:active {
+    transform: scale(0.95);
   }
 }
 
 .social__icon {
   width: 24px;
   height: 24px;
+  fill: $main-color;
+  transition: fill 0.3s;
 }

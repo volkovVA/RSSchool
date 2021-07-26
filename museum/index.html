@@ -15,7 +15,7 @@
         <svg class="logo__icon">
           <use xlink:href="assets/svg/sprite.svg#logo"></use>
         </svg>
-        <span class="logo__text">louvre</span>
+        <h1 class="logo__text">louvre</h1>
       </a>
       <nav class="nav">
         <ul class="nav__list">
@@ -41,7 +41,7 @@
   <main>
     <section class="section welcome">
       <div class="container">
-        <h1 class="title welcome__title">welcome <br>to the louvre</h1>
+        <h2 class="title welcome__title">welcome <br>to the louvre</h2>
         <p class="welcome__text">From the castle to the museum</p>
         <a class="welcome__button" href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" target="_blank">Discover the Louvre</a>
       </div>
@@ -131,28 +131,40 @@
         <div class="player">
           <div class="player__box">
             <img class="player__image" src="./assets/img/video/video.jpg" alt="video">
-            <svg class="player__play-icon">
-              <use xlink:href="assets/svg/sprite.svg#play"></use>
-            </svg>
+            <button class="player__play-button">
+              <svg class="player__play-icon">
+                <use xlink:href="assets/svg/sprite.svg#play"></use>
+              </svg>
+            </button>
           </div>
           <div class="player__control">
-            <svg class="player__icon">
-              <use xlink:href="assets/svg/sprite.svg#back"></use>
-            </svg>
-            <svg class="player__icon">
-              <use xlink:href="assets/svg/sprite.svg#play-small"></use>
-            </svg>
-            <svg class="player__icon">
-              <use xlink:href="assets/svg/sprite.svg#next"></use>
-            </svg>
+            <button class="player__button">
+              <svg class="player__icon">
+                <use xlink:href="assets/svg/sprite.svg#back"></use>
+              </svg>
+            </button>
+            <button class="player__button">
+              <svg class="player__icon">
+                <use xlink:href="assets/svg/sprite.svg#play-small"></use>
+              </svg>
+            </button>
+            <button class="player__button">
+              <svg class="player__icon">
+                <use xlink:href="assets/svg/sprite.svg#next"></use>
+              </svg>
+            </button>
             <input class="player__progress" type="range">
-            <svg class="player__icon player__icon--speaker">
-              <use xlink:href="assets/svg/sprite.svg#speaker"></use>
-            </svg>
+            <button class="player__button player__button--speaker">
+              <svg class="player__icon player__icon--speaker">
+                <use xlink:href="assets/svg/sprite.svg#speaker"></use>
+              </svg>
+            </button>
             <input class="player__volume" type="range">
-            <svg class="player__icon player__icon--full">
-              <use xlink:href="assets/svg/sprite.svg#full"></use>
-            </svg>
+            <button class="player__button">
+              <svg class="player__icon player__icon--full">
+                <use xlink:href="assets/svg/sprite.svg#full"></use>
+              </svg>
+            </button>
           </div>
         </div>
         <div class="video__content">

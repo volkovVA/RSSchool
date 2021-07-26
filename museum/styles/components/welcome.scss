@@ -35,4 +35,7 @@
   &:hover {
     background-color: $font-cold-color;
   }
+  &:active {
+    transform: scale(0.99);
+  }
 }
