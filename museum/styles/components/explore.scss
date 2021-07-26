@@ -7,6 +7,10 @@
   justify-content: space-between;
 }
 
+.explore__col {
+  flex: 1;
+}
+
 .explore__col:first-child {
   margin-right: 60px;
 }

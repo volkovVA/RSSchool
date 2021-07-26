@@ -528,6 +528,10 @@ template {
   justify-content: space-between;
 }
 
+.explore__col {
+  flex: 1;
+}
+
 .explore__col:first-child {
   margin-right: 60px;
 }
@@ -686,7 +690,7 @@ template {
   border-bottom: 3px solid #710707;
 }
 
-.tickets__content {
+.tickets__box {
   display: flex;
 }
 
@@ -697,34 +701,39 @@ template {
   object-position: center;
 }
 
-.tickets__column:first-child {
+.tickets__col {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+}
+
+.tickets__col:first-child {
   margin-right: 60px;
 }
 
-.tickets__column:last-child {
+.tickets__content {
   display: flex;
   justify-content: space-between;
-  flex: 1;
-  width: 100%;
 }
 
-.tickets__small-column {
+.tickets__col-small {
   color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.tickets__small-column:last-child {
-  align-items: flex-end;
-}
 
-.tickets__type {
+.tickets__type, .tickets__amount {
   margin-bottom: 50px;
   font-size: 28px;
   font-weight: 700;
   color: #ffffff;
   line-height: 33px;
+}
+
+.tickets__amount {
+  margin-bottom: 10px;
+  margin-left: auto;
 }
 
 .tickets__radio {
@@ -775,25 +784,12 @@ template {
   background-image: url("./assets/img/tickets/ellipse-checked.png");
 }
 
-.tickets__amount {
-  margin-bottom: 10px;
-  font-size: 28px;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 33px;
-}
-
 .tickets__basic, .tickets__senior {
-  margin-right: 55px;
   margin-bottom: 6px;
   font-size: 22px;
   font-weight: 300;
   color: #ffffff;
   line-height: 26px;
-}
-
-.tickets__senior {
-  margin-right: 45px;
 }
 
 .tickets__count {
@@ -822,6 +818,7 @@ template {
 
 .tickets__buttons {
   all: unset;
+  cursor: pointer;
 }
 .tickets__buttons--minus {
   font-size: 44px;
@@ -841,12 +838,14 @@ template {
 
 .tickets__button {
   padding: 10px 40px;
+  margin-left: auto;
   font-size: 22px;
   font-weight: 300;
   color: #000000;
   line-height: 26px;
   letter-spacing: 2px;
   background-color: #ffffff;
+  cursor: pointer;
 }
 
 .video__content {

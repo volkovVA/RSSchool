@@ -8,7 +8,7 @@
   border-bottom: 3px solid $dark-red-color;
 }
 
-.tickets__content {
+.tickets__box{
   display: flex;
 }
 
@@ -19,31 +19,36 @@
   object-position: center;
 }
 
-.tickets__column:first-child {
+.tickets__col {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+}
+
+.tickets__col:first-child {
   margin-right: 60px;
 }
 
-.tickets__column:last-child {
+.tickets__content {
   display: flex;
   justify-content: space-between;
-  flex: 1;
-  width: 100%;
 }
 
-.tickets__small-column {
+.tickets__col-small {
   color: $main-color;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  &:last-child {
-    align-items: flex-end;
-  }
 }
 
-.tickets__type {
+.tickets__type, .tickets__amount {
   margin-bottom: 50px;
   @include font-source(28px, 700, $main-color, 33px);
+}
+
+.tickets__amount {
+  margin-bottom: 10px;
+  margin-left: auto;
 }
 
 .tickets__radio {
@@ -91,19 +96,9 @@
   background-image: url("./assets/img/tickets/ellipse-checked.png");
 }
 
-.tickets__amount {
-  margin-bottom: 10px;
-  @include font-source(28px, 700, $main-color, 33px);
-}
-
 .tickets__basic, .tickets__senior {
-  margin-right: 55px;
   margin-bottom: 6px;
   @include font-source(22px, 300, $main-color, 26px);
-}
-
-.tickets__senior {
-  margin-right: 45px;
 }
 
 .tickets__count {
@@ -129,6 +124,7 @@
 
 .tickets__buttons {
   all: unset;
+  cursor: pointer;
   &--minus {
     font-size: 44px;
   }
@@ -145,7 +141,9 @@
 
 .tickets__button {
   padding: 10px 40px;
+  margin-left: auto;
   @include font-source(22px, 300, $default-color, 26px);
   letter-spacing: 2px;
   background-color: $main-color;
+  cursor: pointer;
 }
