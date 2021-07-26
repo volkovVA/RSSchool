@@ -1,7 +1,4 @@
 .contacts__title {
-  padding-bottom: 36px;
-  margin-bottom: 100px;
-  border-bottom: 3px solid $dark-red-color;
   color: $font-cold-color;
 }
 
@@ -15,6 +12,7 @@
 
 .contacts__map {
   flex: 2;
+  height: 620px;
 }
 
 .contacts__desc {
@@ -32,5 +30,12 @@
   margin-bottom: 20px;
   & > span {
     margin-right: 10px;
+  }
+}
+
+.contacts__link {
+  transition: color 0.3s;
+  &:hover {
+    color: $font-cold-color;
   }
 }

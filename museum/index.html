@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>museum</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.ico">
 </head>
 <body> 
   <header class="header">
@@ -19,35 +20,35 @@
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link" href="#">Visiting</a>
+            <a class="nav__link" href="#visiting">Visiting</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Explore</a>
+            <a class="nav__link" href="#explore">Explore</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Video</a>
+            <a class="nav__link" href="#video">Video</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Tickets</a>
+            <a class="nav__link" href="#tickets">Tickets</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Contacts</a>
+            <a class="nav__link" href="#contacts">Contacts</a>
           </li>
         </ul>
       </nav>
     </div>
   </header>
   <main>
-    <section class="welcome">
+    <section class="section welcome">
       <div class="container">
         <h1 class="title welcome__title">welcome <br>to the louvre</h1>
         <p class="welcome__text">From the castle to the museum</p>
-        <a class="welcome__button" href="#">Discover the Louvre</a>
+        <a class="welcome__button" href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" target="_blank">Discover the Louvre</a>
       </div>
     </section>
-    <section class="visiting">
+    <section class="section visiting" id="visiting">
       <div class="container">
-        <h2 class="title visiting__title">virtual tour</h2>
+        <h2 class="title border-line visiting__title">virtual tour</h2>
         <ul class="visiting__list">
           <li class="visiting__item">
             <a class="card" href="#">
@@ -112,10 +113,10 @@
         </ul>
       </div>
     </section>
-    <section class="explore">
+    <section class="section explore" id="explore">
       <div class="container explore__container">
         <div class="explore__col">
-          <h2 class="title explore__title">picture explore</h2>
+          <h2 class="title border-line">picture explore</h2>
           <p class="explore__text">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
           <p class="explore__text">It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
           <p class="explore__text">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
@@ -125,7 +126,7 @@
         </div>
       </div>
     </section>
-    <section class="video">
+    <section class="section video" id="video">
       <div class="container">
         <div class="player">
           <div class="player__box">
@@ -135,17 +136,15 @@
             </svg>
           </div>
           <div class="player__control">
-            <div class="player__buttons">
-                <svg class="player__icon">
-                  <use xlink:href="assets/svg/sprite.svg#back"></use>
-                </svg>
-                <svg class="player__icon">
-                  <use xlink:href="assets/svg/sprite.svg#play-small"></use>
-                </svg>
-                <svg class="player__icon">
-                  <use xlink:href="assets/svg/sprite.svg#next"></use>
-                </svg>
-            </div>
+            <svg class="player__icon">
+              <use xlink:href="assets/svg/sprite.svg#back"></use>
+            </svg>
+            <svg class="player__icon">
+              <use xlink:href="assets/svg/sprite.svg#play-small"></use>
+            </svg>
+            <svg class="player__icon">
+              <use xlink:href="assets/svg/sprite.svg#next"></use>
+            </svg>
             <input class="player__progress" type="range">
             <svg class="player__icon player__icon--speaker">
               <use xlink:href="assets/svg/sprite.svg#speaker"></use>
@@ -162,9 +161,9 @@
         </div>
       </div>
     </section>
-    <section class="tickets">
+    <section class="section tickets" id="tickets">
       <div class="container">
-        <h2 class="title tickets__title">buy tickets</h2>
+        <h2 class="title border-line">buy tickets</h2>
         <div class="tickets__box">
           <div class="tickets__col">
             <img class="tickets__image" srcset="./assets/img/tickets/picture@2x.jpg 1.25x, ./assets/img/tickets/picture@3x.jpg 2.25x" src="./assets/img/tickets/picture.jpg" alt="picture tickets">
@@ -191,20 +190,19 @@
                 <span class="tickets__basic">Basic 18+</span>
                 <div class="tickets__count">
                   <button class="tickets__buttons tickets__buttons--minus" type="button">-</button>
-                  <input  class="tickets__number" type="number" min="0" max="100" value="1" readonly>
+                  <input  class="tickets__value" type="number" min="0" max="100" value="1" readonly>
                   <button class="tickets__buttons tickets__buttons--plus" type="button">+</button>
                 </div>
                 <span class="tickets__senior">Senior 65+</span>
                 <div class="tickets__count">
                   <button class="tickets__buttons tickets__buttons--minus" type="button">-</button>
-                  <input  class="tickets__number" type="number" min="0" max="100" value="1" readonly>
+                  <input  class="tickets__value" type="number" min="0" max="100" value="1" readonly>
                   <button class="tickets__buttons tickets__buttons--plus" type="button">+</button>
                 </div>
                 <div class="tickets__price">
                   <span>Total</span>
                   <span class="tickets__price-number">€220</span>
                 </div>
-                
               </div>
             </div>
             <button class="tickets__button">Buy Now</button>
@@ -212,9 +210,9 @@
         </div>
       </div>
     </section>
-    <section class="contacts">
+    <section class="section contacts" id="contacts">
       <div class="container">
-        <h2 class="title contacts__title">contacts</h2>
+        <h2 class="title border-line contacts__title">contacts</h2>
         <div class="contacts__box">
           <div class="contacts__content">
             <h4 class="contacts__desc">Palais Royal Musee du Louvre</h4>
@@ -225,11 +223,11 @@
               </div>
               <div class="contacts__text">
                 <span>phone:</span>
-                <a href="tel:+330140205050">+33(0) 1 40 20 50 50</a>
+                <a class="contacts__link" href="tel:+330140205050">+33(0) 1 40 20 50 50</a>
               </div>
               <div class="contacts__text">
                 <span>mail:</span>
-                <a href="mailto:info@louvre.fr">info@louvre.fr</a>
+                <a class="contacts__link" href="mailto:info@louvre.fr">info@louvre.fr</a>
               </div>
             </div>
           </div>
@@ -254,53 +252,53 @@
             <a class="nav__link" href="#">Welcome</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Visiting</a>
+            <a class="nav__link" href="#visiting">Visiting</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Explore</a>
+            <a class="nav__link" href="#explore">Explore</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Video</a>
+            <a class="nav__link" href="#video">Video</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Tickets</a>
+            <a class="nav__link" href="#tickets">Tickets</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Contacts</a>
+            <a class="nav__link" href="#contacts">Contacts</a>
           </li>
         </ul>
       </nav>
       <ul class="social">
         <li class="social__item">
-          <a class="social__link social__link--youtube" href="#">
+          <a class="social__link social__link--youtube" href="https://www.youtube.com/channel/UCafm6w_rPndqAtokQy04Jdw" target="_blank">
             <svg class="social__icon">
               <use xlink:href="assets/svg/sprite.svg#youtube"></use>
             </svg>
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link social__link--instagram" href="#">
+          <a class="social__link social__link--instagram" href="https://www.instagram.com/museelouvre/" target="_blank">
             <svg class="social__icon">
               <use xlink:href="assets/svg/sprite.svg#instagram"></use>
             </svg>
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link social__link--facebook" href="#">
+          <a class="social__link social__link--facebook" href="https://www.facebook.com/museedulouvre/" target="_blank">
             <svg class="social__icon">
               <use xlink:href="assets/svg/sprite.svg#facebook"></use>
             </svg>
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link social__link--telegram" href="#">
+          <a class="social__link social__link--telegram" href="https://twitter.com/museelouvre" target="_blank">
             <svg class="social__icon">
               <use xlink:href="assets/svg/sprite.svg#twitter"></use>
             </svg>
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link social__link--pinterest" href="#">
+          <a class="social__link social__link--pinterest" href="https://www.pinterest.fr/museedulouvre/" target="_blank">
             <svg class="social__icon">
               <use xlink:href="assets/svg/sprite.svg#pinterest"></use>
             </svg>

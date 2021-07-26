@@ -19,9 +19,9 @@
 }
 
 .welcome__text {
+  margin-bottom: 76px;
   @include font-source(28px, 300, $main-color, 33px);
   letter-spacing: 2px;
-  margin-bottom: 76px;
 }
 
 .welcome__button {
@@ -30,4 +30,8 @@
   letter-spacing: 2px;
   background-color: $dark-red-color;
   border-radius: 10px;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: $font-cold-color;
+  }
 }

@@ -9,13 +9,11 @@
 
 .player__box {
   position: relative;
+  height: 629px;
 }
 
 .player__image {
-  max-width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  @include image-cover;
 }
 
 .player__buttons {
@@ -33,11 +31,17 @@
   width: 30px;
   height: 30px;
   margin-right: 40px;
-  &:nth-child(5) {
+  cursor: pointer;
+  fill: $player-icon-color;
+  transition: fill 0.3s;
+  &:last-child {
     margin-right: 0;
   }
   &--speaker {
     margin-right: 20px;
+  }
+  &:hover {
+    fill: $player-hover-color;
   }
 }
 

@@ -4,15 +4,12 @@
 }
 
 .card__top {
-  width: 100%;
+  height: 285px;
   margin-bottom: 25px;
 }
 
 .card__image {
-  max-width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  @include image-cover;
 }
 
 .card__title {
@@ -34,8 +31,8 @@
 }
 
 .card__desc {
-  @include font-source(22px, 200, $default-color, 26px);
   margin-bottom: 10px;
+  @include font-source(22px, 200, $default-color, 26px);
 }
 
 .card__text {

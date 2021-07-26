@@ -1,14 +1,12 @@
 .visiting__title {
-  padding-bottom: 30px;
-  margin-bottom: 103px;
   color: $font-cold-color;
-  border-bottom: 3px solid $dark-red-color;
 }
 
 .visiting__list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .visiting__item {

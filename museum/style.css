@@ -8,6 +8,7 @@ html {
   box-sizing: border-box;
   height: 100%;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -57,17 +58,18 @@ p {
 }
 
 .container {
-  margin: 0 auto;
   max-width: 1440px;
   width: 95%;
+  margin: 0 auto;
 }
 
-section {
+.section {
   padding: 60px 0;
 }
 
 .title {
   margin: 0;
+  margin-bottom: 100px;
   font-family: "Forum", "Times New Roman", Times, serif;
   font-size: 80px;
   font-weight: 400;
@@ -75,6 +77,18 @@ section {
   line-height: 90px;
   text-transform: uppercase;
   letter-spacing: 5px;
+}
+
+.border-line {
+  position: relative;
+}
+.border-line::before {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  width: 100%;
+  height: 3px;
+  background-color: #710707;
 }
 
 @font-face {
@@ -470,7 +484,7 @@ template {
 }
 
 .card__top {
-  width: 100%;
+  height: 285px;
   margin-bottom: 25px;
 }
 
@@ -505,11 +519,11 @@ template {
 }
 
 .card__desc {
+  margin-bottom: 10px;
   font-size: 22px;
   font-weight: 200;
   color: #000000;
   line-height: 26px;
-  margin-bottom: 10px;
 }
 
 .card__text {
@@ -520,9 +534,6 @@ template {
 }
 
 .contacts__title {
-  padding-bottom: 36px;
-  margin-bottom: 100px;
-  border-bottom: 3px solid #710707;
   color: #9d8665;
 }
 
@@ -536,6 +547,7 @@ template {
 
 .contacts__map {
   flex: 2;
+  height: 620px;
 }
 
 .contacts__desc {
@@ -562,6 +574,13 @@ template {
   margin-right: 10px;
 }
 
+.contacts__link {
+  transition: color 0.3s;
+}
+.contacts__link:hover {
+  color: #9d8665;
+}
+
 .explore {
   background-color: #030303;
 }
@@ -573,17 +592,11 @@ template {
 
 .explore__col {
   flex: 1;
+  height: 700px;
 }
 
 .explore__col:first-child {
   margin-right: 60px;
-}
-
-.explore__title {
-  display: inline-block;
-  padding-bottom: 36px;
-  margin-bottom: 100px;
-  border-bottom: 3px solid #710707;
 }
 
 .explore__text {
@@ -634,6 +647,7 @@ template {
 
 .player__box {
   position: relative;
+  height: 629px;
 }
 
 .player__image {
@@ -658,12 +672,18 @@ template {
   width: 30px;
   height: 30px;
   margin-right: 40px;
+  cursor: pointer;
+  fill: #B3B3B3;
+  transition: fill 0.3s;
 }
-.player__icon:nth-child(5) {
+.player__icon:last-child {
   margin-right: 0;
 }
 .player__icon--speaker {
   margin-right: 20px;
+}
+.player__icon:hover {
+  fill: #989898;
 }
 
 .player__progress,
@@ -723,6 +743,10 @@ template {
   height: 48px;
   border-radius: 50%;
   border: 1px solid #666666;
+  transition: transform 0.2s;
+}
+.social__link:hover {
+  transform: scale(1.1);
 }
 
 .social__icon {
@@ -732,12 +756,6 @@ template {
 
 .tickets {
   background-color: #000000;
-}
-
-.tickets__title {
-  padding-bottom: 36px;
-  margin-bottom: 100px;
-  border-bottom: 3px solid #710707;
 }
 
 .tickets__box {
@@ -755,6 +773,7 @@ template {
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 550px;
 }
 
 .tickets__col:first-child {
@@ -767,10 +786,10 @@ template {
 }
 
 .tickets__col-small {
-  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  color: #ffffff;
 }
 
 .tickets__type, .tickets__amount {
@@ -809,20 +828,18 @@ template {
 
 .tickets__radio > span {
   position: relative;
-  display: inline-flex;
   align-items: center;
+  display: inline-flex;
   padding-left: 40px;
 }
 
 .tickets__radio > span::before {
   content: "";
   position: absolute;
+  left: 0;
   display: inline-block;
   width: 17px;
   height: 17px;
-  left: 0;
-  flex-shrink: 0;
-  flex-grow: 0;
   margin-right: 10px;
   background-image: url("./assets/img/tickets/ellipse.png");
   background-position: center center;
@@ -856,14 +873,18 @@ template {
   margin-bottom: 100px;
 }
 
-.tickets__number {
+.tickets__value {
+  text-align: center;
   font-size: 22px;
   font-weight: 300;
   color: #ffffff;
   line-height: 26px;
   all: unset;
-  text-align: center;
-  padding-left: 18px;
+  width: 10px;
+}
+.tickets__value::-webkit-outer-spin-button, .tickets__value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .tickets__buttons {
@@ -896,6 +917,10 @@ template {
   letter-spacing: 2px;
   background-color: #ffffff;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+.tickets__button:hover {
+  background-color: #9d8665;
 }
 
 .video__content {
@@ -905,6 +930,7 @@ template {
 
 .video__title {
   margin-right: 115px;
+  margin-bottom: 0;
   color: #9d8665;
   white-space: nowrap;
 }
@@ -917,16 +943,14 @@ template {
 }
 
 .visiting__title {
-  padding-bottom: 30px;
-  margin-bottom: 103px;
   color: #9d8665;
-  border-bottom: 3px solid #710707;
 }
 
 .visiting__list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .visiting__item {
@@ -951,12 +975,12 @@ template {
 }
 
 .welcome__text {
+  margin-bottom: 76px;
   font-size: 28px;
   font-weight: 300;
   color: #ffffff;
   line-height: 33px;
   letter-spacing: 2px;
-  margin-bottom: 76px;
 }
 
 .welcome__button {
@@ -968,6 +992,10 @@ template {
   letter-spacing: 2px;
   background-color: #710707;
   border-radius: 10px;
+  transition: background-color 0.3s;
+}
+.welcome__button:hover {
+  background-color: #9d8665;
 }
 
 .footer {
@@ -1024,6 +1052,10 @@ template {
   color: #ffffff;
   line-height: 50px;
   letter-spacing: 2px;
+  transition: color 0.3s;
+}
+.nav__link:hover {
+  color: #9d8665;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -9,17 +9,11 @@
 
 .explore__col {
   flex: 1;
+  height: 700px;
 }
 
 .explore__col:first-child {
   margin-right: 60px;
-}
-
-.explore__title {
-  display: inline-block;
-  padding-bottom: 36px;
-  margin-bottom: 100px;
-  border-bottom: 3px solid $dark-red-color;
 }
 
 .explore__text {
@@ -34,8 +28,5 @@
 }
 
 .explore__image {
-  max-width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  @include image-cover;
 }

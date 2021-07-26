@@ -14,4 +14,8 @@
 .nav__link {
   @include font-source(22px, 200, $main-color, 50px);
   letter-spacing: 2px;
+  transition: color 0.3s;
+  &:hover {
+    color: $font-cold-color;
+  }
 }

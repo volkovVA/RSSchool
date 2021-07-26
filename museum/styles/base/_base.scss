@@ -5,9 +5,10 @@
 }
 
 html {
-    box-sizing: border-box;
-    height: 100%;
-    font-size: $mainFontSize;
+  box-sizing: border-box;
+  height: 100%;
+  font-size: $mainFontSize;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -57,19 +58,32 @@ p {
 }
 
 .container {
-  margin: 0 auto;
   max-width: 1440px;
   width: 95%;
+  margin: 0 auto;
 }
 
-section {
+.section {
   padding: 60px 0;
 }
 
 .title {
   margin: 0;
+  margin-bottom: 100px;
   font-family: "Forum", "Times New Roman", Times, serif;
   @include font-source(80px, 400, $main-color, 90px);
   text-transform: uppercase;
   letter-spacing: 5px;
+}
+
+.border-line {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    width: 100%;
+    height: 3px;
+    background-color: $dark-red-color;
+  }
 }

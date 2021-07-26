@@ -18,6 +18,10 @@
   height: 48px;
   border-radius: 50%;
   border: 1px solid $border-color;
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .social__icon {
