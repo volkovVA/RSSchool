@@ -1,0 +1,23 @@
+.footer {
+  padding: 100px 0;
+  background-color: $bg-dark-color;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__menu {
+  width: 500px;
+}
+
+.footer .menu__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+}
+
+.footer .menu__item {
+  margin-right: 0;
+}

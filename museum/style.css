@@ -626,6 +626,7 @@ template {
 .menu__list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .menu__item {
@@ -721,6 +722,33 @@ template {
 
 .player__volume {
   margin-right: 48px;
+}
+
+.social {
+  display: flex;
+  align-self: flex-end;
+}
+
+.social__item {
+  margin-right: 24px;
+}
+.social__item:last-child {
+  margin-right: 0;
+}
+
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #666666;
+}
+
+.social__icon {
+  width: 24px;
+  height: 24px;
 }
 
 .tickets {
@@ -961,6 +989,30 @@ template {
   letter-spacing: 2px;
   background-color: #710707;
   border-radius: 10px;
+}
+
+.footer {
+  padding: 100px 0;
+  background-color: #030303;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__menu {
+  width: 500px;
+}
+
+.footer .menu__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.footer .menu__item {
+  margin-right: 0;
 }
 
 .header {
