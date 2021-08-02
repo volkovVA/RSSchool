@@ -1,30 +1,29 @@
 .social {
-  display: flex;
+  @include flex;
   align-self: flex-end;
-  padding-bottom: 14px;
+  flex-wrap: wrap;
 }
 
 .social__item {
   margin-right: 23px;
+  margin-bottom: 14px;
   &:last-child {
     margin-right: 0;
   }
 }
 
 .social__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   width: 48px;
   height: 48px;
   border-radius: 50%;
   border: 1px solid $border-color;
   transition: border-color 0.3s;
   &:hover {
-    border-color: $font-cold-color;
+    border-color: $font-gold-color;
   }
   &:hover .social__icon {
-    fill: $font-cold-color;
+    fill: $font-gold-color;
   }
   &:active {
     transform: scale(0.95);

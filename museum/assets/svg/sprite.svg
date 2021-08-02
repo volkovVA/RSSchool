@@ -40,4 +40,10 @@
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 17" id="twitter">
     <path d="M20 1.88c-.75.37-1.5.5-2.38.62.88-.5 1.5-1.25 1.75-2.25a8.2 8.2 0 01-2.62 1 4.36 4.36 0 00-3-1.25c-2.13 0-4 1.88-4 4.13 0 .37 0 .62.13.87A11.5 11.5 0 011.38.75a3.8 3.8 0 00-.5 2.13 4.1 4.1 0 001.87 3.37c-.63 0-1.25-.25-1.88-.5 0 2 1.38 3.63 3.25 4-.37.13-.75.13-1.12.13-.25 0-.5 0-.75-.13.5 1.63 2 2.88 3.88 2.88A7.95 7.95 0 011 14.38H0a12.2 12.2 0 006.25 1.87c7.5 0 11.63-6.25 11.63-11.63v-.5A7.27 7.27 0 0020 1.88z"></path>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" id="minus">
+    <path fill="none" stroke-width="12" stroke-miterlimit="10" d="M13.787 64.001h100.426"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" id="plus">
+    <path d="M13.787 64.001h100.426M64 13.787v100.426" fill="none" stroke-width="12" stroke-miterlimit="10"></path>
+  </symbol>
 </svg>

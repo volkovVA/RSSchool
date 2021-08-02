@@ -1,6 +1,5 @@
 .player__control {
-  display: flex;
-  align-items: center;
+  @include flex(none, center);
   height: 85px;
   padding: 2px 41px 0 41px;
   background-color: $default-color;
@@ -16,7 +15,7 @@
 }
 
 .player__buttons {
-  display: flex;
+  @include flex;
 }
 
 .player__play-button {
@@ -54,8 +53,33 @@
   &:last-child {
     margin-right: 0;
   }
-  &--speaker {
-    margin-right: 19px;
+  &:hover .player__icon {
+    fill: $player-hover-color;
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.player__button--speaker {
+  position: relative;
+  margin-right: 19px;
+  &::after {
+    @include pseudo;
+    top: -4px;
+    left: 15px;
+    width: 4px;
+    height: 45px;
+    transform: rotate(-45deg);
+    background-color: $player-icon-color;
+    opacity: 0;
+    transition: background-color 0.3s, opacity 0.2s;
+  }
+  &.is-active::after {
+    opacity: 1;
+  }
+  &:hover::after {
+    background-color: $player-hover-color;
   }
 }
 
@@ -68,14 +92,6 @@
   &--speaker, &--full {
     width: 36px;
     height: 36px;
-  }
-  &:hover {
-    fill: $player-hover-color;
-  }
-  &:active {
-    &:active {
-      transform: scale(0.9);
-    }
   }
 }
 

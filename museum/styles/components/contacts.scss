@@ -3,15 +3,19 @@
 }
 
 .contacts__title {
-  color: $font-cold-color;
+  color: $font-gold-color;
 }
 
 .contacts__box {
-  display: flex;
+  @include flex;
+}
+
+.contacts__col {
+  flex: 1;
 }
 
 .contacts__content {
-  flex: 1;
+  margin-right: 20px;
 }
 
 .contacts__map {
@@ -31,10 +35,10 @@
 }
 
 .contacts__text {
-  display: flex;
+  @include flex;
   margin-bottom: 20px;
   & > span {
-    margin-right: 10px;
+    margin-right: 8px;
   }
   & > address {
     font-style: normal;
@@ -42,8 +46,8 @@
 }
 
 .contacts__link {
-  transition: color 0.3s;
+  @extend %transition;
   &:hover {
-    color: $font-cold-color;
+    color: $font-gold-color;
   }
 }

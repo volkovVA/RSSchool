@@ -4,7 +4,7 @@
 }
 
 .tickets__box{
-  display: flex;
+  @include flex;
 }
 
 .tickets__image {
@@ -12,8 +12,7 @@
 }
 
 .tickets__col {
-  display: flex;
-  flex-direction: column;
+  @include flex(none, none, column);
   height: 550px;
 }
 
@@ -23,15 +22,15 @@
 }
 
 .tickets__content {
-  display: flex;
-  justify-content: space-between;
+  @include flex(space-between);
 }
 
 .tickets__col-small {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  @include flex(flex-start, none, column);
   color: $main-color;
+  &:first-child {
+    margin-right: 20px;
+  }
 }
 
 .tickets__type, .tickets__amount {
@@ -63,9 +62,8 @@
 }
 
 .tickets__radio > span {
+  @include flex(none, center);
   position: relative;
-  align-items: center;
-  display: inline-flex;
   padding-left: 40px;
 }
 
@@ -93,12 +91,10 @@
 }
 
 .tickets__count {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(space-between, center);
   width: 150px;
   height: 50px;
-  padding: 0 10px 0 13px;
+  padding: 2px 8px 0 11px;
   margin-bottom: 36px;
   border: 4px solid $main-color;
   &--bottom {
@@ -119,21 +115,20 @@
 }
 
 .tickets__buttons {
-  all: unset;
   cursor: pointer;
-  transition: color 0.3s;
-  &--minus {
-    font-size: 58px;
-  }
-  &--plus {
-    font-size: 28px;
-  }
-  &:hover {
-    color: $font-cold-color;
+  &:hover .tickets__icon {
+    stroke: $font-gold-color;
   }
   &:active {
-    transform: scale(0.99);
+    transform: scale(0.85);
   }
+}
+
+.tickets__icon {
+  width: 20px;
+  height: 20px;
+  stroke: $main-color;
+  transition: stroke 0.3s;
 }
 
 .tickets__price {
@@ -143,7 +138,7 @@
 }
 
 .tickets__button {
-  padding: 12px 35px;
+  padding: 12px 37px;
   margin-left: auto;
   @include font-source(22px, 300, $default-color, 26px);
   letter-spacing: 2px;
@@ -151,7 +146,7 @@
   cursor: pointer;
   transition: background-color 0.3s;
   &:hover {
-    background-color: $font-cold-color;
+    background-color: $font-gold-color;
   }
   &:active {
     transform: scale(0.99);

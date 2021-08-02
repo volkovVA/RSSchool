@@ -4,8 +4,7 @@
 }
 
 .explore__container {
-  display: flex;
-  justify-content: space-between;
+  @include flex(space-between);
 }
 
 .explore__title.border-line:before {
@@ -33,7 +32,7 @@
     margin-bottom: 0;
   }
   & span {
-    color: $font-cold-color;
+    color: $font-gold-ticket-color;
   }
 }
 

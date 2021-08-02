@@ -1,16 +1,15 @@
 .visiting {
-  padding: 74px 0 73px;
+  padding: 74px 0 63px;
 }
 
 .visiting__title {
-  color: $font-cold-color;
+  color: $font-gold-color;
 }
 
 .visiting__list {
-  display: flex;
-  justify-content: space-between;
+  @include flex(center);
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0 60px;
 }
 
 .visiting__item {

@@ -1,6 +1,5 @@
 .nav__list {
-  display: flex;
-  align-items: center;
+  @include flex(none, center);
   flex-wrap: wrap;
 }
 
@@ -14,11 +13,11 @@
 .nav__link {
   @include font-source(22px, 200, $main-color, 50px);
   letter-spacing: 2px;
-  transition: color 0.3s;
+  @extend %transition;
   &:hover {
-    color: $font-cold-color;
+    color: $font-gold-color;
   }
   &:active {
-    color: $font-cold-color;
+    color: $font-gold-color;
   }
 }

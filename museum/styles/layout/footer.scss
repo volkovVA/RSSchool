@@ -4,13 +4,12 @@
 }
 
 .footer__container {
-  display: flex;
-  justify-content: space-between;
+  @include flex(space-between);
 }
 
 .footer__nav {
   width: 500px;
-  margin-right: 119px;
+  margin-right: 142px;
 }
 
 .footer .nav__list {

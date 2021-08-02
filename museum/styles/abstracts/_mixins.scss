@@ -42,6 +42,21 @@
   }
 }
 
+// Flex
+
+@mixin flex($justify: none, $align: none, $direction: none) {
+  display: flex;
+  @if $align != none {
+    align-items: #{$align};
+  }
+  @if $justify != none {
+    justify-content: #{$justify};
+  }
+  @if $direction != none {
+    flex-direction: #{$direction};
+  }
+}
+
 // Flex centering
 
 @mixin flex-center {
@@ -49,6 +64,8 @@
   justify-content: center;
   align-items: center;
 }
+
+
 
 // Pseudo
 

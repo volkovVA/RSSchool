@@ -3,14 +3,14 @@
 }
 
 .video__content {
-  display: flex;
+  @include flex;
   margin-top: 40px;
 }
 
 .video__title {
   margin-right: 115px;
   margin-bottom: 0;
-  color: $font-cold-color;
+  color: $font-gold-color;
   white-space: nowrap;
 }
 

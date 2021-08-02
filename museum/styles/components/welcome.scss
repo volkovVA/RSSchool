@@ -1,15 +1,14 @@
 .welcome{
-  padding: 76px 0 246px;
+  padding: 0 0 246px;
   background-color: $bg-dark-color;
-  background-image: url("/museum/assets/img/welcome/welcome.jpg");
-  background-size: 63.3%;
-  background-position: right bottom;
+  background-image: url("./assets/img/welcome/welcome.jpg");
+  background-position: calc(50% + 353px) bottom;
   background-repeat: no-repeat;
   @mixin bg-2x {
-    background-image: url('/museum/assets/img/welcome/welcome@2x.jpg');
+    background-image: url('./assets/img/welcome/welcome@2x.jpg');
   }
   @mixin bg-3x {
-    background-image: url('/museum/assets/img/welcome/welcome@3x.jpg');
+    background-image: url('./assets/img/welcome/welcome@3x.jpg');
   }
 }
 
@@ -33,7 +32,7 @@
   border-radius: 10px;
   transition: background-color 0.3s;
   &:hover {
-    background-color: $font-cold-color;
+    background-color: $font-gold-color;
   }
   &:active {
     transform: scale(0.99);
