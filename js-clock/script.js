@@ -37,4 +37,20 @@ function clock() {
   setInterval(setClock, 1000);
 }
 
+function changeClock() {
+  const toggle = document.querySelector('.toggle');
+  const html = document.querySelector('html');
+
+  toggle.addEventListener('click', e => {
+    html.classList.contains('silver') ?
+      ( html.classList.remove('silver'),
+        e.target.textContent = 'Silver clock'
+      ) : (
+        html.classList.add('silver'),
+        e.target.textContent = 'Blue clock'
+      );
+  });
+}
+
 clock();
+changeClock();

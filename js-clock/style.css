@@ -3,10 +3,24 @@
   --secondary-color:   #ffffff;
   --dial-color:        #f0f0f0;
   --gold-color:        #af9c55;
+  --btn-background:    #000000;
 }
 
 html {
   box-sizing: border-box;
+}
+
+html.silver {
+  --btn-background: #002cb1;
+  --gold-color: #898989;
+}
+
+html.silver .clock{
+  background-image: url('./img/silver-black.png');
+}
+
+html.silver .hour::after{
+  background-image: url('./img/hour-silver.png');
 }
 
 body {
@@ -168,7 +182,7 @@ body {
   left: -17px;
   width: 43px;
   height: 57px;
-  background-image: url('./img/hour.png');
+  background-image: url('./img/hour-gold.png');
   background-position: center center;
   background-size: cover;
 }
@@ -217,4 +231,27 @@ body {
 
 .digital-date {
   font-size: 12px;
+}
+
+.toggle {
+  position: absolute;
+  top: 15px;
+  padding: 16px 36px;
+  font-size: 18px;
+  background-color: var(--btn-background);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1;
+  transition: box-shadow 0.2s;
+}
+
+.toggle:hover {
+  box-shadow: 3px 3px 9px -2px var(--main-color);
+}
+
+.toggle:active {
+  outline: none;
+  transform: scale(0.99);
 }
