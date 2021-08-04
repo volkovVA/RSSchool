@@ -172,3 +172,49 @@ body {
   background-position: center center;
   background-size: cover;
 }
+
+.rect {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 46%;
+  left: 71%;
+  width: 46px;
+  height: 34px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: inset 1px 1px 5px 1px var(--main-color);
+  font-family: 'EB Garamond', serif;
+  font-size: 30px;
+  font-weight: 700;
+  background-color: var(--dial-color);
+}
+
+.digital {
+  position: absolute;
+  top: 56%;
+  font-family: 'EB Garamond', serif;
+  font-weight: 700;
+}
+
+.digital-time, .digital-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 130px;
+  height: 33px;
+  background-color: var(--dial-color);
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 5px 1px #000000;
+}
+
+.digital-time {
+  margin-bottom: 2px;
+  font-size: 22px;
+}
+
+.digital-date {
+  font-size: 12px;
+}
