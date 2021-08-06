@@ -1,5 +1,5 @@
 .explore {
-  padding: 74px 0 75px;
+  padding: 75px 0 74px;
   background-color: $bg-dark-color;
 }
 
@@ -7,17 +7,13 @@
   @include flex(space-between);
 }
 
-.explore__title.border-line:before {
-  width: 96%;
-}
-
 .explore__col {
-  flex: 1;
-  height: 715px;
-}
-
-.explore__col:first-child {
-  margin-right: 7px;
+  &:first-child {
+    max-width: 660px;
+  }
+  &:last-child {
+    max-width: 720px;
+  }
 }
 
 .explore__col:last-child {
@@ -26,10 +22,11 @@
 
 .explore__text {
   margin-bottom: 27px;
-  padding-right: 60px;
+  padding-right: 50px;
   @include font-source(22px, 300, $main-color, 38.5px);
   &:last-child {
     margin-bottom: 0;
+    padding-right: 0;
   }
   & span {
     color: $font-gold-ticket-color;

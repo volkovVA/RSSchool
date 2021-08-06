@@ -1,7 +1,7 @@
 .player__control {
   @include flex(none, center);
   height: 85px;
-  padding: 2px 41px 0 41px;
+  padding: 2px 41px 0 40px;
   background-color: $default-color;
 }
 
@@ -95,11 +95,11 @@
   }
 }
 
-.player__progress,
-.player__volume {
+.player__progress {
   height: 8px;
   -webkit-appearance: none;
-  background-color: $range-color;
+  background: linear-gradient(to right, $range-color 0%, $range-color 50%, $player-progress-color 40%, $player-progress-color 100%);
+  transition: background 0.4s ease-in;
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
@@ -120,12 +120,12 @@
   }
 }
 
-.player__progress {
+.player__progress--rewind {
   width: 820px;
   margin-right: 40px;
 }
 
-.player__volume {
+.player__progress--volume {
   width: 154px;
   margin-right: 51px;
 }

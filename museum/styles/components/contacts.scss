@@ -14,10 +14,6 @@
   flex: 1;
 }
 
-.contacts__content {
-  margin-right: 20px;
-}
-
 .contacts__map {
   flex: 2;
   height: 620px;
@@ -30,18 +26,17 @@
   @include font-source(28px, 500, $default-color, 33px);
 }
 
-.contacts__content {
+.contacts__address {
+  margin-right: 20px;
   @include font-source(22px, 300, $default-color, 26px);
+  font-style: normal;
 }
 
 .contacts__text {
   @include flex;
   margin-bottom: 20px;
   & > span {
-    margin-right: 8px;
-  }
-  & > address {
-    font-style: normal;
+    margin-right: 6px;
   }
 }
 
