@@ -44,10 +44,10 @@ function changeClock() {
   toggle.addEventListener('click', e => {
     html.classList.contains('silver') ?
       ( html.classList.remove('silver'),
-        e.target.textContent = 'Silver clock'
+        e.target.textContent = 'Silver / Black clock'
       ) : (
         html.classList.add('silver'),
-        e.target.textContent = 'Blue clock'
+        e.target.textContent = 'Gold / Blue clock'
       );
   });
 }

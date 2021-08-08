@@ -30,6 +30,14 @@ body {
   overflow-x: hidden;
 }
 
+.wrapper {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.7s ease-in-out 0s;
+}
+
 .container {
   position: relative;
   display: flex;
@@ -52,6 +60,7 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  transition: background-image 0.5s;
 }
 
 .clock-box {
@@ -124,7 +133,7 @@ body {
 }
 
 .second {
-  height: 147px;
+  height: 145px;
   width: 3px;
   transform: translate(-50%, -100%) rotate(20deg);
   z-index: 3;
@@ -244,7 +253,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   z-index: 1;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.5s, color 0.5s;
 }
 
 .toggle:hover {
