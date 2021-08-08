@@ -264,3 +264,48 @@ body {
   outline: none;
   transform: scale(0.99);
 }
+
+.button-box {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.slider-btn {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border-top: 10px solid var(--secondary-color);
+  border-right: 10px solid var(--secondary-color);
+  transition: transform 0.2s;
+}
+
+.slider-btn.prev {
+  transform: rotate(-135deg);
+}
+
+.slider-btn.next {
+  transform: rotate(45deg);
+}
+
+.slider-btn.prev:hover {
+  transform: scale(1.1) rotate(-135deg);
+}
+
+.slider-btn.next:hover {
+  transform: scale(1.1) rotate(45deg);
+}
+
+.slider-btn.prev:active {
+  transform: scale(1) rotate(-135deg);
+}
+
+.slider-btn.next:active {
+  transform: scale(1) rotate(45deg);
+}

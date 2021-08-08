@@ -52,5 +52,61 @@ function changeClock() {
   });
 }
 
+function slider() {
+  const slidePrev = document.querySelector('.prev');
+  const slideNext = document.querySelector('.next');
+  let randomNum = getRandomNum(1,5);
+
+  function getTimeOfDay() {
+    const time = new Date();
+    const hours = time.getHours();
+
+    switch(true) {
+      case (hours >= 4 && hours < 12)  : return 'morning';
+      case (hours >= 12 && hours < 17) : return 'day';
+      case (hours >= 17 && hours <= 23) : return 'evening';
+      case (hours >= 0 && hours < 4)  : return 'night';
+      default: return null;
+    }
+  }
+
+  function getRandomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function setBg() {
+    const img = new Image();
+    const wrapper = document.querySelector('.wrapper');
+    const timeDay = getTimeOfDay();
+
+    img.src = `./img/${timeDay}/${randomNum}.jpg`;
+    img.onload = () => {
+      wrapper.style.backgroundImage = `url(${img.src})`;
+    }
+    
+  }
+
+  function getSlideNext() {
+    randomNum += 1;
+    if (randomNum > 5) {
+      randomNum = 1;
+    }
+    setBg();
+  }
+
+  function getSlidePrev() {
+    randomNum -= 1;
+    if (randomNum < 1) {
+      randomNum = 5;
+    }
+    setBg();
+  }
+
+  setBg();
+  slidePrev.addEventListener('click', getSlidePrev);
+  slideNext.addEventListener('click', getSlideNext);
+}
+
 clock();
 changeClock();
+slider();
