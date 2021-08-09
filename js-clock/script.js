@@ -43,7 +43,7 @@ function clock() {
   setInterval(setClock, 1000);
 }
 
-function changeClock() {
+function changeColorClock() {
   const toggle = document.querySelector('.toggle');
   const html = document.querySelector('html');
 
@@ -113,6 +113,22 @@ function slider() {
   slideNext.addEventListener('click', getSlideNext);
 }
 
+function changeClock() {
+  const checkClockOne = document.querySelector('.change-clock_one');
+  const checkClockTwo = document.querySelector('.change-clock_two');
+  const clockOne = document.querySelector('.clock-one');
+  const clockTwo = document.querySelector('.clock-two');
+  checkClockOne.addEventListener('click', () => {
+    clockOne.style.display = 'flex';
+    clockTwo.style.display = 'none';
+  })
+  checkClockTwo.addEventListener('click', () => {
+    clockOne.style.display = 'none';
+    clockTwo.style.display = 'flex';
+  })
+}
+
 clock();
 changeClock();
+changeColorClock();
 slider();
