@@ -44,18 +44,30 @@ function clock() {
 }
 
 function changeColorClock() {
-  const toggle = document.querySelector('.toggle');
-  const html = document.querySelector('html');
+  const toggleOne = document.querySelector('.toggle-one');
+  const toggleTwo = document.querySelector('.toggle-two');
+  const clockOne = document.querySelector('.clock-one');
+  const clockTwo = document.querySelector('.clock-two');
 
-  toggle.addEventListener('click', e => {
-    html.classList.contains('silver') ?
-      ( html.classList.remove('silver'),
-        e.target.textContent = 'Silver / Black clock'
-      ) : (
-        html.classList.add('silver'),
-        e.target.textContent = 'Gold / Blue clock'
-      );
+  toggleOne.addEventListener('click', e => {
+    change(e, clockOne, 'silver', 'Silver / Black clock', 'Gold / Blue clock', '#000000', '#898989', '#000074', '#af9c55')
   });
+
+  toggleTwo.addEventListener('click', e => {
+    change(e, clockTwo, 'green', 'Green / Silver clock', 'Silver / Green clock', '#c0c0c0', '#00532c', '#c0c0c0', '#00532c')
+  });
+
+  function change(e, clockNumber, className, contentOne, contentTwo, colorOne, colorTwo, colorThree, colorFour) {
+    clockNumber.classList.contains(className) ?
+      ( clockNumber.classList.remove(className),
+        e.target.textContent = contentOne,
+        e.target.style.background = `linear-gradient(0deg, ${colorOne} 0%, ${colorTwo} 100%)`
+      ) : (
+        clockNumber.classList.add(className),
+        e.target.textContent = contentTwo,
+        e.target.style.background = `linear-gradient(0deg, ${colorThree} 0, ${colorFour} 100%)`
+      );
+  }
 }
 
 function slider() {
