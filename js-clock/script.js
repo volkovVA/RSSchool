@@ -1,8 +1,8 @@
 function clock() {
   const needle = document.querySelector('.needle');
-  const secondNeedle = document.querySelector('.second');
-  const minuteNeedle = document.querySelector('.minute');
-  const hourNeedle = document.querySelector('.hour');
+  const secondNeedle = document.querySelectorAll('.second');
+  const minuteNeedle = document.querySelectorAll('.minute');
+  const hourNeedle = document.querySelectorAll('.hour');
   const dayWindow = document.querySelector('.rect');
   const dateWindow = document.querySelector('.digital-date');
   const timeWindow = document.querySelector('.digital-time');
@@ -25,13 +25,19 @@ function clock() {
     const digitalTime = time.toLocaleTimeString('en-US');
     seconds == 0 ? needle.style.transition = 'none': needle.style.transition = 'all 0.5s';
 
-    hourNeedle.style.transform = `translate(-50%, -100%) rotate(${hoursDegrees}deg)`;
-    minuteNeedle.style.transform = `translate(-50%, -100%) rotate(${minutesDegrees}deg)`;
-    secondNeedle.style.transform = `translate(-50%, -100%) rotate(${secondsDegrees}deg)`;
+    styleTransform(hourNeedle, hoursDegrees);
+    styleTransform(minuteNeedle, minutesDegrees);
+    styleTransform(secondNeedle, secondsDegrees);
 
     dayWindow.innerHTML = `${date}`;
     timeWindow.innerHTML = digitalTime;
     dateWindow.innerHTML = `${days[day]} | ${months[month]} | ${year}`;
+  }
+
+  function styleTransform(list, exp) {
+    list.forEach(el => {
+      el.style.transform = `translate(-50%, -100%) rotate(${exp}deg)`;
+    })
   }
 
   setInterval(setClock, 1000);

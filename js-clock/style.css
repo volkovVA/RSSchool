@@ -4,23 +4,41 @@
   --dial-color:        #f0f0f0;
   --gold-color:        #af9c55;
   --btn-background:    #000000;
+  --silver-color:      #c0c0c0;
+  --grey-color:        #898989;
 }
 
 html {
   box-sizing: border-box;
 }
 
-html.silver {
-  --btn-background: #002cb1;
-  --gold-color: #898989;
-}
-
-html.silver .clock{
+.clock-one.silver {
   background-image: url('./img/silver-black.png');
 }
 
-html.silver .hour::after{
+.clock-one.silver .hour::after{
   background-image: url('./img/hour-silver.png');
+}
+
+.clock-one.silver .center-point,
+.clock-one.silver .second-gold {
+  background-color: var(--grey-color);
+}
+
+.clock-one.silver .needle {
+  border-color: var(--grey-color);
+}
+
+.clock-one.silver .minute-gold::after {
+  border-bottom-color: var(--grey-color);
+}
+
+.clock-one.silver .second-gold::after {
+  border-color: var(--grey-color);
+}
+
+.clock-two.green {
+  background-image: url('./img/silver-green.png');
 }
 
 body {
@@ -28,6 +46,13 @@ body {
   padding: 0;
   color: var(--main-color);
   overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 .wrapper {
@@ -49,18 +74,27 @@ body {
   margin: 0 auto;
 }
 
-.clock {
+.clock-one,
+.clock-two {
   position: relative;
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 900px;
   height: 900px;
-  background-image: url('./img/gold-blue.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   transition: background-image 0.5s;
+}
+
+.clock-one {
+  display: flex;
+  background-image: url('./img/gold-blue.png');
+}
+
+.clock-two {
+  display: none;
+  background-image: url('./img/green-silver.png');
 }
 
 .clock-box {
@@ -74,7 +108,7 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 29%;
+  top: 31%;
   font-family: 'EB Garamond', serif;
   font-size: 20px;
   color: var(--dial-color);
@@ -82,11 +116,15 @@ body {
   text-align: center;
 }
 
+.logo-box_top {
+  top: 25%;
+}
+
 .logo-symbol {
-  width: 80px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   margin: 0 auto;
-  background-image: url('./img/rolex.png');
+  background-image: url('./img/rolex-logo.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -103,7 +141,6 @@ body {
   left: 50%;
   transform-origin: bottom center;
   transition-timing-function: ease-in;
-  background-color: var(--gold-color);
   box-shadow: 2px 1px 5px 2px rgba(0,0,0, 0.7);
 }
 
@@ -116,7 +153,7 @@ body {
   width: 26px;
   height: 26px;
   background-color: var(--gold-color);
-  box-shadow: inset 0px 0px 0px 2px var(--dial-color);;
+  box-shadow: inset 0px 0px 0px 2px var(--dial-color);
   z-index: 4;
 }
 
@@ -129,11 +166,19 @@ body {
   width: 17px;
   height: 17px;
   border-radius: 50%;
-  background-color: var(--dial-color);;
+  background-color: var(--dial-color);
+}
+
+.center-point-silver {
+  background-color: var(--dial-color);
+  box-shadow: inset 0px 0px 0px 2px var(--silver-color);
+}
+
+.center-point-silver::after {
+  background-color: var(--silver-color);
 }
 
 .second {
-  height: 145px;
   width: 3px;
   transform: translate(-50%, -100%) rotate(20deg);
   z-index: 3;
@@ -142,6 +187,14 @@ body {
 .second::after {
   content: '';
   position: absolute;
+}
+
+.second-gold {
+  height: 145px;
+  background-color: var(--gold-color);
+}
+
+.second-gold::after {
   top: 33%;
   left: 50%;
   transform: translateX(-50%);
@@ -152,41 +205,85 @@ body {
   border: 3px solid var(--gold-color);
 }
 
+.second-silver {
+  height: 165px;
+  background-color: var(--silver-color);
+}
+
+.second-silver::after {
+  top: -6%;
+  transform: translateX(-35%);
+  width: 0; 
+  height: 0;
+  border-left: 7.5px solid transparent;
+  border-right: 7.5px solid transparent;
+  border-bottom: 22px solid var(--silver-color);
+}
+
 .minute {
-  height: 100px;
   width: 7px;
   transform: translate(-50%, -100%) rotate(70deg);
-  background-color: var(--dial-color);;
-  border: 4px solid var(--gold-color);
-  border-bottom: 17px solid var(--gold-color);
   z-index: 2;
 }
 
 .minute::after {
   content: '';
   position: absolute;
-  top: -26%;
   left: -57%;
   width: 0; 
   height: 0;
   border-left: 7.5px solid transparent;
   border-right: 7.5px solid transparent;
+}
+
+.minute-gold {
+  height: 100px;
+  background-color: var(--dial-color);
+  border: 4px solid var(--gold-color);
+  border-bottom: 17px solid var(--gold-color);
+}
+
+.minute-gold::after {
+  top: -26%;
   border-bottom: 22px solid var(--gold-color);
 }
 
+.minute-silver {
+  height: 130px;
+  background: linear-gradient(
+    to bottom,
+    var(--main-color) 20%,
+    var(--dial-color) 20%,
+    var(--dial-color) 60%,
+    var(--main-color) 20%
+  );
+  border: 4px solid var(--silver-color);
+}
+
+.minute-silver::after {
+  top: -20%;
+  border-bottom: 22px solid var(--silver-color);
+}
+
 .hour {
-  height: 65px;
-  width: 10px;
   transform: translate(-50%, -100%) rotate(180deg);
-  background-color: var(--dial-color);;
-  border: 2px solid var(--gold-color);
-  border-bottom: 15px solid var(--gold-color);
   z-index: 1;
 }
 
 .hour::after {
   content: '';
   position: absolute;
+}
+
+.hour-gold {
+  width: 10px;
+  height: 65px;
+  background-color: var(--dial-color);;
+  border: 2px solid var(--gold-color);
+  border-bottom: 15px solid var(--gold-color);
+}
+
+.hour-gold::after {
   top: -36%;
   left: -17px;
   width: 43px;
@@ -194,6 +291,34 @@ body {
   background-image: url('./img/hour-gold.png');
   background-position: center center;
   background-size: cover;
+}
+
+.hour-silver {
+  width: 7px;
+  height: 65px;
+  border: 4px solid var(--silver-color);
+  border-bottom: 17px solid var(--silver-color);
+  background: linear-gradient(
+    to bottom,
+    var(--main-color) 20%,
+    var(--dial-color) 20%,
+    var(--dial-color) 60%,
+    var(--main-color) 20%
+  );
+  transform: translate(-50%, -100%) rotate(180deg);
+  z-index: 1;
+}
+
+.hour-silver::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -57%;
+  width: 0; 
+  height: 0;
+  border-left: 7.5px solid transparent;
+  border-right: 7.5px solid transparent;
+  border-bottom: 22px solid var(--silver-color);
 }
 
 .rect {
@@ -243,11 +368,9 @@ body {
 }
 
 .toggle {
-  position: absolute;
-  top: 15px;
-  padding: 16px 36px;
+  width: 200px;
+  height: 50px;
   font-size: 18px;
-  background-color: var(--btn-background);
   color: var(--secondary-color);
   border: 0;
   border-radius: 4px;
@@ -265,7 +388,15 @@ body {
   transform: scale(0.99);
 }
 
-.button-box {
+.toggle-one {
+  background: linear-gradient(0deg, #000000 0%, #898989 100%);
+}
+
+.toggle-two {
+  background: linear-gradient(0deg, #c0c0c0 0%, #00532c 100%);
+}
+
+.slider-btn-box {
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -308,4 +439,29 @@ body {
 
 .slider-btn.next:active {
   transform: scale(1) rotate(45deg);
+}
+
+.change-clock {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  transition: filter 0.3s;
+  filter: brightness(90%);
+}
+
+.change-clock:hover {
+  filter: brightness(110%);
+}
+
+.clock-btn-box {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 40px 0;
+  z-index: 1;
 }
