@@ -10,6 +10,7 @@
 
 html {
   box-sizing: border-box;
+  font-family: 'EB Garamond', serif;
 }
 
 .clock-one.silver {
@@ -88,12 +89,12 @@ img {
 }
 
 .clock-one {
-  display: flex;
+  display: none;
   background-image: url('./img/gold-blue.png');
 }
 
 .clock-two {
-  display: none;
+  display: flex;
   background-image: url('./img/green-silver.png');
 }
 
@@ -109,7 +110,6 @@ img {
 .logo-box {
   position: absolute;
   top: 31%;
-  font-family: 'EB Garamond', serif;
   font-size: 20px;
   color: var(--dial-color);
   text-transform: uppercase;
@@ -464,4 +464,54 @@ img {
   width: 100%;
   padding: 40px 0;
   z-index: 1;
+}
+
+.round {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  font-size: 40px;
+  color: var(--secondary-color);
+}
+
+.round-hour {
+  top: 39%;
+  left: 22.2%;
+}
+
+.round-minute {
+  top: 39%;
+  left: 61%;
+}
+
+.round-second {
+  top: 61%;
+  left: 42%;
+}
+
+.progress-ring {
+  position: absolute;
+  margin-right: 2px;
+  margin-top: 1px;
+  fill: transparent;
+  stroke-width: 15;
+  stroke: rgba(192,192,192, 0.8);
+}
+
+/* .progress-ring_second {
+  stroke: rgba(250,226,50, 0.4);
+}
+.progress-ring_minute {
+  stroke: rgba(114,87,250, 0.4);
+}
+.progress-ring_hour {
+  stroke: rgba(250,67,37, 0.4);
+} */
+
+.progress-circle {
+  transform-origin: center;
+  transform: rotate(-90deg);
 }

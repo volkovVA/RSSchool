@@ -6,6 +6,9 @@ function clock() {
   const dayWindow = document.querySelector('.rect');
   const dateWindow = document.querySelector('.digital-date');
   const timeWindow = document.querySelector('.digital-time');
+  const roundSecond = document.querySelector('.round-second span');
+  const roundMinute = document.querySelector('.round-minute span');
+  const roundHour = document.querySelector('.round-hour span');
 
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -19,25 +22,53 @@ function clock() {
     const hours = time.getHours();
     const minutes = time.getMinutes();
     const seconds = time.getSeconds();
+
+    const digitalTime = time.toLocaleTimeString('en-US');
+
     const hoursDegrees = ((hours / 12) * 360) + ((minutes/60)*30)
     const minutesDegrees = ((minutes / 60) * 360) + 0.3;
     const secondsDegrees = ((seconds / 60) * 360) + 0.4;
-    const digitalTime = time.toLocaleTimeString('en-US');
+
+    const circleSecond = document.querySelector('.progress-circle_second');
+    const circleMinute = document.querySelector('.progress-circle_minute');
+    const circleHour = document.querySelector('.progress-circle_hour');
+
+    const secondPercent = (seconds * 100) / 60;
+    const minutePercent = (minutes * 100) / 60;
+    const hourPercent = (((hours + 24) % 12 || 12) * 100) / 12;
+
     seconds == 0 ? needle.style.transition = 'none': needle.style.transition = 'all 0.5s';
+
+    dayWindow.innerHTML = `${date}`;
+    timeWindow.innerHTML = digitalTime;
+    dateWindow.innerHTML = `${days[day]} | ${months[month]} | ${year}`;
+    roundSecond.textContent = `${seconds}`;
+    roundMinute.textContent = `${minutes}`;
+    roundHour.textContent = `${hours}`;
 
     styleTransform(hourNeedle, hoursDegrees);
     styleTransform(minuteNeedle, minutesDegrees);
     styleTransform(secondNeedle, secondsDegrees);
 
-    dayWindow.innerHTML = `${date}`;
-    timeWindow.innerHTML = digitalTime;
-    dateWindow.innerHTML = `${days[day]} | ${months[month]} | ${year}`;
+    setProgress(secondPercent, circleSecond);
+    setProgress(minutePercent, circleMinute);
+    setProgress(hourPercent, circleHour);
   }
 
   function styleTransform(list, exp) {
     list.forEach(el => {
       el.style.transform = `translate(-50%, -100%) rotate(${exp}deg)`;
     })
+  }
+
+  function setProgress(percent, circle) {
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+    const offset = circumference - percent / 100 * circumference;
+
+    circle.style.strokeDasharray = `${circumference} ${circumference}`;
+    circle.style.strokeDashoffset = circumference;
+    circle.style.strokeDashoffset = offset;
   }
 
   setInterval(setClock, 1000);
