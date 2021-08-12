@@ -566,10 +566,19 @@ button {
   background-image: url('./img/time-zones/tokyo.jpg');
 }
 
-.time-zones:active {
-  transform: scale(0.99);
-}
-
 .time-zones:hover {
   filter: brightness(110%);
+}
+
+.time-zones.no-active:hover {
+  filter: brightness(60%);
+}
+
+.time-zones.active {
+  filter: brightness(100%);
+  outline: 3px solid black;
+}
+
+.time-zones.no-active {
+  filter: brightness(40%);
 }

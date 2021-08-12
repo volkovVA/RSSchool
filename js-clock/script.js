@@ -100,20 +100,35 @@ function clock() {
         }, 1000);
         arr.push(interval);
     }
+
+    function addActive(target) {
+      const timeZonesButtons = document.querySelectorAll('.time-zones');
+      timeZonesButtons.forEach(el => {
+        el.classList.add('no-active');
+        el.classList.remove('active');
+      })
+      target.classList.add('active');
+      target.classList.remove('no-active');
+    }
   
     timeZones.addEventListener('click', e => {
+      const target = e.target;
       switch (true) {
-        case e.target.classList.contains('time-moscow'): 
+        case target.classList.contains('time-moscow'): 
           setTimeOfCity(3, 'Europe/Moscow');
+          addActive(target);
           break;
-        case e.target.classList.contains('time-new-york'):
+        case target.classList.contains('time-new-york'):
           setTimeOfCity(-4, 'US/Eastern');
+          addActive(target);
           break;
-        case e.target.classList.contains('time-london'):
+        case target.classList.contains('time-london'):
           setTimeOfCity(1, 'Europe/London');
+          addActive(target);
           break;
-        case e.target.classList.contains('time-tokyo'):
+        case target.classList.contains('time-tokyo'):
           setTimeOfCity(9, 'Asia/Tokyo');
+          addActive(target);
           break;
         default: return;
       }
