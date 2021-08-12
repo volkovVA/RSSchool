@@ -582,3 +582,17 @@ button {
 .time-zones.no-active {
   filter: brightness(40%);
 }
+
+.desc {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 390px;
+  text-align: center;
+  transform: rotate(-45deg);
+  font-size: 46px;
+  color: #00a900;
+  text-shadow: #000000 2px 2px 3px;
+  letter-spacing: 1px;
+  transition: opacity 1s;
+}

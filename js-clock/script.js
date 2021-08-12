@@ -235,7 +235,28 @@ function changeClock() {
   })
 }
 
+function easterEgg() {
+  const description = document.querySelector('.desc')
+
+  setTimeout(() => {
+    const text = 'Project description in console';
+    let i = 0;
+      setInterval(() => {
+        i >= text.length ? false : description.innerHTML += text[i];
+        i++;
+      }, 200)
+  }, 5000);
+
+  setTimeout(() => {
+    description.style.opacity = 0;
+    setTimeout(() => {
+      description.style.display = 'none';
+    }, 1000);
+  }, 20000);
+}
+
 clock();
 changeClock();
 changeColorClock();
 slider();
+easterEgg();
