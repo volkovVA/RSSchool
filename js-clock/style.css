@@ -56,6 +56,13 @@ img {
   object-position: center;
 }
 
+button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
 .wrapper {
   position: relative;
   background-position: center center;
@@ -372,7 +379,6 @@ img {
   height: 50px;
   font-size: 18px;
   color: var(--secondary-color);
-  border: 0;
   border-radius: 4px;
   cursor: pointer;
   z-index: 1;
@@ -514,4 +520,56 @@ img {
 .progress-circle {
   transform-origin: center;
   transform: rotate(-90deg);
+}
+
+.time-zones-box {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.time-zones {
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+  width: 150px;
+  height: 250px;
+  margin: 0 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--main-color);
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 2px 2px 7px 5px rgba(0,0,0,0.8);
+  filter: brightness(90%);
+  transition: filter 0.3s;
+}
+
+.time-moscow {
+  background-image: url('./img/time-zones/moscow.jpg');
+}
+
+.time-new-york {
+  background-image: url('./img/time-zones/new-york.jpg');
+}
+
+.time-london {
+  background-image: url('./img/time-zones/london.jpg');
+}
+
+.time-tokyo {
+  background-image: url('./img/time-zones/tokyo.jpg');
+}
+
+.time-zones:active {
+  transform: scale(0.99);
+}
+
+.time-zones:hover {
+  filter: brightness(110%);
 }

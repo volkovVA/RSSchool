@@ -9,21 +9,23 @@ function clock() {
   const roundSecond = document.querySelector('.round-second span');
   const roundMinute = document.querySelector('.round-minute span');
   const roundHour = document.querySelector('.round-hour span');
+  const timeZones = document.querySelector('.time-zones-box');
 
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  function setClock() {
+  function setClock(n = 3, timeZone = 'Europe/Moscow') {
     const time = new Date();
     const year = time.getFullYear();
     const month = time.getMonth();
     const day = time.getDay();
     const date = time.getDate();
-    const hours = time.getHours();
+    const hours = time.getUTCHours() + n;
+
     const minutes = time.getMinutes();
     const seconds = time.getSeconds();
 
-    const digitalTime = time.toLocaleTimeString('en-US');
+    const digitalTime = time.toLocaleTimeString('en-US', {timeZone});
 
     const hoursDegrees = ((hours / 12) * 360) + ((minutes/60)*30)
     const minutesDegrees = ((minutes / 60) * 360) + 0.3;
@@ -39,12 +41,18 @@ function clock() {
 
     seconds == 0 ? needle.style.transition = 'none': needle.style.transition = 'all 0.5s';
 
-    dayWindow.innerHTML = `${date}`;
+    dayWindow.innerHTML = hours > 24 ? `${date+1}` : `${date}`;
     timeWindow.innerHTML = digitalTime;
-    dateWindow.innerHTML = `${days[day]} | ${months[month]} | ${year}`;
-    roundSecond.textContent = `${seconds}`;
-    roundMinute.textContent = `${minutes}`;
-    roundHour.textContent = `${hours}`;
+    dateWindow.innerHTML = hours > 24 ? 
+      `${days[day+1]} | ${months[month]} | ${year}` :
+      hours > 24 && day === 31 || day === 30 ?
+      `${days[day+1]} | ${months[month+1]} | ${year}` :
+      hours > 24 && day === 31 || day === 30  &&  month === 12 ?
+      `${days[day+1]} | ${months[month+1]} | ${year+1}` :
+      `${days[day]} | ${months[month]} | ${year}`;
+    roundSecond.textContent = seconds < 10 ? `0${seconds}` : `${seconds}`;;
+    roundMinute.textContent = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    roundHour.textContent = hours > 24 ? `${hours-24}` : `${hours}`;
 
     styleTransform(hourNeedle, hoursDegrees);
     styleTransform(minuteNeedle, minutesDegrees);
@@ -71,7 +79,48 @@ function clock() {
     circle.style.strokeDashoffset = offset;
   }
 
-  setInterval(setClock, 1000);
+  function setClockTimeZones() {
+    const interval = setInterval(() => {
+      setClock()
+    }, 1000);
+  
+    let arr = [interval];
+  
+    function clearIntervalAll() {
+      arr.map((a) => {
+        clearInterval(a);
+        arr = [];
+      })
+    }
+  
+    function setTimeOfCity(difference, timeZone) {
+        clearIntervalAll();
+        const interval = setInterval(() => {
+          setClock(difference, timeZone)
+        }, 1000);
+        arr.push(interval);
+    }
+  
+    timeZones.addEventListener('click', e => {
+      switch (true) {
+        case e.target.classList.contains('time-moscow'): 
+          setTimeOfCity(3, 'Europe/Moscow');
+          break;
+        case e.target.classList.contains('time-new-york'):
+          setTimeOfCity(-4, 'US/Eastern');
+          break;
+        case e.target.classList.contains('time-london'):
+          setTimeOfCity(1, 'Europe/London');
+          break;
+        case e.target.classList.contains('time-tokyo'):
+          setTimeOfCity(9, 'Asia/Tokyo');
+          break;
+        default: return;
+      }
+    });
+  }
+
+  setClockTimeZones();
 }
 
 function changeColorClock() {
