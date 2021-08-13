@@ -6,6 +6,7 @@
   --btn-background:    #000000;
   --silver-color:      #c0c0c0;
   --grey-color:        #898989;
+  --green-color:       #00532c;
 }
 
 html {
@@ -13,47 +14,15 @@ html {
   font-family: 'EB Garamond', serif;
 }
 
-.clock-one.silver {
-  background-image: url('./img/silver-black.png');
-}
-
-.clock-one.silver .hour::after{
-  background-image: url('./img/hour-silver.png');
-}
-
-.clock-one.silver .center-point,
-.clock-one.silver .second-gold {
-  background-color: var(--grey-color);
-}
-
-.clock-one.silver .needle {
-  border-color: var(--grey-color);
-}
-
-.clock-one.silver .minute-gold::after {
-  border-bottom-color: var(--grey-color);
-}
-
-.clock-one.silver .second-gold::after {
-  border-color: var(--grey-color);
-}
-
-.clock-two.green {
-  background-image: url('./img/silver-green.png');
-}
-
 body {
   margin: 0;
   padding: 0;
+  border: none;
+  background: transparent;
   color: var(--main-color);
+  font: inherit;
+  color: inherit;
   overflow-x: hidden;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
 }
 
 button {
@@ -82,8 +51,10 @@ button {
   margin: 0 auto;
 }
 
-.clock-one,
-.clock-two {
+/*===== Clock styles ======*/
+
+.clock-blue,
+.clock-green {
   position: relative;
   justify-content: center;
   align-items: center;
@@ -95,12 +66,12 @@ button {
   transition: background-image 0.5s;
 }
 
-.clock-one {
+.clock-blue {
   display: none;
   background-image: url('./img/gold-blue.png');
 }
 
-.clock-two {
+.clock-green {
   display: flex;
   background-image: url('./img/green-silver.png');
 }
@@ -123,7 +94,7 @@ button {
   text-align: center;
 }
 
-.logo-box_top {
+.logo-box_green {
   top: 25%;
 }
 
@@ -155,10 +126,10 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
   width: 26px;
   height: 26px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
   background-color: var(--gold-color);
   box-shadow: inset 0px 0px 0px 2px var(--dial-color);
   z-index: 4;
@@ -169,19 +140,19 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 17px;
   height: 17px;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background-color: var(--dial-color);
 }
 
-.center-point-silver {
+.center-point_silver {
   background-color: var(--dial-color);
   box-shadow: inset 0px 0px 0px 2px var(--silver-color);
 }
 
-.center-point-silver::after {
+.center-point_silver::after {
   background-color: var(--silver-color);
 }
 
@@ -196,12 +167,12 @@ button {
   position: absolute;
 }
 
-.second-gold {
+.second_gold {
   height: 145px;
   background-color: var(--gold-color);
 }
 
-.second-gold::after {
+.second_gold::after {
   top: 33%;
   left: 50%;
   transform: translateX(-50%);
@@ -212,12 +183,12 @@ button {
   border: 3px solid var(--gold-color);
 }
 
-.second-silver {
+.second_silver {
   height: 165px;
   background-color: var(--silver-color);
 }
 
-.second-silver::after {
+.second_silver::after {
   top: -6%;
   transform: translateX(-35%);
   width: 0; 
@@ -255,7 +226,7 @@ button {
   border-bottom: 22px solid var(--gold-color);
 }
 
-.minute-silver {
+.minute_silver {
   height: 130px;
   background: linear-gradient(
     to bottom,
@@ -267,7 +238,7 @@ button {
   border: 4px solid var(--silver-color);
 }
 
-.minute-silver::after {
+.minute_silver::after {
   top: -20%;
   border-bottom: 22px solid var(--silver-color);
 }
@@ -282,7 +253,7 @@ button {
   position: absolute;
 }
 
-.hour-gold {
+.hour_gold {
   width: 10px;
   height: 65px;
   background-color: var(--dial-color);;
@@ -290,7 +261,7 @@ button {
   border-bottom: 15px solid var(--gold-color);
 }
 
-.hour-gold::after {
+.hour_gold::after {
   top: -36%;
   left: -17px;
   width: 43px;
@@ -300,7 +271,7 @@ button {
   background-size: cover;
 }
 
-.hour-silver {
+.hour_silver {
   width: 7px;
   height: 65px;
   border: 4px solid var(--silver-color);
@@ -316,7 +287,7 @@ button {
   z-index: 1;
 }
 
-.hour-silver::after {
+.hour_silver::after {
   content: '';
   position: absolute;
   top: -40%;
@@ -362,7 +333,7 @@ button {
   height: 33px;
   background-color: var(--dial-color);
   border-radius: 6px;
-  box-shadow: inset 1px 1px 5px 1px #000000;
+  box-shadow: inset 1px 1px 5px 1px var(--main-color);
 }
 
 .digital-time {
@@ -374,102 +345,33 @@ button {
   font-size: 12px;
 }
 
-.toggle {
-  width: 200px;
-  height: 50px;
-  font-size: 18px;
-  color: var(--secondary-color);
-  border-radius: 4px;
-  cursor: pointer;
-  z-index: 1;
-  transition: box-shadow 0.5s, color 0.5s;
+.clock-blue.silver {
+  background-image: url('./img/silver-black.png');
 }
 
-.toggle:hover {
-  box-shadow: 3px 3px 9px -2px var(--main-color);
+.clock-blue.silver .hour::after{
+  background-image: url('./img/hour-silver.png');
 }
 
-.toggle:active {
-  outline: none;
-  transform: scale(0.99);
+.clock-blue.silver .center-point,
+.clock-blue.silver .second_gold {
+  background-color: var(--grey-color);
 }
 
-.toggle-one {
-  background: linear-gradient(0deg, #000000 0%, #898989 100%);
+.clock-blue.silver .needle {
+  border-color: var(--grey-color);
 }
 
-.toggle-two {
-  background: linear-gradient(0deg, #c0c0c0 0%, #00532c 100%);
+.clock-blue.silver .minute-gold::after {
+  border-bottom-color: var(--grey-color);
 }
 
-.slider-btn-box {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+.clock-blue.silver .second_gold::after {
+  border-color: var(--grey-color);
 }
 
-.slider-btn {
-  width: 80px;
-  height: 80px;
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-  background: transparent;
-  border-top: 10px solid var(--secondary-color);
-  border-right: 10px solid var(--secondary-color);
-  transition: transform 0.2s;
-}
-
-.slider-btn.prev {
-  transform: rotate(-135deg);
-}
-
-.slider-btn.next {
-  transform: rotate(45deg);
-}
-
-.slider-btn.prev:hover {
-  transform: scale(1.1) rotate(-135deg);
-}
-
-.slider-btn.next:hover {
-  transform: scale(1.1) rotate(45deg);
-}
-
-.slider-btn.prev:active {
-  transform: scale(1) rotate(-135deg);
-}
-
-.slider-btn.next:active {
-  transform: scale(1) rotate(45deg);
-}
-
-.change-clock {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1;
-  transition: filter 0.3s;
-  filter: brightness(90%);
-}
-
-.change-clock:hover {
-  filter: brightness(110%);
-}
-
-.clock-btn-box {
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  padding: 40px 0;
-  z-index: 1;
+.clock-green.green {
+  background-image: url('./img/silver-green.png');
 }
 
 .round {
@@ -483,17 +385,17 @@ button {
   color: var(--secondary-color);
 }
 
-.round-hour {
+.round_hour {
   top: 39%;
   left: 22.2%;
 }
 
-.round-minute {
+.round_minute {
   top: 39%;
   left: 61%;
 }
 
-.round-second {
+.round_second {
   top: 61%;
   left: 42%;
 }
@@ -522,6 +424,118 @@ button {
   transform: rotate(-90deg);
 }
 
+/*===== Clock button box styles =====*/
+
+.clock-btn-box {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 40px 0;
+  z-index: 1;
+}
+
+.change-clock {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  z-index: 1;
+  transition: filter 0.3s;
+  filter: brightness(90%);
+}
+
+.change-clock:hover {
+  filter: brightness(110%);
+}
+
+.change-clock_blue {
+  background-image: url('./img/clock-blue.png');
+}
+
+.change-clock_green {
+  background-image: url('./img/clock-green.png');
+}
+
+.toggle {
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+  color: var(--secondary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1;
+  transition: box-shadow 0.5s, color 0.5s;
+}
+
+.toggle:hover {
+  box-shadow: 3px 3px 9px -2px var(--main-color);
+}
+
+.toggle:active {
+  outline: none;
+  transform: scale(0.99);
+}
+
+.toggle-one {
+  background: linear-gradient(0deg, var(--main-color) 0%, var(--grey-color) 100%);
+}
+
+.toggle-two {
+  background: linear-gradient(0deg, var(--silver-color) 0%, var(--green-color) 100%);
+}
+
+/*===== Slider button box styles =====*/
+
+.slider-btn-box {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+}
+
+.slider-btn {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  border-top: 7px solid var(--secondary-color);
+  border-right: 7px solid var(--secondary-color);
+  transition: transform 0.2s;
+}
+
+.slider-btn.slider-btn_prev {
+  transform: rotate(-135deg);
+}
+
+.slider-btn.slider-btn_next {
+  transform: rotate(45deg);
+}
+
+.slider-btn.slider-btn_prev:hover {
+  transform: scale(1.1) rotate(-135deg);
+}
+
+.slider-btn.slider-btn_next:hover {
+  transform: scale(1.1) rotate(45deg);
+}
+
+.slider-btn.slider-btn_prev:active {
+  transform: scale(1) rotate(-135deg);
+}
+
+.slider-btn.slider-btn_next:active {
+  transform: scale(1) rotate(45deg);
+}
+
+/*===== Time zones box styles =====*/
+
 .time-zones-box {
   position: absolute;
   bottom: 0;
@@ -529,59 +543,62 @@ button {
   justify-content: space-between;
   width: 100%;
   padding: 40px 0;
+  z-index: 3;
 }
 
-.time-zones {
+.time-zone {
   display: inline-flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 20px;
   width: 150px;
   height: 250px;
+  padding-top: 20px;
   margin: 0 30px;
+  font-size: 30px;
+  font-weight: 700;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--main-color);
-  font-size: 30px;
-  font-weight: 700;
   box-shadow: 2px 2px 7px 5px rgba(0,0,0,0.8);
   filter: brightness(90%);
   transition: filter 0.3s;
 }
 
-.time-moscow {
+.time-zone_moscow {
   background-image: url('./img/time-zones/moscow.jpg');
 }
 
-.time-new-york {
+.time-zone_new-york {
   background-image: url('./img/time-zones/new-york.jpg');
 }
 
-.time-london {
+.time-zone_london {
   background-image: url('./img/time-zones/london.jpg');
 }
 
-.time-tokyo {
+.time-zone_tokyo {
   background-image: url('./img/time-zones/tokyo.jpg');
 }
 
-.time-zones:hover {
+.time-zone:hover {
   filter: brightness(110%);
 }
 
-.time-zones.no-active:hover {
+.time-zone.no-active:hover {
   filter: brightness(60%);
 }
 
-.time-zones.active {
+.time-zone.active {
   filter: brightness(100%);
-  outline: 3px solid black;
+  outline: 3px solid var(--main-color);
 }
 
-.time-zones.no-active {
+.time-zone.no-active {
   filter: brightness(40%);
 }
+
+/*===== Easter Egg =====*/
 
 .desc {
   position: absolute;
@@ -595,4 +612,5 @@ button {
   text-shadow: #000000 2px 2px 3px;
   letter-spacing: 1px;
   transition: opacity 1s;
+  z-index: 10;
 }

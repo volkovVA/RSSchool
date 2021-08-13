@@ -15,24 +15,30 @@
     <p class="desc"></p>
     <div class="container">
       <div class="clock-btn-box">
-        <div class="clock-btn-one">
-          <div class="change-clock change-clock_one">
-            <img src="./img/clock-one.png" alt="clock one">
-          </div>
+        <div class="clock-btns">
+          <button class="change-clock change-clock_blue"></button>
           <button class="toggle toggle-one">Silver / Black clock</button>
         </div>
-        <div class="clock-btn-two">
-          <div class="change-clock change-clock_two">
-            <img src="./img/clock-two.png" alt="clock two">
-          </div>
+        <div class="clock-btns">
+          <button class="change-clock change-clock_green"></button>
           <button class="toggle toggle-two">Black / Green clock</button>
         </div>
       </div>
       <div class="slider-btn-box">
-        <button class="slider-btn prev"></button>
-        <button class="slider-btn next"></button>
+        <button class="slider-btn slider-btn_prev"></button>
+        <button class="slider-btn slider-btn_next"></button>
       </div>
-      <div class="clock-one">
+      <div class="time-zones-box">
+        <div>
+          <button class="time-zone time-zone_moscow">Moscow time</button>
+          <button class="time-zone time-zone_new-york">New-York time</button>
+        </div>
+        <div>
+          <button class="time-zone time-zone_london">London time</button>
+          <button class="time-zone time-zone_tokyo">Tokyo time</button>
+        </div>
+      </div>
+      <div class="clock-blue">
         <div class="clock-box">
           <div class="logo-box">
             <div class="logo-symbol"></div>
@@ -40,9 +46,9 @@
             <span class="logo-text">oyster perpetual date</span>
           </div>
           <div class="center-point"></div>
-          <div class="needle second second-gold"></div>
+          <div class="needle second second_gold"></div>
           <div class="needle minute minute-gold"></div>
-          <div class="needle hour hour-gold"></div>
+          <div class="needle hour hour_gold"></div>
           <div class="rect"></div>
           <div class="digital">
             <div class="digital-time"></div>
@@ -50,44 +56,34 @@
           </div>
         </div>
       </div>
-      <div class="clock-two">
+      <div class="clock-green">
         <div class="clock-box">
-          <div class="logo-box logo-box_top">
+          <div class="logo-box logo-box_green">
             <span class="logo-rolex">rolex</span>
             <span class="logo-text">oyster perpetual</span>
           </div>
-          <div class="center-point center-point-silver"></div>
-          <div class="needle second second-silver"></div>
-          <div class="needle minute minute-silver"></div>
-          <div class="needle hour hour-silver"></div>
-          <div class="round round-second">
+          <div class="center-point center-point_silver"></div>
+          <div class="needle second second_silver"></div>
+          <div class="needle minute minute_silver"></div>
+          <div class="needle hour hour_silver"></div>
+          <div class="round round_second">
             <span></span>
             <svg class="progress-ring progress-ring_second" width="120" height="120">
               <circle class="progress-circle progress-circle_second" cx="60" cy="60" r="50"/>
             </svg>
           </div>
-          <div class="round round-minute">
+          <div class="round round_minute">
             <span></span>
             <svg class="progress-ring progress-ring_minute" width="120" height="120">
               <circle class="progress-circle progress-circle_minute" cx="60" cy="60" r="50"/>
             </svg>
           </div>
-          <div class="round round-hour">
+          <div class="round round_hour">
             <span></span>
             <svg class="progress-ring progress-ring_hour" width="120" height="120">
               <circle class="progress-circle progress-circle_hour" cx="60" cy="60" r="50"/>
             </svg>
           </div>
-        </div>
-      </div>
-      <div class="time-zones-box">
-        <div>
-          <button class="time-zones time-moscow">Moscow time</button>
-          <button class="time-zones time-new-york">New-York time</button>
-        </div>
-        <div>
-          <button class="time-zones time-london">London time</button>
-          <button class="time-zones time-tokyo">Tokyo time</button>
         </div>
       </div>
     </div>

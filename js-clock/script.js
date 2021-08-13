@@ -1,3 +1,7 @@
+function currentTimeDiff() {
+  return Math.abs(new Date().getTimezoneOffset() / 60);
+}
+
 function clock() {
   const needle = document.querySelector('.needle');
   const secondNeedle = document.querySelectorAll('.second');
@@ -6,67 +10,68 @@ function clock() {
   const dayWindow = document.querySelector('.rect');
   const dateWindow = document.querySelector('.digital-date');
   const timeWindow = document.querySelector('.digital-time');
-  const roundSecond = document.querySelector('.round-second span');
-  const roundMinute = document.querySelector('.round-minute span');
-  const roundHour = document.querySelector('.round-hour span');
+  const roundSecond = document.querySelector('.round_second span');
+  const roundMinute = document.querySelector('.round_minute span');
+  const roundHour = document.querySelector('.round_hour span');
   const timeZones = document.querySelector('.time-zones-box');
 
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  function setClock(n = 3, timeZone = 'Europe/Moscow') {
+  function setClock(timeDifference = currentTimeDiff(), timeZone) {
     const time = new Date();
-    const year = time.getFullYear();
-    const month = time.getMonth();
-    const day = time.getDay();
-    const date = time.getDate();
-    const hours = time.getUTCHours() + n;
-
-    const minutes = time.getMinutes();
-    const seconds = time.getSeconds();
-
+    const year = time.getUTCFullYear();
+    const month = time.getUTCMonth();
+    const day = time.getUTCDay();
+    const date = time.getUTCDate();
+    const seconds = time.getUTCSeconds();
+    const minutes = time.getUTCMinutes();
+    const hours = time.getUTCHours() + timeDifference;
+    
     const digitalTime = time.toLocaleTimeString('en-US', {timeZone});
 
-    const hoursDegrees = ((hours / 12) * 360) + ((minutes/60)*30)
-    const minutesDegrees = ((minutes / 60) * 360) + 0.3;
-    const secondsDegrees = ((seconds / 60) * 360) + 0.4;
+    const degreesSecond = ((seconds / 60) * 360);
+    const degreesMinute = ((minutes / 60) * 360);
+    const degreesHour = ((hours / 12) * 360) + ((minutes/60)*30);
 
     const circleSecond = document.querySelector('.progress-circle_second');
     const circleMinute = document.querySelector('.progress-circle_minute');
     const circleHour = document.querySelector('.progress-circle_hour');
 
-    const secondPercent = (seconds * 100) / 60;
-    const minutePercent = (minutes * 100) / 60;
-    const hourPercent = (((hours + 24) % 12 || 12) * 100) / 12;
+    const percentSecond = (seconds * 100) / 60;
+    const percentMinute = (minutes * 100) / 60;
+    let percentHour = (((hours + 24) % 12 || 12) * 100) / 12;
+    percentHour === 100 ? percentHour = 0 : percentHour; 
 
     seconds == 0 ? needle.style.transition = 'none': needle.style.transition = 'all 0.5s';
 
-    dayWindow.innerHTML = hours > 24 ? `${date+1}` : `${date}`;
-    timeWindow.innerHTML = digitalTime;
-    dateWindow.innerHTML = hours > 24 ? 
+    dayWindow.textContent = hours >= 24 ? `${date+1}` : `${date}`;
+    timeWindow.textContent = digitalTime;
+    dateWindow.textContent = hours >= 24 ? 
       `${days[day+1]} | ${months[month]} | ${year}` :
-      hours > 24 && day === 31 || day === 30 ?
+      hours >= 24 && day === 31 || day === 30 ?
       `${days[day+1]} | ${months[month+1]} | ${year}` :
-      hours > 24 && day === 31 || day === 30  &&  month === 12 ?
+      hours >= 24 && day === 31 || day === 30  &&  month === 12 ?
       `${days[day+1]} | ${months[month+1]} | ${year+1}` :
       `${days[day]} | ${months[month]} | ${year}`;
-    roundSecond.textContent = seconds < 10 ? `0${seconds}` : `${seconds}`;;
+
+    roundSecond.textContent = seconds < 10 ? `0${seconds}` : `${seconds}`;
     roundMinute.textContent = minutes < 10 ? `0${minutes}` : `${minutes}`;
-    roundHour.textContent = hours > 24 ? `${hours-24}` : `${hours}`;
+    roundHour.textContent = hours >= 24 ? `${hours-24}` : `${hours}`;
 
-    styleTransform(hourNeedle, hoursDegrees);
-    styleTransform(minuteNeedle, minutesDegrees);
-    styleTransform(secondNeedle, secondsDegrees);
+    needleRotate(secondNeedle, degreesSecond);
+    needleRotate(minuteNeedle, degreesMinute);
+    needleRotate(hourNeedle, degreesHour);
 
-    setProgress(secondPercent, circleSecond);
-    setProgress(minutePercent, circleMinute);
-    setProgress(hourPercent, circleHour);
+    setProgress(percentSecond, circleSecond);
+    setProgress(percentMinute, circleMinute);
+    setProgress(percentHour, circleHour);
   }
 
-  function styleTransform(list, exp) {
+  function needleRotate(list, exp) {
     list.forEach(el => {
       el.style.transform = `translate(-50%, -100%) rotate(${exp}deg)`;
-    })
+    });
   }
 
   function setProgress(percent, circle) {
@@ -79,9 +84,9 @@ function clock() {
     circle.style.strokeDashoffset = offset;
   }
 
-  function setClockTimeZones() {
+  function setClockTimeZone() {
     const interval = setInterval(() => {
-      setClock()
+      setClock();
     }, 1000);
   
     let arr = [interval];
@@ -96,13 +101,14 @@ function clock() {
     function setTimeOfCity(difference, timeZone) {
         clearIntervalAll();
         const interval = setInterval(() => {
-          setClock(difference, timeZone)
+          setClock(difference, timeZone);
         }, 1000);
         arr.push(interval);
+        bgSlider(difference);
     }
 
-    function addActive(target) {
-      const timeZonesButtons = document.querySelectorAll('.time-zones');
+    function addActiveTimeZone(target) {
+      const timeZonesButtons = document.querySelectorAll('.time-zone');
       timeZonesButtons.forEach(el => {
         el.classList.add('no-active');
         el.classList.remove('active');
@@ -114,66 +120,81 @@ function clock() {
     timeZones.addEventListener('click', e => {
       const target = e.target;
       switch (true) {
-        case target.classList.contains('time-moscow'): 
+        case target.classList.contains('time-zone_moscow'): 
           setTimeOfCity(3, 'Europe/Moscow');
-          addActive(target);
+          addActiveTimeZone(target);
           break;
-        case target.classList.contains('time-new-york'):
+        case target.classList.contains('time-zone_new-york'):
           setTimeOfCity(-4, 'US/Eastern');
-          addActive(target);
+          addActiveTimeZone(target);
           break;
-        case target.classList.contains('time-london'):
+        case target.classList.contains('time-zone_london'):
           setTimeOfCity(1, 'Europe/London');
-          addActive(target);
+          addActiveTimeZone(target);
           break;
-        case target.classList.contains('time-tokyo'):
+        case target.classList.contains('time-zone_tokyo'):
           setTimeOfCity(9, 'Asia/Tokyo');
-          addActive(target);
+          addActiveTimeZone(target);
           break;
         default: return;
       }
     });
   }
 
-  setClockTimeZones();
+  setClockTimeZone();
+}
+
+function changeClock() {
+  const checkClockBlue = document.querySelector('.change-clock_blue');
+  const checkClockGreen = document.querySelector('.change-clock_green');
+  const clockBlue = document.querySelector('.clock-blue');
+  const clockGreen = document.querySelector('.clock-green');
+  checkClockBlue.addEventListener('click', () => {
+    clockBlue.style.display = 'flex';
+    clockGreen.style.display = 'none';
+  })
+  checkClockGreen.addEventListener('click', () => {
+    clockBlue.style.display = 'none';
+    clockGreen.style.display = 'flex';
+  })
 }
 
 function changeColorClock() {
-  const toggleOne = document.querySelector('.toggle-one');
-  const toggleTwo = document.querySelector('.toggle-two');
-  const clockOne = document.querySelector('.clock-one');
-  const clockTwo = document.querySelector('.clock-two');
+  const toggleBlue = document.querySelector('.toggle-one');
+  const toggleGreen = document.querySelector('.toggle-two');
+  const clockBlue = document.querySelector('.clock-blue');
+  const clockGreen = document.querySelector('.clock-green');
 
-  toggleOne.addEventListener('click', e => {
-    change(e, clockOne, 'silver', 'Silver / Black clock', 'Gold / Blue clock', '#000000', '#898989', '#000074', '#af9c55')
+  toggleBlue.addEventListener('click', event => {
+    change(event, clockBlue, 'silver', 'Silver / Black clock', 'Gold / Blue clock', '#000000', '#898989', '#000074', '#af9c55');
   });
 
-  toggleTwo.addEventListener('click', e => {
-    change(e, clockTwo, 'green', 'Green / Silver clock', 'Silver / Green clock', '#c0c0c0', '#00532c', '#c0c0c0', '#00532c')
+  toggleGreen.addEventListener('click', event => {
+    change(event, clockGreen, 'green', 'Green / Silver clock', 'Silver / Green clock', '#c0c0c0', '#00532c', '#c0c0c0', '#00532c');
   });
 
-  function change(e, clockNumber, className, contentOne, contentTwo, colorOne, colorTwo, colorThree, colorFour) {
-    clockNumber.classList.contains(className) ?
-      ( clockNumber.classList.remove(className),
-        e.target.textContent = contentOne,
-        e.target.style.background = `linear-gradient(0deg, ${colorOne} 0%, ${colorTwo} 100%)`
-      ) : (
-        clockNumber.classList.add(className),
-        e.target.textContent = contentTwo,
-        e.target.style.background = `linear-gradient(0deg, ${colorThree} 0, ${colorFour} 100%)`
-      );
+  function change(event, clockNumber, className, contentOne, contentTwo, colorOne, colorTwo, colorThree, colorFour) {
+    if (clockNumber.classList.contains(className)) {
+      clockNumber.classList.remove(className);
+      event.target.textContent = contentOne;
+      event.target.style.background = `linear-gradient(0deg, ${colorOne} 0%, ${colorTwo} 100%)`;
+    } else {
+      clockNumber.classList.add(className);
+      event.target.textContent = contentTwo;
+      event.target.style.background = `linear-gradient(0deg, ${colorThree} 0, ${colorFour} 100%)`;
+    }
   }
 }
 
-function slider() {
-  const slidePrev = document.querySelector('.prev');
-  const slideNext = document.querySelector('.next');
+function bgSlider(timeDifference = currentTimeDiff()) {
+  const slidePrev = document.querySelector('.slider-btn_prev');
+  const slideNext = document.querySelector('.slider-btn_next');
   let randomNum = getRandomNum(1,5);
 
   function getTimeOfDay() {
     const time = new Date();
-    const hours = time.getHours();
-
+    let hours = time.getUTCHours() + timeDifference;
+    hours >= 24 ? hours = hours - 24 : hours;
     switch(true) {
       case (hours >= 4 && hours < 12)  : return 'morning';
       case (hours >= 12 && hours < 17) : return 'day';
@@ -191,12 +212,10 @@ function slider() {
     const img = new Image();
     const wrapper = document.querySelector('.wrapper');
     const timeDay = getTimeOfDay();
-
     img.src = `./img/${timeDay}/${randomNum}.jpg`;
     img.onload = () => {
       wrapper.style.backgroundImage = `url(${img.src})`;
     }
-    
   }
 
   function getSlideNext() {
@@ -216,27 +235,13 @@ function slider() {
   }
 
   setBg();
-  slidePrev.addEventListener('click', getSlidePrev);
-  slideNext.addEventListener('click', getSlideNext);
-}
 
-function changeClock() {
-  const checkClockOne = document.querySelector('.change-clock_one');
-  const checkClockTwo = document.querySelector('.change-clock_two');
-  const clockOne = document.querySelector('.clock-one');
-  const clockTwo = document.querySelector('.clock-two');
-  checkClockOne.addEventListener('click', () => {
-    clockOne.style.display = 'flex';
-    clockTwo.style.display = 'none';
-  })
-  checkClockTwo.addEventListener('click', () => {
-    clockOne.style.display = 'none';
-    clockTwo.style.display = 'flex';
-  })
+  slidePrev.onclick = getSlidePrev;
+  slideNext.onclick = getSlideNext;
 }
 
 function easterEgg() {
-  const description = document.querySelector('.desc')
+  const description = document.querySelector('.desc');
 
   setTimeout(() => {
     const text = 'Project description in console';
@@ -244,13 +249,13 @@ function easterEgg() {
       setInterval(() => {
         i >= text.length ? false : description.innerHTML += text[i];
         i++;
-      }, 200)
+      }, 200);
   }, 5000);
 
   setTimeout(() => {
     description.style.opacity = 0;
     setTimeout(() => {
-      description.style.display = 'none';
+      description.remove();
     }, 1000);
   }, 20000);
 }
@@ -258,5 +263,5 @@ function easterEgg() {
 clock();
 changeClock();
 changeColorClock();
-slider();
+bgSlider();
 easterEgg();
