@@ -58,13 +58,7 @@ function clock() {
 
     dayWindow.textContent = hours >= 24 ? `${date+1}` : `${date}`;
     timeWindow.textContent = digitalTime;
-    dateWindow.textContent = hours >= 24 ? 
-      `${days[day+1]} | ${months[month]} | ${year}` :
-      hours >= 24 && day === 31 || day === 30 ?
-      `${days[day+1]} | ${months[month+1]} | ${year}` :
-      hours >= 24 && day === 31 || day === 30  &&  month === 12 ?
-      `${days[day+1]} | ${months[month+1]} | ${year+1}` :
-      `${days[day]} | ${months[month]} | ${year}`;
+    dateWindow.textContent = setDateWindow(hours, day, date, month, year);
 
     roundSecond.textContent = seconds < 10 ? `0${seconds}` : `${seconds}`;
     roundMinute.textContent = minutes < 10 ? `0${minutes}` : `${minutes}`;
@@ -78,6 +72,20 @@ function clock() {
     setProgress(percentMinute, circleMinute);
     setProgress(percentHour, circleHour);
   }
+
+  function setDateWindow(hours, day, date, month, year) {
+    switch (true) {
+      case hours >= 24 && day == 6 && date == 31 && month == 11 : return `${days[0]} | ${months[0]} | ${year+1}`;
+      case hours >= 24 && date == 31 && month == 11 : return `${days[day+1]} | ${months[0]} | ${year+1}`;
+      case hours >= 24 && day == 6 && date == 29 || date == 28 && month == 1 : return `${days[0]} | ${months[month+1]} | ${year}`;
+      case hours >= 24 && date == 29 || date == 28 && month == 1 : return `${days[day+1]} | ${months[month+1]} | ${year}`;
+      case hours >= 24 && day == 6 && date == 31 || date == 30 : return `${days[0]} | ${months[month+1]} | ${year}`;
+      case hours >= 24 && date == 31 || date == 30 : return `${days[day+1]} | ${months[month+1]} | ${year}`;
+      case hours >= 24 && day == 6: return `${days[0]} | ${months[month]} | ${year}`;
+      case hours >= 24: return `${days[day+1]} | ${months[month]} | ${year}`;
+      default: return `${days[day]} | ${months[month]} | ${year}`;
+    }
+  } 
 
   function needleRotate(list, exp) {
     list.forEach(el => {
