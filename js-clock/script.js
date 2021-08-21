@@ -2,6 +2,17 @@ function currentTimeDiff() {
   return Math.abs(new Date().getTimezoneOffset() / 60);
 }
 
+function currentTimeZone() {
+  const timeDiff = currentTimeDiff();
+  switch (timeDiff) {
+    case 3: return 'moscow';
+    case -4: return 'newyork';
+    case 1: return 'london';
+    case 9: return 'tokyo';
+    default: return 'moscow';
+  }
+}
+
 function clock() {
   const needle = document.querySelector('.needle');
   const secondNeedle = document.querySelectorAll('.second');
@@ -104,7 +115,6 @@ function clock() {
           setClock(difference, timeZone);
         }, 1000);
         arr.push(interval);
-        bgSlider(difference);
     }
 
     function addActiveTimeZone(target) {
@@ -121,18 +131,22 @@ function clock() {
       const target = e.target;
       switch (true) {
         case target.classList.contains('time-zone_moscow'): 
+          bgSlider(3, 'moscow');
           setTimeOfCity(3, 'Europe/Moscow');
           addActiveTimeZone(target);
           break;
         case target.classList.contains('time-zone_new-york'):
+          bgSlider(-4, 'newyork');
           setTimeOfCity(-4, 'US/Eastern');
           addActiveTimeZone(target);
           break;
         case target.classList.contains('time-zone_london'):
+          bgSlider(1, 'london');
           setTimeOfCity(1, 'Europe/London');
           addActiveTimeZone(target);
           break;
         case target.classList.contains('time-zone_tokyo'):
+          bgSlider(9, 'tokyo');
           setTimeOfCity(9, 'Asia/Tokyo');
           addActiveTimeZone(target);
           break;
@@ -186,10 +200,10 @@ function changeColorClock() {
   }
 }
 
-function bgSlider(timeDifference = currentTimeDiff()) {
+function bgSlider(timeDifference = currentTimeDiff(), timeZoneCity = currentTimeZone()) {
   const slidePrev = document.querySelector('.slider-btn_prev');
   const slideNext = document.querySelector('.slider-btn_next');
-  let randomNum = getRandomNum(1,5);
+  let randomNum = getRandomNum(1,3);
 
   function getTimeOfDay() {
     const time = new Date();
@@ -212,7 +226,7 @@ function bgSlider(timeDifference = currentTimeDiff()) {
     const img = new Image();
     const wrapper = document.querySelector('.wrapper');
     const timeDay = getTimeOfDay();
-    img.src = `./img/${timeDay}/${randomNum}.jpg`;
+    img.src = `./img/${timeZoneCity}/${timeDay}/${randomNum}.jpg`;
     img.onload = () => {
       wrapper.style.backgroundImage = `url(${img.src})`;
     }
@@ -220,7 +234,7 @@ function bgSlider(timeDifference = currentTimeDiff()) {
 
   function getSlideNext() {
     randomNum += 1;
-    if (randomNum > 5) {
+    if (randomNum > 3) {
       randomNum = 1;
     }
     setBg();
@@ -229,7 +243,7 @@ function bgSlider(timeDifference = currentTimeDiff()) {
   function getSlidePrev() {
     randomNum -= 1;
     if (randomNum < 1) {
-      randomNum = 5;
+      randomNum = 3;
     }
     setBg();
   }
