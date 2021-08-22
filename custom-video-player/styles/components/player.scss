@@ -1,16 +1,17 @@
+.player {
+  position: relative;
+  @include flex(none, center, column);
+}
+
 .player__control {
   @include flex(none, center);
+  width: 100%;
   height: 85px;
   padding: 2px 41px 0 40px;
   background-color: $default-color;
 }
 
-.player__box {
-  position: relative;
-  height: 629px;
-}
-
-.player__image {
+.player__video {
   @include image-cover;
 }
 
