@@ -19,7 +19,7 @@
   @include flex;
 }
 
-.player__play-button {
+.player__bigplay {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -46,7 +46,7 @@
     margin-right: 37px;
   }
   &:nth-child(2) {
-    margin-right: 36px;
+    margin-right: 39px;
   }
   &:nth-child(3) {
     margin-right: 39px;

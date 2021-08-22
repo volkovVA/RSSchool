@@ -95,7 +95,7 @@ button {
   display: flex;
 }
 
-.player__play-button {
+.player__bigplay {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -123,7 +123,7 @@ button {
   margin-right: 37px;
 }
 .player__button:nth-child(2) {
-  margin-right: 36px;
+  margin-right: 39px;
 }
 .player__button:nth-child(3) {
   margin-right: 39px;
