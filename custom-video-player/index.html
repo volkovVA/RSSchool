@@ -11,6 +11,47 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <div class="player">
+      <div class="player__box">
+        <img class="player__image" src="./assets/img/video/video.jpg" alt="video" width="1440" height="629">
+        <button class="player__play-button" type="button">
+          <svg class="player__play-icon">
+            <use xlink:href="./assets/svg/sprite.svg#play"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="player__control">
+        <button class="player__button" type="button">
+          <svg class="player__icon">
+            <use xlink:href="./assets/svg/sprite.svg#back"></use>
+          </svg>
+        </button>
+        <button class="player__button" type="button">
+          <svg class="player__icon">
+            <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
+          </svg>
+        </button>
+        <button class="player__button" type="button">
+          <svg class="player__icon">
+            <use xlink:href="./assets/svg/sprite.svg#next"></use>
+          </svg>
+        </button>
+        <input class="player__progress player__progress--rewind" type="range" value="50" min="0" max="100" step="1">
+        <button class="player__button player__button--speaker" type="button">
+          <svg class="player__icon player__icon--speaker">
+            <use xlink:href="./assets/svg/sprite.svg#speaker"></use>
+          </svg>
+        </button>
+        <input class="player__progress player__progress--volume" type="range">
+        <button class="player__button" type="button">
+          <svg class="player__icon player__icon--full">
+            <use xlink:href="./assets/svg/sprite.svg#full"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

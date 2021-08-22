@@ -26,7 +26,6 @@ body {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
 }
 
 h1,
@@ -68,6 +67,143 @@ button {
   max-width: 1440px;
   width: 95%;
   margin: 0 auto;
+  padding: 40px 0;
+}
+
+.player__control {
+  display: flex;
+  align-items: center;
+  height: 85px;
+  padding: 2px 41px 0 40px;
+  background-color: #000000;
+}
+
+.player__box {
+  position: relative;
+  height: 629px;
+}
+
+.player__image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.player__buttons {
+  display: flex;
+}
+
+.player__play-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.player__play-icon {
+  width: 220px;
+  height: 220px;
+  fill: #ffffff;
+  transition: 0.1s;
+}
+.player__play-icon:hover {
+  transform: scale(1.05);
+}
+.player__play-icon:active {
+  transform: scale(1);
+}
+
+.player__button {
+  margin-right: 40px;
+}
+.player__button:first-child {
+  margin-right: 37px;
+}
+.player__button:nth-child(2) {
+  margin-right: 36px;
+}
+.player__button:nth-child(3) {
+  margin-right: 39px;
+}
+.player__button:last-child {
+  margin-right: 0;
+}
+.player__button:hover .player__icon {
+  fill: #989898;
+}
+.player__button:active {
+  transform: scale(0.9);
+}
+
+.player__button--speaker {
+  position: relative;
+  margin-right: 19px;
+}
+.player__button--speaker::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: 15px;
+  width: 4px;
+  height: 45px;
+  transform: rotate(-45deg);
+  background-color: #B3B3B3;
+  opacity: 0;
+  transition: background-color 0.3s, opacity 0.2s;
+}
+.player__button--speaker.is-active::after {
+  opacity: 1;
+}
+.player__button--speaker:hover::after {
+  background-color: #989898;
+}
+
+.player__icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  fill: #B3B3B3;
+  transition: fill 0.3s;
+}
+.player__icon--speaker, .player__icon--full {
+  width: 36px;
+  height: 36px;
+}
+
+.player__progress {
+  height: 8px;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #24809E 0%, #24809E 50%, #c4c4c4 40%, #c4c4c4 100%);
+  transition: background 0.4s ease-in;
+}
+.player__progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.player__progress::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.player__progress:focus {
+  outline: none;
+}
+
+.player__progress--rewind {
+  width: 820px;
+  margin-right: 40px;
+}
+
+.player__progress--volume {
+  width: 154px;
+  margin-right: 51px;
 }
 
 /*# sourceMappingURL=style.css.map */
