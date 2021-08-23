@@ -53,5 +53,22 @@ function playerProgress() {
   progress.addEventListener('click', scrubProgress);
 }
 
+function playerVolume() {
+  const video = document.querySelector('.player__video');
+  const volume= document.querySelector('.player__progress--volume');
+  
+  volume.style.background = 'linear-gradient(to right, #24809e 0%, #24809e 50%, #c4c4c4 50%, #c4c4c4 100%';
+
+  function handleVolumeUpdate() {
+    const percent = volume.value * 100;
+    video.volume = volume.value;
+    volume.style.background = `linear-gradient(to right, #24809e 0%, #24809e ${percent}%, #c4c4c4 ${percent}%, #c4c4c4 100%`;
+  }
+
+  volume.addEventListener('change', handleVolumeUpdate)
+  volume.addEventListener('mousemove', handleVolumeUpdate)
+}
+
 playerPlay();
 playerProgress();
+playerVolume();
