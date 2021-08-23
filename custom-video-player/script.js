@@ -144,23 +144,8 @@ function playbackRate() {
   });
 }
 
-function playerSkip() {
-  const video = document.querySelector('.player__video');
-
-  document.addEventListener('keydown', (e) => {
-    const skip = 10;
-    if (e.code === 'KeyJ') {
-      video.currentTime -= skip;
-    }
-    if (e.code === 'KeyL') {
-      video.currentTime += skip;
-    }
-  });
-}
-
 playerPlay();
 playerProgress();
 playerVolume();
 fullScreen();
 playbackRate();
-playerSkip();
