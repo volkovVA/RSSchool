@@ -119,10 +119,41 @@ function fullScreen() {
   })
 
   document.addEventListener('keydown', (e) => {
-    console.log(e);
     const isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null)
     if (e.code === 'KeyF') {
       !isInFullScreen ? video.requestFullscreen() : document.exitFullscreen();
+    }
+  });
+}
+
+function playbackRate() {
+  const video = document.querySelector('.player__video');
+
+  document.addEventListener('keydown', (e) => {
+    const step = 0.25;
+    if (e.shiftKey && e.code === 'Comma') {
+      if (video.playbackRate !== 0.25) {
+        video.playbackRate -= step;
+      }
+    }
+    if (e.shiftKey && e.code === 'Period') {
+      if (video.playbackRate !== 2) {
+        video.playbackRate += step;
+      }
+    }
+  });
+}
+
+function playerSkip() {
+  const video = document.querySelector('.player__video');
+
+  document.addEventListener('keydown', (e) => {
+    const skip = 10;
+    if (e.code === 'KeyJ') {
+      video.currentTime -= skip;
+    }
+    if (e.code === 'KeyL') {
+      video.currentTime += skip;
     }
   });
 }
@@ -131,3 +162,5 @@ playerPlay();
 playerProgress();
 playerVolume();
 fullScreen();
+playbackRate();
+playerSkip();
