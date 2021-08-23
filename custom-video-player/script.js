@@ -93,6 +93,20 @@ function playerVolume() {
   volume.addEventListener('mousemove', handleVolumeUpdate);
 }
 
+function fullScreen() {
+  const video = document.querySelector('.player__video');
+  const fullBtn = document.querySelector('.full');
+  
+  fullBtn.addEventListener('click', () => {
+    video.requestFullscreen();
+  })
+
+  video.addEventListener('fullscreenchange', () => {
+    video.pause();
+  })
+}
+
 playerPlay();
 playerProgress();
 playerVolume();
+fullScreen();
