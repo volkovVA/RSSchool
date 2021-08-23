@@ -177,8 +177,6 @@ button {
 .player__progress {
   height: 8px;
   -webkit-appearance: none;
-  background: linear-gradient(to right, #24809E 0%, #24809E 50%, #c4c4c4 40%, #c4c4c4 100%);
-  transition: background 0.4s ease-in;
 }
 .player__progress::-webkit-slider-thumb {
   -webkit-appearance: none;

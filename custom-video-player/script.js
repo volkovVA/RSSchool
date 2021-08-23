@@ -1,19 +1,5 @@
-function playerProgress() {
-  const playerControl = document.querySelector(".player__control");
-
-  playerControl.addEventListener("input", e => {
-    const target = e.target
-    if (target.classList.contains('player__progress')) {
-      const value = target.value;
-      target.style.background = `linear-gradient(to right, #24809e 0%, #24809e ${value}%, #c4c4c4 ${value}%, #c4c4c4 100%)`;
-    }
-  });
-}
-
-const player = document.querySelector('.player');
-const video = document.querySelector('.player__video');
-
 function playerPlay() {
+  const video = document.querySelector('.player__video');
   const buttonsPlay = document.querySelectorAll('.play');
   const buttonPause = document.querySelector('.pause');
 
@@ -44,6 +30,27 @@ function playerPlay() {
       !video.paused ? el.hidden = true : el.hidden = false;
     });
   }
+}
+
+function playerProgress() {
+  const video = document.querySelector('.player__video');
+  const progress = document.querySelector('.player__progress--rewind');
+
+  progress.style.background = 'linear-gradient(to right, #24809e 0%, #24809e 0%, #c4c4c4 0%, #c4c4c4 100%';
+  
+  function handleProgressUpdate() {
+    const percent = Math.floor((100 / video.duration) * video.currentTime);
+    progress.value = percent;
+    progress.style.background = `linear-gradient(to right, #24809e 0%, #24809e ${percent}%, #c4c4c4 ${percent}%, #c4c4c4 100%`;
+  }
+ 
+  function scrubProgress(e) {
+    const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+    video.currentTime = scrubTime;
+  }
+
+  video.addEventListener('timeupdate', handleProgressUpdate);
+  progress.addEventListener('click', scrubProgress);
 }
 
 playerPlay();
