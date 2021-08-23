@@ -158,9 +158,43 @@ function playerSkip() {
   });
 }
 
+function timeStamp() {
+  const video = document.querySelector('.player__video');
+
+  function stamp(current) {
+    video.currentTime = (video.duration * current) / 100;
+  }
+
+  document.addEventListener('keydown', (e) => {
+    switch (e.code) {
+      case 'Digit0' : stamp(0)
+        break;
+      case 'Digit1' : stamp(10)
+        break;
+      case 'Digit2' : stamp(20)
+        break;
+      case 'Digit3' : stamp(30)
+        break;
+      case 'Digit4' : stamp(40)
+        break;
+      case 'Digit5' : stamp(50)
+        break;
+      case 'Digit6' : stamp(60)
+        break;
+      case 'Digit7' : stamp(70)
+        break;
+      case 'Digit8' : stamp(80)
+        break;
+      case 'Digit9' : stamp(90)
+        break;
+    }
+  });
+}
+
 playerPlay();
 playerProgress();
 playerVolume();
 fullScreen();
 playbackRate();
 playerSkip();
+timeStamp();
