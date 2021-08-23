@@ -32,6 +32,13 @@ function playerPlay() {
       !video.paused ? el.hidden = true : el.hidden = false;
     });
   }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.code == 'Space') {
+      togglePlay();
+      hiddenIcon();
+    }
+  })
 }
 
 function playerProgress() {
@@ -70,7 +77,7 @@ function playerVolume() {
     volume.style.background = `linear-gradient(to right, #24809e 0%, #24809e ${percent}%, #c4c4c4 ${percent}%, #c4c4c4 100%`;
   }
 
-  function volumeMute(param) {
+  function volumeMute(param = video.volume > 0) {
     if (param) {
       volume.value = 0;
       video.volume = 0;
@@ -83,7 +90,7 @@ function playerVolume() {
     }
   }
 
-  speaker.addEventListener('click', () => volumeMute(video.volume > 0))
+  speaker.addEventListener('click', () => volumeMute())
   volume.addEventListener('change', () => {
     value = volume.value;
     percent = value * 100;
@@ -91,6 +98,12 @@ function playerVolume() {
     handleVolumeUpdate();
   })
   volume.addEventListener('mousemove', handleVolumeUpdate);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'KeyM') {
+      volumeMute();
+    }
+  });
 }
 
 function fullScreen() {
@@ -104,6 +117,14 @@ function fullScreen() {
   video.addEventListener('fullscreenchange', () => {
     video.pause();
   })
+
+  document.addEventListener('keydown', (e) => {
+    console.log(e);
+    const isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null)
+    if (e.code === 'KeyF') {
+      !isInFullScreen ? video.requestFullscreen() : document.exitFullscreen();
+    }
+  });
 }
 
 playerPlay();
