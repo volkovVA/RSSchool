@@ -7,17 +7,19 @@ function playerPlay() {
     togglePlay();
     hiddenIcon();
   });
+
   buttonsPlay.forEach(el => {
     el.addEventListener('click', () => {
       togglePlay();
       hiddenIcon();
     });
   });
+
   video.addEventListener('click', () => {
     if (!video.paused) {
       togglePlay();
-      hiddenIcon();
     }
+    hiddenIcon();
   });
 
   function togglePlay() {
@@ -55,18 +57,40 @@ function playerProgress() {
 
 function playerVolume() {
   const video = document.querySelector('.player__video');
-  const volume= document.querySelector('.player__progress--volume');
-  
+  const volume = document.querySelector('.player__progress--volume');
+  const speaker = document.querySelector('.player__button--speaker');
+
+  let value = volume.value
+  let percent = value * 100;
+
   volume.style.background = 'linear-gradient(to right, #24809e 0%, #24809e 50%, #c4c4c4 50%, #c4c4c4 100%';
 
   function handleVolumeUpdate() {
-    const percent = volume.value * 100;
-    video.volume = volume.value;
+    video.volume = value;
     volume.style.background = `linear-gradient(to right, #24809e 0%, #24809e ${percent}%, #c4c4c4 ${percent}%, #c4c4c4 100%`;
   }
 
-  volume.addEventListener('change', handleVolumeUpdate)
-  volume.addEventListener('mousemove', handleVolumeUpdate)
+  function volumeMute(param) {
+    if (param) {
+      volume.value = 0;
+      video.volume = 0;
+      volume.style.background = '#c4c4c4';
+      speaker.classList.add('is-active');
+    } else {
+      volume.value = value;
+      handleVolumeUpdate();
+      speaker.classList.remove('is-active');
+    }
+  }
+
+  speaker.addEventListener('click', () => volumeMute(video.volume > 0))
+  volume.addEventListener('change', () => {
+    value = volume.value;
+    percent = value * 100;
+    volumeMute(value == 0);
+    handleVolumeUpdate();
+  })
+  volume.addEventListener('mousemove', handleVolumeUpdate);
 }
 
 playerPlay();
