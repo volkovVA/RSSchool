@@ -1,14 +1,6 @@
 <svg width="0" height="0" class="hidden">
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 30" id="back">
-    <path d="M3.8 14.75l22.34 14.74V0L3.8 14.75z"></path>
-    <path d="M0 29.49h4.19V0H0v29.49z"></path>
-  </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" id="full">
     <path d="M31.48 31.63h-8.43v4.23H35.7V23.15h-4.22v8.48zM4.22 23.15H0v12.71h12.65v-4.23H4.22v-8.48zM0 12.71h4.22V4.24h8.43V0H0v12.71zM23.05 0v4.24h8.43v8.47h4.22V0H23.05z"></path>
-  </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 30" id="next">
-    <path d="M22.35 14.75L0 0v29.49l22.35-14.74z"></path>
-    <path d="M26.15 0h-4.19v29.49h4.19V0z"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" id="play">
     <path d="M110 8.892a101.126 101.126 0 0199.206 120.852 101.133 101.133 0 01-79.462 79.462A101.128 101.128 0 018.892 110 101.247 101.247 0 01110 8.892zM110 0a110 110 0 100 220 110 110 0 000-220z"></path>
@@ -48,5 +40,15 @@
     <g></g>
     <g></g>
     <g></g>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="next" role="img" stroke-width="1.7142857142857142" stroke-linecap="square" stroke-linejoin="miter" fill="none">
+    <title id="chevronsRightIconTitle">Chevrons Right</title>
+    <polyline points="13 7 18 12 13 17 13 17"></polyline>
+    <polyline points="7 7 12 12 7 17 7 17"></polyline>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="prev" role="img" stroke-width="1.7142857142857142" stroke-linecap="square" stroke-linejoin="miter" fill="none">
+    <title id="chevronsLeftIconTitle">Chevron Left</title>
+    <polyline points="11 17 6 12 11 7 11 7"></polyline>
+    <polyline points="17 17 12 12 17 7 17 7"></polyline>
   </symbol>
 </svg>

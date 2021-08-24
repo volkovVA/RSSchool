@@ -22,17 +22,6 @@ function playerPlay() {
     hiddenIcon();
   });
 
-  function togglePlay() {
-    video.paused ? video.play() : video.pause();
-  }
-
-  function hiddenIcon() {
-    !video.paused ? buttonPause.hidden = false : buttonPause.hidden = true;
-    buttonsPlay.forEach(el => {
-      !video.paused ? el.hidden = true : el.hidden = false;
-    });
-  }
-
   document.addEventListener('keydown', (e) => {
     if (e.code == 'Space') {
       togglePlay();
@@ -191,6 +180,77 @@ function timeStamp() {
   });
 }
 
+function videoSlider() {
+  const video = document.querySelector('.player__video');
+  const leftBtn = document.querySelector('.player__slide--prev');
+  const rightBtn = document.querySelector('.player__slide--next');
+  const progress = document.querySelector('.player__progress--rewind');
+
+  const videoSrc = [
+    'louvre1',
+    'louvre2',
+    'louvre3',
+    'louvre4',
+    'louvre5',
+  ]
+
+  const posterSrc = [
+    'poster1',
+    'poster2',
+    'poster3',
+    'poster4',
+    'poster5',
+  ]
+  
+  let active = 0;
+
+  rightBtn.addEventListener('click', () => {
+    active++;
+
+    if (active> videoSrc.length - 1) {
+      active = 0;
+    }
+
+    setActiveVideo();
+  })
+
+  leftBtn.addEventListener('click', () => {
+    active--;
+
+    if (active < 0) {
+      active = videoSrc.length - 1;
+    }
+    
+    setActiveVideo();
+  })
+
+  function setActiveVideo() {
+    video.src = `./assets/video/${videoSrc[active]}.mp4`;
+    video.poster = `./assets/img/${posterSrc[active]}.png`;
+    progress.style.background = '#c4c4c4';
+    if (!video.paused) {
+      togglePlay();
+    }
+    hiddenIcon();
+  }
+}
+
+function hiddenIcon() {
+  const video = document.querySelector('.player__video');
+  const buttonsPlay = document.querySelectorAll('.play');
+  const buttonPause = document.querySelector('.pause');
+  
+  !video.paused ? buttonPause.hidden = false : buttonPause.hidden = true;
+  buttonsPlay.forEach(el => {
+    !video.paused ? el.hidden = true : el.hidden = false;
+  });
+}
+
+function togglePlay() {
+  const video = document.querySelector('.player__video');
+  video.paused ? video.play() : video.pause();
+}
+
 playerPlay();
 playerProgress();
 playerVolume();
@@ -198,3 +258,4 @@ fullScreen();
 playbackRate();
 playerSkip();
 timeStamp();
+videoSlider();
