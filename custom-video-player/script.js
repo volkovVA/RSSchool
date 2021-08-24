@@ -204,26 +204,6 @@ function videoSlider() {
   
   let active = 0;
 
-  rightBtn.addEventListener('click', () => {
-    active++;
-
-    if (active> videoSrc.length - 1) {
-      active = 0;
-    }
-
-    setActiveVideo();
-  })
-
-  leftBtn.addEventListener('click', () => {
-    active--;
-
-    if (active < 0) {
-      active = videoSrc.length - 1;
-    }
-    
-    setActiveVideo();
-  })
-
   function setActiveVideo() {
     video.src = `./assets/video/${videoSrc[active]}.mp4`;
     video.poster = `./assets/img/poster/${posterSrc[active]}.png`;
@@ -233,6 +213,44 @@ function videoSlider() {
     }
     hiddenIcon();
   }
+
+  rightBtn.addEventListener('click', () => {
+    active++;
+    if (active> videoSrc.length - 1) {
+      active = 0;
+    }
+
+    setActiveVideo();
+  });
+
+  leftBtn.addEventListener('click', () => {
+    active--;
+    if (active < 0) {
+      active = videoSrc.length - 1;
+    }
+    
+    setActiveVideo();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.shiftKey && e.code === 'KeyP') {
+      active++;
+      if (active> videoSrc.length - 1) {
+        active = 0;
+      }
+
+      setActiveVideo();
+    }
+
+    if (e.shiftKey && e.code === 'KeyN') {
+      active--;
+      if (active < 0) {
+        active = videoSrc.length - 1;
+      }
+      
+      setActiveVideo();
+    }
+  });
 }
 
 function hiddenIcon() {
