@@ -67,5 +67,13 @@ button {
   max-width: 1440px;
   width: 95%;
   margin: 0 auto;
-  padding: 40px 0;
+}
+
+.wrapper {
+  @include flex(center, center, column);
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/custom-video-player/assets/img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }

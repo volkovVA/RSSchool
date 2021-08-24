@@ -1,6 +1,7 @@
 .player {
   position: relative;
   @include flex(none, center, column);
+  box-shadow: 7px 7px 14px 5px rgba(0,0,0,0.8);
 }
 
 .player__control {

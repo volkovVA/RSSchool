@@ -11,49 +11,51 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="player">
-      <video class="player__video active" src="./assets/video/louvre1.mp4" poster='./assets/img/poster1.png' width="100%" height="630"></video>
-      <button class="player__bigplay play" type="button">
-        <svg class="player__play-icon">
-          <use xlink:href="./assets/svg/sprite.svg#play"></use>
-        </svg>
-      </button>
-      <div class="player__control">
-        <button class="player__button play" type="button">
-          <svg class="player__icon">
-            <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
+  <div class="wrapper">
+    <div class="container">
+      <div class="player">
+        <video class="player__video active" src="./assets/video/louvre1.mp4" poster='./assets/img/poster/poster1.png' width="100%" height="630"></video>
+        <button class="player__bigplay play" type="button">
+          <svg class="player__play-icon">
+            <use xlink:href="./assets/svg/sprite.svg#play"></use>
           </svg>
         </button>
-        <button class="player__button pause" type="button" hidden>
-          <svg class="player__icon">
-            <use xlink:href="./assets/svg/sprite.svg#pause"></use>
-          </svg>
-        </button>
-        <input class="player__progress player__progress--rewind" type="range" name="progress" value="0" min="0" max="100" step="1">
-        <button class="player__button player__button--speaker" type="button">
-          <svg class="player__icon player__icon--speaker">
-            <use xlink:href="./assets/svg/sprite.svg#speaker"></use>
-          </svg>
-        </button>
-        <input class="player__progress player__progress--volume" type="range" name="volume" value="0.5" min="0" max="1" step="0.05">
-        <button class="player__button full" type="button">
-          <svg class="player__icon player__icon--full">
-            <use xlink:href="./assets/svg/sprite.svg#full"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="player__slider-control">
-        <button class="player__slide player__slide--prev">
-          <svg class="player__icon">
-            <use xlink:href="./assets/svg/sprite.svg#prev"></use>
-          </svg>
-        </button>
-        <button class="player__slide player__slide--next">
-          <svg class="player__icon">
-            <use xlink:href="./assets/svg/sprite.svg#next"></use>
-          </svg>
-        </button>
+        <div class="player__control">
+          <button class="player__button play" type="button">
+            <svg class="player__icon">
+              <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
+            </svg>
+          </button>
+          <button class="player__button pause" type="button" hidden>
+            <svg class="player__icon">
+              <use xlink:href="./assets/svg/sprite.svg#pause"></use>
+            </svg>
+          </button>
+          <input class="player__progress player__progress--rewind" type="range" name="progress" value="0" min="0" max="100" step="1">
+          <button class="player__button player__button--speaker" type="button">
+            <svg class="player__icon player__icon--speaker">
+              <use xlink:href="./assets/svg/sprite.svg#speaker"></use>
+            </svg>
+          </button>
+          <input class="player__progress player__progress--volume" type="range" name="volume" value="0.5" min="0" max="1" step="0.05">
+          <button class="player__button full" type="button">
+            <svg class="player__icon player__icon--full">
+              <use xlink:href="./assets/svg/sprite.svg#full"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="player__slider-control">
+          <button class="player__slide player__slide--prev">
+            <svg class="player__icon">
+              <use xlink:href="./assets/svg/sprite.svg#prev"></use>
+            </svg>
+          </button>
+          <button class="player__slide player__slide--next">
+            <svg class="player__icon">
+              <use xlink:href="./assets/svg/sprite.svg#next"></use>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>

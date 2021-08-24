@@ -67,7 +67,18 @@ button {
   max-width: 1440px;
   width: 95%;
   margin: 0 auto;
-  padding: 40px 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/custom-video-player/assets/img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .player {
@@ -75,6 +86,7 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
+  box-shadow: 7px 7px 14px 5px rgba(0, 0, 0, 0.8);
 }
 
 .player__control {

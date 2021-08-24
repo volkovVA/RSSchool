@@ -226,7 +226,7 @@ function videoSlider() {
 
   function setActiveVideo() {
     video.src = `./assets/video/${videoSrc[active]}.mp4`;
-    video.poster = `./assets/img/${posterSrc[active]}.png`;
+    video.poster = `./assets/img/poster/${posterSrc[active]}.png`;
     progress.style.background = '#c4c4c4';
     if (!video.paused) {
       togglePlay();
