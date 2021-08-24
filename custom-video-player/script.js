@@ -1,8 +1,9 @@
-function playerPlay() {
-  const video = document.querySelector('.player__video');
-  const buttonsPlay = document.querySelectorAll('.play');
-  const buttonPause = document.querySelector('.pause');
+const video = document.querySelector('.player__video');
+const buttonsPlay = document.querySelectorAll('.play');
+const buttonPause = document.querySelector('.pause');
+const progress = document.querySelector('.player__progress--rewind');
 
+function playerPlay() {
   buttonPause.addEventListener('click', () => {
     togglePlay();
     hiddenIcon();
@@ -31,9 +32,6 @@ function playerPlay() {
 }
 
 function playerProgress() {
-  const video = document.querySelector('.player__video');
-  const progress = document.querySelector('.player__progress--rewind');
-
   progress.style.background = 'linear-gradient(to right, #24809e 0%, #24809e 0%, #c4c4c4 0%, #c4c4c4 100%';
   
   function handleProgressUpdate() {
@@ -52,7 +50,6 @@ function playerProgress() {
 }
 
 function playerVolume() {
-  const video = document.querySelector('.player__video');
   const volume = document.querySelector('.player__progress--volume');
   const speaker = document.querySelector('.player__button--speaker');
 
@@ -96,7 +93,6 @@ function playerVolume() {
 }
 
 function fullScreen() {
-  const video = document.querySelector('.player__video');
   const fullBtn = document.querySelector('.full');
   
   fullBtn.addEventListener('click', () => {
@@ -116,8 +112,6 @@ function fullScreen() {
 }
 
 function playbackRate() {
-  const video = document.querySelector('.player__video');
-
   document.addEventListener('keydown', (e) => {
     const step = 0.25;
     if (e.shiftKey && e.code === 'Comma') {
@@ -134,8 +128,6 @@ function playbackRate() {
 }
 
 function playerSkip() {
-  const video = document.querySelector('.player__video');
-
   document.addEventListener('keydown', (e) => {
     const skip = 10;
     if (e.code === 'KeyJ') {
@@ -148,8 +140,6 @@ function playerSkip() {
 }
 
 function timeStamp() {
-  const video = document.querySelector('.player__video');
-
   function stamp(current) {
     video.currentTime = (video.duration * current) / 100;
   }
@@ -181,10 +171,8 @@ function timeStamp() {
 }
 
 function videoSlider() {
-  const video = document.querySelector('.player__video');
   const leftBtn = document.querySelector('.player__slide--prev');
   const rightBtn = document.querySelector('.player__slide--next');
-  const progress = document.querySelector('.player__progress--rewind');
 
   const videoSrc = [
     'louvre1',
@@ -254,10 +242,6 @@ function videoSlider() {
 }
 
 function hiddenIcon() {
-  const video = document.querySelector('.player__video');
-  const buttonsPlay = document.querySelectorAll('.play');
-  const buttonPause = document.querySelector('.pause');
-  
   !video.paused ? buttonPause.hidden = false : buttonPause.hidden = true;
   buttonsPlay.forEach(el => {
     !video.paused ? el.hidden = true : el.hidden = false;
@@ -265,7 +249,6 @@ function hiddenIcon() {
 }
 
 function togglePlay() {
-  const video = document.querySelector('.player__video');
   video.paused ? video.play() : video.pause();
 }
 
