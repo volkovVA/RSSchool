@@ -252,6 +252,25 @@ function togglePlay() {
   video.paused ? video.play() : video.pause();
 }
 
+function digitalVideoDuration() {
+  const videoDurationCurrent = document.querySelector('.player__duration-current');
+  const videoDurationTotal = document.querySelector('.player__duration-total');
+
+  video.addEventListener("durationchange", function() {
+    videoDurationTotal.innerText = formatTime(video.duration);
+  });
+
+  video.addEventListener("timeupdate", function() {
+    videoDurationCurrent.innerText = formatTime(video.currentTime);
+  });
+
+  function formatTime(time) {
+    const minutes = Math.floor(Math.round(time) / 60);
+    const seconds = Math.round(time) % 60;
+    return `${minutes < 10 ? '0' + minutes : minutes} : ${seconds < 10 ? '0' + seconds : seconds}`;
+  }
+}
+
 playerPlay();
 playerProgress();
 playerVolume();
@@ -260,3 +279,4 @@ playbackRate();
 playerSkip();
 timeStamp();
 videoSlider();
+digitalVideoDuration();

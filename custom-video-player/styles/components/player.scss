@@ -122,12 +122,11 @@
 }
 
 .player__progress--rewind {
-  width: 820px;
+  flex: 1;
   margin-right: 40px;
 }
 
 .player__progress--volume {
-  width: 154px;
   margin-right: 51px;
 }
 
@@ -155,5 +154,22 @@
   &--next:hover {
     background: linear-gradient(to left, #0f2027, #203a43, #2c5364);
   }
+}
 
+.player__duration {
+  @include flex;
+  width: 130px;
+  margin-right: 10px;
+  color:#ffffff;
+}
+
+.player__duration-current {
+  &::after {
+    content: '-';
+    margin-left: 10px;
+  }
+}
+
+.player__duration-total {
+  margin-left: 10px;
 }
