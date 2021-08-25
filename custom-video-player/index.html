@@ -8,11 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="wrapper">
     <div class="container">
+      <h1 class="title">louvre museum</h1>
       <div class="player">
         <video class="player__video" src="./assets/video/louvre1.mp4" poster='./assets/img/poster/poster1.png' width="100%" height="630"></video>
         <button class="player__bigplay play" type="button">
@@ -21,16 +23,18 @@
           </svg>
         </button>
         <div class="player__control">
-          <button class="player__button play" type="button">
-            <svg class="player__icon">
-              <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
-            </svg>
-          </button>
-          <button class="player__button pause" type="button" hidden>
-            <svg class="player__icon">
-              <use xlink:href="./assets/svg/sprite.svg#pause"></use>
-            </svg>
-          </button>
+          <div class="player__box">
+            <button class="player__button play" type="button">
+              <svg class="player__icon">
+                <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
+              </svg>
+            </button>
+            <button class="player__button pause" type="button" hidden>
+              <svg class="player__icon">
+                <use xlink:href="./assets/svg/sprite.svg#pause"></use>
+              </svg>
+            </button>
+          </div>
           <input class="player__progress player__progress--rewind" type="range" name="progress" value="0" min="0" max="100" step="1">
           <div class="player__duration">
             <span class="player__duration-current">00 : 00</span>
@@ -42,7 +46,7 @@
             </svg>
           </button>
           <input class="player__progress player__progress--volume" type="range" name="volume" value="0.5" min="0" max="1" step="0.05">
-          <a class="player__download" href="./assets/video/louvre1.mp4" download="louvre1.mp4">
+          <a class="player__button player__button--download" href="./assets/video/louvre1.mp4" download="louvre1.mp4">
             <svg class="player__icon player__icon--download">
               <use xlink:href="./assets/svg/sprite.svg#download"></use>
             </svg>

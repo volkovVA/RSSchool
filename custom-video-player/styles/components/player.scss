@@ -1,7 +1,18 @@
+.title {
+  margin-bottom: 20px;
+  font-family: 'Style Script', cursive;
+  font-size: 70px;
+  color: $main-color;
+  text-shadow: 4px 2px 4px $default-color;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+}
+
 .player {
   position: relative;
   @include flex(none, center, column);
   box-shadow: 7px 7px 14px 5px rgba(0,0,0,0.8);
+  width: 1200px;
 }
 
 .player__control {
@@ -9,11 +20,14 @@
   width: 100%;
   height: 85px;
   padding: 2px 41px 0 40px;
-  background-color: $default-color;
+  background: $default-color;
+  background: linear-gradient(to top, $default-color, $player-control-color);
 }
 
 .player__video {
   @include image-cover;
+  width: 100%;
+  height: 550px;
 }
 
 .player__buttons {
@@ -23,9 +37,13 @@
 .player__bigplay {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   transform: translate(-50%, -50%);
   cursor: pointer;
+}
+
+.player__box {
+  width: 50px;
 }
 
 .player__play-icon {
@@ -57,6 +75,7 @@
   }
   &:hover .player__icon {
     fill: $player-hover-color;
+    stroke: $player-hover-color;
   }
   &:active {
     transform: scale(0.9);
@@ -85,13 +104,17 @@
   }
 }
 
+.player__button--download {
+  margin-right: 25px;
+}
+
 .player__icon {
   width: 30px;
   height: 30px;
   cursor: pointer;
   fill: $player-icon-color;
   stroke: $player-icon-color;
-  transition: fill 0.3s;
+  transition: 0.3s;
   &--speaker, &--full, &--download {
     width: 36px;
     height: 36px;
@@ -145,8 +168,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border: 1px solid #000000;
+  border: 1px solid $default-color;
   filter: contrast(40%);
+  cursor: pointer;
   &--one {
     background-image: url('./assets/img/poster/poster1.png');
   }
@@ -167,47 +191,43 @@
   }
   &.active {
     filter: contrast(100%);
-    box-shadow: inset 2px 2px 0 0 #000, inset -2px -2px 0 0 #000;
+    box-shadow: inset 2px 2px 0 0 $default-color, inset -2px -2px 0 0 $default-color;
   }
 }
 
 .player__slide {
   flex-basis: 8%;
   cursor: pointer;
-  color: #ffffff;
-  background: #0f2027;
+  background: $default-color;
   & .player__icon {
     width: 50px;
     height: 50px;
   }
   &--prev {
     &:hover {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(to bottom, $default-color, $player-control-color);
     }
   }
   &--next:hover {
-    background: linear-gradient(to left, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(to bottom, $default-color, $player-control-color);
   }
 }
 
 .player__duration {
   @include flex;
-  width: 130px;
-  margin-right: 10px;
-  color:#ffffff;
+  margin-right: 25px;
+  color:$player-icon-color;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 .player__duration-current {
   &::after {
     content: '-';
-    margin-left: 10px;
+    margin-left: 8px;
   }
 }
 
 .player__duration-total {
-  margin-left: 10px;
-}
-
-.player__download {
-  margin-right: 25px;
+  margin-left: 8px;
 }

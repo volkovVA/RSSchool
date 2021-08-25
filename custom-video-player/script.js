@@ -174,7 +174,7 @@ function videoSlider() {
   const leftBtn = document.querySelector('.player__slide--prev');
   const rightBtn = document.querySelector('.player__slide--next');
   const sliderItems = document.querySelectorAll('.player__slider-item');
-  const load = document.querySelector('.player__download');
+  const load = document.querySelector('.player__button--download');
 
   const videoSrc = [
     'louvre1',
@@ -286,10 +286,6 @@ function digitalVideoDuration() {
   }
 }
 
-function videoDownload() {
-  const load = document.querySelector('.player__download');
-}
-
 playerPlay();
 playerProgress();
 playerVolume();
@@ -299,4 +295,3 @@ playerSkip();
 timeStamp();
 videoSlider();
 digitalVideoDuration();
-videoDownload();
