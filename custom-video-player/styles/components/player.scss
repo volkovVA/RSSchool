@@ -92,7 +92,7 @@
   fill: $player-icon-color;
   stroke: $player-icon-color;
   transition: fill 0.3s;
-  &--speaker, &--full {
+  &--speaker, &--full, &--download {
     width: 36px;
     height: 36px;
   }
@@ -127,7 +127,7 @@
 }
 
 .player__progress--volume {
-  margin-right: 51px;
+  margin-right: 25px;
 }
 
 .player__slider {
@@ -206,4 +206,8 @@
 
 .player__duration-total {
   margin-left: 10px;
+}
+
+.player__download {
+  margin-right: 25px;
 }

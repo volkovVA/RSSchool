@@ -174,6 +174,7 @@ function videoSlider() {
   const leftBtn = document.querySelector('.player__slide--prev');
   const rightBtn = document.querySelector('.player__slide--next');
   const sliderItems = document.querySelectorAll('.player__slider-item');
+  const load = document.querySelector('.player__download');
 
   const videoSrc = [
     'louvre1',
@@ -201,6 +202,8 @@ function videoSlider() {
     })
     sliderItems[active].classList.add('active')
     progress.style.background = '#c4c4c4';
+    load.href = `./assets/video/louvre${active+1}.mp4`
+    load.download = `louvre${active+1}.mp4`
     if (!video.paused) {
       togglePlay();
     }
@@ -283,6 +286,10 @@ function digitalVideoDuration() {
   }
 }
 
+function videoDownload() {
+  const load = document.querySelector('.player__download');
+}
+
 playerPlay();
 playerProgress();
 playerVolume();
@@ -292,3 +299,4 @@ playerSkip();
 timeStamp();
 videoSlider();
 digitalVideoDuration();
+videoDownload();
