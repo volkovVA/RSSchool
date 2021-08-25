@@ -173,6 +173,7 @@ function timeStamp() {
 function videoSlider() {
   const leftBtn = document.querySelector('.player__slide--prev');
   const rightBtn = document.querySelector('.player__slide--next');
+  const sliderItems = document.querySelectorAll('.player__slider-item');
 
   const videoSrc = [
     'louvre1',
@@ -192,14 +193,25 @@ function videoSlider() {
   
   let active = 0;
 
-  function setActiveVideo() {
+  function setActiveVideo(active) {
     video.src = `./assets/video/${videoSrc[active]}.mp4`;
     video.poster = `./assets/img/poster/${posterSrc[active]}.png`;
+    sliderItems.forEach(item => {
+      item.classList.remove('active');
+    })
+    sliderItems[active].classList.add('active')
     progress.style.background = '#c4c4c4';
     if (!video.paused) {
       togglePlay();
     }
     hiddenIcon();
+  }
+
+  for (let i = 0; i < sliderItems.length; i++) {
+    sliderItems[i].addEventListener('click', () => {
+      setActiveVideo(i);
+      active = i;
+    })
   }
 
   rightBtn.addEventListener('click', () => {
@@ -208,7 +220,7 @@ function videoSlider() {
       active = 0;
     }
 
-    setActiveVideo();
+    setActiveVideo(active);
   });
 
   leftBtn.addEventListener('click', () => {
@@ -217,7 +229,7 @@ function videoSlider() {
       active = videoSrc.length - 1;
     }
     
-    setActiveVideo();
+    setActiveVideo(active);
   });
 
   document.addEventListener('keydown', (e) => {
@@ -227,7 +239,7 @@ function videoSlider() {
         active = 0;
       }
 
-      setActiveVideo();
+      setActiveVideo(active);
     }
 
     if (e.shiftKey && e.code === 'KeyN') {
@@ -236,7 +248,7 @@ function videoSlider() {
         active = videoSrc.length - 1;
       }
       
-      setActiveVideo();
+      setActiveVideo(active);
     }
   });
 }

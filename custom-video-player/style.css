@@ -220,14 +220,49 @@ button {
   margin-right: 51px;
 }
 
+.player__slider {
+  width: 100%;
+}
+
 .player__slider-control {
   display: flex;
   width: 100%;
-  height: 60px;
+  height: 100px;
+}
+
+.player__slider-item {
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #000000;
+  filter: contrast(40%);
+}
+.player__slider-item--one {
+  background-image: url("./assets/img/poster/poster1.png");
+}
+.player__slider-item--two {
+  background-image: url("./assets/img/poster/poster2.png");
+}
+.player__slider-item--three {
+  background-image: url("./assets/img/poster/poster3.png");
+}
+.player__slider-item--four {
+  background-image: url("./assets/img/poster/poster4.png");
+}
+.player__slider-item--five {
+  background-image: url("./assets/img/poster/poster5.png");
+}
+.player__slider-item:last-child {
+  border-right: 0;
+}
+.player__slider-item.active {
+  filter: contrast(100%);
+  box-shadow: inset 2px 2px 0 0 #000, inset -2px -2px 0 0 #000;
 }
 
 .player__slide {
-  flex: 1;
+  flex-basis: 8%;
   cursor: pointer;
   color: #ffffff;
   background: #0f2027;
@@ -235,9 +270,6 @@ button {
 .player__slide .player__icon {
   width: 50px;
   height: 50px;
-}
-.player__slide--prev {
-  border-right: 3px solid #000000;
 }
 .player__slide--prev:hover {
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
