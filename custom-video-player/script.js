@@ -286,6 +286,23 @@ function digitalVideoDuration() {
   }
 }
 
+function modalWindow() {
+  const overlay = document.querySelector('.overlay');
+  const close = document.querySelector('.modal__close');
+
+  document.addEventListener('keydown', (e) => {
+    if (e.shiftKey && e.code === 'Slash') {
+      overlay.style.display = 'flex';
+    }
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target == overlay || e.target == close) {
+      overlay.style.display = 'none';
+    }
+  })
+}
+
 playerPlay();
 playerProgress();
 playerVolume();
@@ -295,3 +312,4 @@ playerSkip();
 timeStamp();
 videoSlider();
 digitalVideoDuration();
+modalWindow();

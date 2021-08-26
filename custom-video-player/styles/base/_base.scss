@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   font-family: $mainFont;
@@ -80,7 +81,7 @@ button {
   width: 100vw;
   height: 100vh;
   &::after {
-    content: 'attr(data-el)';
+    content: '';
     position: absolute;
     display: block;
     background-image: url('/custom-video-player/assets/img/background2.jpg');

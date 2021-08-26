@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   font-family: "Roboto", Arial, sans-serif;
@@ -87,7 +88,7 @@ button:active {
   height: 100vh;
 }
 .wrapper::after {
-  content: "attr(data-el)";
+  content: "";
   position: absolute;
   display: block;
   background-image: url("/custom-video-player/assets/img/background2.jpg");
@@ -335,6 +336,93 @@ button:active {
 
 .player__duration-total {
   margin-left: 8px;
+}
+
+.modal {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 90vh;
+  width: 60vw;
+  padding: 30px;
+  background-color: #ffffff;
+  overflow: auto;
+  z-index: 2;
+}
+
+.modal__title {
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.modal__box {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.modal__col {
+  flex: 1;
+  margin-right: 40px;
+}
+.modal__col:last-child {
+  margin-right: 0;
+}
+
+.modal__caption {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.modal__desc {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px 0px;
+}
+
+.modal__text, .modal__key {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #c4c4c4;
+}
+
+.modal__text {
+  padding-right: 30px;
+}
+
+.modal__close {
+  display: block;
+  margin-left: auto;
+  font-size: 18px;
+  color: #065fd4;
+  cursor: pointer;
+  transition: text-shadow 0.3s;
+}
+.modal__close:hover {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.overlay {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.overlay:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 /*# sourceMappingURL=style.css.map */
