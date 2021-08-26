@@ -23,56 +23,58 @@
           </svg>
         </button>
         <div class="player__control">
-          <div class="player__box">
-            <button class="player__button play" type="button">
-              <svg class="player__icon">
-                <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
+          <div class="player__main-control">
+            <div class="player__box">
+              <button class="player__button play" type="button">
+                <svg class="player__icon">
+                  <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
+                </svg>
+              </button>
+              <button class="player__button pause" type="button" hidden>
+                <svg class="player__icon">
+                  <use xlink:href="./assets/svg/sprite.svg#pause"></use>
+                </svg>
+              </button>
+            </div>
+            <input class="player__progress player__progress--rewind" type="range" name="progress" value="0" min="0" max="100" step="1">
+            <div class="player__duration">
+              <span class="player__duration-current">00 : 00</span>
+              <span class="player__duration-total">00 : 00</span>
+            </div>
+            <button class="player__button player__button--speaker" type="button">
+              <svg class="player__icon player__icon--speaker">
+                <use xlink:href="./assets/svg/sprite.svg#speaker"></use>
               </svg>
             </button>
-            <button class="player__button pause" type="button" hidden>
-              <svg class="player__icon">
-                <use xlink:href="./assets/svg/sprite.svg#pause"></use>
+            <input class="player__progress player__progress--volume" type="range" name="volume" value="0.5" min="0" max="1" step="0.05">
+            <a class="player__button player__button--download" href="./assets/video/louvre1.mp4" download="louvre1.mp4">
+              <svg class="player__icon player__icon--download">
+                <use xlink:href="./assets/svg/sprite.svg#download"></use>
+              </svg>
+            </a>
+            <button class="player__button full" type="button">
+              <svg class="player__icon player__icon--full">
+                <use xlink:href="./assets/svg/sprite.svg#full"></use>
               </svg>
             </button>
           </div>
-          <input class="player__progress player__progress--rewind" type="range" name="progress" value="0" min="0" max="100" step="1">
-          <div class="player__duration">
-            <span class="player__duration-current">00 : 00</span>
-            <span class="player__duration-total">00 : 00</span>
+          <div class="player__slider-control">
+            <button class="player__slide player__slide--prev">
+              <svg class="player__icon">
+                <use xlink:href="./assets/svg/sprite.svg#prev"></use>
+              </svg>
+            </button>
+            <div class="player__slider-item player__slider-item--one active"></div>
+            <div class="player__slider-item player__slider-item--two"></div>
+            <div class="player__slider-item player__slider-item--three"></div>
+            <div class="player__slider-item player__slider-item--four"></div>
+            <div class="player__slider-item player__slider-item--five"></div>
+            <button class="player__slide player__slide--next">
+              <svg class="player__icon">
+                <use xlink:href="./assets/svg/sprite.svg#next"></use>
+              </svg>
+            </button>
           </div>
-          <button class="player__button player__button--speaker" type="button">
-            <svg class="player__icon player__icon--speaker">
-              <use xlink:href="./assets/svg/sprite.svg#speaker"></use>
-            </svg>
-          </button>
-          <input class="player__progress player__progress--volume" type="range" name="volume" value="0.5" min="0" max="1" step="0.05">
-          <a class="player__button player__button--download" href="./assets/video/louvre1.mp4" download="louvre1.mp4">
-            <svg class="player__icon player__icon--download">
-              <use xlink:href="./assets/svg/sprite.svg#download"></use>
-            </svg>
-          </a>
-          <button class="player__button full" type="button">
-            <svg class="player__icon player__icon--full">
-              <use xlink:href="./assets/svg/sprite.svg#full"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="player__slider-control">
-          <button class="player__slide player__slide--prev">
-            <svg class="player__icon">
-              <use xlink:href="./assets/svg/sprite.svg#prev"></use>
-            </svg>
-          </button>
-          <div class="player__slider-item player__slider-item--one active"></div>
-          <div class="player__slider-item player__slider-item--two"></div>
-          <div class="player__slider-item player__slider-item--three"></div>
-          <div class="player__slider-item player__slider-item--four"></div>
-          <div class="player__slider-item player__slider-item--five"></div>
-          <button class="player__slide player__slide--next">
-            <svg class="player__icon">
-              <use xlink:href="./assets/svg/sprite.svg#next"></use>
-            </svg>
-          </button>
         </div>
       </div>
     </div>

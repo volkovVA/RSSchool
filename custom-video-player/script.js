@@ -29,6 +29,10 @@ function playerPlay() {
       hiddenIcon();
     }
   })
+
+  if (!video.paused) {
+    control.style.display = 'none';
+  }
 }
 
 function playerProgress() {
@@ -303,6 +307,14 @@ function modalWindow() {
   })
 }
 
+function playTransition() {
+  const bigPlay = document.querySelector('.player__bigplay');
+
+  document.addEventListener('DOMContentLoaded', () => {
+    bigPlay.style.transition = 'transform 0.4s';
+  });
+}
+
 playerPlay();
 playerProgress();
 playerVolume();
@@ -313,3 +325,4 @@ timeStamp();
 videoSlider();
 digitalVideoDuration();
 modalWindow();
+playTransition();

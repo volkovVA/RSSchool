@@ -119,13 +119,28 @@ button:active {
   box-shadow: 7px 7px 14px 5px rgba(0, 0, 0, 0.8);
   width: 1200px;
 }
+.player:hover .player__control {
+  opacity: 1;
+}
+.player:hover .player__bigplay {
+  transform: translate(-50%, -80%);
+}
 
 .player__control {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.player__main-control {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 85px;
+  height: 64px;
   padding: 2px 41px 0 40px;
   background: #000000;
   background: linear-gradient(to top, #000000, #434343);
@@ -135,7 +150,6 @@ button:active {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  height: 550px;
 }
 
 .player__buttons {
@@ -145,7 +159,7 @@ button:active {
 .player__bigplay {
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
@@ -270,7 +284,7 @@ button:active {
 .player__slider-control {
   display: flex;
   width: 100%;
-  height: 100px;
+  height: 84px;
 }
 
 .player__slider-item {
