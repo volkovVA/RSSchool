@@ -91,7 +91,7 @@ button:active {
   content: "";
   position: absolute;
   display: block;
-  background-image: url("/custom-video-player/assets/img/background2.jpg");
+  background-image: url("./assets/img/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   top: 0;

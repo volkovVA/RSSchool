@@ -299,7 +299,7 @@ function modalWindow() {
       overlay.style.display = 'flex';
     }
   });
-
+  
   overlay.addEventListener('click', (e) => {
     if (e.target == overlay || e.target == close) {
       overlay.style.display = 'none';
