@@ -296,13 +296,19 @@ function modalWindow() {
 
   document.addEventListener('keydown', (e) => {
     if (e.shiftKey && e.code === 'Slash') {
-      overlay.style.display = 'flex';
+      overlay.classList.toggle('active');
     }
   });
-  
+
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Escape') {
+      overlay.classList.remove('active');
+    }
+  });
+
   overlay.addEventListener('click', (e) => {
     if (e.target == overlay || e.target == close) {
-      overlay.style.display = 'none';
+      overlay.classList.remove('active');
     }
   })
 }
