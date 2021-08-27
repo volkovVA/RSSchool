@@ -1,7 +1,7 @@
 const video = document.querySelector('.player__video');
-const buttonsPlay = document.querySelectorAll('.play');
-const buttonPause = document.querySelector('.pause');
-const progress = document.querySelector('.player__progress--rewind');
+const buttonsPlay = document.querySelectorAll('.player__button--play');
+const buttonPause = document.querySelector('.player__button--pause');
+const progress = document.querySelector('.player__progress--range');
 
 function playerPlay() {
   buttonPause.addEventListener('click', () => {
@@ -97,7 +97,7 @@ function playerVolume() {
 }
 
 function fullScreen() {
-  const fullBtn = document.querySelector('.full');
+  const fullBtn = document.querySelector('.player__button--full');
   
   fullBtn.addEventListener('click', () => {
     video.requestFullscreen();
@@ -272,8 +272,8 @@ function togglePlay() {
 }
 
 function digitalVideoDuration() {
-  const videoDurationCurrent = document.querySelector('.player__duration-current');
-  const videoDurationTotal = document.querySelector('.player__duration-total');
+  const videoDurationCurrent = document.querySelector('.player__time-elapsed');
+  const videoDurationTotal = document.querySelector('.player__time-duration');
 
   video.addEventListener("durationchange", function() {
     videoDurationTotal.innerText = formatTime(video.duration);
@@ -286,7 +286,7 @@ function digitalVideoDuration() {
   function formatTime(time) {
     const minutes = Math.floor(Math.round(time) / 60);
     const seconds = Math.round(time) % 60;
-    return `${minutes < 10 ? '0' + minutes : minutes} : ${seconds < 10 ? '0' + seconds : seconds}`;
+    return `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
   }
 }
 
@@ -311,14 +311,6 @@ function modalWindow() {
       overlay.classList.remove('active');
     }
   })
-}
-
-function playTransition() {
-  const bigPlay = document.querySelector('.player__bigplay');
-
-  document.addEventListener('DOMContentLoaded', () => {
-    bigPlay.style.transition = 'transform 0.4s';
-  });
 }
 
 function consoleDesc() {
@@ -352,5 +344,4 @@ timeStamp();
 videoSlider();
 digitalVideoDuration();
 modalWindow();
-playTransition();
 consoleDesc();

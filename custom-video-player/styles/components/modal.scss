@@ -1,0 +1,73 @@
+.modal {
+  @include flex(space-between, none, column);
+  height: 90vh;
+  width: 60vw;
+  padding: 30px;
+  background-color: $main-color;
+  overflow: auto;
+  z-index: 2;
+  @include media-tablet {
+    width: 90vw;
+  }
+}
+
+.modal__title {
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.modal__box {
+  @include flex;
+  margin-bottom: 40px;
+  @include media-mobile {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
+
+.modal__col {
+  flex: 1;
+  margin-right: 40px;
+  &:last-child {
+    margin-right: 0;
+  }
+  @include media-mobile {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+}
+
+.modal__caption {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.modal__desc {
+  display: grid; 
+  grid-template-columns: 3fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+  gap: 10px 0px; 
+}
+
+.modal__text, .modal__key {
+  padding-bottom: 10px;
+  border-bottom: 2px solid $player-progress-color;
+}
+
+.modal__text {
+  padding-right: 30px;
+}
+
+.modal__close {
+  display: block;
+  margin-left: auto;
+  font-size: 18px;
+  color: $close-color;
+  cursor: pointer;
+  transition: text-shadow 0.3s;
+  &:hover {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  }
+}

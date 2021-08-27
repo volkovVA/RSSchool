@@ -1,47 +1,60 @@
-.title {
-  margin-bottom: 20px;
-  font-family: 'Style Script', cursive;
-  font-size: 70px;
-  color: $main-color;
-  text-shadow: 4px 2px 4px $default-color;
-  letter-spacing: 7px;
-  text-transform: uppercase;
-}
-
 .player {
   position: relative;
   @include flex(none, center, column);
   box-shadow: 7px 7px 14px 5px rgba(0,0,0,0.8);
-  width: 1200px;
-  &:hover .player__control {
+  width: 80%;
+  &:hover .player__controls {
     opacity: 1;
+    transition: opacity 0.4s ease-out;
   }
   &:hover .player__bigplay {
-    transform: translate(-50%, -80%);
+    opacity: 1;
+    transition: transform 0.4s ease-out;
+  }
+  @include media-tablet {
+    width: 100%;
   }
 }
 
-.player__control {
+.player__controls {
   width: 100%;
   position: absolute;
   bottom: 0;
   padding: 10px;
-  opacity: 0;
-  transition: opacity 0.4s;
+  opacity: 1;
+  transition: opacity 0.4s ease-out 2s;
+  @include media-tablet {
+    bottom: -37%;
+    padding: 0;
+    opacity: 1;
+  }
+  @include media-mobile {
+    bottom: -77%;
+  }
 }
 
 .player__main-control {
   @include flex(space-between, center);
+  flex-wrap: wrap;
   width: 100%;
-  height: 64px;
-  padding: 2px 41px 0 40px;
+  padding: 14px 20px;
   background: $default-color;
   background: linear-gradient(to top, $default-color, $player-control-color);
+  @include media-mobile {
+    padding: 10px 16px;
+  }
 }
 
 .player__video {
   @include image-cover;
   width: 100%;
+  height: 630px;
+  @include media-tablet {
+    height: 400px;
+  }
+  @include media-mobile{
+    height: 200px;
+  }
 }
 
 .player__buttons {
@@ -52,15 +65,20 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -80%);
+  opacity: 0;
   cursor: pointer;
+  transition: opacity 0.4s ease-out 2s;
 }
 
-.player__box {
-  width: 50px;
+.player__btn-box {
+  width: 4%;
+  @include media-tablet {
+    margin-right: 16px;
+  }
 }
 
-.player__play-icon {
+.player__bigplay-icon {
   width: 220px;
   height: 220px;
   fill: $main-color;
@@ -71,22 +89,14 @@
   &:active {
     transform: scale(1);
   }
+  @include media-mobile {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .player__button {
-  margin-right: 40px;
-  &:first-child {
-    margin-right: 37px;
-  }
-  &:nth-child(2) {
-    margin-right: 39px;
-  }
-  &:nth-child(3) {
-    margin-right: 39px;
-  }
-  &:last-child {
-    margin-right: 0;
-  }
+  margin-right: 20px;
   &:hover .player__icon {
     fill: $player-hover-color;
     stroke: $player-hover-color;
@@ -94,21 +104,29 @@
   &:active {
     transform: scale(0.9);
   }
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .player__button--speaker {
   position: relative;
-  margin-right: 19px;
+  margin-right: 10px;
   &::after {
     @include pseudo;
-    top: -4px;
-    left: 15px;
+    top: -3px;
+    left: 13px;
     width: 4px;
-    height: 45px;
+    height: 37px;
     transform: rotate(-45deg);
     background-color: $player-icon-color;
     opacity: 0;
     transition: background-color 0.3s, opacity 0.2s;
+    @include media-mobile {
+      width: 3px;
+      height: 26px;
+      left: 7px;
+    }
   }
   &.is-active::after {
     opacity: 1;
@@ -119,32 +137,43 @@
 }
 
 .player__button--download {
-  margin-right: 25px;
+  @include media-mobile {
+    display: none;
+  }
 }
 
 .player__icon {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
   fill: $player-icon-color;
   stroke: $player-icon-color;
   transition: 0.3s;
   &--speaker, &--full, &--download {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
+    @include media-mobile {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  @include media-mobile {
+    width: 20px;
+    height: 20px;
   }
 }
 
 .player__progress {
   height: 8px;
+  margin-right: 20px;
   -webkit-appearance: none;
+  cursor: pointer;
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
     border-radius: 50%;
     background-color: $main-color;
-    cursor: pointer;
   }
   &::-ms-track {
     width: 100%;
@@ -156,15 +185,16 @@
   &:focus {
     outline: none;
   }
+  @include media-mobile {
+    margin-right: 10px;
+  }
 }
 
-.player__progress--rewind {
+.player__progress--range {
   flex: 1;
-  margin-right: 40px;
-}
-
-.player__progress--volume {
-  margin-right: 25px;
+  @include media-mobile {
+    flex-basis: 84%;
+  }
 }
 
 .player__slider {
@@ -227,109 +257,25 @@
   }
 }
 
-.player__duration {
+.player__time {
   @include flex;
-  margin-right: 25px;
+  margin-right: 20px;
   color:$player-icon-color;
   font-size: 22px;
   font-weight: 500;
+  @include media-mobile {
+    margin-right: 10px;
+    font-size: 18px;
+  }
 }
 
-.player__duration-current {
+.player__time-elapsed {
   &::after {
     content: '-';
     margin-left: 8px;
   }
 }
 
-.player__duration-total {
+.player__time-duration {
   margin-left: 8px;
-}
-
-.modal {
-  @include flex(space-between, none, column);
-  height: 90vh;
-  width: 60vw;
-  padding: 30px;
-  background-color: $main-color;
-  overflow: auto;
-  z-index: 2;
-}
-
-.modal__title {
-  margin-bottom: 40px;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.modal__box {
-  @include flex;
-  margin-bottom: 40px;
-}
-
-.modal__col {
-  flex: 1;
-  margin-right: 40px;
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-.modal__caption {
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.modal__desc {
-  display: grid; 
-  grid-template-columns: 3fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-  gap: 10px 0px; 
-}
-
-.modal__text, .modal__key {
-  padding-bottom: 10px;
-  border-bottom: 2px solid $player-progress-color;
-}
-
-.modal__text {
-  padding-right: 30px;
-}
-
-.modal__close {
-  display: block;
-  margin-left: auto;
-  font-size: 18px;
-  color: $close-color;
-  cursor: pointer;
-  transition: text-shadow 0.3s;
-  &:hover {
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-  }
-}
-
-.overlay {
-  position: relative;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  &:after {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255,255,255, 0.3);
-  }
-  &.active {
-    display: flex;
-  }
 }
