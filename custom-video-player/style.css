@@ -67,6 +67,20 @@ button:active {
   outline: none;
 }
 
+select,
+option {
+  cursor: pointer;
+}
+
+select {
+  position: relative;
+  border: none;
+  background: transparent;
+}
+select:focus {
+  outline: none;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -177,7 +191,7 @@ button:active {
   position: absolute;
   bottom: 0;
   padding: 10px;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.4s ease-out 2s;
 }
 @media (max-width: 1024px) {
@@ -313,8 +327,9 @@ button:active {
   background-color: #8a8a8a;
 }
 
-@media (max-width: 375px) {
-  .player__button--download {
+@media (max-width: 1024px) {
+  .player__button--download,
+.player__playback-rate {
     display: none;
   }
 }
@@ -461,6 +476,21 @@ button:active {
 
 .player__time-duration {
   margin-left: 8px;
+}
+
+.player__playback-rate {
+  margin-right: 10px;
+}
+
+.player__speed {
+  width: 66px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #B3B3B3;
+}
+.player__speed > option {
+  background: #B3B3B3;
+  color: #000000;
 }
 
 .modal {

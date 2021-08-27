@@ -67,6 +67,20 @@ button {
   }
 }
 
+select,
+option {
+  cursor: pointer;
+}
+
+select {
+  position: relative;
+  border: none;
+  background: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+
 .container {
   @include flex(center, center, column);
   max-width: 1440px;

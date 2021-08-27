@@ -21,7 +21,7 @@
   position: absolute;
   bottom: 0;
   padding: 10px;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.4s ease-out 2s;
   @include media-tablet {
     bottom: -37%;
@@ -136,8 +136,9 @@
   }
 }
 
-.player__button--download {
-  @include media-mobile {
+.player__button--download,
+.player__playback-rate {
+  @include media-tablet {
     display: none;
   }
 }
@@ -278,4 +279,19 @@
 
 .player__time-duration {
   margin-left: 8px;
+}
+
+.player__playback-rate {
+  margin-right: 10px;
+}
+
+.player__speed {
+  width: 66px;
+  font-size: 22px;
+  font-weight: 700;
+  color: $player-icon-color;
+  & > option {
+    background: $player-icon-color;
+    color: $default-color;
+  }
 }
