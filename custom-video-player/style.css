@@ -171,6 +171,7 @@ select:focus {
   flex-direction: column;
   box-shadow: 7px 7px 14px 5px rgba(0, 0, 0, 0.8);
   width: 80%;
+  height: 630px;
 }
 .player:hover .player__controls {
   opacity: 1;
@@ -183,6 +184,12 @@ select:focus {
 @media (max-width: 1024px) {
   .player {
     width: 100%;
+    height: 400px;
+  }
+}
+@media (max-width: 375px) {
+  .player {
+    height: 200px;
   }
 }
 
@@ -227,17 +234,7 @@ select:focus {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  height: 630px;
-}
-@media (max-width: 1024px) {
-  .player__video {
-    height: 400px;
-  }
-}
-@media (max-width: 375px) {
-  .player__video {
-    height: 200px;
-  }
+  height: 100%;
 }
 
 .player__buttons {
@@ -252,6 +249,11 @@ select:focus {
   opacity: 0;
   cursor: pointer;
   transition: opacity 0.4s ease-out 2s;
+}
+@media (max-width: 1024px) {
+  .player__bigplay {
+    transform: translate(-50%, -50%);
+  }
 }
 
 .player__btn-box {

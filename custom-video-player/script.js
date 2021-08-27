@@ -1,5 +1,5 @@
 const video = document.querySelector('.player__video');
-const buttonsPlay = document.querySelectorAll('.player__button--play');
+const playButtons = document.querySelectorAll('.player__button--play');
 const buttonPause = document.querySelector('.player__button--pause');
 const progress = document.querySelector('.player__progress--range');
 
@@ -9,7 +9,7 @@ function playerPlay() {
     hiddenIcon();
   });
 
-  buttonsPlay.forEach(el => {
+  playButtons.forEach(el => {
     el.addEventListener('click', () => {
       togglePlay();
       hiddenIcon();
@@ -23,23 +23,21 @@ function playerPlay() {
     hiddenIcon();
   });
 
+  video.addEventListener('ended', hiddenIcon);
+
   document.addEventListener('keydown', (e) => {
     if (e.code == 'Space') {
       togglePlay();
       hiddenIcon();
     }
-  })
-
-  if (!video.paused) {
-    control.style.display = 'none';
-  }
+  });
 }
 
 function playerProgress() {
   progress.style.background = 'linear-gradient(to right, #24809e 0%, #24809e 0%, #c4c4c4 0%, #c4c4c4 100%';
   
   function handleProgressUpdate() {
-    const percent = Math.floor((100 / video.duration) * video.currentTime);
+    const percent = (100 / video.duration) * video.currentTime;
     progress.value = percent;
     progress.style.background = `linear-gradient(to right, #24809e 0%, #24809e ${percent}%, #c4c4c4 ${percent}%, #c4c4c4 100%`;
   }
@@ -50,7 +48,27 @@ function playerProgress() {
   }
 
   video.addEventListener('timeupdate', handleProgressUpdate);
+  video.addEventListener('canplay', handleProgressUpdate);
   progress.addEventListener('click', scrubProgress);
+}
+
+function displayTime() {
+  const currentTime = document.querySelector('.player__time-elapsed');
+  const duration = document.querySelector('.player__time-duration');
+
+  video.addEventListener("durationchange", function() {
+    duration.innerText = formatTime(video.duration);
+  });
+
+  video.addEventListener("timeupdate", function() {
+    currentTime.innerText = formatTime(video.currentTime);
+  });
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+  }
 }
 
 function playerVolume() {
@@ -80,14 +98,14 @@ function playerVolume() {
     }
   }
 
-  speaker.addEventListener('click', () => volumeMute())
+  speaker.addEventListener('click', () => volumeMute());
+
   volume.addEventListener('change', () => {
     value = volume.value;
     percent = value * 100;
     volumeMute(value == 0);
     handleVolumeUpdate();
   })
-  volume.addEventListener('mousemove', handleVolumeUpdate);
 
   document.addEventListener('keydown', (e) => {
     if (e.code === 'KeyM') {
@@ -97,25 +115,58 @@ function playerVolume() {
 }
 
 function fullScreen() {
-  const fullBtn = document.querySelector('.player__button--full');
+  const player = document.querySelector('.player');
+  const fullscreenBtn = document.querySelector('.player__button--full');
+  const controls = document.querySelector('.player__controls');
+  let fullscreen = false;
   
-  fullBtn.addEventListener('click', () => {
-    video.requestFullscreen();
-  })
-
-  video.addEventListener('fullscreenchange', () => {
-    video.pause();
+  fullscreenBtn.addEventListener('click', () => {
+    toggleFullScreen();
   })
 
   document.addEventListener('keydown', (e) => {
-    const isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null)
     if (e.code === 'KeyF') {
-      !isInFullScreen ? video.requestFullscreen() : document.exitFullscreen();
+      toggleFullScreen();
     }
   });
+
+  function openFullscreen(elem) {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    }
+  }
+
+  function closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  }
+
+  function toggleFullScreen() {
+    if (!fullscreen) {
+      openFullscreen(player);
+      video.style.height = '100%';
+      controls.style.bottom = 0;
+    } else {
+      closeFullscreen();
+      video.style.height = '630px';
+      controls.style.bottom = '';
+    }
+    fullscreen = !fullscreen;
+  }
 }
 
 function playbackRate() {
+  const speed = document.querySelector('.player__speed');
+
   document.addEventListener('keydown', (e) => {
     const step = 0.25;
     if (e.shiftKey && e.code === 'Comma') {
@@ -128,6 +179,10 @@ function playbackRate() {
         video.playbackRate += step;
       }
     }
+  });
+
+  speed.addEventListener('change', () => {
+    video.playbackRate = speed.value;
   });
 }
 
@@ -262,32 +317,13 @@ function videoSlider() {
 
 function hiddenIcon() {
   !video.paused ? buttonPause.hidden = false : buttonPause.hidden = true;
-  buttonsPlay.forEach(el => {
+  playButtons.forEach(el => {
     !video.paused ? el.hidden = true : el.hidden = false;
   });
 }
 
 function togglePlay() {
   video.paused ? video.play() : video.pause();
-}
-
-function digitalVideoDuration() {
-  const videoDurationCurrent = document.querySelector('.player__time-elapsed');
-  const videoDurationTotal = document.querySelector('.player__time-duration');
-
-  video.addEventListener("durationchange", function() {
-    videoDurationTotal.innerText = formatTime(video.duration);
-  });
-
-  video.addEventListener("timeupdate", function() {
-    videoDurationCurrent.innerText = formatTime(video.currentTime);
-  });
-
-  function formatTime(time) {
-    const minutes = Math.floor(Math.round(time) / 60);
-    const seconds = Math.round(time) % 60;
-    return `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-  }
 }
 
 function modalWindow() {
@@ -342,6 +378,6 @@ playbackRate();
 playerSkip();
 timeStamp();
 videoSlider();
-digitalVideoDuration();
+displayTime();
 modalWindow();
-consoleDesc();
+// consoleDesc();
