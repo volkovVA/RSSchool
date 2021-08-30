@@ -90,11 +90,11 @@ function playerVolume() {
       volume.value = 0;
       video.volume = 0;
       volume.style.background = '#c4c4c4';
-      speaker.classList.add('is-active');
+      speaker.classList.add('active');
     } else {
       volume.value = value;
       handleVolumeUpdate();
-      speaker.classList.remove('is-active');
+      speaker.classList.remove('active');
     }
   }
 
@@ -349,6 +349,23 @@ function modalWindow() {
   })
 }
 
+function addOpacity() {
+  const bigPlay = document.querySelector('.player__bigplay');
+  const controlPanel = document.querySelector('.player__controls');
+
+  bigPlay.style.opacity = '1';
+  controlPanel.style.opacity = '1';
+
+  setTimeout(() => {
+    bigPlay.style.opacity = '0';
+    controlPanel.style.opacity = '0';
+    setTimeout(() => {
+      bigPlay.style.opacity = '';
+      controlPanel.style.opacity = '';
+    }, 2000);
+  }, 5000);
+}
+
 function consoleDesc() {
   console.group('Первый этап. Обязательный функционал');
   console.warn('Разобраться в коде предложенного вам для изучения чужого проекта и самостоятельно его воспроизвести');
@@ -381,4 +398,5 @@ timeStamp();
 videoSlider();
 displayTime();
 modalWindow();
+addOpacity()
 consoleDesc();
