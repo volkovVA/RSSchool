@@ -38,79 +38,111 @@ button {
   background-size: cover;
   background-repeat: no-repeat;
   transition: background-image 0.7s ease-in-out 0s;
+  background-image: url('./img/london/day/1.jpg');
 }
 
 .container {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  max-width: 1440px;
-  width: 95%;
+  width: 100%;
   height: 100vh;
   margin: 0 auto;
 }
 
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+aside {
+  position: relative;
+  height: 100%;
+}
+
+aside::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  opacity: 0.7;
+}
+
 /*===== Clock styles ======*/
 
+.clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 380px;
+}
+
 .clock-blue,
-.clock-green {
+.clock-black,
+.clock-green,
+.clock-dark-green {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 900px;
-  height: 900px;
+  height: 550px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   transition: background-image 0.5s;
 }
 
+.clock-blue,
+.clock-black {
+  margin-right: 7px;
+}
+
 .clock-blue {
+  display: flex;
+  background-image: url('./img/clock/gold-blue.png');
+}
+
+.clock-black {
   display: none;
-  background-image: url('./img/gold-blue.png');
+  background-image: url('./img/clock/silver-black.png');
+}
+
+.clock-green,
+.clock-dark-green {
+  margin-right: 5px;
 }
 
 .clock-green {
-  display: flex;
-  background-image: url('./img/green-silver.png');
+  display: none;
+  background-image: url('./img/clock/green-silver.png');
+}
+
+.clock-dark-green {
+  display: none;
+  background-image: url('./img/clock/silver-green.png');
 }
 
 .clock-box {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 50%;
-  height: 50%;
   border-radius: 50%;
 }
 
-.logo-box {
-  position: absolute;
-  top: 31%;
-  font-size: 20px;
-  color: var(--dial-color);
-  text-transform: uppercase;
-  text-align: center;
+.clock-box_one {
+  width: 83%;
+  height: 56%;
 }
 
-.logo-box_green {
-  top: 25%;
-}
-
-.logo-symbol {
-  width: 30px;
-  height: 30px;
-  margin: 0 auto;
-  background-image: url('./img/rolex-logo.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.logo-text {
-  display: block;
-  font-size: 10px;
+.clock-box_two {
+  width: 75%;
+  height: 50%;
 }
 
 .needle {
@@ -126,12 +158,10 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background-color: var(--gold-color);
-  box-shadow: inset 0px 0px 0px 2px var(--dial-color);
   z-index: 4;
 }
 
@@ -140,24 +170,43 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 17px;
-  height: 17px;
+  width: 10px;
+  height: 10px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background-color: var(--dial-color);
 }
 
-.center-point_silver {
+.clock-green .center-point,
+.clock-dark-green .center-point {
   background-color: var(--dial-color);
   box-shadow: inset 0px 0px 0px 2px var(--silver-color);
 }
 
-.center-point_silver::after {
+.clock-green .center-point::after,
+.clock-dark-green .center-point::after  {
   background-color: var(--silver-color);
 }
 
+.clock-black .center-point,
+.clock-blue .center-point {
+  box-shadow: inset 0px 0px 0px 2px var(--dial-color);
+}
+
+.clock-black .center-point::after,
+.clock-blue .center-point::after {
+  background-color: var(--dial-color);
+}
+
+.clock-black .center-point {
+  background-color: var(--grey-color);
+}
+
+.clock-blue .center-point {
+  background-color: var(--gold-color);
+}
+
 .second {
-  width: 3px;
+  width: 2px;
   transform: translate(-50%, -100%) rotate(20deg);
   z-index: 3;
 }
@@ -167,39 +216,57 @@ button {
   position: absolute;
 }
 
-.second_gold {
-  height: 145px;
-  background-color: var(--gold-color);
-}
-
-.second_gold::after {
-  top: 33%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: var(--dial-color);;
-  border: 3px solid var(--gold-color);
-}
-
-.second_silver {
-  height: 165px;
+.clock-green .second,
+.clock-dark-green .second {
+  height: 100px;
   background-color: var(--silver-color);
 }
 
-.second_silver::after {
+.clock-green .second::after,
+.clock-dark-green .second::after {
   top: -6%;
   transform: translateX(-35%);
   width: 0; 
   height: 0;
-  border-left: 7.5px solid transparent;
-  border-right: 7.5px solid transparent;
-  border-bottom: 22px solid var(--silver-color);
+  border-left: 5.5px solid transparent;
+  border-right: 5.5px solid transparent;
+  border-bottom: 16px solid var(--silver-color);
+}
+
+.clock-blue .second,
+.clock-black .second {
+  height: 90px;
+}
+
+.clock-blue .second::after,
+.clock-black .second::after {
+  top: 33%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--dial-color);;
+}
+
+.clock-blue .second {
+  background-color: var(--gold-color);
+}
+
+.clock-black .second {
+  background-color: var(--grey-color);
+}
+
+.clock-blue .second::after {
+  border: 2px solid var(--gold-color);
+}
+
+.clock-black .second::after {
+  border: 2px solid var(--grey-color);
 }
 
 .minute {
-  width: 7px;
+  width: 5px;
   transform: translate(-50%, -100%) rotate(70deg);
   z-index: 2;
 }
@@ -207,27 +274,16 @@ button {
 .minute::after {
   content: '';
   position: absolute;
-  left: -57%;
+  left: -70%;
   width: 0; 
   height: 0;
-  border-left: 7.5px solid transparent;
-  border-right: 7.5px solid transparent;
+  border-left: 5.5px solid transparent;
+  border-right: 6px solid transparent;
 }
 
-.minute-gold {
-  height: 100px;
-  background-color: var(--dial-color);
-  border: 4px solid var(--gold-color);
-  border-bottom: 17px solid var(--gold-color);
-}
-
-.minute-gold::after {
-  top: -26%;
-  border-bottom: 22px solid var(--gold-color);
-}
-
-.minute_silver {
-  height: 130px;
+.clock-green .minute,
+.clock-dark-green .minute {
+  height: 75px;
   background: linear-gradient(
     to bottom,
     var(--main-color) 20%,
@@ -235,12 +291,42 @@ button {
     var(--dial-color) 60%,
     var(--main-color) 20%
   );
-  border: 4px solid var(--silver-color);
+  border: 3px solid var(--silver-color);
 }
 
-.minute_silver::after {
-  top: -20%;
-  border-bottom: 22px solid var(--silver-color);
+.clock-green .minute::after,
+.clock-dark-green .minute::after {
+  top: -25%;
+  border-bottom: 16px solid var(--silver-color);
+}
+
+.clock-blue .minute,
+.clock-black .minute {
+  height: 56px;
+  background-color: var(--dial-color);
+}
+
+.clock-blue .minute {
+  border: 2px solid var(--gold-color);
+  border-bottom: 17px solid var(--gold-color);
+}
+
+.clock-black .minute {
+  border: 2px solid var(--grey-color);
+  border-bottom: 17px solid var(--grey-color);
+}
+
+.clock-blue .minute::after,
+.clock-black .minute::after {
+  top: -31%;
+}
+
+.clock-black .minute::after {
+  border-bottom: 15px solid var(--grey-color);
+}
+
+.clock-blue .minute::after {
+  border-bottom: 15px solid var(--gold-color);
 }
 
 .hour {
@@ -253,28 +339,11 @@ button {
   position: absolute;
 }
 
-.hour_gold {
-  width: 10px;
-  height: 65px;
-  background-color: var(--dial-color);;
-  border: 2px solid var(--gold-color);
-  border-bottom: 15px solid var(--gold-color);
-}
-
-.hour_gold::after {
-  top: -36%;
-  left: -17px;
-  width: 43px;
-  height: 57px;
-  background-image: url('./img/hour-gold.png');
-  background-position: center center;
-  background-size: cover;
-}
-
-.hour_silver {
-  width: 7px;
-  height: 65px;
-  border: 4px solid var(--silver-color);
+.clock-green .hour,
+.clock-dark-green .hour {
+  width: 5px;
+  height: 40px;
+  border: 3px solid var(--silver-color);
   border-bottom: 17px solid var(--silver-color);
   background: linear-gradient(
     to bottom,
@@ -287,16 +356,52 @@ button {
   z-index: 1;
 }
 
-.hour_silver::after {
+.clock-green .hour::after,
+.clock-dark-green .hour::after {
   content: '';
   position: absolute;
-  top: -40%;
-  left: -57%;
+  top: -63%;
+  left: -60%;
   width: 0; 
   height: 0;
-  border-left: 7.5px solid transparent;
-  border-right: 7.5px solid transparent;
+  border-left: 5.5px solid transparent;
+  border-right: 5.5px solid transparent;
   border-bottom: 22px solid var(--silver-color);
+}
+
+.clock-blue .hour,
+.clock-black .hour {
+  width: 7px;
+  height: 30px;
+  background-color: var(--dial-color);;
+}
+
+.clock-blue .hour {
+  border: 2px solid var(--gold-color);
+  border-bottom: 12px solid var(--gold-color);
+}
+
+.clock-black .hour {
+  border: 2px solid var(--grey-color);
+  border-bottom: 12px solid var(--grey-color);
+}
+
+.clock-blue .hour::after,
+.clock-black .hour::after {
+  top: -70%;
+  left: -9px;
+  width: 25px;
+  height: 35px;
+  background-position: center center;
+  background-size: cover;
+}
+
+.clock-blue .hour::after {
+  background-image: url('./img/clock/hour-gold.png');
+}
+
+.clock-black .hour::after{
+  background-image: url('./img/clock/hour-silver.png');
 }
 
 .rect {
@@ -305,107 +410,51 @@ button {
   justify-content: center;
   align-items: center;
   top: 46%;
-  left: 71%;
-  width: 46px;
-  height: 34px;
-  border-radius: 6px;
+  left: 70%;
+  width: 30px;
+  height: 23px;
+  border-radius: 4px;
   border: none;
   box-shadow: inset 1px 1px 5px 1px var(--main-color);
   font-family: 'EB Garamond', serif;
-  font-size: 30px;
-  font-weight: 700;
-  background-color: var(--dial-color);
-}
-
-.digital {
-  position: absolute;
-  top: 56%;
-  font-family: 'EB Garamond', serif;
-  font-weight: 700;
-}
-
-.digital-time, .digital-date {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  width: 130px;
-  height: 33px;
-  background-color: var(--dial-color);
-  border-radius: 6px;
-  box-shadow: inset 1px 1px 5px 1px var(--main-color);
-}
-
-.digital-time {
-  margin-bottom: 2px;
   font-size: 22px;
-}
-
-.digital-date {
-  font-size: 12px;
-}
-
-.clock-blue.silver {
-  background-image: url('./img/silver-black.png');
-}
-
-.clock-blue.silver .hour::after{
-  background-image: url('./img/hour-silver.png');
-}
-
-.clock-blue.silver .center-point,
-.clock-blue.silver .second_gold {
-  background-color: var(--grey-color);
-}
-
-.clock-blue.silver .needle {
-  border-color: var(--grey-color);
-}
-
-.clock-blue.silver .minute-gold::after {
-  border-bottom-color: var(--grey-color);
-}
-
-.clock-blue.silver .second_gold::after {
-  border-color: var(--grey-color);
-}
-
-.clock-green.green {
-  background-image: url('./img/silver-green.png');
+  font-weight: 700;
+  background-color: var(--dial-color);
 }
 
 .round {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75px;
-  height: 75px;
-  font-size: 40px;
+  font-size: 26px;
   color: var(--secondary-color);
 }
 
+.round > span {
+  position: absolute;
+  top: 21%;
+  left: 45%;
+}
+
 .round_hour {
-  top: 39%;
-  left: 22.2%;
+  top: 34.8%;
+  left: 13.5%;
 }
 
 .round_minute {
-  top: 39%;
-  left: 61%;
+  top: 34.5%;
+  left: 48%;
 }
 
 .round_second {
-  top: 61%;
-  left: 42%;
+  top: 54.5%;
+  left: 31%;
 }
 
 .progress-ring {
-  position: absolute;
-  margin-right: 2px;
-  margin-top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   fill: transparent;
-  stroke-width: 15;
+  stroke-width: 9px;
   stroke: rgba(192,192,192, 0.8);
 }
 
@@ -426,21 +475,16 @@ button {
 
 /*===== Clock button box styles =====*/
 
-.clock-btn-box {
-  position: absolute;
-  top: 0;
+.clock-btns {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  padding: 40px 0;
-  z-index: 1;
+  justify-content: space-evenly;
+  padding: 20px;
 }
 
 .change-clock {
   display: block;
-  width: 200px;
-  height: 200px;
-  margin-bottom: 20px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
@@ -456,11 +500,19 @@ button {
 }
 
 .change-clock_blue {
-  background-image: url('./img/clock-blue.png');
+  background-image: url('./img/clock-btns/clock-blue.png');
 }
 
 .change-clock_green {
-  background-image: url('./img/clock-green.png');
+  background-image: url('./img/clock-btns/clock-green.png');
+}
+
+.change-clock_black {
+  background-image: url('./img/clock-btns/clock-black.png');
+}
+
+.change-clock_dark-green {
+  background-image: url('./img/clock-btns/clock-dark-green.png');
 }
 
 .toggle {
@@ -493,11 +545,11 @@ button {
 
 /*===== Slider button box styles =====*/
 
-.slider-btn-box {
-  position: absolute;
+.slider-btns {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  width: 70%;
+  margin-top: auto;
+  margin-bottom: 20px;
   z-index: 1;
 }
 
@@ -536,25 +588,26 @@ button {
 
 /*===== Time zones box styles =====*/
 
-.time-zones-box {
-  position: absolute;
-  bottom: 0;
+.time-zones {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 40px 0;
-  z-index: 3;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 7px;
+  box-sizing: border-box;
+  width: 10%;
 }
 
 .time-zone {
   display: inline-flex;
   justify-content: center;
   align-items: flex-start;
-  width: 150px;
-  height: 250px;
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 5px;
   padding-top: 20px;
-  margin: 0 30px;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 700;
   background-position: center;
   background-repeat: no-repeat;
@@ -563,6 +616,10 @@ button {
   box-shadow: 2px 2px 7px 5px rgba(0,0,0,0.8);
   filter: brightness(90%);
   transition: filter 0.3s;
+}
+
+.time-zone:last-child {
+  margin-bottom: 0;
 }
 
 .time-zone_moscow {
@@ -591,26 +648,28 @@ button {
 
 .time-zone.active {
   filter: brightness(100%);
-  outline: 3px solid var(--main-color);
+  box-shadow: inset 2px 2px 5px 3px rgba(0,0,0,0.8);
 }
 
 .time-zone.no-active {
   filter: brightness(40%);
 }
 
-/*===== Easter Egg =====*/
+.time-zones-text {
+  transform: rotate(90deg);
+  white-space: nowrap;
+}
 
-.desc {
-  position: absolute;
-  top: 15%;
-  left: 5%;
-  width: 390px;
-  text-align: center;
-  transform: rotate(-45deg);
-  font-size: 46px;
-  color: #00a900;
-  text-shadow: #000000 2px 2px 3px;
-  letter-spacing: 1px;
-  transition: opacity 1s;
-  z-index: 10;
+/*====== Digital Time =====*/
+
+.digital {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: 'EB Garamond', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--secondary-color);
 }

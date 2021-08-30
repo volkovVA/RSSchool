@@ -262,26 +262,6 @@ function bgSlider(timeDifference = currentTimeDiff(), timeZoneCity = currentTime
   slideNext.onclick = getSlideNext;
 }
 
-function easterEgg() {
-  const description = document.querySelector('.desc');
-
-  setTimeout(() => {
-    const text = 'Project description in console';
-    let i = 0;
-      setInterval(() => {
-        i >= text.length ? false : description.innerHTML += text[i];
-        i++;
-      }, 200);
-  }, 5000);
-
-  setTimeout(() => {
-    description.style.opacity = 0;
-    setTimeout(() => {
-      description.remove();
-    }, 1000);
-  }, 20000);
-}
-
 function consoleDesc() {
   console.group('Обязательный функционал');
   console.warn('Разобраться в коде предложенного вам для изучения чужого проекта и самостоятельно его воспроизвести');
@@ -325,5 +305,4 @@ clock();
 changeClock();
 changeColorClock();
 bgSlider();
-easterEgg();
 consoleDesc();

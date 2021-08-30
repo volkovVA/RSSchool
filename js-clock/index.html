@@ -12,80 +12,104 @@
 </head>
 <body>
   <div class="wrapper">
-    <p class="desc"></p>
     <div class="container">
-      <div class="clock-btn-box">
-        <div class="clock-btns">
-          <button class="change-clock change-clock_blue"></button>
-          <button class="toggle toggle-one">Silver / Black clock</button>
-        </div>
-        <div class="clock-btns">
-          <button class="change-clock change-clock_green"></button>
-          <button class="toggle toggle-two">Black / Green clock</button>
-        </div>
-      </div>
-      <div class="slider-btn-box">
-        <button class="slider-btn slider-btn_prev"></button>
-        <button class="slider-btn slider-btn_next"></button>
-      </div>
-      <div class="time-zones-box">
-        <div>
-          <button class="time-zone time-zone_moscow">Moscow time</button>
+      <main class="main">
+        <aside class="time-zones">
+          <button class="time-zone time-zone_moscow ">Moscow time</button>
           <button class="time-zone time-zone_new-york">New-York time</button>
-        </div>
-        <div>
           <button class="time-zone time-zone_london">London time</button>
           <button class="time-zone time-zone_tokyo">Tokyo time</button>
+        </aside>
+        <div class="slider-btns">
+          <button class="slider-btn slider-btn_prev"></button>
+          <button class="slider-btn slider-btn_next"></button>
         </div>
-      </div>
-      <div class="clock-blue">
-        <div class="clock-box">
-          <div class="logo-box">
-            <div class="logo-symbol"></div>
-            <span class="logo-rolex">rolex</span>
-            <span class="logo-text">oyster perpetual date</span>
+        <aside class="clock">
+          <div class="clock-green">
+            <div class="clock-box clock-box_one">
+              <div class="center-point"></div>
+              <div class="needle second"></div>
+              <div class="needle minute"></div>
+              <div class="needle hour"></div>
+              <div class="round round_second">
+                <span></span>
+                <svg class="progress-ring progress-ring_second" width="100" height="100">
+                  <circle class="progress-circle progress-circle_second" cx="60" cy="60" r="30"/>
+                </svg>
+              </div>
+              <div class="round round_minute">
+                <span></span>
+                <svg class="progress-ring progress-ring_minute" width="100" height="100">
+                  <circle class="progress-circle progress-circle_minute" cx="60" cy="60" r="30"/>
+                </svg>
+              </div>
+              <div class="round round_hour">
+                <span></span>
+                <svg class="progress-ring progress-ring_hour" width="100" height="100">
+                  <circle class="progress-circle progress-circle_hour" cx="60" cy="60" r="30"/>
+                </svg>
+              </div>
+            </div>
           </div>
-          <div class="center-point"></div>
-          <div class="needle second second_gold"></div>
-          <div class="needle minute minute-gold"></div>
-          <div class="needle hour hour_gold"></div>
-          <div class="rect"></div>
+          <div class="clock-dark-green">
+            <div class="clock-box clock-box_one">
+              <div class="center-point"></div>
+              <div class="needle second"></div>
+              <div class="needle minute"></div>
+              <div class="needle hour"></div>
+              <div class="round round_second">
+                <span></span>
+                <svg class="progress-ring progress-ring_second" width="100" height="100">
+                  <circle class="progress-circle progress-circle_second" cx="60" cy="60" r="30"/>
+                </svg>
+              </div>
+              <div class="round round_minute">
+                <span></span>
+                <svg class="progress-ring progress-ring_minute" width="100" height="100">
+                  <circle class="progress-circle progress-circle_minute" cx="60" cy="60" r="30"/>
+                </svg>
+              </div>
+              <div class="round round_hour">
+                <span></span>
+                <svg class="progress-ring progress-ring_hour" width="100" height="100">
+                  <circle class="progress-circle progress-circle_hour" cx="60" cy="60" r="30"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="clock-black">
+            <div class="clock-box clock-box_two">
+              <div class="center-point"></div>
+              <div class="needle second"></div>
+              <div class="needle minute"></div>
+              <div class="needle hour"></div>
+              <div class="rect"></div>
+            </div>
+          </div>
+          <div class="clock-blue">
+            <div class="clock-box clock-box_two">
+              <div class="center-point"></div>
+              <div class="needle second"></div>
+              <div class="needle minute"></div>
+              <div class="needle hour"></div>
+              <div class="rect"></div>
+            </div>
+          </div>
           <div class="digital">
             <div class="digital-time"></div>
             <div class="digital-date"></div>
           </div>
-        </div>
-      </div>
-      <div class="clock-green">
-        <div class="clock-box">
-          <div class="logo-box logo-box_green">
-            <span class="logo-rolex">rolex</span>
-            <span class="logo-text">oyster perpetual</span>
+          <div class="clock-btns">
+            <button class="change-clock change-clock_blue"></button>
+            <button class="change-clock change-clock_black"></button>
+            <button class="change-clock change-clock_green"></button>
+            <button class="change-clock change-clock_dark-green"></button>
           </div>
-          <div class="center-point center-point_silver"></div>
-          <div class="needle second second_silver"></div>
-          <div class="needle minute minute_silver"></div>
-          <div class="needle hour hour_silver"></div>
-          <div class="round round_second">
-            <span></span>
-            <svg class="progress-ring progress-ring_second" width="120" height="120">
-              <circle class="progress-circle progress-circle_second" cx="60" cy="60" r="50"/>
-            </svg>
-          </div>
-          <div class="round round_minute">
-            <span></span>
-            <svg class="progress-ring progress-ring_minute" width="120" height="120">
-              <circle class="progress-circle progress-circle_minute" cx="60" cy="60" r="50"/>
-            </svg>
-          </div>
-          <div class="round round_hour">
-            <span></span>
-            <svg class="progress-ring progress-ring_hour" width="120" height="120">
-              <circle class="progress-circle progress-circle_hour" cx="60" cy="60" r="50"/>
-            </svg>
-          </div>
-        </div>
-      </div>
+         </aside>
+      </main>
+   
+
+    
     </div>
   </div>
   <script src="script.js"></script>
