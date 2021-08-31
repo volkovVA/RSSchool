@@ -178,6 +178,17 @@ function bgSlider(timeDifference = currentTimeDiff(), timeZoneCity = currentTime
   const slideNext = document.querySelector('.slider-btn_next');
   let randomNum = getRandomNum(1,3);
 
+  const sliderBox = document.querySelectorAll('.slider-box');
+  const sliderCurrent = document.querySelector('.slider-controls_current');
+  const sliderTotal = document.querySelector('.slider-controls_total');
+  
+  function chooseBox() {
+    sliderBox.forEach(el => el.classList.remove('active'));
+    sliderBox[randomNum-1].classList.add('active');
+    sliderTotal.textContent = sliderBox.length;
+    sliderCurrent.textContent = randomNum;
+  }
+
   function getTimeOfDay() {
     const time = new Date();
     let hours = time.getUTCHours() + timeDifference;
@@ -210,6 +221,7 @@ function bgSlider(timeDifference = currentTimeDiff(), timeZoneCity = currentTime
     if (randomNum > 3) {
       randomNum = 1;
     }
+    chooseBox();
     setBg();
   }
 
@@ -218,9 +230,11 @@ function bgSlider(timeDifference = currentTimeDiff(), timeZoneCity = currentTime
     if (randomNum < 1) {
       randomNum = 3;
     }
+    chooseBox();
     setBg();
   }
 
+  chooseBox();
   setBg();
 
   slidePrev.onclick = getSlidePrev;

@@ -20,9 +20,24 @@
           <button class="time-zone time-zone_london">London time</button>
           <button class="time-zone time-zone_tokyo">Tokyo time</button>
         </aside>
-        <div class="slider-btns">
-          <button class="slider-btn slider-btn_prev"></button>
-          <button class="slider-btn slider-btn_next"></button>
+        <div class="slider-case">
+          <div class="slider-controls">
+            <span class="slider-controls_current"></span>
+            <span class="slider-controls_total"></span>
+          </div>
+          <button class="slider-box"></button>
+          <button class="slider-box"></button>
+          <button class="slider-box"></button>
+          <button class="slider-btn slider-btn_prev">
+            <svg class="player__icon">
+              <use xlink:href="./img/svg/sprite.svg#arrow-prev"></use>
+            </svg>
+          </button>
+          <button class="slider-btn slider-btn_next">
+            <svg class="player__icon">
+              <use xlink:href="./img/svg/sprite.svg#arrow-next"></use>
+            </svg>
+          </button>
         </div>
         <aside class="clock-case">
           <div class="clock clock-green">
@@ -107,9 +122,6 @@
           </div>
          </aside>
       </main>
-   
-
-    
     </div>
   </div>
   <script src="script.js"></script>
