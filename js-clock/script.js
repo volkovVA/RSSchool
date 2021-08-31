@@ -18,36 +18,39 @@ function clock() {
   const secondNeedle = document.querySelectorAll('.second');
   const minuteNeedle = document.querySelectorAll('.minute');
   const hourNeedle = document.querySelectorAll('.hour');
-  const dayWindow = document.querySelector('.rect');
+  const dayWindow = document.querySelectorAll('.rect');
   const dateWindow = document.querySelector('.digital-date');
   const timeWindow = document.querySelector('.digital-time');
-  const roundSecond = document.querySelector('.round_second span');
-  const roundMinute = document.querySelector('.round_minute span');
-  const roundHour = document.querySelector('.round_hour span');
-  const timeZones = document.querySelector('.time-zones-box');
-
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const roundSecond = document.querySelectorAll('.round_second span');
+  const roundMinute = document.querySelectorAll('.round_minute span');
+  const roundHour = document.querySelectorAll('.round_hour span');
+  const timeZones = document.querySelector('.time-zones');
 
   function setClock(timeDifference = currentTimeDiff(), timeZone) {
     const time = new Date();
-    const year = time.getUTCFullYear();
-    const month = time.getUTCMonth();
-    const day = time.getUTCDay();
-    const date = time.getUTCDate();
     const seconds = time.getUTCSeconds();
     const minutes = time.getUTCMinutes();
     const hours = time.getUTCHours() + timeDifference;
-    
-    const digitalTime = time.toLocaleTimeString('en-US', {timeZone});
+
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone
+    };
+  
+    const digitalTime = time.toLocaleTimeString('en-GB', {timeZone});
+    const digitalDate = time.toLocaleDateString('en-GB', options);
+    const digitalDay = time.toLocaleDateString('en-GB', {day: "numeric", timeZone});
 
     const degreesSecond = ((seconds / 60) * 360);
     const degreesMinute = ((minutes / 60) * 360);
     const degreesHour = ((hours / 12) * 360) + ((minutes/60)*30);
 
-    const circleSecond = document.querySelector('.progress-circle_second');
-    const circleMinute = document.querySelector('.progress-circle_minute');
-    const circleHour = document.querySelector('.progress-circle_hour');
+    const circleSecond = document.querySelectorAll('.progress-circle_second');
+    const circleMinute = document.querySelectorAll('.progress-circle_minute');
+    const circleHour = document.querySelectorAll('.progress-circle_hour');
 
     const percentSecond = (seconds * 100) / 60;
     const percentMinute = (minutes * 100) / 60;
@@ -56,13 +59,13 @@ function clock() {
 
     seconds == 0 ? needle.style.transition = 'none': needle.style.transition = 'all 0.5s';
 
-    dayWindow.textContent = hours >= 24 ? `${date+1}` : `${date}`;
+    dayWindow.forEach(el => el.textContent = digitalDay);
     timeWindow.textContent = digitalTime;
-    dateWindow.textContent = setDateWindow(hours, day, date, month, year);
+    dateWindow.textContent = digitalDate;
 
-    roundSecond.textContent = seconds < 10 ? `0${seconds}` : `${seconds}`;
-    roundMinute.textContent = minutes < 10 ? `0${minutes}` : `${minutes}`;
-    roundHour.textContent = hours >= 24 ? `${hours-24}` : `${hours}`;
+    roundSecond.forEach(el => el.textContent = seconds < 10 ? `0${seconds}` : `${seconds}`);
+    roundMinute.forEach(el => el.textContent = minutes < 10 ? `0${minutes}` : `${minutes}`);
+    roundHour.forEach(el => el.textContent = hours >= 24 ? `${hours-24}0` : `${hours}`);
 
     needleRotate(secondNeedle, degreesSecond);
     needleRotate(minuteNeedle, degreesMinute);
@@ -73,20 +76,6 @@ function clock() {
     setProgress(percentHour, circleHour);
   }
 
-  function setDateWindow(hours, day, date, month, year) {
-    switch (true) {
-      case hours >= 24 && day == 6 && date == 31 && month == 11 : return `${days[0]} | ${months[0]} | ${year+1}`;
-      case hours >= 24 && date == 31 && month == 11 : return `${days[day+1]} | ${months[0]} | ${year+1}`;
-      case hours >= 24 && day == 6 && date == 29 || date == 28 && month == 1 : return `${days[0]} | ${months[month+1]} | ${year}`;
-      case hours >= 24 && date == 29 || date == 28 && month == 1 : return `${days[day+1]} | ${months[month+1]} | ${year}`;
-      case hours >= 24 && day == 6 && date == 31 || date == 30 : return `${days[0]} | ${months[month+1]} | ${year}`;
-      case hours >= 24 && date == 31 || date == 30 : return `${days[day+1]} | ${months[month+1]} | ${year}`;
-      case hours >= 24 && day == 6: return `${days[0]} | ${months[month]} | ${year}`;
-      case hours >= 24: return `${days[day+1]} | ${months[month]} | ${year}`;
-      default: return `${days[day]} | ${months[month]} | ${year}`;
-    }
-  } 
-
   function needleRotate(list, exp) {
     list.forEach(el => {
       el.style.transform = `translate(-50%, -100%) rotate(${exp}deg)`;
@@ -94,13 +83,16 @@ function clock() {
   }
 
   function setProgress(percent, circle) {
-    const radius = circle.r.baseVal.value;
-    const circumference = 2 * Math.PI * radius;
-    const offset = circumference - percent / 100 * circumference;
+    circle.forEach(el => {
+      const radius = el.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+      const offset = circumference - percent / 100 * circumference;
+  
+      el.style.strokeDasharray = `${circumference} ${circumference}`;
+      el.style.strokeDashoffset = circumference;
+      el.style.strokeDashoffset = offset;
+    });
 
-    circle.style.strokeDasharray = `${circumference} ${circumference}`;
-    circle.style.strokeDashoffset = circumference;
-    circle.style.strokeDashoffset = offset;
   }
 
   function setClockTimeZone() {
@@ -167,45 +159,18 @@ function clock() {
 }
 
 function changeClock() {
-  const checkClockBlue = document.querySelector('.change-clock_blue');
-  const checkClockGreen = document.querySelector('.change-clock_green');
-  const clockBlue = document.querySelector('.clock-blue');
-  const clockGreen = document.querySelector('.clock-green');
-  checkClockBlue.addEventListener('click', () => {
-    clockBlue.style.display = 'flex';
-    clockGreen.style.display = 'none';
-  })
-  checkClockGreen.addEventListener('click', () => {
-    clockBlue.style.display = 'none';
-    clockGreen.style.display = 'flex';
-  })
-}
+  const clockBtns = document.querySelector('.clock-btns');
+  const clock = document.querySelectorAll('.clock');
 
-function changeColorClock() {
-  const toggleBlue = document.querySelector('.toggle-one');
-  const toggleGreen = document.querySelector('.toggle-two');
-  const clockBlue = document.querySelector('.clock-blue');
-  const clockGreen = document.querySelector('.clock-green');
-
-  toggleBlue.addEventListener('click', event => {
-    change(event, clockBlue, 'silver', 'Silver / Black clock', 'Gold / Blue clock', '#000000', '#898989', '#000074', '#af9c55');
+  clockBtns.addEventListener('click', e => {
+    target = e.target.getAttribute('data-name');
+    clock.forEach(el => {
+      el.style.display = 'none';
+      if (el.classList.contains(target)) {
+        el.style.display = 'flex';
+      }
+    });
   });
-
-  toggleGreen.addEventListener('click', event => {
-    change(event, clockGreen, 'green', 'Green / Silver clock', 'Silver / Green clock', '#c0c0c0', '#00532c', '#c0c0c0', '#00532c');
-  });
-
-  function change(event, clockNumber, className, contentOne, contentTwo, colorOne, colorTwo, colorThree, colorFour) {
-    if (clockNumber.classList.contains(className)) {
-      clockNumber.classList.remove(className);
-      event.target.textContent = contentOne;
-      event.target.style.background = `linear-gradient(0deg, ${colorOne} 0%, ${colorTwo} 100%)`;
-    } else {
-      clockNumber.classList.add(className);
-      event.target.textContent = contentTwo;
-      event.target.style.background = `linear-gradient(0deg, ${colorThree} 0, ${colorFour} 100%)`;
-    }
-  }
 }
 
 function bgSlider(timeDifference = currentTimeDiff(), timeZoneCity = currentTimeZone()) {
@@ -303,6 +268,5 @@ function consoleDesc() {
 
 clock();
 changeClock();
-changeColorClock();
 bgSlider();
-consoleDesc();
+// consoleDesc();
