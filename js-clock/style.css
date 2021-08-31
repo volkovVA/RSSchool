@@ -38,7 +38,7 @@ button {
   background-size: cover;
   background-repeat: no-repeat;
   transition: background-image 0.7s ease-in-out 0s;
-  background-image: url('./img/london/day/1.jpg');
+  background-image: url('./assets/img/london/day/1.jpg');
 }
 
 .container {
@@ -105,12 +105,12 @@ aside::before {
 
 .clock-blue {
   display: flex;
-  background-image: url('./img/clock/gold-blue.png');
+  background-image: url('./assets/img/clock/gold-blue.png');
 }
 
 .clock-black {
   display: none;
-  background-image: url('./img/clock/silver-black.png');
+  background-image: url('./assets/img/clock/silver-black.png');
 }
 
 .clock-green,
@@ -120,12 +120,12 @@ aside::before {
 
 .clock-green {
   display: none;
-  background-image: url('./img/clock/green-silver.png');
+  background-image: url('./assets/img/clock/green-silver.png');
 }
 
 .clock-dark-green {
   display: none;
-  background-image: url('./img/clock/silver-green.png');
+  background-image: url('./assets/img/clock/silver-green.png');
 }
 
 .clock-box {
@@ -397,11 +397,11 @@ aside::before {
 }
 
 .clock-blue .hour::after {
-  background-image: url('./img/clock/hour-gold.png');
+  background-image: url('./assets/img/clock/hour-gold.png');
 }
 
 .clock-black .hour::after{
-  background-image: url('./img/clock/hour-silver.png');
+  background-image: url('./assets/img/clock/hour-silver.png');
 }
 
 .rect {
@@ -418,7 +418,7 @@ aside::before {
   box-shadow: inset 1px 1px 5px 1px var(--main-color);
   font-size: 22px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -1px;
   background-color: var(--dial-color);
 }
 
@@ -500,19 +500,19 @@ aside::before {
 }
 
 .change-clock_blue {
-  background-image: url('./img/clock-btns/clock-blue.png');
+  background-image: url('./assets/img/clock-btns/clock-blue.png');
 }
 
 .change-clock_green {
-  background-image: url('./img/clock-btns/clock-green.png');
+  background-image: url('./assets/img/clock-btns/clock-green.png');
 }
 
 .change-clock_black {
-  background-image: url('./img/clock-btns/clock-black.png');
+  background-image: url('./assets/img/clock-btns/clock-black.png');
 }
 
 .change-clock_dark-green {
-  background-image: url('./img/clock-btns/clock-dark-green.png');
+  background-image: url('./assets/img/clock-btns/clock-dark-green.png');
 }
 
 .toggle {
@@ -622,6 +622,7 @@ aside::before {
   padding: 7px;
   box-sizing: border-box;
   width: 10%;
+  min-width: 170px;
 }
 
 .time-zone {
@@ -638,7 +639,7 @@ aside::before {
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--main-color);
-  box-shadow: 2px 2px 7px 5px rgba(0,0,0,0.8);
+  box-shadow: 1px 1px 3px 3px rgba(0,0,0,0.8);
   filter: brightness(90%);
   transition: filter 0.3s;
 }
@@ -648,19 +649,19 @@ aside::before {
 }
 
 .time-zone_moscow {
-  background-image: url('./img/time-zones/moscow.jpg');
+  background-image: url('./assets/img/time-zones/moscow.jpg');
 }
 
 .time-zone_new-york {
-  background-image: url('./img/time-zones/new-york.jpg');
+  background-image: url('./assets/img/time-zones/new-york.jpg');
 }
 
 .time-zone_london {
-  background-image: url('./img/time-zones/london.jpg');
+  background-image: url('./assets/img/time-zones/london.jpg');
 }
 
 .time-zone_tokyo {
-  background-image: url('./img/time-zones/tokyo.jpg');
+  background-image: url('./assets/img/time-zones/tokyo.jpg');
 }
 
 .time-zone:hover {
@@ -673,7 +674,7 @@ aside::before {
 
 .time-zone.active {
   filter: brightness(100%);
-  box-shadow: inset 2px 2px 5px 3px rgba(0,0,0,0.8);
+  box-shadow: inset 1px 1px 5px 3px rgba(0,0,0,0.8);
 }
 
 .time-zone.no-active {
@@ -696,4 +697,8 @@ aside::before {
   font-size: 24px;
   font-weight: 400;
   color: var(--secondary-color);
+}
+
+.digital-time {
+  margin-bottom: 10px;
 }

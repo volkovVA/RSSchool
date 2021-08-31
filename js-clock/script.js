@@ -182,9 +182,9 @@ function bgSlider(timeDifference = currentTimeDiff(), timeZoneCity = currentTime
   const sliderCurrent = document.querySelector('.slider-controls_current');
   const sliderTotal = document.querySelector('.slider-controls_total');
   
-  function chooseBox() {
+  function chooseBox(num) {
     sliderBox.forEach(el => el.classList.remove('active'));
-    sliderBox[randomNum-1].classList.add('active');
+    sliderBox[num-1].classList.add('active');
     sliderTotal.textContent = sliderBox.length;
     sliderCurrent.textContent = randomNum;
   }
@@ -206,11 +206,11 @@ function bgSlider(timeDifference = currentTimeDiff(), timeZoneCity = currentTime
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  function setBg() {
+  function setBg(num = randomNum) {
     const img = new Image();
     const wrapper = document.querySelector('.wrapper');
     const timeDay = getTimeOfDay();
-    img.src = `./img/${timeZoneCity}/${timeDay}/${randomNum}.jpg`;
+    img.src = `./assets/img/${timeZoneCity}/${timeDay}/${num}.jpg`;
     img.onload = () => {
       wrapper.style.backgroundImage = `url(${img.src})`;
     }
@@ -221,7 +221,7 @@ function bgSlider(timeDifference = currentTimeDiff(), timeZoneCity = currentTime
     if (randomNum > 3) {
       randomNum = 1;
     }
-    chooseBox();
+    chooseBox(randomNum);
     setBg();
   }
 
@@ -230,11 +230,21 @@ function bgSlider(timeDifference = currentTimeDiff(), timeZoneCity = currentTime
     if (randomNum < 1) {
       randomNum = 3;
     }
-    chooseBox();
+    chooseBox(randomNum);
     setBg();
   }
 
-  chooseBox();
+  function getSlideCurrent() {
+    sliderBox.forEach((el, idx) => {
+      el.addEventListener('click', () => {
+        setBg(idx+1);
+        chooseBox(idx+1);
+      })
+    })
+  }
+  getSlideCurrent()
+
+  chooseBox(randomNum);
   setBg();
 
   slidePrev.onclick = getSlidePrev;
@@ -255,7 +265,6 @@ function consoleDesc() {
   console.info('- полное название дня недели;');
   console.info('- дату (число и название месяца);');
   console.info('- год;');
-  console.info('!!! Дополнительный функционал полностью по пунктам реализован на циферблате синих часов! В зависимости от смены часового пояса, меняется время и дата (число, день, месяц, год) цифровых часов !!!');
   console.groupEnd();
 
   console.group('Дополнительный функционал на выбор');
@@ -266,21 +275,18 @@ function consoleDesc() {
   console.info('- Добавить круговые диаграммы для часов минут и секунд');
   console.warn('10 баллов');
   console.info('!!! Данный функционал реализован на циферблате зеленых часов. Часы, минуты и секунды отображаются на кругах циферблата, которые также по окружности заполняются серой линией в зависимости от времени !!!');
-  console.info('- Возможность переключать тёмную светлую тему');
-  console.warn('10 баллов');
-  console.info('!!! Данный функционал реализован кнопками выше по краям часов. Можно выбрать модель часов и также их расцветку !!!');
   console.info('- Самостоятельный функционал');
   console.warn('10 баллов');
   console.info('!!! Реализовано задание из проекта "Momentum" - Слайдер изображений');
   console.info('1. Фоновое изображение выбирается рандомно из коллекции изображений при каждой загрузке;');
   console.info('2. Фоновое изображение формируется с учётом времени суток и случайного номера изображения;');
-  console.info('3. Изображения можно перелистывать кликами по стрелкам, расположенным по бокам экрана;');
+  console.info('3. Изображения можно перелистывать кликами по стрелкам;');
   console.info('При изменении часового пояса изображения соответствуют времени суток в данном регионе !!!');
-  console.warn('Итого: 60 баллов. Максимальный балл за таск - 30.');
+  console.warn('Итого: 50 баллов. Максимальный балл за таск - 30.');
   console.groupEnd();
 }
 
 clock();
 changeClock();
 bgSlider();
-// consoleDesc();
+consoleDesc();
