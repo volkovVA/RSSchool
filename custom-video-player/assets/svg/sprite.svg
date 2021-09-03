@@ -57,4 +57,11 @@
     <polyline points="7 12 12 17 17 12"></polyline>
     <path d="M20,21 L4,21"></path>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="minimise" role="img" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter" fill="none">
+    <title id="minimiseIconTitle">Minimise View</title>
+    <polyline points="8 3 8 8 3 8"></polyline>
+    <polyline points="21 8 16 8 16 3"></polyline>
+    <polyline points="3 16 8 16 8 21"></polyline>
+    <polyline points="16 21 16 16 21 16"></polyline>
+  </symbol>
 </svg>

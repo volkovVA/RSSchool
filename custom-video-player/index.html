@@ -56,10 +56,14 @@
             <input class="player__progress player__progress--volume" type="range" name="volume" value="0.5" min="0" max="1" step="0.05">
             <div class="player__playback-rate">
               <select class="player__speed" name="speed">
-                <option value="0.5">0.5x</option>
-                <option value="1" selected>1x</option>
-                <option value="1.5">1.5x</option>
-                <option value="2">2x</option>
+                <option value="0.25">0.25x</option>
+                <option value="0.5">0.50x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1" selected>1.00x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.50x</option>
+                <option value="1.75">1.75x</option>
+                <option value="2">2.00x</option>
               </select>
             </div>
             <a class="player__button player__button--download" href="./assets/video/louvre1.mp4" download="louvre1.mp4">
@@ -70,6 +74,9 @@
             <button class="player__button player__button--full" type="button">
               <svg class="player__icon player__icon--full">
                 <use xlink:href="./assets/svg/sprite.svg#full"></use>
+              </svg>
+              <svg class="player__icon player__icon--minimise">
+                <use xlink:href="./assets/svg/sprite.svg#minimise"></use>
               </svg>
             </button>
           </div>

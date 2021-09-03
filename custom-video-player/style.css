@@ -344,15 +344,18 @@ select:focus {
   stroke: #B3B3B3;
   transition: 0.3s;
 }
-.player__icon--speaker, .player__icon--full, .player__icon--download {
+.player__icon--speaker, .player__icon--full, .player__icon--download, .player__icon--minimise {
   width: 30px;
   height: 30px;
 }
 @media (max-width: 375px) {
-  .player__icon--speaker, .player__icon--full, .player__icon--download {
+  .player__icon--speaker, .player__icon--full, .player__icon--download, .player__icon--minimise {
     width: 24px;
     height: 24px;
   }
+}
+.player__icon--minimise {
+  display: none;
 }
 @media (max-width: 375px) {
   .player__icon {
@@ -485,7 +488,7 @@ select:focus {
 }
 
 .player__speed {
-  width: 66px;
+  width: 80px;
   font-size: 22px;
   font-weight: 700;
   color: #B3B3B3;

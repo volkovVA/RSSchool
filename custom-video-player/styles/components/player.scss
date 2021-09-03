@@ -153,13 +153,16 @@
   fill: $player-icon-color;
   stroke: $player-icon-color;
   transition: 0.3s;
-  &--speaker, &--full, &--download {
+  &--speaker, &--full, &--download, &--minimise {
     width: 30px;
     height: 30px;
     @include media-mobile {
       width: 24px;
       height: 24px;
     }
+  }
+  &--minimise {
+    display: none;
   }
   @include media-mobile {
     width: 20px;
@@ -289,7 +292,7 @@
 }
 
 .player__speed {
-  width: 66px;
+  width: 80px;
   font-size: 22px;
   font-weight: 700;
   color: $player-icon-color;
