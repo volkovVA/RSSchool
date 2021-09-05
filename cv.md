@@ -58,3 +58,19 @@ I’m developer in the field of Frontend development and determined to become a 
 *1998 - 2004 | Incomplete higher education*  
 
 ***
+
+### Courses and Certificates
+
++ #### [Profession: Web developer. Advanced course in Web Development / VUE](https://loftschool.com/diploma/NPR31420ZJ284PZW8/en/pdf)
+*2020 | IT-school "LoftSchool"*
++ #### [Modern JavaScript + Vue on real projects / Practical JavaScript (Advanced level)](https://www.udemy.com/certificate/UC-04c8a658-cb41-4d5a-844a-7879aeb9ccbd/)
+*2020 | Udemy*
++ #### [Promotion of websites and projects](https://loftschool.com/diploma/ZI89058085003/en/pdf) / [SEO](https://loftschool.com/diploma/SG43394254724/en/pdf)
+*2020 | IT-school "LoftSchool"*
++ #### [Web programmer. Creating websites in HTML 5 and CSS 3 / JavaScript](https://cdn.specialist.ru/Content/Temp/User/groupcert/1915216small.png)
+[Public Profile](https://www.specialist.ru/profile/public/1256405) / [Recommendation Letter](https://www.specialist.ru/graduate/best2019/740444)  
+*2019 | EC "Specialist" at the Bauman State Technical University of Moscow*
++ #### [Responsive Web Design](https://www.freecodecamp.org/certification/volkov_slava/responsive-web-design) / [JavaScript Algorithms and Data Structures](https://www.freecodecamp.org/certification/volkov_slava/javascript-algorithms-and-data-structures)
+*2019 | freeCodeCamp*  
+
+***
