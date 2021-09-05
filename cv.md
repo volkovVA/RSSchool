@@ -8,3 +8,9 @@ I’m developer in the field of Frontend development and determined to become a 
 
 **My purposes**: Styding and improving knowledge of HTML5, CSS3, JavaScript technologies. Study React (React Native, Redux), NodeJS.  
 **My strengths**:  I’m driven to succeed and deliver results. And I have the ability to learn new technologies quickly.
+
+#### 💬 *Contacts*:
++ **Phone**: +375 (29) 989-15-54, +7 (915) 377-79-81
++ **Email**: volkov.slava@hotmail.com
++ **Telegram**: @volkov_slava
++ **Linkedin** : https://www.linkedin.com/in/volkov-slava
