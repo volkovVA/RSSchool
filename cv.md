@@ -88,3 +88,5 @@ I’m developer in the field of Frontend development and determined to become a 
 My profile on Github: [volkovVA](https://github.com/volkovVA), where you can get acquainted with completed projects and tasks. All repositories are described in the readme.  
 
 ***
+
+###### ©️ Viacheslav Volkov
