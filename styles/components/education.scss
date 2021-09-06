@@ -1,0 +1,23 @@
+.education {
+  padding: rem(36) rem(20) rem(0) rem(50);
+}
+
+.education__container {
+  @include flex;
+}
+
+.education__box:first-child {
+  flex-basis: 33%;
+}
+
+.education__box:last-child {
+  flex-basis: 67%;
+}
+
+.education__major {
+  padding-top: rem(5);
+}
+
+.education__name {
+  margin-bottom: rem(5);
+}

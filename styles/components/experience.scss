@@ -2,17 +2,17 @@
   padding: rem(36) rem(20) rem(0) rem(50);
 }
 
-.experience__title {
-  margin-bottom: rem(20);
-}
-
 .experience__item {
   @include flex;
   margin-bottom: rem(20);
 }
 
 .experience__box:first-child {
-  margin-right: rem(30);
+  flex-basis: 33%;
+}
+
+.experience__box:last-child {
+  flex-basis: 67%;
 }
 
 .experience__position {

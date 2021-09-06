@@ -47,6 +47,7 @@
     background-color: $box-color;
   }
   &--color {
+    margin-bottom: rem(20);
     color: $title-color;
   }
 }

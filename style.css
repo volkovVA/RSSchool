@@ -128,6 +128,7 @@ button:active {
   background-color: #3a478e;
 }
 .title--color {
+  margin-bottom: 1.25rem;
   color: #434343;
 }
 
@@ -311,17 +312,17 @@ button:active {
   padding: 2.25rem 1.25rem 0rem 3.125rem;
 }
 
-.experience__title {
-  margin-bottom: 1.25rem;
-}
-
 .experience__item {
   display: flex;
   margin-bottom: 1.25rem;
 }
 
 .experience__box:first-child {
-  margin-right: 1.875rem;
+  flex-basis: 33%;
+}
+
+.experience__box:last-child {
+  flex-basis: 67%;
 }
 
 .experience__position {
@@ -338,6 +339,30 @@ button:active {
 
 .experience__date {
   white-space: nowrap;
+}
+
+.education {
+  padding: 2.25rem 1.25rem 0rem 3.125rem;
+}
+
+.education__container {
+  display: flex;
+}
+
+.education__box:first-child {
+  flex-basis: 33%;
+}
+
+.education__box:last-child {
+  flex-basis: 67%;
+}
+
+.education__major {
+  padding-top: 0.3125rem;
+}
+
+.education__name {
+  margin-bottom: 0.3125rem;
 }
 
 /*# sourceMappingURL=style.css.map */
