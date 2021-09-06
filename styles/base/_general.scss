@@ -10,6 +10,7 @@
   }
   &:last-child {
     flex-basis: 65%;
+    padding: rem(36) 0;
   }
 }
 
@@ -35,6 +36,9 @@
       background-color: $main-color;
       bottom: 18%;
     }
+  }
+  &--color {
+    color: $title-color;
   }
 }
 

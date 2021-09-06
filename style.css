@@ -90,6 +90,7 @@ button:active {
 }
 .column:last-child {
   flex-basis: 65%;
+  padding: 2.25rem 0;
 }
 
 .section {
@@ -118,6 +119,9 @@ button:active {
   height: 2px;
   background-color: #ffffff;
   bottom: 18%;
+}
+.title--color {
+  color: #434343;
 }
 
 .icon {
@@ -238,6 +242,41 @@ button:active {
 }
 .portfolio__link:hover {
   text-shadow: 2px 2px 1px #000000;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  background-color: #3a478e;
+  padding: 1.25rem 3.125rem;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  right: 4%;
+  top: -24%;
+  display: block;
+  background-image: url("../../assets/img/html+css+js.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 130px 60px;
+  width: 130px;
+  height: 60px;
+}
+
+.header__title {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+.header__title span {
+  margin-left: 0.625rem;
+  font-weight: 700;
+}
+
+.header__text {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */
