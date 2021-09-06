@@ -89,7 +89,7 @@ button:active {
 }
 .column:last-child {
   flex-basis: 65%;
-  padding: 2.25rem 0;
+  padding: 2.25rem 0 1.25rem;
 }
 
 .section {
@@ -400,6 +400,13 @@ button:active {
 }
 
 .references__position, .references__company {
+  font-weight: 500;
+}
+
+.footer {
+  width: 100%;
+  padding: 2.25rem 1.25rem 0rem 3.125rem;
+  font-size: 1.125rem;
   font-weight: 500;
 }
 

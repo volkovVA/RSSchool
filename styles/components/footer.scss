@@ -1,0 +1,5 @@
+.footer {
+  width: 100%;
+  padding: rem(36) rem(20) rem(0) rem(50);
+  @include font-source(rem(18), 500);
+}
