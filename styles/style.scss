@@ -1,6 +1,8 @@
+@import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
 @import "base/base";
+@import "base/general";
 
-// @import "components/";
+@import "components/avatar";

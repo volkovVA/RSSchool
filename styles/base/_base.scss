@@ -7,7 +7,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
-  font-size: $mainFontSize;
+  font-size: rem(16);
   scroll-behavior: smooth;
 }
 
@@ -68,7 +68,8 @@ button {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1024px;
   width: 95%;
   margin: 0 auto;
+  padding: 20px 0;
 }

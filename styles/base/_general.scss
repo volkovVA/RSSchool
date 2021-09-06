@@ -1,0 +1,13 @@
+.main {
+  @include flex;
+}
+
+.column {
+  @include flex(space-between, center, column);
+  &:first-child {
+    flex-basis: 35%;
+  }
+  &:last-child {
+    flex-basis: 65%;
+  }
+}

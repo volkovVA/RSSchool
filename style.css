@@ -7,7 +7,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
-  font-size: 16px;
+  font-size: 1rem;
   scroll-behavior: smooth;
 }
 
@@ -68,9 +68,38 @@ button:active {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1024px;
   width: 95%;
   margin: 0 auto;
+  padding: 20px 0;
+}
+
+.main {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.column:first-child {
+  flex-basis: 35%;
+}
+.column:last-child {
+  flex-basis: 65%;
+}
+
+.avatar {
+  width: 100%;
+}
+
+.avatar__image {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /*# sourceMappingURL=style.css.map */
