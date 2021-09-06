@@ -224,4 +224,20 @@ button:active {
   text-shadow: 2px 2px 1px #000000;
 }
 
+.portfolio__box {
+  display: flex;
+  padding: 2.25rem 3.125rem;
+}
+
+.portfolio__icon {
+  margin-right: 1.875rem;
+}
+
+.portfolio__link {
+  transition: text-shadow 0.2s;
+}
+.portfolio__link:hover {
+  text-shadow: 2px 2px 1px #000000;
+}
+
 /*# sourceMappingURL=style.css.map */

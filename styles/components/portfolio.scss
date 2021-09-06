@@ -1,0 +1,16 @@
+.portfolio__box {
+  @include flex;
+  padding: rem(36) rem(50);
+}
+
+.portfolio__icon {
+  margin-right: rem(30);
+}
+
+.portfolio__link {
+  transition: text-shadow 0.2s;
+  &:hover {
+    text-shadow: 2px 2px 1px $default-color;
+  }
+}
+
