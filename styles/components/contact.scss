@@ -1,7 +1,3 @@
-.contact__title {
-  // margin-bottom: rem(40);
-}
-
 .contact__list {
   padding: rem(36) rem(50);
 }
@@ -23,10 +19,9 @@
   align-self: flex-start
 }
 
-.contact__name {
-  @include font-source(rem(20), 500, $main-color);
-}
-
-.contact__text {
-  @include font-source(rem(16), 400, $main-color);
+.contact__link {
+  transition: text-shadow 0.2s;
+  &:hover {
+    text-shadow: 2px 2px 1px $default-color;
+  }
 }

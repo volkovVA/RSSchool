@@ -130,6 +130,18 @@ button:active {
   height: 2.25rem;
 }
 
+.text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #cbcccc;
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
 .avatar {
   width: 100%;
 }
@@ -162,16 +174,39 @@ button:active {
   align-self: flex-start;
 }
 
-.contact__name {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #ffffff;
+.contact__link {
+  transition: text-shadow 0.2s;
+}
+.contact__link:hover {
+  text-shadow: 2px 2px 1px #000000;
 }
 
-.contact__text {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #ffffff;
+.skills__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 2fr;
+  gap: 1rem 0;
+  padding: 2.25rem 3.125rem;
+}
+
+.skills__name {
+  position: relative;
+  margin-bottom: 1.125rem;
+  margin-left: 1rem;
+}
+.skills__name::before {
+  content: "//";
+  position: absolute;
+  display: block;
+  left: -1rem;
+}
+
+.skills__item {
+  margin-bottom: 0.625rem;
+}
+
+.skills__box {
+  height: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

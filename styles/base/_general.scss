@@ -47,3 +47,11 @@
     height: rem(36);
   }
 }
+
+.text {
+  @include font-source(rem(16), 400, $text-color);
+}
+
+.name {
+  @include font-source(rem(20), 500, $main-color);
+}

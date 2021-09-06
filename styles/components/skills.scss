@@ -1,0 +1,27 @@
+.skills__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 2fr;
+  gap: rem(16) 0; 
+  padding: rem(36) rem(50);
+}
+
+.skills__name {
+  position: relative;
+  margin-bottom: rem(18);
+  margin-left: rem(16);
+  &::before {
+    content: '//';
+    position: absolute;
+    display: block;
+    left: rem(-16);
+  }
+}
+
+.skills__item {
+  margin-bottom: rem(10);
+}
+
+.skills__box {
+  height: 50%;
+}
