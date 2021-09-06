@@ -85,10 +85,49 @@ button:active {
   flex-direction: column;
 }
 .column:first-child {
+  background-color: #434343;
   flex-basis: 35%;
 }
 .column:last-child {
   flex-basis: 65%;
+}
+
+.section {
+  width: 100%;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.title--bg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4.375rem;
+  padding: 0 3.125rem;
+  background-color: #3a478e;
+}
+.title--bg::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 2px;
+  background-color: #ffffff;
+  bottom: 18%;
+}
+
+.icon {
+  width: 1.875rem;
+  height: 1.875rem;
+  fill: #ffffff;
+}
+.icon--telegram {
+  width: 2.25rem;
+  height: 2.25rem;
 }
 
 .avatar {
@@ -100,6 +139,39 @@ button:active {
   max-height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.contact__list {
+  padding: 2.25rem 3.125rem;
+}
+
+.contact__item {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.contact__item:last-child {
+  margin-bottom: 0;
+}
+
+.contact__icon {
+  margin-right: 1.875rem;
+  padding: 0.4375rem 0;
+}
+
+.contact__desc {
+  align-self: flex-start;
+}
+
+.contact__name {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.contact__text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */

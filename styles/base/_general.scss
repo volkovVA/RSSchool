@@ -5,9 +5,45 @@
 .column {
   @include flex(space-between, center, column);
   &:first-child {
+    background-color: $bg-color;
     flex-basis: 35%;
   }
   &:last-child {
     flex-basis: 65%;
+  }
+}
+
+.section {
+  width: 100%;
+}
+
+.title {
+  @include font-source(rem(30), 500, $main-color);
+  text-transform: uppercase;
+  &--bg {
+    position: relative;
+    @include flex(none, center);
+    width: 100%;
+    height: rem(70);
+    padding: 0 rem(50);
+    background-color: $box-color;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 70%;
+      height: 2px;
+      background-color: $main-color;
+      bottom: 18%;
+    }
+  }
+}
+
+.icon {
+  width: rem(30);
+  height: rem(30);
+  fill: $main-color;
+  &--telegram {
+    width: rem(36);
+    height: rem(36);
   }
 }
