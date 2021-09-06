@@ -1,0 +1,14 @@
+.social__list {
+  padding: rem(36) rem(50);
+}
+
+.social__item {
+  margin-bottom: rem(16);
+}
+
+.social__link {
+  transition: text-shadow 0.2s;
+  &:hover {
+    text-shadow: 2px 2px 1px $default-color;
+  }
+}

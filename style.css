@@ -209,4 +209,19 @@ button:active {
   height: 50%;
 }
 
+.social__list {
+  padding: 2.25rem 3.125rem;
+}
+
+.social__item {
+  margin-bottom: 1rem;
+}
+
+.social__link {
+  transition: text-shadow 0.2s;
+}
+.social__link:hover {
+  text-shadow: 2px 2px 1px #000000;
+}
+
 /*# sourceMappingURL=style.css.map */
