@@ -19,7 +19,7 @@
 }
 
 .header__title {
-  @include font-source(rem(40), 300);
+  @include font-source(rem(40), 300, $main-color);
   & span {
     margin-left: rem(10);
     font-weight: 700;

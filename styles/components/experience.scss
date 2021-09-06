@@ -1,0 +1,32 @@
+.experience {
+  padding: rem(36) rem(20) rem(0) rem(50);
+}
+
+.experience__title {
+  margin-bottom: rem(20);
+}
+
+.experience__item {
+  @include flex;
+  margin-bottom: rem(20);
+}
+
+.experience__box:first-child {
+  margin-right: rem(30);
+}
+
+.experience__position {
+  padding-top: rem(5);
+}
+
+.experience__company {
+  margin-bottom: rem(5);
+}
+
+.experience__name {
+  color: $title-color;
+}
+
+.experience__date {
+  white-space: nowrap;
+}

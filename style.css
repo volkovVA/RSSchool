@@ -98,27 +98,34 @@ button:active {
 }
 
 .title {
+  position: relative;
+  display: block;
   font-size: 1.875rem;
   font-weight: 500;
   color: #ffffff;
   text-transform: uppercase;
 }
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 18%;
+  width: 70%;
+  height: 2px;
+  background-color: #ffffff;
+}
+.title--line::after {
+  left: 0;
+  bottom: -5%;
+  width: 100%;
+  background-color: #434343;
+}
 .title--bg {
-  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
   height: 4.375rem;
   padding: 0 3.125rem;
   background-color: #3a478e;
-}
-.title--bg::after {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 2px;
-  background-color: #ffffff;
-  bottom: 18%;
 }
 .title--color {
   color: #434343;
@@ -142,6 +149,14 @@ button:active {
   font-size: 1.25rem;
   font-weight: 500;
   color: #ffffff;
+}
+.name--color {
+  color: #434343;
+}
+.name--up {
+  margin-bottom: 0.4375rem;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 .avatar {
@@ -265,6 +280,7 @@ button:active {
 .header__title {
   font-size: 2.5rem;
   font-weight: 300;
+  color: #ffffff;
 }
 .header__title span {
   margin-left: 0.625rem;
@@ -278,7 +294,7 @@ button:active {
 }
 
 .about {
-  padding: 2.25rem 1.25rem 2.25rem 3.125rem;
+  padding: 2.25rem 1.25rem 0rem 3.125rem;
 }
 
 .about__title {
@@ -289,6 +305,39 @@ button:active {
 
 .about__text span {
   font-weight: 700;
+}
+
+.experience {
+  padding: 2.25rem 1.25rem 0rem 3.125rem;
+}
+
+.experience__title {
+  margin-bottom: 1.25rem;
+}
+
+.experience__item {
+  display: flex;
+  margin-bottom: 1.25rem;
+}
+
+.experience__box:first-child {
+  margin-right: 1.875rem;
+}
+
+.experience__position {
+  padding-top: 0.3125rem;
+}
+
+.experience__company {
+  margin-bottom: 0.3125rem;
+}
+
+.experience__name {
+  color: #434343;
+}
+
+.experience__date {
+  white-space: nowrap;
 }
 
 /*# sourceMappingURL=style.css.map */
