@@ -3,7 +3,7 @@
 }
 
 .column {
-  @include flex(space-between, center, column);
+  @include flex(none, center, column);
   &:first-child {
     background-color: $bg-color;
     flex-basis: 35%;

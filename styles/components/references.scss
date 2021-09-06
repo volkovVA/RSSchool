@@ -1,0 +1,17 @@
+.references {
+  padding: rem(36) rem(20) rem(0) rem(50);
+}
+
+.references__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.references__item {
+  margin-bottom: rem(20);
+}
+
+.references__position, .references__company {
+  font-weight: 500;
+}

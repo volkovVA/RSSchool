@@ -81,7 +81,6 @@ button:active {
 .column {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-direction: column;
 }
 .column:first-child {
@@ -383,6 +382,24 @@ button:active {
 }
 
 .courses__text {
+  font-weight: 500;
+}
+
+.references {
+  padding: 2.25rem 1.25rem 0rem 3.125rem;
+}
+
+.references__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.references__item {
+  margin-bottom: 1.25rem;
+}
+
+.references__position, .references__company {
   font-weight: 500;
 }
 
