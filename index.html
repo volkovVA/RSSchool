@@ -15,16 +15,121 @@
   <meta name="msapplication-TileColor" content="#ffc40d">
   <meta name="theme-color" content="#ffffff">
   <title>CV Viacheslav Volkov</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <svg class="icon">
-    <use xlink:href="./assets/svg/sprite.svg#github"></use>
-  </svg><svg class="icon">
-    <use xlink:href="./assets/svg/sprite.svg#phone"></use>
-  </svg><svg class="icon">
-    <use xlink:href="./assets/svg/sprite.svg#mail"></use>
-  </svg><svg class="icon">
-    <use xlink:href="./assets/svg/sprite.svg#telegram"></use>
-  </svg>
+  <div class="container">
+    <main class="main">
+      <aside class="column">
+        <div class="avatar">
+          <img src="./assets/img/avatar.jpg" alt="avatar">
+        </div>
+        <section class="section contact">
+          <h2 class="title contact__title">contact</h2>
+          <ul class="contact__list">
+            <li class="contact__item">
+              <div class="contact__box">
+                <div class="contact__icon">
+                  <svg class="icon">
+                    <use xlink:href="./assets/svg/sprite.svg#phone"></use>
+                  </svg>
+                </div>
+                <div class="contact__desc">
+                  <h3 class="contact__name">Phone:</h3>
+                  <a href="tel:+375299891554" class="text contact__text">+375(29) 989-15-54</a>
+                  <a href="tel:+79153777981" class="text contact__text">+7(915) 37-79-81</a>
+                </div>
+              </div>
+            </li>
+            <li class="contact__item">
+              <div class="contact__box">
+                <div class="contact__icon">
+                  <svg class="icon">
+                    <use xlink:href="./assets/svg/sprite.svg#mail"></use>
+                  </svg>
+                </div>
+                <div class="contact__desc">
+                  <h3 class="contact__name">Mail:</h3>
+                  <a href="mailto:volkov.slava@hotmail.com" class="text contact__text">volkov.slava@hotmail.com</a>
+                </div>
+              </div>
+            </li>
+            <li class="contact__item">
+              <div class="contact__box">
+                <div class="contact__icon">
+                  <svg class="icon">
+                    <use xlink:href="./assets/svg/sprite.svg#phone"></use>
+                  </svg>
+                </div>
+                <div class="contact__desc">
+                  <h3 class="contact__name">Telegram:</h3>
+                  <a href="tg://resolve?domain=volkov_slava" class="text contact__text">@volkov_slava</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="section skills">
+          <h2 class="title skills__title">skills</h2>
+          <div class="skills__box">
+            <h3 class="skills__name">Technical</h3>
+            <ul class="skills__list">
+              <li class="text skills__item">HTML / Pug</li>
+              <li class="text skills__item">CSS / Sass</li>
+              <li class="text skills__item">JavaScript</li>
+            </ul>
+          </div>
+          <div class="skills__box">
+            <h3 class="skills__name">Tools</h3>
+            <ul class="skills__list">
+              <li class="text skills__item">Git / GitHub</li>
+              <li class="text skills__item">Gulp / Webpack</li>
+              <li class="text skills__item">NPM / Yarn</li>
+              <li class="text skills__item">PhotoShop / Figma</li>
+              <li class="text skills__item">VS Code</li>
+            </ul>
+          </div>
+          <div class="skills__box">
+            <h3 class="skills__name">Soft</h3>
+            <ul class="skills__list">
+              <li class="text skills__item">Responsible</li>
+              <li class="text skills__item">Perseverance</li>
+              <li class="text skills__item">Hardworking</li>
+            </ul>
+          </div>
+          <div class="skills__box">
+            <h3 class="skills__name">Languages</h3>
+            <ul class="skills__list">
+              <li class="text skills__item">Russian native</li>
+              <li class="text skills__item">English A2</li>
+            </ul>
+          </div>
+        </section>
+        <section class="section social">
+          <h2 class="title social__title">skills</h2>
+          <ul class="social__list">
+            <li class="social__item">
+              <h3 class="sociaL__name">LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/volkov-slava/" class="text social__link">https://www.linkedin.com/in/volkov-slava/</a>
+              <h3 class="sociaL__name">VK</h3>
+              <a href="https://vk.com/volkov.viacheslav" class="text social__link">https://vk.com/volkov.viacheslav</a>
+            </li>
+          </ul>
+        </section>
+        <section class="section portfolio">
+          <h2 class="title portfolio__title">portfolio</h2>
+          <div class="portfolio__box">
+            <div class="portfolio__icon">
+              <svg class="icon">
+                <use xlink:href="./assets/svg/sprite.svg#github"></use>
+              </svg>
+            </div>
+            <a href="https://github.com/volkovVA" class="text portfolio__link">https://github.com/volkovVA</a>
+          </div>
+        </section>
+      </aside>
+      <aside class="column"></aside>
+    </main>
+  </div>
 </body>
 </html>
