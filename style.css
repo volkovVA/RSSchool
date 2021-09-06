@@ -68,7 +68,7 @@ button:active {
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 1200px;
   width: 95%;
   margin: 0 auto;
   padding: 20px 0;
@@ -128,7 +128,7 @@ button:active {
   background-color: #3a478e;
 }
 .title--color {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.875rem;
   color: #434343;
 }
 
@@ -155,7 +155,7 @@ button:active {
   color: #434343;
 }
 .name--up {
-  margin-bottom: 0.4375rem;
+  margin-bottom: 0.3125rem;
   font-size: 1rem;
   text-transform: uppercase;
 }
@@ -338,6 +338,7 @@ button:active {
 }
 
 .experience__date {
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -363,6 +364,26 @@ button:active {
 
 .education__name {
   margin-bottom: 0.3125rem;
+}
+
+.education__date {
+  font-weight: 500;
+}
+
+.courses {
+  padding: 2.25rem 1.25rem 0rem 3.125rem;
+}
+
+.courses__item {
+  margin-bottom: 1.25rem;
+}
+
+.courses__name {
+  margin-bottom: 0.3125rem;
+}
+
+.courses__text {
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */
