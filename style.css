@@ -17,7 +17,7 @@ body {
   padding: 0;
   font-family: "Roboto", Arial, sans-serif;
   background-color: #ffffff;
-  color: #000;
+  color: #7a7a7a;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -135,8 +135,6 @@ button:active {
 }
 
 .text {
-  font-size: 1rem;
-  font-weight: 400;
   color: #cbcccc;
 }
 
@@ -277,6 +275,20 @@ button:active {
   font-size: 1.5rem;
   font-weight: 300;
   color: #ffffff;
+}
+
+.about {
+  padding: 2.25rem 1.25rem 2.25rem 3.125rem;
+}
+
+.about__title {
+  margin-bottom: 0.625rem;
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+
+.about__text span {
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

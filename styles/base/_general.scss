@@ -53,7 +53,7 @@
 }
 
 .text {
-  @include font-source(rem(16), 400, $text-color);
+  color: $text-color;
 }
 
 .name {
