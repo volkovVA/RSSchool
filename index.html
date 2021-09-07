@@ -34,7 +34,7 @@
                 </svg>
               </div>
               <div class="contact__desc">
-                <h3 class="name contact__name">Phone:</h3>
+                <h3 class="name name--color contact__name">Phone:</h3>
                 <a href="tel:+375299891554" class="text contact__link">+375(29) 989-15-54</a>
                 <a href="tel:+79153777981" class="text contact__link">+7(915) 37-79-81</a>
               </div>
@@ -46,7 +46,7 @@
                 </svg>
               </div>
               <div class="contact__desc">
-                <h3 class="name contact__name">Mail:</h3>
+                <h3 class="name name--color contact__name">Mail:</h3>
                 <a href="mailto:volkov.slava@hotmail.com" class="text contact__link">volkov.slava@hotmail.com</a>
               </div>
             </li>
@@ -57,7 +57,7 @@
                 </svg>
               </div>
               <div class="contact__desc">
-                <h3 class="name contact__name">Telegram:</h3>
+                <h3 class="name name--color contact__name">Telegram:</h3>
                 <a href="tg://resolve?domain=volkov_slava" class="text contact__link">@volkov_slava</a>
               </div>
             </li>
@@ -67,7 +67,7 @@
           <h2 class="title title--bg skills__title">skills</h2>
           <div class="skills__container">
             <div class="skills__box">
-              <h3 class="name skills__name">Technical</h3>
+              <h3 class="name name--color skills__name">Technical</h3>
               <ul class="skills__list">
                 <li class="text skills__item">HTML / Pug</li>
                 <li class="text skills__item">CSS / Sass</li>
@@ -75,7 +75,7 @@
               </ul>
             </div>
             <div class="skills__box">
-              <h3 class="name skills__name">Tools</h3>
+              <h3 class="name name--color skills__name">Tools</h3>
               <ul class="skills__list">
                 <li class="text skills__item">Git / GitHub</li>
                 <li class="text skills__item">Gulp / Webpack</li>
@@ -85,7 +85,7 @@
               </ul>
             </div>
             <div class="skills__box">
-              <h3 class="name skills__name">Soft</h3>
+              <h3 class="name name--color skills__name">Soft</h3>
               <ul class="skills__list">
                 <li class="text skills__item">Responsible</li>
                 <li class="text skills__item">Perseverance</li>
@@ -93,7 +93,7 @@
               </ul>
             </div>
             <div class="skills__box">
-              <h3 class="name skills__name">Languages</h3>
+              <h3 class="name name--color skills__name">Languages</h3>
               <ul class="skills__list">
                 <li class="text skills__item">Russian native</li>
                 <li class="text skills__item">English A2</li>
@@ -105,26 +105,41 @@
           <h2 class="title title--bg social__title">social</h2>
           <ul class="social__list">
             <li class="social__item">
-              <h3 class="name sociaL__name">LinkedIn</h3>
-              <a href="https://www.linkedin.com/in/volkov-slava/" class="text social__link">https://www.linkedin.com/in/volkov-slava/</a>
+              <h3 class="name name--color sociaL__name">LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/volkov-slava/" class="text social__link" rel="noopener noreferrer" target="_blank">https://www.linkedin.com/in/volkov-slava/</a>
             </li>
             <li class="social__item">
-              <h3 class="name sociaL__name">VK</h3>
-              <a href="https://vk.com/volkov.viacheslav" class="text social__link">https://vk.com/volkov.viacheslav</a>
+              <h3 class="name name--color sociaL__name">VK</h3>
+              <a href="https://vk.com/volkov.viacheslav" class="text social__link" rel="noopener noreferrer" target="_blank">https://vk.com/volkov.viacheslav</a>
             </li>
           </ul>
         </section>
         <section class="section portfolio">
           <h2 class="title title--bg portfolio__title">portfolio</h2>
-          <div class="portfolio__box">
-            <div class="portfolio__icon">
-              <svg class="icon">
-                <use xlink:href="./assets/svg/sprite.svg#github"></use>
-              </svg>
+          <div class="portfolio__container">
+            <div class="portfolio__box">
+              <div class="portfolio__icon">
+                <svg class="icon">
+                  <use xlink:href="./assets/svg/sprite.svg#github"></use>
+                </svg>
+              </div>
+              <a href="https://github.com/volkovVA" class="text portfolio__link" rel="noopener noreferrer" target="_blank">https://github.com/volkovVA</a>
             </div>
-            <a href="https://github.com/volkovVA" class="text portfolio__link">https://github.com/volkovVA</a>
+            <h3 class="name name--color portfolio__name">My latest projects:</h3>
+            <ul class="portfolio__list">
+              <li class="portfolio__item">
+                <a class="text portfolio__link" href="https://volkovva.github.io/js-clock/" rel="noopener noreferrer" target="_blank">JS Clock</a>
+              </li>
+              <li class="portfolio__item">
+                <a class="text portfolio__link" href="https://volkovva.github.io/custom-video-player/" rel="noopener noreferrer" target="_blank">Custon Video Player</a>
+              </li>
+              <li class="portfolio__item">
+                <a class="text portfolio__link" href="https://github.com/volkovVA/virtual-piano" rel="noopener noreferrer" target="_blank">Virtual Piano</a>
+              </li>
+            </ul>
           </div>
         </section>
+        <p class="column__name">&#169; Viacheslav Volkov</p>
       </aside>
       <aside class="column">
         <header class="header">
@@ -140,21 +155,21 @@
           <ul class="experience__list">
             <li class="experience__item">
               <div class="experience__box">
-                <h3 class="name name--color name--up experience__position">webmaster</h3>
+                <h3 class="name name--up experience__position">webmaster</h3>
                 <span class="experience__date">Dec 2020 - May 2021</span>
               </div>
               <div class="experience__box">
-                <h3 class="name name--color experience__company">Seoready | Saint-Petersburg</h3>
+                <h3 class="name experience__company">Seoready | Saint-Petersburg</h3>
                 <p class="experience__text">Layout of new pages and editing of the layout, adjusting the adaptability of pages for mobile devices, correcting validator errors, eliminating bugs. Technical audit of sites and correction of technical aspects of the site. Code optimization in order to speed up the site. Updating text and graphic content.</p>
               </div>
             </li>
             <li class="experience__item">
               <div class="experience__box">
-                <h3 class="name name--color name--up experience__position">assistant mentor</h3>
+                <h3 class="name name--up experience__position">assistant mentor</h3>
                 <span class="experience__date">June 2020 - Dec 2020</span>
               </div>
               <div class="experience__box">
-                <h3 class="name name--color experience__company">LoftSchool | Saint-Petersburg</h3>
+                <h3 class="name experience__company">LoftSchool | Saint-Petersburg</h3>
                 <p class="experience__text">I taught students markup code, HTML semantics and CSS styles. JavaScript basics, adaptive layout, basic functionality of working with Git. I checked the practical tasks of students, reviewed the code, sorted out errors.</p>
               </div>
             </li>
@@ -164,12 +179,12 @@
           <h2 class="title title--color title--line education__title">education</h2>
           <div class="education__container">
             <div class="education__box">
-              <h3 class="name name--color name--up education__major">economist manager</h3>
+              <h3 class="name name--up education__major">economist manager</h3>
               <span class="education__date">1998 - 2004</span>
             </div>
             <div class="education__box">
-              <h3 class="name name--color education__name">Sukhoi State Technical University | Gomel</h3>
-              <p class="education__text">Incomplete higher education</>
+              <h3 class="name education__name">Sukhoi State Technical University | Gomel</h3>
+              <p class="education__text">Incomplete higher education</p>
             </div>
           </div>
         </section>
@@ -177,23 +192,23 @@
           <h2 class="title title--color title--line courses__title">courses & certificates</h2>
           <ul class="courses__list">
             <li class="courses__item">
-              <h3 class="name name--color courses__name">Profession: Web developer. Advanced course in Web Development / VUE</h3>
+              <h3 class="name courses__name">Profession: Web developer. Advanced course in Web Development / VUE</h3>
               <p class="courses__text">2020 | IT-school “Loftschool”</p>
             </li>
             <li class="courses__item">
-              <h3 class="name name--color courses__name">Modern JavaScript + Vue on real projects / Practical JavaScript (Advanced level)</h3>
+              <h3 class="name courses__name">Modern JavaScript + Vue on real projects / Practical JavaScript (Advanced level)</h3>
               <p class="courses__text">2020 | Udemy</p>
             </li>
             <li class="courses__item">
-              <h3 class="name name--color courses__name">Promotion of websites and projects / SEO</h3>
+              <h3 class="name courses__name">Promotion of websites and projects / SEO</h3>
               <p class="courses__text">2020 | IT-school “Loftschool”</p>
             </li>
             <li class="courses__item">
-              <h3 class="name name--color courses__name">Web programmer. Creating websites in HTML 5 and CSS 3 / JavaScript</h3>
+              <h3 class="name courses__name">Web programmer. Creating websites in HTML 5 and CSS 3 / JavaScript</h3>
               <p class="courses__text">2019 | EC “Specialist” at the Bauman State Technical University of Moscow</p>
             </li>
             <li class="courses__item">
-              <h3 class="name name--color courses__name">Responsive Web Design / JavaScript Algorithms and Data Structures</h3>
+              <h3 class="name courses__name">Responsive Web Design / JavaScript Algorithms and Data Structures</h3>
               <p class="courses__text">2019 | freeCodeCamp</p>
             </li>
           </ul>
@@ -202,23 +217,31 @@
           <h2 class="title title--color title--line references__title">references</h2>
           <ul class="references__list">
             <li class="references__item">
-              <h3 class="name name--up name--color references__name">narmatova natalia</h3>
+              <h3 class="name name--up references__name">narmatova natalia</h3>
               <p class="references__position">Head of Marketing Department</p>
               <p class="references__company">"Seoready"</p>
             </li>
             <li class="references__item">
-              <h3 class="name name--up name--color references__name">kovalchuk dmitriy</h3>
+              <h3 class="name name--up references__name">kovalchuk dmitriy</h3>
               <p class="references__position">Head of IT Department</p>
               <p class="references__company">"LoftSchool"</p>
             </li>
             <li class="references__item">
-              <h3 class="name name--up name--color references__name">dryabin boris</h3>
+              <h3 class="name name--up references__name">dryabin boris</h3>
               <p class="references__position">Senior Developer</p>
               <p class="references__company">"Rostelecom-Solar"</p>
             </li>
           </ul>
         </section>
-        <footer class="footer">&#169; Viacheslav Volkov</footer>
+        <footer class="footer">
+          <a class="footer__github" href="https://github.com/volkovVA" rel="noopener noreferrer" target="_blank">
+            <svg class="icon footer__icon">
+              <use xlink:href="./assets/svg/sprite.svg#github"></use>
+            </svg>
+          </a>
+          <time class="footer__year">2021</time>
+          <a class="footer__rsschool" href="https://rs.school/js/"></a>
+        </footer>
       </aside>
     </main>
   </div>

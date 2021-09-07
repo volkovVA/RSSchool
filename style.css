@@ -76,6 +76,7 @@ button:active {
 
 .main {
   display: flex;
+  box-shadow: 4px 4px 8px #000;
 }
 
 .column {
@@ -89,7 +90,12 @@ button:active {
 }
 .column:last-child {
   flex-basis: 65%;
-  padding: 2.25rem 0 1.25rem;
+  padding: 3.125rem 0 1.25rem;
+}
+.column__name {
+  display: inline-block;
+  margin: auto auto 0.625rem 3.125rem;
+  color: #cbcccc;
 }
 
 .section {
@@ -99,7 +105,7 @@ button:active {
 .title {
   position: relative;
   display: block;
-  font-size: 1.875rem;
+  font-size: 1.625rem;
   font-weight: 500;
   color: #ffffff;
   text-transform: uppercase;
@@ -148,13 +154,13 @@ button:active {
 .name {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #ffffff;
-}
-.name--color {
   color: #434343;
 }
+.name--color {
+  color: #ffffff;
+}
 .name--up {
-  margin-bottom: 0.3125rem;
+  margin-bottom: 0.5rem;
   font-size: 1rem;
   text-transform: uppercase;
 }
@@ -168,6 +174,10 @@ button:active {
   max-height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.contact {
+  padding-top: 3.125rem;
 }
 
 .contact__list {
@@ -188,6 +198,8 @@ button:active {
 }
 
 .contact__desc {
+  display: flex;
+  flex-direction: column;
   align-self: flex-start;
 }
 
@@ -241,9 +253,17 @@ button:active {
   text-shadow: 2px 2px 1px #000000;
 }
 
+.portfolio__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2.25rem 3.125rem;
+}
+
 .portfolio__box {
   display: flex;
-  padding: 2.25rem 3.125rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
 }
 
 .portfolio__icon {
@@ -255,6 +275,15 @@ button:active {
 }
 .portfolio__link:hover {
   text-shadow: 2px 2px 1px #000000;
+}
+
+.portfolio__name {
+  margin-bottom: 0.625rem;
+}
+
+.portfolio__item {
+  margin-bottom: 0.625rem;
+  padding: 0 1.25rem;
 }
 
 .header {
@@ -278,13 +307,13 @@ button:active {
 }
 
 .header__title {
-  font-size: 2.5rem;
+  font-size: 3.125rem;
   font-weight: 300;
   color: #ffffff;
 }
 .header__title span {
   margin-left: 0.625rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .header__text {
@@ -299,11 +328,12 @@ button:active {
 
 .about__title {
   margin-bottom: 0.625rem;
-  font-size: 1.625rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
 .about__text span {
+  margin-top: 0.1875rem;
   font-weight: 700;
 }
 
@@ -311,9 +341,37 @@ button:active {
   padding: 2.25rem 1.25rem 0rem 3.125rem;
 }
 
+.experience__list {
+  position: relative;
+  padding-left: 2.125rem;
+}
+.experience__list::before {
+  content: "";
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 2px;
+  background-color: #434343;
+}
+
 .experience__item {
+  position: relative;
   display: flex;
   margin-bottom: 1.25rem;
+}
+.experience__item::before {
+  content: "";
+  position: absolute;
+  top: 0.625rem;
+  left: -2.6875rem;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid #434343;
+  background-color: #cbcccc;
 }
 
 .experience__box:first-child {
@@ -325,7 +383,7 @@ button:active {
 }
 
 .experience__position {
-  padding-top: 0.3125rem;
+  padding-top: 0.1875rem;
 }
 
 .experience__company {
@@ -346,7 +404,33 @@ button:active {
 }
 
 .education__container {
+  position: relative;
   display: flex;
+  padding-left: 2.125rem;
+}
+.education__container::before {
+  content: "";
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 2px;
+  background-color: #434343;
+}
+.education__container::after {
+  content: "";
+  position: absolute;
+  top: 0.625rem;
+  left: -2.6875rem;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid #434343;
+  background-color: #cbcccc;
+  top: 12%;
+  left: -1.3%;
 }
 
 .education__box:first-child {
@@ -358,7 +442,7 @@ button:active {
 }
 
 .education__major {
-  padding-top: 0.3125rem;
+  padding-top: 0.1875rem;
 }
 
 .education__name {
@@ -373,8 +457,36 @@ button:active {
   padding: 2.25rem 1.25rem 0rem 3.125rem;
 }
 
+.courses__list {
+  position: relative;
+  padding-left: 2.125rem;
+}
+.courses__list::before {
+  content: "";
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 2px;
+  background-color: #434343;
+}
+
 .courses__item {
+  position: relative;
   margin-bottom: 1.25rem;
+}
+.courses__item::before {
+  content: "";
+  position: absolute;
+  top: 0.625rem;
+  left: -2.6875rem;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid #434343;
+  background-color: #cbcccc;
 }
 
 .courses__name {
@@ -390,13 +502,51 @@ button:active {
 }
 
 .references__list {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  padding-left: 2.125rem;
+}
+.references__list::before {
+  content: "";
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 2px;
+  background-color: #434343;
+  height: 86%;
 }
 
 .references__item {
+  position: relative;
   margin-bottom: 1.25rem;
+}
+.references__item::before {
+  content: "";
+  position: absolute;
+  top: 0.625rem;
+  left: -2.6875rem;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid #434343;
+  background-color: #cbcccc;
+}
+.references__item:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 2px;
+  background-color: #434343;
+  left: -2.125rem;
+  z-index: -1;
 }
 
 .references__position, .references__company {
@@ -404,10 +554,34 @@ button:active {
 }
 
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   width: 100%;
   padding: 2.25rem 1.25rem 0rem 3.125rem;
   font-size: 1.125rem;
   font-weight: 500;
+}
+
+.footer__icon {
+  fill: #7a7a7a;
+}
+
+.footer__rsschool {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-image: url("../../assets/svg/rsschool.svg");
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.footer__rsschool, .footer__github {
+  transition: 0.2s;
+}
+.footer__rsschool:hover, .footer__github:hover {
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */

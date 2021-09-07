@@ -1,6 +1,11 @@
-.portfolio__box {
-  @include flex;
+.portfolio__container{
+  @include flex(center, none, column);
   padding: rem(36) rem(50);
+}
+
+.portfolio__box {
+  @include flex(none, center);
+  margin-bottom: rem(20);
 }
 
 .portfolio__icon {
@@ -14,3 +19,11 @@
   }
 }
 
+.portfolio__name {
+  margin-bottom: rem(10);
+}
+
+.portfolio__item {
+  margin-bottom: rem(10);
+  padding: 0 rem(20);
+}

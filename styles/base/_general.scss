@@ -1,5 +1,6 @@
 .main {
   @include flex;
+  box-shadow: 4px 4px 8px #000;
 }
 
 .column {
@@ -10,7 +11,12 @@
   }
   &:last-child {
     flex-basis: 65%;
-    padding: rem(36) 0 rem(20);
+    padding: rem(50) 0 rem(20);
+  }
+  &__name {
+    display: inline-block;
+    margin: auto auto rem(10) rem(50);
+    color: $text-color;
   }
 }
 
@@ -21,7 +27,7 @@
 .title {
   position: relative;
   display: block;
-  @include font-source(rem(30), 500, $main-color);
+  @include font-source(rem(26), 500, $main-color);
   text-transform: uppercase;
   &::after {
     content: '';
@@ -67,12 +73,12 @@
 }
 
 .name {
-  @include font-source(rem(20), 500, $main-color);
+  @include font-source(rem(20), 500, $title-color);
   &--color {
-    color: $title-color;
+    color: $main-color;
   }
   &--up {
-    margin-bottom: rem(5);
+    margin-bottom: rem(8);
     font-size: rem(16);
     text-transform: uppercase;
   }

@@ -1,5 +1,27 @@
 .footer {
+  @include flex(space-around, center, none);
   width: 100%;
   padding: rem(36) rem(20) rem(0) rem(50);
   @include font-source(rem(18), 500);
+}
+
+.footer__icon {
+  fill: $text-dark-color;
+}
+
+.footer__rsschool {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-image: url('../../assets/svg/rsschool.svg');
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.footer__rsschool, .footer__github {
+  transition: 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
