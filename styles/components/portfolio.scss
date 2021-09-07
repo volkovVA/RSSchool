@@ -1,6 +1,9 @@
 .portfolio__container{
   @include flex(center, none, column);
   padding: rem(36) rem(50);
+  @include media-tablet {
+    padding: rem(16) rem(30);
+  }
 }
 
 .portfolio__box {

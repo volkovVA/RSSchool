@@ -73,10 +73,26 @@ button:active {
   margin: 0 auto;
   padding: 20px 0;
 }
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+}
 
 .main {
   display: flex;
   box-shadow: 4px 4px 8px #000;
+}
+@media (max-width: 1024px) {
+  .main {
+    box-shadow: none;
+  }
+}
+@media (max-width: 375px) {
+  .main {
+    display: block;
+  }
 }
 
 .column {
@@ -183,6 +199,11 @@ button:active {
 .contact__list {
   padding: 2.25rem 3.125rem;
 }
+@media (max-width: 1024px) {
+  .contact__list {
+    padding: 1rem 1.875rem;
+  }
+}
 
 .contact__item {
   display: flex;
@@ -217,6 +238,11 @@ button:active {
   gap: 1rem 0;
   padding: 2.25rem 3.125rem;
 }
+@media (max-width: 1024px) {
+  .skills__container {
+    padding: 1rem 1.875rem;
+  }
+}
 
 .skills__name {
   position: relative;
@@ -241,6 +267,11 @@ button:active {
 .social__list {
   padding: 2.25rem 3.125rem;
 }
+@media (max-width: 1024px) {
+  .social__list {
+    padding: 1rem 1.875rem;
+  }
+}
 
 .social__item {
   margin-bottom: 1rem;
@@ -258,6 +289,11 @@ button:active {
   justify-content: center;
   flex-direction: column;
   padding: 2.25rem 3.125rem;
+}
+@media (max-width: 1024px) {
+  .portfolio__container {
+    padding: 1rem 1.875rem;
+  }
 }
 
 .portfolio__box {
@@ -296,7 +332,7 @@ button:active {
   content: "";
   position: absolute;
   right: 4%;
-  top: -24%;
+  top: -2.125rem;
   display: block;
   background-image: url("../../assets/img/html+css+js.png");
   background-repeat: no-repeat;
@@ -373,9 +409,19 @@ button:active {
   border: 2px solid #434343;
   background-color: #cbcccc;
 }
+@media (max-width: 1024px) {
+  .experience__item {
+    display: block;
+  }
+}
 
 .experience__box:first-child {
   flex-basis: 33%;
+}
+@media (max-width: 1024px) {
+  .experience__box:first-child {
+    margin-bottom: 0.625rem;
+  }
 }
 
 .experience__box:last-child {
@@ -518,6 +564,11 @@ button:active {
   width: 2px;
   background-color: #434343;
   height: 86%;
+}
+@media (max-width: 1024px) {
+  .references__list {
+    gap: 3.125rem;
+  }
 }
 
 .references__item {

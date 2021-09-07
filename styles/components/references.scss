@@ -12,6 +12,9 @@
     @include line;
     height: 86%;
   }
+  @include media-tablet {
+    gap: rem(50);
+  }
 }
 
 .references__item {

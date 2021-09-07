@@ -1,6 +1,12 @@
 .main {
   @include flex;
   box-shadow: 4px 4px 8px #000;
+  @include media-tablet {
+    box-shadow: none;
+  }
+  @include media-mobile {
+    display: block
+  }
 }
 
 .column {

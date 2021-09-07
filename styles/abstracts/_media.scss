@@ -1,0 +1,15 @@
+@import "./variables";
+
+@mixin media-tablet{
+
+  @media (max-width: $mediaWidthTablet) {
+      @content;
+  }
+}
+
+@mixin media-mobile {
+
+  @media (max-width: $mediaWidthMobile) {
+      @content;
+  }
+}

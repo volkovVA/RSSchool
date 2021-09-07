@@ -4,6 +4,9 @@
   grid-template-rows: 3fr 2fr;
   gap: rem(16) 0; 
   padding: rem(36) rem(50);
+  @include media-tablet {
+    padding: rem(16) rem(30);
+  }
 }
 
 .skills__name {

@@ -17,10 +17,16 @@
   &::before {
     @include circle;
   }
+  @include media-tablet {
+    display: block;
+  }
 }
 
 .experience__box:first-child {
   flex-basis: 33%;
+  @include media-tablet {
+    margin-bottom: rem(10);
+  }
 }
 
 .experience__box:last-child {

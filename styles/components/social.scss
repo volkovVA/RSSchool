@@ -1,5 +1,8 @@
 .social__list {
   padding: rem(36) rem(50);
+  @include media-tablet {
+    padding: rem(16) rem(30);
+  }
 }
 
 .social__item {
