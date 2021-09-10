@@ -162,6 +162,10 @@ button:active {
   width: 2.25rem;
   height: 2.25rem;
 }
+.icon--github {
+  width: 2.5rem;
+  height: 2.5rem;
+}
 
 .text {
   color: #cbcccc;
@@ -225,10 +229,12 @@ button:active {
 }
 
 .contact__link {
+  display: inline-block;
+  margin-bottom: 0.1875rem;
   transition: text-shadow 0.2s;
 }
 .contact__link:hover {
-  text-shadow: 2px 2px 1px #000000;
+  text-shadow: 3px 3px 2px #000000;
 }
 
 .skills__container {
@@ -281,7 +287,7 @@ button:active {
   transition: text-shadow 0.2s;
 }
 .social__link:hover {
-  text-shadow: 2px 2px 1px #000000;
+  text-shadow: 3px 3px 2px #000000;
 }
 
 .portfolio__container {
@@ -310,7 +316,7 @@ button:active {
   transition: text-shadow 0.2s;
 }
 .portfolio__link:hover {
-  text-shadow: 2px 2px 1px #000000;
+  text-shadow: 3px 3px 2px #000000;
 }
 
 .portfolio__name {
@@ -334,7 +340,7 @@ button:active {
   right: 4%;
   top: -2.125rem;
   display: block;
-  background-image: url("../../assets/img/html+css+js.png");
+  background-image: url("./assets/img/html+css+js.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 130px 60px;
@@ -434,6 +440,10 @@ button:active {
 
 .experience__company {
   margin-bottom: 0.3125rem;
+  transition: text-shadow 0.2s;
+}
+.experience__company:hover {
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);
 }
 
 .experience__name {
@@ -535,8 +545,20 @@ button:active {
   background-color: #cbcccc;
 }
 
-.courses__name {
+.courses__link {
+  display: inline-block;
   margin-bottom: 0.3125rem;
+  transition: text-shadow 0.2s;
+}
+.courses__link--udemy, .courses__link--freecodecamp {
+  display: inline;
+}
+.courses__link--text {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.courses__link:hover {
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);
 }
 
 .courses__text {
@@ -620,10 +642,10 @@ button:active {
 
 .footer__rsschool {
   display: inline-block;
-  width: 70px;
-  height: 70px;
-  background-image: url("../../assets/svg/rsschool.svg");
-  background-size: 70px 70px;
+  width: 5.625rem;
+  height: 2.125rem;
+  background-image: url("./assets/svg/rsschool.svg");
+  background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.6;
 }
@@ -633,6 +655,10 @@ button:active {
 }
 .footer__rsschool:hover, .footer__github:hover {
   transform: scale(1.1);
+}
+
+.footer__year {
+  font-size: 1.25rem;
 }
 
 /*# sourceMappingURL=style.css.map */

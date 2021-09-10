@@ -11,10 +11,10 @@
 
 .footer__rsschool {
   display: inline-block;
-  width: 70px;
-  height: 70px;
-  background-image: url('../../assets/svg/rsschool.svg');
-  background-size: 70px 70px;
+  width: rem(90);
+  height: rem(34);
+  background-image: url('./assets/svg/rsschool.svg');
+  background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.6;
 }
@@ -24,4 +24,8 @@
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.footer__year {
+  font-size: rem(20);
 }

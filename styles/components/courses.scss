@@ -18,8 +18,20 @@
   }
 }
 
-.courses__name {
+.courses__link {
+  display: inline-block;
   margin-bottom: rem(5);
+  transition: text-shadow 0.2s;
+  &--udemy, &--freecodecamp {
+    display: inline;
+  }
+  &--text {
+    font-size: rem(18);
+    font-weight: 500;
+  }
+  &:hover {
+    text-shadow: 3px 3px 2px rgba(0,0,0,0.4);
+  }
 }
 
 .courses__text {

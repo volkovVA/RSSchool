@@ -28,8 +28,10 @@
 }
 
 .contact__link {
+  display: inline-block;
+  margin-bottom: rem(3);
   transition: text-shadow 0.2s;
   &:hover {
-    text-shadow: 2px 2px 1px $default-color;
+    text-shadow: 3px 3px 2px $default-color;
   }
 }
