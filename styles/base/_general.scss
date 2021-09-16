@@ -13,10 +13,10 @@
   @include flex(none, center, column);
   &:first-child {
     background-color: $bg-color;
-    flex-basis: 35%;
+    flex-basis: 36%;
   }
   &:last-child {
-    flex-basis: 65%;
+    flex-basis: 64%;
     padding: rem(50) 0 rem(20);
   }
   &__name {

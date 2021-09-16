@@ -43,6 +43,15 @@ h6 {
 a {
   text-decoration: none;
   color: inherit;
+  border-bottom: 1px dotted $title-color;
+}
+
+aside:first-child a {
+  border-color: $main-color;
+}
+
+footer a {
+  border: none;
 }
 
 ul {

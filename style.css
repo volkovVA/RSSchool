@@ -43,6 +43,15 @@ h6 {
 a {
   text-decoration: none;
   color: inherit;
+  border-bottom: 1px dotted #434343;
+}
+
+aside:first-child a {
+  border-color: #ffffff;
+}
+
+footer a {
+  border: none;
 }
 
 ul {
@@ -102,10 +111,10 @@ button:active {
 }
 .column:first-child {
   background-color: #434343;
-  flex-basis: 35%;
+  flex-basis: 36%;
 }
 .column:last-child {
-  flex-basis: 65%;
+  flex-basis: 64%;
   padding: 3.125rem 0 1.25rem;
 }
 .column__name {
@@ -554,8 +563,12 @@ button:active {
   display: inline;
 }
 .courses__link--text {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
+  font-style: italic;
+}
+.courses__link--text:nth-child(4) {
+  color: #3a478e;
 }
 .courses__link:hover {
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);

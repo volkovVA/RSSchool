@@ -1,259 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="./assets/favicon/site.webmanifest">
-  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#ffc40d">
-  <meta name="theme-color" content="#ffffff">
-  <title>CV Viacheslav Volkov</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <main class="main">
-      <aside class="column">
-        <div class="avatar">
-          <img class="avatar__image" src="./assets/img/avatar.jpg" alt="avatar" height="320">
-        </div>
-        <section class="section contact">
-          <h2 class="title title--bg contact__title ">contact</h2>
-          <ul class="contact__list">
-            <li class="contact__item">
-              <div class="contact__icon">
-                <svg class="icon">
-                  <use xlink:href="./assets/svg/sprite.svg#phone"></use>
-                </svg>
-              </div>
-              <div class="contact__desc">
-                <h3 class="name name--color contact__name">Phone:</h3>
-                <a href="tel:+375299891554" class="text contact__link">+375(29) 989-15-54</a>
-                <a href="tel:+79153777981" class="text contact__link">+7(915) 37-79-81</a>
-              </div>
-            </li>
-            <li class="contact__item">
-              <div class="contact__icon">
-                <svg class="icon">
-                  <use xlink:href="./assets/svg/sprite.svg#mail"></use>
-                </svg>
-              </div>
-              <div class="contact__desc">
-                <h3 class="name name--color contact__name">Mail:</h3>
-                <a href="mailto:volkov.slava@hotmail.com" class="text contact__link">volkov.slava@hotmail.com</a>
-              </div>
-            </li>
-            <li class="contact__item">
-              <div class="contact__icon">
-                <svg class="icon icon--telegram">
-                  <use xlink:href="./assets/svg/sprite.svg#telegram"></use>
-                </svg>
-              </div>
-              <div class="contact__desc">
-                <h3 class="name name--color contact__name">Telegram:</h3>
-                <a href="tg://resolve?domain=volkov_slava" class="text contact__link">@volkov_slava</a>
-              </div>
-            </li>
-          </ul>
-        </section>
-        <section class="section skills">
-          <h2 class="title title--bg skills__title">skills</h2>
-          <div class="skills__container">
-            <div class="skills__box">
-              <h3 class="name name--color skills__name">Technical</h3>
-              <ul class="skills__list">
-                <li class="text skills__item">HTML / Pug</li>
-                <li class="text skills__item">CSS / Sass</li>
-                <li class="text skills__item">JavaScript</li>
-              </ul>
-            </div>
-            <div class="skills__box">
-              <h3 class="name name--color skills__name">Tools</h3>
-              <ul class="skills__list">
-                <li class="text skills__item">Git / GitHub</li>
-                <li class="text skills__item">Gulp / Webpack</li>
-                <li class="text skills__item">NPM / Yarn</li>
-                <li class="text skills__item">PhotoShop / Figma</li>
-                <li class="text skills__item">VS Code</li>
-              </ul>
-            </div>
-            <div class="skills__box">
-              <h3 class="name name--color skills__name">Soft</h3>
-              <ul class="skills__list">
-                <li class="text skills__item">Responsible</li>
-                <li class="text skills__item">Perseverance</li>
-                <li class="text skills__item">Hardworking</li>
-              </ul>
-            </div>
-            <div class="skills__box">
-              <h3 class="name name--color skills__name">Languages</h3>
-              <ul class="skills__list">
-                <li class="text skills__item">Russian native</li>
-                <li class="text skills__item">English A2</li>
-              </ul>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./assets/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>CV Viacheslav Volkov</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main class="main">
+        <aside class="column">
+          <div class="avatar">
+            <img
+              class="avatar__image"
+              src="./assets/img/avatar.jpg"
+              alt="avatar"
+              height="320"
+            />
           </div>
-        </section>
-        <section class="section social">
-          <h2 class="title title--bg social__title">social</h2>
-          <ul class="social__list">
-            <li class="social__item">
-              <h3 class="name name--color sociaL__name">LinkedIn</h3>
-              <a href="https://www.linkedin.com/in/volkov-slava/" class="text social__link" rel="noopener noreferrer" target="_blank">https://www.linkedin.com/in/volkov-slava/</a>
-            </li>
-            <li class="social__item">
-              <h3 class="name name--color sociaL__name">VK</h3>
-              <a href="https://vk.com/volkov.viacheslav" class="text social__link" rel="noopener noreferrer" target="_blank">https://vk.com/volkov.viacheslav</a>
-            </li>
-          </ul>
-        </section>
-        <section class="section portfolio">
-          <h2 class="title title--bg portfolio__title">portfolio</h2>
-          <div class="portfolio__container">
-            <div class="portfolio__box">
-              <div class="portfolio__icon">
-                <svg class="icon">
-                  <use xlink:href="./assets/svg/sprite.svg#github"></use>
-                </svg>
-              </div>
-              <a href="https://github.com/volkovVA" class="text portfolio__link" rel="noopener noreferrer" target="_blank">https://github.com/volkovVA</a>
-            </div>
-            <h3 class="name name--color portfolio__name">My latest projects:</h3>
-            <ul class="portfolio__list">
-              <li class="portfolio__item">
-                <a class="text portfolio__link" href="https://volkovva.github.io/js-clock/" rel="noopener noreferrer" target="_blank">JS Clock</a>
+          <section class="section contact">
+            <h2 class="title title--bg contact__title ">contacts</h2>
+            <ul class="contact__list">
+              <li class="contact__item">
+                <div class="contact__icon">
+                  <svg class="icon">
+                    <use xlink:href="./assets/svg/sprite.svg#phone"></use>
+                  </svg>
+                </div>
+                <div class="contact__desc">
+                  <h3 class="name name--color contact__name">Phone:</h3>
+                  <a href="tel:+375299891554" class="text contact__link"
+                    >+375(29) 989-15-54</a
+                  >
+                  <a href="tel:+79153777981" class="text contact__link"
+                    >+7(915) 37-79-81</a
+                  >
+                </div>
               </li>
-              <li class="portfolio__item">
-                <a class="text portfolio__link" href="https://volkovva.github.io/custom-video-player/" rel="noopener noreferrer" target="_blank">Custom Video Player</a>
+              <li class="contact__item">
+                <div class="contact__icon">
+                  <svg class="icon">
+                    <use xlink:href="./assets/svg/sprite.svg#mail"></use>
+                  </svg>
+                </div>
+                <div class="contact__desc">
+                  <h3 class="name name--color contact__name">Mail:</h3>
+                  <a
+                    href="mailto:volkov.slava@hotmail.com"
+                    class="text contact__link"
+                    >volkov.slava@hotmail.com</a
+                  >
+                </div>
               </li>
-              <li class="portfolio__item">
-                <a class="text portfolio__link" href="https://volkovva.github.io/virtual-piano/" rel="noopener noreferrer" target="_blank">Virtual Piano</a>
+              <li class="contact__item">
+                <div class="contact__icon">
+                  <svg class="icon icon--telegram">
+                    <use xlink:href="./assets/svg/sprite.svg#telegram"></use>
+                  </svg>
+                </div>
+                <div class="contact__desc">
+                  <h3 class="name name--color contact__name">Telegram:</h3>
+                  <a
+                    href="tg://resolve?domain=volkov_slava"
+                    class="text contact__link"
+                    >@volkov_slava</a
+                  >
+                </div>
               </li>
             </ul>
-          </div>
-        </section>
-        <p class="column__name">&#169; Viacheslav Volkov</p>
-      </aside>
-      <aside class="column">
-        <header class="header">
-          <h1 class="header__title">Viacheslav <span>Volkov</span></h1>
-          <span class="header__text">Frontend Developer</span>
-        </header>
-        <section class="section about">
-          <h2 class="title title--color about__title">Hello, I'm Viacheslav</h2>
-          <p class="about__text">I’m developer in the field of Frontend development and determined to become a full-stack developer. I am originally from Russia, but now I live in Belarus, Gomel. I like to bring visual designs to life, make them functional through the use of coding.  I have a passion for excellence and I am really committed to achieving the best possible results.</p>
-          <p class="about__text"><span>My purposes:</span> Styding and improving knowledge of HTML5, CSS3, JavaScript technologies. Study React (React Native, Redux), NodeJS.</p>
-          <p class="about__text"><span>My strengths:</span> I’m driven to succeed and deliver results. And I have the ability to learn new technologies quickly.</p>
-        </section>
-        <section class="section experience">
-          <h2 class="title title--color title--line experience__title">experience</h2>
-          <ul class="experience__list">
-            <li class="experience__item">
-              <div class="experience__box">
-                <h3 class="name name--up experience__position">webmaster</h3>
-                <span class="experience__date">Dec 2020 - May 2021</span>
+          </section>
+          <section class="section skills">
+            <h2 class="title title--bg skills__title">skills</h2>
+            <div class="skills__container">
+              <div class="skills__box">
+                <h3 class="name name--color skills__name">Technical</h3>
+                <ul class="skills__list">
+                  <li class="text skills__item">HTML / Pug</li>
+                  <li class="text skills__item">CSS / Sass</li>
+                  <li class="text skills__item">JavaScript</li>
+                </ul>
               </div>
-              <div class="experience__box">
-                <a class="name experience__company" href="https://seoready.ru" rel="noopener noreferrer" target="_blank">Seoready | Saint-Petersburg</a>
-                <p class="experience__text">Layout of new pages and editing of the layout, adjusting the adaptability of pages for mobile devices, correcting validator errors, eliminating bugs. Technical audit of sites and correction of technical aspects of the site. Code optimization in order to speed up the site. Updating text and graphic content.</p>
+              <div class="skills__box">
+                <h3 class="name name--color skills__name">Tools</h3>
+                <ul class="skills__list">
+                  <li class="text skills__item">Git / GitHub</li>
+                  <li class="text skills__item">Gulp / Webpack</li>
+                  <li class="text skills__item">NPM / Yarn</li>
+                  <li class="text skills__item">PhotoShop / Figma</li>
+                  <li class="text skills__item">VS Code</li>
+                </ul>
               </div>
-            </li>
-            <li class="experience__item">
-              <div class="experience__box">
-                <h3 class="name name--up experience__position">assistant mentor</h3>
-                <span class="experience__date">June 2020 - Dec 2020</span>
+              <div class="skills__box">
+                <h3 class="name name--color skills__name">Soft</h3>
+                <ul class="skills__list">
+                  <li class="text skills__item">Responsible</li>
+                  <li class="text skills__item">Perseverance</li>
+                  <li class="text skills__item">Hardworking</li>
+                </ul>
               </div>
-              <div class="experience__box">
-                <a class="name experience__company" href="https://loftschool.com" rel="noopener noreferrer" target="_blank">LoftSchool | Saint-Petersburg</a>
-                <p class="experience__text">I taught students markup code, HTML semantics and CSS styles. JavaScript basics, adaptive layout, basic functionality of working with Git. I checked the practical tasks of students, reviewed the code, sorted out errors.</p>
+              <div class="skills__box">
+                <h3 class="name name--color skills__name">Languages</h3>
+                <ul class="skills__list">
+                  <li class="text skills__item">Russian native</li>
+                  <li class="text skills__item">English A2</li>
+                </ul>
               </div>
-            </li>
-          </ul>
-        </section>
-        <section class="section education">
-          <h2 class="title title--color title--line education__title">education</h2>
-          <div class="education__container">
-            <div class="education__box">
-              <h3 class="name name--up education__major">economist manager</h3>
-              <span class="education__date">1998 - 2004</span>
             </div>
-            <div class="education__box">
-              <h3 class="name education__name">Sukhoi State Technical University | Gomel</h3>
-              <p class="education__text">Incomplete higher education</p>
+          </section>
+          <section class="section social">
+            <h2 class="title title--bg social__title">socials</h2>
+            <ul class="social__list">
+              <li class="social__item">
+                <h3 class="name name--color sociaL__name">LinkedIn</h3>
+                <a
+                  href="https://www.linkedin.com/in/volkov-slava/"
+                  class="text social__link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >https://www.linkedin.com/in/volkov-slava/</a
+                >
+              </li>
+              <li class="social__item">
+                <h3 class="name name--color sociaL__name">VK</h3>
+                <a
+                  href="https://vk.com/volkov.viacheslav"
+                  class="text social__link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >https://vk.com/volkov.viacheslav</a
+                >
+              </li>
+            </ul>
+          </section>
+          <section class="section portfolio">
+            <h2 class="title title--bg portfolio__title">portfolio</h2>
+            <div class="portfolio__container">
+              <div class="portfolio__box">
+                <div class="portfolio__icon">
+                  <svg class="icon">
+                    <use xlink:href="./assets/svg/sprite.svg#github"></use>
+                  </svg>
+                </div>
+                <a
+                  href="https://github.com/volkovVA"
+                  class="text portfolio__link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >https://github.com/volkovVA</a
+                >
+              </div>
+              <h3 class="name name--color portfolio__name">
+                My latest projects:
+              </h3>
+              <ul class="portfolio__list">
+                <li class="portfolio__item">
+                  <span class="text">JS Clock:&nbsp;&nbsp;</span>
+                  <a
+                    class="text portfolio__link"
+                    href="https://volkovva.github.io/js-clock/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Live Demo
+                  </a>
+                  <span class="text">/</span>
+                  <a
+                    class="text portfolio__link"
+                    href="https://github.com/volkovVA/js-clock"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Repo
+                  </a>
+                </li>
+                <li class="portfolio__item">
+                  <span class="text">Custom Video Player:&nbsp;&nbsp;</span>
+                  <a
+                    class="text portfolio__link"
+                    href="https://volkovva.github.io/custom-video-player/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Live Demo
+                  </a>
+                  <span class="text">/</span>
+                  <a
+                    class="text portfolio__link"
+                    href="https://github.com/volkovVA/custom-video-player"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Repo
+                  </a>
+                </li>
+                <li class="portfolio__item">
+                  <span class="text">Virtual Piano:&nbsp;&nbsp;</span>
+                  <a
+                    class="text portfolio__link"
+                    href="https://volkovva.github.io/virtual-piano/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Live Demo</a
+                  >
+                  <span class="text">/</span>
+                  <a
+                    class="text portfolio__link"
+                    href="https://github.com/volkovVA/virtual-piano"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Repo</a
+                  >
+                </li>
+              </ul>
             </div>
-          </div>
-        </section>
-        <section class="section courses">
-          <h2 class="title title--color title--line courses__title">courses & certificates</h2>
-          <ul class="courses__list">
-            <li class="courses__item">
-              <a class="name courses__link" href="https://app.rs.school/certificate/j55t1zxf" rel="noopener noreferrer" target="_blank">JS / FE Pre-School (JavaScript)</a>
-              <p class="courses__text">2021 | RS School</p>
-            </li>
-            <li class="courses__item">
-              <a class="name courses__link courses__link--udemy" href="#">Modern JavaScript + Vue on real projects</a>
-              <span class="name">/</span>
-              <a class="name courses__link courses__link--udemy" href="https://www.udemy.com/certificate/UC-04c8a658-cb41-4d5a-844a-7879aeb9ccbd/" rel="noopener noreferrer" target="_blank">Practical JavaScript (Advanced level)</a>
-              <p class="courses__text">2020 | Udemy</p>
-            </li>
-            <li class="courses__item">
-              <a class="name courses__link" href="https://loftschool.com/diploma/NPR31420ZJ284PZW8/en/pdf" rel="noopener noreferrer" target="_blank">Profession: Web developer. Advanced course in Web Development / VUE</a>
-              <a class="name courses__link" href="https://loftschool.com/diploma/ZI89058085003/en/pdf" rel="noopener noreferrer" target="_blank">Promotion of websites and projects / SEO</a>
-              <p class="courses__text">2020 | IT-school “Loftschool”</p>
-            </li>
-            <li class="courses__item">
-              <a class="name courses__link" href="https://cdn.specialist.ru/Content/Temp/User/groupcert/1915216small.png" rel="noopener noreferrer" target="_blank">Web programmer. Creating websites in HTML 5 and CSS 3 / JavaScript</a>
-              <a class="name courses__link courses__link--text" href="https://www.specialist.ru/profile/public/1256405" rel="noopener noreferrer" target="_blank">Public Profile</a>
-              <span class="name">/</span>
-              <a class="name courses__link courses__link--text" href="https://www.specialist.ru/graduate/best2019/740444" rel="noopener noreferrer" target="_blank">Recommendation Letter</a>
-              <p class="courses__text">2019 | EC “Specialist” at the Bauman State Technical University of Moscow</p>
-            </li>
-            <li class="courses__item">
-              <a class="name courses__link courses__link--freecodecamp" href="https://www.freecodecamp.org/certification/volkov_slava/responsive-web-design" rel="noopener noreferrer" target="_blank">Responsive Web Design</a>
-              <span class="name">/</span>
-              <a class="name courses__link courses__link--freecodecamp" href="https://www.freecodecamp.org/certification/volkov_slava/javascript-algorithms-and-data-structures" rel="noopener noreferrer" target="_blank">JavaScript Algorithms and Data Structures</a>
-              <p class="courses__text">2019 | freeCodeCamp</p>
-            </li>
-          </ul>
-        </section>
-        <section class="section references">
-          <h2 class="title title--color title--line references__title">references</h2>
-          <ul class="references__list">
-            <li class="references__item">
-              <h3 class="name name--up references__name">narmatova natalia</h3>
-              <p class="references__position">Head of Marketing Department</p>
-              <p class="references__company">"Seoready"</p>
-            </li>
-            <li class="references__item">
-              <h3 class="name name--up references__name">kovalchuk dmitriy</h3>
-              <p class="references__position">Head of IT Department</p>
-              <p class="references__company">"LoftSchool"</p>
-            </li>
-            <li class="references__item">
-              <h3 class="name name--up references__name">dryabin boris</h3>
-              <p class="references__position">Senior Developer</p>
-              <p class="references__company">"Rostelecom-Solar"</p>
-            </li>
-          </ul>
-        </section>
-        <footer class="footer">
-          <a class="footer__github" href="https://github.com/volkovVA" rel="noopener noreferrer" target="_blank">
-            <svg class="icon icon--github footer__icon">
-              <use xlink:href="./assets/svg/sprite.svg#github"></use>
-            </svg>
-          </a>
-          <time class="footer__year">2021</time>
-          <a class="footer__rsschool" href="https://rs.school/js/" rel="noopener noreferrer" target="_blank"></a>
-        </footer>
-      </aside>
-    </main>
-  </div>
-</body>
+          </section>
+          <p class="column__name">&#169; Viacheslav Volkov</p>
+        </aside>
+        <aside class="column">
+          <header class="header">
+            <h1 class="header__title">Viacheslav <span>Volkov</span></h1>
+            <span class="header__text">Frontend Developer</span>
+          </header>
+          <section class="section about">
+            <h2 class="title title--color about__title">
+              Hello, I'm Viacheslav
+            </h2>
+            <p class="about__text">
+              I’m developer in the field of Frontend development and determined
+              to become a full-stack developer. I am originally from Russia, but
+              now I live in Belarus, Gomel. I like to bring visual designs to
+              life, make them functional through the use of coding. I have a
+              passion for excellence and I am really committed to achieving the
+              best possible results.
+            </p>
+            <p class="about__text">
+              <span>My purposes:</span> Styding and improving knowledge of
+              HTML5, CSS3, JavaScript technologies. Study React (React Native,
+              Redux), NodeJS.
+            </p>
+            <p class="about__text">
+              <span>My strengths:</span> I’m driven to succeed and deliver
+              results. And I have the ability to learn new technologies quickly.
+            </p>
+          </section>
+          <section class="section experience">
+            <h2 class="title title--color title--line experience__title">
+              experience
+            </h2>
+            <ul class="experience__list">
+              <li class="experience__item">
+                <div class="experience__box">
+                  <h3 class="name name--up experience__position">webmaster</h3>
+                  <span class="experience__date">Dec 2020 - May 2021</span>
+                </div>
+                <div class="experience__box">
+                  <a
+                    class="name experience__company"
+                    href="https://seoready.ru"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Seoready | Saint-Petersburg</a
+                  >
+                  <p class="experience__text">
+                    Layout of new pages and editing of the layout, adjusting the
+                    adaptability of pages for mobile devices, correcting
+                    validator errors, eliminating bugs. Technical audit of sites
+                    and correction of technical aspects of the site. Code
+                    optimization in order to speed up the site. Updating text
+                    and graphic content.
+                  </p>
+                </div>
+              </li>
+              <li class="experience__item">
+                <div class="experience__box">
+                  <h3 class="name name--up experience__position">
+                    assistant mentor
+                  </h3>
+                  <span class="experience__date">June 2020 - Dec 2020</span>
+                </div>
+                <div class="experience__box">
+                  <a
+                    class="name experience__company"
+                    href="https://loftschool.com"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >LoftSchool | Saint-Petersburg</a
+                  >
+                  <p class="experience__text">
+                    I taught students markup code, HTML semantics and CSS
+                    styles. JavaScript basics, adaptive layout, basic
+                    functionality of working with Git. I checked the practical
+                    tasks of students, reviewed the code, sorted out errors.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+          <section class="section education">
+            <h2 class="title title--color title--line education__title">
+              education
+            </h2>
+            <div class="education__container">
+              <div class="education__box">
+                <h3 class="name name--up education__major">
+                  economist manager
+                </h3>
+                <span class="education__date">1998 - 2004</span>
+              </div>
+              <div class="education__box">
+                <h3 class="name education__name">
+                  Sukhoi State Technical University | Gomel
+                </h3>
+                <p class="education__text">Incomplete higher education</p>
+              </div>
+            </div>
+          </section>
+          <section class="section courses">
+            <h2 class="title title--color title--line courses__title">
+              courses & certificates
+            </h2>
+            <ul class="courses__list">
+              <li class="courses__item">
+                <a
+                  class="name courses__link"
+                  href="https://app.rs.school/certificate/j55t1zxf"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >JS / FE Pre-School (JavaScript)</a
+                >
+                <p class="courses__text">2021 | RS School</p>
+              </li>
+              <li class="courses__item">
+                <a class="name courses__link courses__link--udemy" href="#"
+                  >Modern JavaScript + Vue on real projects</a
+                >
+                <span class="name">/</span>
+                <a
+                  class="name courses__link courses__link--udemy"
+                  href="https://www.udemy.com/certificate/UC-04c8a658-cb41-4d5a-844a-7879aeb9ccbd/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Practical JavaScript (Advanced level)</a
+                >
+                <p class="courses__text">2020 | Udemy</p>
+              </li>
+              <li class="courses__item">
+                <a
+                  class="name courses__link"
+                  href="https://loftschool.com/diploma/NPR31420ZJ284PZW8/en/pdf"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Profession: Web developer. Advanced course in Web Development
+                  / VUE</a
+                >
+                <a
+                  class="name courses__link"
+                  href="https://loftschool.com/diploma/ZI89058085003/en/pdf"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Promotion of websites and projects / SEO</a
+                >
+                <p class="courses__text">2020 | IT-school “Loftschool”</p>
+              </li>
+              <li class="courses__item">
+                <a
+                  class="name courses__link"
+                  href="https://cdn.specialist.ru/Content/Temp/User/groupcert/1915216small.png"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Web programmer. Creating websites in HTML 5 and CSS 3 /
+                  JavaScript</a
+                >
+                <a
+                  class="name courses__link courses__link--text"
+                  href="https://www.specialist.ru/profile/public/1256405"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Public Profile</a
+                >
+                <span class="name">/</span>
+                <a
+                  class="name courses__link courses__link--text"
+                  href="https://www.specialist.ru/graduate/best2019/740444"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Recommendation Letter</a
+                >
+                <p class="courses__text">
+                  2019 | EC “Specialist” at the Bauman State Technical
+                  University of Moscow
+                </p>
+              </li>
+              <li class="courses__item">
+                <a
+                  class="name courses__link courses__link--freecodecamp"
+                  href="https://www.freecodecamp.org/certification/volkov_slava/responsive-web-design"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Responsive Web Design</a
+                >
+                <span class="name">/</span>
+                <a
+                  class="name courses__link courses__link--freecodecamp"
+                  href="https://www.freecodecamp.org/certification/volkov_slava/javascript-algorithms-and-data-structures"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >JavaScript Algorithms and Data Structures</a
+                >
+                <p class="courses__text">2019 | freeCodeCamp</p>
+              </li>
+            </ul>
+          </section>
+          <section class="section references">
+            <h2 class="title title--color title--line references__title">
+              references
+            </h2>
+            <ul class="references__list">
+              <li class="references__item">
+                <h3 class="name name--up references__name">
+                  narmatova natalia
+                </h3>
+                <p class="references__position">Head of Marketing Department</p>
+                <p class="references__company">"Seoready"</p>
+              </li>
+              <li class="references__item">
+                <h3 class="name name--up references__name">
+                  kovalchuk dmitriy
+                </h3>
+                <p class="references__position">Head of IT Department</p>
+                <p class="references__company">"LoftSchool"</p>
+              </li>
+              <li class="references__item">
+                <h3 class="name name--up references__name">dryabin boris</h3>
+                <p class="references__position">Senior Developer</p>
+                <p class="references__company">"Rostelecom-Solar"</p>
+              </li>
+            </ul>
+          </section>
+          <footer class="footer">
+            <a
+              class="footer__github"
+              href="https://github.com/volkovVA"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="icon icon--github footer__icon">
+                <use xlink:href="./assets/svg/sprite.svg#github"></use>
+              </svg>
+            </a>
+            <time class="footer__year">2021</time>
+            <a
+              class="footer__rsschool"
+              href="https://rs.school/js/"
+              rel="noopener noreferrer"
+              target="_blank"
+            ></a>
+          </footer>
+        </aside>
+      </main>
+    </div>
+  </body>
 </html>
