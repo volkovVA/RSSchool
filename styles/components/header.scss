@@ -1,7 +1,7 @@
 .header {
   position: relative;
   width: 100%;
-  background-color: $box-color;
+  background-color: var(--box-color);
   padding: rem(20) rem(50);
   &::after {
     content: '';

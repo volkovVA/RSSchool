@@ -29,7 +29,7 @@
     @include font-source(rem(16), 500);
     font-style: italic;
     &:nth-child(4) {
-      color: $box-color;
+      color: var(--box-color);
     }
   }
   &:hover {

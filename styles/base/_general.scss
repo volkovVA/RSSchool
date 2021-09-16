@@ -56,7 +56,7 @@
     width: 100%;
     height: rem(70);
     padding: 0 rem(50);
-    background-color: $box-color;
+    background-color: var(--box-color);
   }
   &--color {
     margin-bottom: rem(30);

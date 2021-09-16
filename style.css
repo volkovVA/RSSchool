@@ -1,3 +1,7 @@
+:root {
+  --box-color: #3a478e;
+}
+
 *,
 *::before,
 *::after {
@@ -155,7 +159,7 @@ button:active {
   width: 100%;
   height: 4.375rem;
   padding: 0 3.125rem;
-  background-color: #3a478e;
+  background-color: var(--box-color);
 }
 .title--color {
   margin-bottom: 1.875rem;
@@ -205,8 +209,28 @@ button:active {
   object-position: center;
 }
 
+.color {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 1.25rem 3.125rem 0;
+}
+
+.color__text {
+  margin-right: 0.625rem;
+}
+
+.color__change {
+  width: 4.375rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 .contact {
-  padding-top: 3.125rem;
+  padding-top: 1.25rem;
 }
 
 .contact__list {
@@ -340,7 +364,7 @@ button:active {
 .header {
   position: relative;
   width: 100%;
-  background-color: #3a478e;
+  background-color: var(--box-color);
   padding: 1.25rem 3.125rem;
 }
 .header::after {
@@ -568,7 +592,7 @@ button:active {
   font-style: italic;
 }
 .courses__link--text:nth-child(4) {
-  color: #3a478e;
+  color: var(--box-color);
 }
 .courses__link:hover {
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);

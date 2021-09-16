@@ -1,0 +1,18 @@
+.color {
+  @include flex(none, center);
+  align-self: flex-start;
+  padding: rem(20) rem(50) 0;
+}
+
+.color__text {
+  margin-right: rem(10);
+}
+
+.color__change {
+  width: rem(70);
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  background-color:transparent;
+}
