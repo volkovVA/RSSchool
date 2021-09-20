@@ -2,6 +2,7 @@
   @include flex(space-around, center, none);
   width: 100%;
   padding: rem(36) rem(20) rem(0) rem(50);
+  margin-top: auto;
   @include font-source(rem(18), 500);
   @include media-mobile{
     padding: rem(36) 0 0;
