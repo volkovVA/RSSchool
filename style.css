@@ -87,7 +87,7 @@ button:active {
   margin: 0 auto;
   box-shadow: 0.3125rem 0.3125rem 0.625rem #000000;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .container {
     width: 100%;
     box-shadow: none;
@@ -108,7 +108,7 @@ button:active {
   padding: 1.25rem 0;
   overflow: hidden;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .main {
     padding: 0;
   }
@@ -272,7 +272,7 @@ button:active {
 .contact__list {
   padding: 2.25rem 3.125rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .contact__list {
     padding: 1rem 1.875rem;
   }
@@ -313,7 +313,7 @@ button:active {
   gap: 1rem 0;
   padding: 2.25rem 3.125rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .skills__container {
     padding: 1rem 1.875rem;
   }
@@ -342,7 +342,7 @@ button:active {
 .social__list {
   padding: 2.25rem 3.125rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .social__list {
     padding: 1rem 1.875rem;
   }
@@ -365,7 +365,7 @@ button:active {
   flex-direction: column;
   padding: 2.25rem 3.125rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .projects__container {
     padding: 1rem 1.875rem;
   }
@@ -398,7 +398,7 @@ button:active {
 .projects__card:last-child {
   margin-bottom: 3.75rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .projects__card {
     margin-bottom: 2.5rem;
   }
@@ -422,12 +422,12 @@ button:active {
   opacity: 0.7;
   background-color: #000000;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .projects__link::before {
     display: none;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .projects__link {
     border-bottom: 1px dotted #434343;
     padding-bottom: 1.25rem;
@@ -440,7 +440,7 @@ button:active {
   object-fit: cover;
   object-position: center;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .projects__image {
     margin-bottom: 1.25rem;
   }
@@ -455,7 +455,7 @@ button:active {
   color: #ffffff;
   z-index: 1;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .projects__content {
     position: static;
     width: 100%;
@@ -611,7 +611,7 @@ button:active {
   border: 2px solid #434343;
   background-color: #cbcccc;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .experience__item {
     display: block;
   }
@@ -620,7 +620,7 @@ button:active {
 .experience__box:first-child {
   flex-basis: 33%;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .experience__box:first-child {
     margin-bottom: 0.625rem;
   }
@@ -802,7 +802,7 @@ button:active {
   background-color: #434343;
   height: 86%;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .references__list {
     gap: 3.125rem;
   }
@@ -933,7 +933,7 @@ button:active {
   gap: 0.625rem 0px;
   justify-content: center;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .nav__list {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -1027,7 +1027,7 @@ pre {
   justify-content: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   pre code {
     font-size: 0.875rem;
   }
