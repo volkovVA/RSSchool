@@ -2,6 +2,9 @@
   @include flex(none, center);
   align-self: flex-start;
   padding: rem(20) rem(50) 0;
+  @include media-mobile{
+    padding: 0 rem(50);
+  }
 }
 
 .color__text {

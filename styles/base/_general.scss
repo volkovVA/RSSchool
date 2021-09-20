@@ -23,7 +23,7 @@
   }
   &:last-child {
     flex-basis: 64%;
-    padding: rem(50) 0 rem(20);
+    padding-bottom: rem(20);
     @include media-mobile {
       padding: 0 rem(20) rem(50);
     }

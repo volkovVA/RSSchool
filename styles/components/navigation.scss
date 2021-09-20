@@ -1,0 +1,108 @@
+.nav {
+  align-self: flex-start;
+  width: 78%;
+  padding: rem(20);
+  @include media-mobile {
+    position: absolute;
+    top: rem(22);
+    left: rem(20);
+    width: 0;
+    padding: 0;
+  }
+  &.active > .nav__list {
+    @include media-mobile {
+      left: 0;
+      opacity: 1;
+    }
+  }
+  &.active > .nav__icon {
+    @include media-mobile {
+      z-index: 2;
+      transform: rotate(-45deg);
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: rem(30);
+        height: rem(4);
+        left: 0;
+        top: 0;
+        background-color: $bg-color;
+        transform: rotate(90deg);
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.nav__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: rem(10) 0px;
+  justify-content: center;
+  @include media-tablet {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  @include media-mobile {
+    @include flex(center, center, column);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -9999px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+    background-color: $main-color;
+    opacity: 0;
+  }
+}
+
+.nav__item {
+  justify-self: center;
+  @include media-mobile {
+    padding: rem(10);
+  }
+}
+
+.nav__link {
+  font-weight: 500;
+  transition: text-shadow 0.2s;
+  &:hover {
+    text-shadow: 3px 3px 2px rgba(0,0,0,0.4);
+  }
+  @include media-mobile {
+    font-size: rem(22);
+  }
+}
+
+.nav__icon {
+  display: none;
+  @include media-mobile {
+    position: relative;
+    display: block;
+    width: rem(30);
+    height: rem(4);
+    background-color: $bg-color;
+    cursor: pointer;
+    &:before {
+      @include pseudo;
+      left: 0;
+      top: rem(10);
+      width: rem(30);
+      height: rem(4);
+      background-color: $bg-color;
+    }
+    &::after {
+      @include pseudo;
+      left: 0;
+      bottom: rem(10);
+      width: rem(30);
+      height: rem(4);
+      background-color: $bg-color;
+    }
+  }
+}
