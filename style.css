@@ -909,4 +909,24 @@ button:active {
   }
 }
 
+.code {
+  padding: 2.25rem 1.25rem 0rem 3.125rem;
+}
+@media (max-width: 420px) {
+  .code {
+    padding: 2.25rem 0 0;
+  }
+}
+
+pre {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  pre code {
+    font-size: 0.875rem;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

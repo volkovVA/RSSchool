@@ -33,6 +33,10 @@
       href="./assets/favicon/safari-pinned-tab.svg"
       color="#5bbad5"
     />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/atom-one-light.min.css"
+    />
     <meta name="msapplication-TileColor" content="#ffc40d" />
     <meta name="theme-color" content="#ffffff" />
     <title>CV Viacheslav Volkov</title>
@@ -504,6 +508,29 @@
               </li>
             </ul>
           </section>
+          <section class="section code">
+            <h2 class="title title--color title--line references__title">
+              code example
+            </h2>
+            <pre>
+              <code class="javascript hljs">
+function deepCount(a){
+  let count = a.length;
+
+  function sumCount(a) {
+    for (let i = 0; i &lt; a.length; i++) {
+      if (Array.isArray(a[i])) {
+        count += a[i].length;
+        sumCount(a[i]);
+      }
+    }
+    return count;
+  }
+  return sumCount(a)
+}
+              </code>
+            </pre>
+          </section>
           <footer class="footer">
             <a
               class="footer__github"
@@ -526,6 +553,10 @@
         </aside>
       </div>
     </main>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
     <script src="./script.js"></script>
   </body>
 </html>
