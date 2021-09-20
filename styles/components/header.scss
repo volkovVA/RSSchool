@@ -15,6 +15,10 @@
     background-size: 130px 60px;
     width: 130px;
     height: 60px;
+    @include media-mobile {
+      left: 4%;
+      top: rem(-40);
+    }
   }
   @include media-mobile{
     position: absolute;
