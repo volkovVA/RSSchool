@@ -1,5 +1,8 @@
 .references {
   padding: rem(36) rem(20) rem(0) rem(50);
+  @include media-mobile{
+    padding: rem(36) 0 0;
+  }
 }
 
 .references__list {
@@ -32,6 +35,7 @@
   }
 }
 
-.references__position, .references__company {
+.references__position,
+.references__company {
   font-weight: 500;
 }

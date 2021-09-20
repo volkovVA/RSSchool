@@ -13,3 +13,10 @@
       @content;
   }
 }
+
+@mixin media-mobile-horizontal {
+
+  @media (max-width: $mediaMaxWidthMobile) and (orientation:landscape){
+      @content;
+  }
+}

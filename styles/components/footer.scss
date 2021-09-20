@@ -3,6 +3,9 @@
   width: 100%;
   padding: rem(36) rem(20) rem(0) rem(50);
   @include font-source(rem(18), 500);
+  @include media-mobile{
+    padding: rem(36) 0 0;
+  }
 }
 
 .footer__icon {
@@ -19,7 +22,8 @@
   opacity: 0.6;
 }
 
-.footer__rsschool, .footer__github {
+.footer__rsschool,
+.footer__github {
   transition: 0.2s;
   &:hover {
     transform: scale(1.1);

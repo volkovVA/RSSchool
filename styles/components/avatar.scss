@@ -4,4 +4,7 @@
 
 .avatar__image {
   @include image-cover;
+  @include media-mobile {
+    object-fit: contain;
+  }
 }

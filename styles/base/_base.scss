@@ -81,12 +81,19 @@ button {
 }
 
 .container {
+  @include flex;
   max-width: 1200px;
   width: 95%;
   margin: 0 auto;
-  padding: 20px 0;
+  box-shadow: rem(5) rem(5) rem(10) $default-color;
   @include media-tablet {
     width: 100%;
-    padding: 0;
+    box-shadow: none;
+  }
+  @include media-mobile {
+    display: block;
+  }
+  @include media-mobile-horizontal {
+    display: block;
   }
 }

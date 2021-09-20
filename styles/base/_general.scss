@@ -1,11 +1,11 @@
 .main {
-  @include flex;
-  box-shadow: 4px 4px 8px #000;
+  padding: rem(20) 0;
+  overflow: hidden;
   @include media-tablet {
-    box-shadow: none;
+    padding: 0;
   }
-  @include media-mobile {
-    display: block
+  @include media-mobile-horizontal {
+    padding: 0;
   }
 }
 
@@ -14,10 +14,19 @@
   &:first-child {
     background-color: $bg-color;
     flex-basis: 36%;
+    @include media-mobile {
+      margin-top: 62%
+    }
+    @include media-mobile-horizontal {
+      margin-top: 32%
+    }
   }
   &:last-child {
     flex-basis: 64%;
     padding: rem(50) 0 rem(20);
+    @include media-mobile {
+      padding: 0 rem(20) rem(50);
+    }
   }
   &__name {
     display: inline-block;

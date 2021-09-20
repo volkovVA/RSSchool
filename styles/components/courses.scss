@@ -1,5 +1,8 @@
 .courses{
   padding: rem(36) rem(20) rem(0) rem(50);
+  @include media-mobile{
+    padding: rem(36) 0 0;
+  }
 }
 
 .courses__list {

@@ -81,30 +81,41 @@ button:active {
 }
 
 .container {
+  display: flex;
   max-width: 1200px;
   width: 95%;
   margin: 0 auto;
-  padding: 20px 0;
+  box-shadow: 0.3125rem 0.3125rem 0.625rem #000000;
 }
 @media (max-width: 1024px) {
   .container {
     width: 100%;
-    padding: 0;
+    box-shadow: none;
+  }
+}
+@media (max-width: 420px) {
+  .container {
+    display: block;
+  }
+}
+@media (max-width: 640px) and (orientation: landscape) {
+  .container {
+    display: block;
   }
 }
 
 .main {
-  display: flex;
-  box-shadow: 4px 4px 8px #000;
+  padding: 1.25rem 0;
+  overflow: hidden;
 }
 @media (max-width: 1024px) {
   .main {
-    box-shadow: none;
+    padding: 0;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 640px) and (orientation: landscape) {
   .main {
-    display: block;
+    padding: 0;
   }
 }
 
@@ -117,9 +128,24 @@ button:active {
   background-color: #434343;
   flex-basis: 36%;
 }
+@media (max-width: 420px) {
+  .column:first-child {
+    margin-top: 62%;
+  }
+}
+@media (max-width: 640px) and (orientation: landscape) {
+  .column:first-child {
+    margin-top: 32%;
+  }
+}
 .column:last-child {
   flex-basis: 64%;
   padding: 3.125rem 0 1.25rem;
+}
+@media (max-width: 420px) {
+  .column:last-child {
+    padding: 0 1.25rem 3.125rem;
+  }
 }
 .column__name {
   display: inline-block;
@@ -207,6 +233,11 @@ button:active {
   max-height: 100%;
   object-fit: cover;
   object-position: center;
+}
+@media (max-width: 420px) {
+  .avatar__image {
+    object-fit: contain;
+  }
 }
 
 .color {
@@ -380,6 +411,20 @@ button:active {
   width: 130px;
   height: 60px;
 }
+@media (max-width: 420px) {
+  .header {
+    position: absolute;
+    top: 1%;
+    left: 0;
+  }
+}
+@media (max-width: 640px) and (orientation: landscape) {
+  .header {
+    position: absolute;
+    top: 1%;
+    left: 0;
+  }
+}
 
 .header__title {
   font-size: 3.125rem;
@@ -400,6 +445,11 @@ button:active {
 .about {
   padding: 2.25rem 1.25rem 0rem 3.125rem;
 }
+@media (max-width: 420px) {
+  .about {
+    padding: 2.25rem 0 0;
+  }
+}
 
 .about__title {
   margin-bottom: 0.625rem;
@@ -414,6 +464,11 @@ button:active {
 
 .experience {
   padding: 2.25rem 1.25rem 0rem 3.125rem;
+}
+@media (max-width: 420px) {
+  .experience {
+    padding: 2.25rem 0 0;
+  }
 }
 
 .experience__list {
@@ -491,6 +546,11 @@ button:active {
 .education {
   padding: 2.25rem 1.25rem 0rem 3.125rem;
 }
+@media (max-width: 420px) {
+  .education {
+    padding: 2.25rem 0 0;
+  }
+}
 
 .education__container {
   position: relative;
@@ -544,6 +604,11 @@ button:active {
 
 .courses {
   padding: 2.25rem 1.25rem 0rem 3.125rem;
+}
+@media (max-width: 420px) {
+  .courses {
+    padding: 2.25rem 0 0;
+  }
 }
 
 .courses__list {
@@ -605,6 +670,11 @@ button:active {
 .references {
   padding: 2.25rem 1.25rem 0rem 3.125rem;
 }
+@media (max-width: 420px) {
+  .references {
+    padding: 2.25rem 0 0;
+  }
+}
 
 .references__list {
   position: relative;
@@ -659,7 +729,8 @@ button:active {
   z-index: -1;
 }
 
-.references__position, .references__company {
+.references__position,
+.references__company {
   font-weight: 500;
 }
 
@@ -671,6 +742,11 @@ button:active {
   padding: 2.25rem 1.25rem 0rem 3.125rem;
   font-size: 1.125rem;
   font-weight: 500;
+}
+@media (max-width: 420px) {
+  .footer {
+    padding: 2.25rem 0 0;
+  }
 }
 
 .footer__icon {
@@ -687,10 +763,12 @@ button:active {
   opacity: 0.6;
 }
 
-.footer__rsschool, .footer__github {
+.footer__rsschool,
+.footer__github {
   transition: 0.2s;
 }
-.footer__rsschool:hover, .footer__github:hover {
+.footer__rsschool:hover,
+.footer__github:hover {
   transform: scale(1.1);
 }
 
