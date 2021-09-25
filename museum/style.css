@@ -1153,6 +1153,11 @@ template {
   transform: scale(0.99);
 }
 
+.tour {
+  width: 100%;
+  height: 100vh;
+}
+
 .video {
   padding: 90px 0 75px;
 }
