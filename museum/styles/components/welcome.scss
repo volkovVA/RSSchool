@@ -1,31 +1,30 @@
-.welcome{
-  padding: 0 0 246px;
+.welcome {
+  padding: 0 0 272px;
   background-color: $bg-dark-color;
-  background-image: url("./assets/img/welcome/welcome.jpg");
-  background-position: calc(50% + 353px) bottom;
-  background-repeat: no-repeat;
-  @mixin bg-2x {
-    background-image: url('./assets/img/welcome/welcome@2x.jpg');
-  }
-  @mixin bg-3x {
-    background-image: url('./assets/img/welcome/welcome@3x.jpg');
-  }
+}
+
+.welcome__container {
+  position: relative;
 }
 
 .welcome__title {
-  padding-top: 114px;
+  position: relative;
+  padding-top: 122px;
   margin-bottom: 26px;
+  z-index: 2;
 }
 
 .welcome__text {
-  margin-bottom: 77px;
+  position: relative;
+  margin-bottom: 75px;
   @include font-source(28px, 300, $main-color, 33px);
   letter-spacing: 2.2px;
+  z-index: 2;
 }
 
 .welcome__button {
   display: inline-block;
-  padding: 24px 69px;
+  padding: 24px 68px;
   @include font-source(22px, 200, $main-color, 26px);
   letter-spacing: 2px;
   background-color: $dark-red-color;

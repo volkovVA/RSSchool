@@ -813,6 +813,122 @@ template {
   margin-right: 51px;
 }
 
+.slider {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  width: 1000px;
+  height: 810px;
+  overflow: hidden;
+}
+
+.slider__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+}
+.slider__gradient::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  background: linear-gradient(90deg, #030303 15%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+}
+
+.slider__box {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: -1000px;
+  width: 5000px;
+}
+.slider__box.shifting {
+  transition: left 0.2s ease-out;
+}
+
+.slider__item {
+  position: relative;
+  display: block;
+  width: 1000px;
+  height: 810px;
+  padding-bottom: 60px;
+  cursor: pointer;
+}
+
+.slider__control {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  height: 120px;
+  padding-left: 74px;
+  padding-top: 2px;
+  background-color: #030303;
+  z-index: 2;
+}
+.slider__control .active {
+  background-color: #D2B183;
+}
+
+.slider__btn {
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.slider__btn--prev {
+  margin-right: 20px;
+}
+.slider__btn:hover {
+  transform: scale(1.1);
+}
+.slider__btn:active {
+  transform: scale(1);
+}
+
+.slider__icon {
+  width: 30px;
+  height: 8px;
+}
+
+.slider__counter {
+  display: flex;
+  align-items: center;
+  margin-right: 56px;
+  font-size: 22px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 44px;
+}
+
+.slider__counter_current {
+  margin-right: 10px;
+}
+.slider__counter_current::after {
+  content: "|";
+  padding-left: 10px;
+}
+
+.slider__key {
+  width: 16px;
+  height: 16px;
+  margin-right: 25px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.slider__key:nth-child(6) {
+  margin-right: 61px;
+}
+
 .social {
   display: flex;
   align-self: flex-end;
@@ -1084,30 +1200,35 @@ template {
 }
 
 .welcome {
-  padding: 0 0 246px;
+  padding: 0 0 272px;
   background-color: #030303;
-  background-image: url("./assets/img/welcome/welcome.jpg");
-  background-position: calc(50% + 353px) bottom;
-  background-repeat: no-repeat;
+}
+
+.welcome__container {
+  position: relative;
 }
 
 .welcome__title {
-  padding-top: 114px;
+  position: relative;
+  padding-top: 122px;
   margin-bottom: 26px;
+  z-index: 2;
 }
 
 .welcome__text {
-  margin-bottom: 77px;
+  position: relative;
+  margin-bottom: 75px;
   font-size: 28px;
   font-weight: 300;
   color: #ffffff;
   line-height: 33px;
   letter-spacing: 2.2px;
+  z-index: 2;
 }
 
 .welcome__button {
   display: inline-block;
-  padding: 24px 69px;
+  padding: 24px 68px;
   font-size: 22px;
   font-weight: 200;
   color: #ffffff;
@@ -1171,7 +1292,7 @@ template {
 }
 
 .header {
-  padding: 74px 0 76px;
+  padding: 52px 0 76px;
   background-color: #030303;
 }
 

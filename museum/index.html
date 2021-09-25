@@ -1,346 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>museum</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="./assets/favicon/site.webmanifest">
-  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#24809e">
-  <meta name="msapplication-TileColor" content="#caaa7d">
-  <meta name="theme-color" content="#ffffff">
-</head>
-<body> 
-  <header class="header">
-    <div class="container header__container">
-      <a href="#" class="logo">
-        <svg class="logo__icon">
-          <use xlink:href="./assets/svg/sprite.svg#logo"></use>
-        </svg>
-        <h1 class="logo__text">louvre</h1>
-      </a>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a class="nav__link" href="#visiting">Visiting</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#explore">Explore</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#video">Video</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#tickets">Tickets</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#contacts">Contacts</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <section class="section welcome" id="welcome">
-      <div class="container">
-        <h2 class="title welcome__title">welcome <br>to the louvre</h2>
-        <p class="welcome__text">From the castle to the museum</p>
-        <a class="welcome__button" href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" rel="noopener noreferrer" target="_blank">Discover the Louvre</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>museum</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./assets/favicon/safari-pinned-tab.svg"
+      color="#24809e"
+    />
+    <meta name="msapplication-TileColor" content="#caaa7d" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <a href="#" class="logo">
+          <svg class="logo__icon">
+            <use xlink:href="./assets/svg/sprite.svg#logo"></use>
+          </svg>
+          <h1 class="logo__text">louvre</h1>
+        </a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#visiting">Visiting</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#explore">Explore</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#video">Video</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#tickets">Tickets</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#contacts">Contacts</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </section>
-    <section class="section visiting" id="visiting">
-      <div class="container">
-        <h2 class="title border-line visiting__title">virtual tour</h2>
-        <ul class="visiting__list">
-          <li class="visiting__item">
-            <a class="card" href="https://www.google.com/maps/@48.8606882,2.3356791,3a,90y,328.36h,87.55t/data=!3m7!1e1!3m5!1sAF1QipMZ9YgnArbwEIbTDANeSQYFu9gNqpW_2Sv8FBvY!2e10!3e12!7i4352!8i1815" rel="noopener noreferrer" target="_blank">
-              <div class="card__top">
-                <img class="card__image" srcset="./assets/img/visiting/royal-palace/royal-palace@2x.jpg 1.25x, ./assets/img/visiting/royal-palace/royal-palace@3x.jpg 2.25x" src="./assets/img/visiting/royal-palace/royal-palace.jpg" alt="royal palace" width="440" height="285">
-              </div>
-              <h3 class="card__title">royal palace</h3>
-              <p class="card__desc">360° Virtual Tour</p>
-              <p class="card__text">Google Street Panorama View</p>
-            </a>
-          </li>
-          <li class="visiting__item">
-            <a class="card" href="https://www.google.com/maps/@48.8563254,2.3352706,3a,75y,90t/data=!3m7!1e1!3m5!1sAF1QipNRj_CwP4coDMYdCHj6qHeBeJpI2VxU5BUsOX4F!2e10!3e12!7i11000!8i5500" rel="noopener noreferrer"target="_blank">
-              <div class="card__top">
-                <img class="card__image" srcset="./assets/img/visiting/denon-wing/denon-wing@2x.jpg 1.25x, ./assets/img/visiting/denon-wing/denon-wing@3x.jpg 2.25x" src="./assets/img/visiting/denon-wing/denon-wing.jpg" alt="denon wing" width="440" height="285">
-              </div>
-              <h3 class="card__title">denon wing</h3>
-              <p class="card__desc">360° Virtual Tour</p>
-              <p class="card__text">Google Street Panorama View</p>
-            </a>
-          </li>
-          <li class="visiting__item">
-            <a class="card" href="https://www.google.com/maps/@48.8601723,2.3395439,3a,88.4y,322.04h,84.25t/data=!3m7!1e1!3m5!1sAF1QipNMZGQuEA-pAUvIG_eP_2f3gWTKZEJ6XLVJ-Pgb!2e10!3e12!7i10240!8i5120" rel="noopener noreferrer" target="_blank">
-              <div class="card__top">
-                <img class="card__image" srcset="./assets/img/visiting/colonnade-perrault/colonnade-perrault@2x.jpg 1.25x, ./assets/img/visiting/colonnade-perrault/colonnade-perrault@3x.jpg 2.25x" src="./assets/img/visiting/colonnade-perrault/colonnade-perrault.jpg" alt="colonnade perrault" width="440" height="285">
-              </div>
-              <h3 class="card__title">colonnade perrault</h3>
-              <p class="card__desc">360° Virtual Tour</p>
-              <p class="card__text">Google Street Panorama View</p>
-            </a>
-          </li>
-          <li class="visiting__item">
-            <a class="card" href="https://www.google.com/maps/@48.860183,2.3356156,3a,90y,177.69h,95.61t/data=!3m7!1e1!3m5!1sAF1QipP7uFZnTITRe-7AEVAgHAfqiCL-03gvBHcYWgF3!2e10!3e12!7i5472!8i2736" rel="noopener noreferrer" target="_blank">
-              <div class="card__top">
-                <img class="card__image" srcset="./assets/img/visiting/greek-hall/greek-hall@2x.jpg 1.25x, ./assets/img/visiting/greek-hall/greek-hall@3x.jpg 2.25x" src="./assets/img/visiting/greek-hall/greek-hall.jpg" alt="greek hall" width="440" height="285">
-              </div>
-              <h3 class="card__title">greek hall</h3>
-              <p class="card__desc">360° Virtual Tour</p>
-              <p class="card__text">Google Street Panorama View</p>
-            </a>
-          </li>
-          <li class="visiting__item">
-            <a class="card" href="https://www.google.com/maps/@48.8598788,2.3355157,3a,82.2y,7.53h,94t/data=!3m7!1e1!3m5!1sAF1QipO1wkUUbyzpPjj-OR0mR5etZJT-xl-40XK8rDQ3!2e10!3e12!7i10240!8i5120" rel="noopener noreferrer" target="_blank">
-              <div class="card__top">
-                <img class="card__image" srcset="./assets/img/visiting/mona-lisa/mona-lisa@2x.jpg 1.25x, ./assets/img/visiting/mona-lisa/mona-lisa@3x.jpg 2.25x" src="./assets/img/visiting/mona-lisa/mona-lisa.jpg" alt="mona lisa" width="440" height="285">
-              </div>
-              <h3 class="card__title">mona lisa</h3>
-              <p class="card__desc">360° Virtual Tour</p>
-              <p class="card__text">Google Street Panorama View</p>
-            </a>
-          </li>
-          <li class="visiting__item">
-            <a class="card" href="https://www.google.com/maps/@48.8563254,2.3352706,3a,90y,21.26h,79.91t/data=!3m7!1e1!3m5!1sAF1QipPpGAowYatVyk3MMGnZAaQkYm2EUk-Dlca06SS5!2e10!3e12!7i11304!8i5652" rel="noopener noreferrer" target="_blank">
-              <div class="card__top">
-                <img class="card__image" srcset="./assets/img/visiting/night-palace/night-palace@2x.jpg 1.25x, ./assets/img/visiting/night-palace/night-palace@3x.jpg 2.25x" src="./assets/img/visiting/night-palace/night-palace.jpg" alt="night palace" width="440" height="285">
-              </div>
-              <h3 class="card__title">night palace</h3>
-              <p class="card__desc">360° Virtual Tour</p>
-              <p class="card__text">Google Street Panorama View</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section class="section explore" id="explore">
-      <div class="container explore__container">
-        <div class="explore__col">
-          <h2 class="title border-line explore__title">picture explore</h2>
-          <p class="explore__text">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
-          <p class="explore__text">It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
-          <p class="explore__text">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
-        </div>
-        <div class="explore__col">
-          <img class="explore__image" srcset="./assets/img/explore/picture@2x.jpg 1.25x, ./assets/img/explore/picture@3x.jpg 2.25x" src="./assets/img/explore/picture.jpg" alt="picture explore" width="720" height="700">
-        </div>
-      </div>
-    </section>
-    <section class="section video" id="video">
-      <div class="container">
-        <div class="player">
-          <div class="player__box">
-            <img class="player__image" src="./assets/img/video/video.jpg" alt="video" width="1440" height="629">
-            <button class="player__play-button" type="button">
-              <svg class="player__play-icon">
-                <use xlink:href="./assets/svg/sprite.svg#play"></use>
-              </svg>
-            </button>
-          </div>
-          <div class="player__control">
-            <button class="player__button" type="button">
-              <svg class="player__icon">
-                <use xlink:href="./assets/svg/sprite.svg#back"></use>
-              </svg>
-            </button>
-            <button class="player__button" type="button">
-              <svg class="player__icon">
-                <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
-              </svg>
-            </button>
-            <button class="player__button" type="button">
-              <svg class="player__icon">
-                <use xlink:href="./assets/svg/sprite.svg#next"></use>
-              </svg>
-            </button>
-            <input class="player__progress player__progress--rewind" type="range" value="50" min="0" max="100" step="1">
-            <button class="player__button player__button--speaker" type="button">
-              <svg class="player__icon player__icon--speaker">
-                <use xlink:href="./assets/svg/sprite.svg#speaker"></use>
-              </svg>
-            </button>
-            <input class="player__progress player__progress--volume" type="range">
-            <button class="player__button" type="button">
-              <svg class="player__icon player__icon--full">
-                <use xlink:href="./assets/svg/sprite.svg#full"></use>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div class="video__content">
-          <h2 class="title video__title">video journey</h2>
-          <p class="video__text">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
-        </div>
-      </div>
-    </section>
-    <section class="section tickets" id="tickets">
-      <div class="container">
-        <h2 class="title border-line">buy tickets</h2>
-        <div class="tickets__box">
-          <div class="tickets__picture">
-            <img class="tickets__image" srcset="./assets/img/tickets/picture@2x.jpg 1.25x, ./assets/img/tickets/picture@3x.jpg 2.25x" src="./assets/img/tickets/picture.jpg" alt="picture tickets" width="720" height="550">
-          </div>
-          <form class="tickets__form">
-            <div class="tickets__content">
-              <div class="tickets__col-small">
-                <h3 class="tickets__type">Ticket Type</h3>
-                <label class="tickets__radio">
-                  <input name="radio" type="radio" checked>
-                  <span>Permanent exhibition</span>
-                </label>
-                <label class="tickets__radio">
-                  <input name="radio" type="radio">
-                  <span>Temporary exhibition</span>
-                </label>
-                <label class="tickets__radio">
-                  <input name="radio" type="radio">
-                  <span>Combined Admission</span>
-                </label>
-              </div>
-              <div class="tickets__col-small">
-                <h3 class="tickets__amount">Amount</h3>
-                <span class="tickets__basic">Basic 18+</span>
-                <div class="tickets__count">
-                  <button class="tickets__buttons" type="button">
-                    <svg class="tickets__icon">
-                      <use xlink:href="./assets/svg/sprite.svg#minus"></use>
-                    </svg>
-                  </button>
-                  <input  class="tickets__value" type="number" min="0" max="100" value="1" readonly>
-                  <button class="tickets__buttons tickets__buttons--plus" type="button">
-                    <svg class="tickets__icon">
-                      <use xlink:href="./assets/svg/sprite.svg#plus"></use>
-                    </svg>
-                  </button>
-                </div>
-                <span class="tickets__senior">Senior 65+</span>
-                <div class="tickets__count tickets__count--bottom">
-                  <button class="tickets__buttons" type="button">
-                    <svg class="tickets__icon">
-                      <use xlink:href="./assets/svg/sprite.svg#minus"></use>
-                    </svg>
-                  </button>
-                  <input  class="tickets__value" type="number" min="0" max="100" value="1" readonly>
-                  <button class="tickets__buttons tickets__buttons--plus" type="button">
-                    <svg class="tickets__icon">
-                      <use xlink:href="./assets/svg/sprite.svg#plus"></use>
-                    </svg>
-                  </button>
-                </div>
-                <div class="tickets__price">
-                  <span>Total</span>
-                  <span class="tickets__price-number">€220</span>
-                </div>
-              </div>
+    </header>
+    <main>
+      <section class="section welcome" id="welcome">
+        <div class="container welcome__container">
+          <h2 class="title welcome__title">welcome <br />to the louvre</h2>
+          <p class="welcome__text">From the castle to the museum</p>
+          <a
+            class="welcome__button"
+            href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736"
+            rel="noopener noreferrer"
+            target="_blank"
+            >Discover the Louvre</a
+          >
+          <div class="slider">
+            <div class="slider__gradient"></div>
+            <div class="slider__box">
+              <img
+                class="slider__item"
+                src="./assets/img/welcome/1.jpg"
+                alt="mona liza"
+              />
+              <img
+                class="slider__item"
+                src="./assets/img/welcome/2.jpg"
+                alt="freedom on the barricades"
+              />
+              <img
+                class="slider__item"
+                src="./assets/img/welcome/3.jpg"
+                alt="a beautiful ferroniere"
+              />
+              <img
+                class="slider__item"
+                src="./assets/img/welcome/4.jpg"
+                alt="jellyfish raft"
+              />
+              <img
+                class="slider__item"
+                src="./assets/img/welcome/5.jpg"
+                alt="geographer"
+              />
             </div>
-            <button class="tickets__button">Buy Now</button>
-          </form>
-        </div>
-      </div>
-    </section>
-    <section class="section contacts" id="contacts">
-      <div class="container">
-        <h2 class="title border-line contacts__title">contacts</h2>
-        <div class="contacts__box">
-          <div class="contacts__col">
-            <h4 class="contacts__desc">Palais Royal Musee du Louvre</h4>
-            <address class="contacts__address">
-              <div class="contacts__text">
-                <span>address:</span>
-                <p>75001 Paris, France</p>
+            <div class="slider__control">
+              <div class="slider__counter">
+                <span class="slider__counter_current">01</span>
+                <span class="slider__counter_total">05</span>
               </div>
-              <div class="contacts__text">
-                <span>phone:</span>
-                <a class="contacts__link" href="tel:+330140205050">+33(0) 1 40 20 50 50</a>
-              </div>
-              <div class="contacts__text">
-                <span>mail:</span>
-                <a class="contacts__link" href="mailto:info@louvre.fr">info@louvre.fr</a>
-              </div>
-            </address>
-          </div>
-          <div class="contacts__map">
-            <img src="./assets/img/contacts/map.png" alt="map" width="960" height="620">
+              <button class="slider__key"></button>
+              <button class="slider__key"></button>
+              <button class="slider__key"></button>
+              <button class="slider__key"></button>
+              <button class="slider__key"></button>
+              <button class="slider__btn slider__btn--prev" id="prev">
+                <svg class="slider__icon">
+                  <use xlink:href="./assets/svg/sprite.svg#arrow-prev"></use>
+                </svg>
+              </button>
+              <button class="slider__btn slider__btn--next" id="next">
+                <svg class="slider__icon">
+                  <use xlink:href="./assets/svg/sprite.svg#arrow-next"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container footer__container">
-      <a href="#" class="logo">
-        <svg class="logo__icon">
-          <use xlink:href="./assets/svg/sprite.svg#logo"></use>
-        </svg>
-        <span class="logo__text">louvre</span>
-      </a>
-      <nav class="nav footer__nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a class="nav__link" href="#welcome">Welcome</a>
+      </section>
+      <section class="section visiting" id="visiting">
+        <div class="container">
+          <h2 class="title border-line visiting__title">virtual tour</h2>
+          <ul class="visiting__list">
+            <li class="visiting__item">
+              <a
+                class="card"
+                href="https://www.google.com/maps/@48.8606882,2.3356791,3a,90y,328.36h,87.55t/data=!3m7!1e1!3m5!1sAF1QipMZ9YgnArbwEIbTDANeSQYFu9gNqpW_2Sv8FBvY!2e10!3e12!7i4352!8i1815"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div class="card__top">
+                  <img
+                    class="card__image"
+                    srcset="
+                      ./assets/img/visiting/royal-palace/royal-palace@2x.jpg 1.25x,
+                      ./assets/img/visiting/royal-palace/royal-palace@3x.jpg 2.25x
+                    "
+                    src="./assets/img/visiting/royal-palace/royal-palace.jpg"
+                    alt="royal palace"
+                    width="440"
+                    height="285"
+                  />
+                </div>
+                <h3 class="card__title">royal palace</h3>
+                <p class="card__desc">360° Virtual Tour</p>
+                <p class="card__text">Google Street Panorama View</p>
+              </a>
+            </li>
+            <li class="visiting__item">
+              <a
+                class="card"
+                href="https://www.google.com/maps/@48.8563254,2.3352706,3a,75y,90t/data=!3m7!1e1!3m5!1sAF1QipNRj_CwP4coDMYdCHj6qHeBeJpI2VxU5BUsOX4F!2e10!3e12!7i11000!8i5500"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div class="card__top">
+                  <img
+                    class="card__image"
+                    srcset="
+                      ./assets/img/visiting/denon-wing/denon-wing@2x.jpg 1.25x,
+                      ./assets/img/visiting/denon-wing/denon-wing@3x.jpg 2.25x
+                    "
+                    src="./assets/img/visiting/denon-wing/denon-wing.jpg"
+                    alt="denon wing"
+                    width="440"
+                    height="285"
+                  />
+                </div>
+                <h3 class="card__title">denon wing</h3>
+                <p class="card__desc">360° Virtual Tour</p>
+                <p class="card__text">Google Street Panorama View</p>
+              </a>
+            </li>
+            <li class="visiting__item">
+              <a
+                class="card"
+                href="https://www.google.com/maps/@48.8601723,2.3395439,3a,88.4y,322.04h,84.25t/data=!3m7!1e1!3m5!1sAF1QipNMZGQuEA-pAUvIG_eP_2f3gWTKZEJ6XLVJ-Pgb!2e10!3e12!7i10240!8i5120"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div class="card__top">
+                  <img
+                    class="card__image"
+                    srcset="
+                      ./assets/img/visiting/colonnade-perrault/colonnade-perrault@2x.jpg 1.25x,
+                      ./assets/img/visiting/colonnade-perrault/colonnade-perrault@3x.jpg 2.25x
+                    "
+                    src="./assets/img/visiting/colonnade-perrault/colonnade-perrault.jpg"
+                    alt="colonnade perrault"
+                    width="440"
+                    height="285"
+                  />
+                </div>
+                <h3 class="card__title">colonnade perrault</h3>
+                <p class="card__desc">360° Virtual Tour</p>
+                <p class="card__text">Google Street Panorama View</p>
+              </a>
+            </li>
+            <li class="visiting__item">
+              <a
+                class="card"
+                href="https://www.google.com/maps/@48.860183,2.3356156,3a,90y,177.69h,95.61t/data=!3m7!1e1!3m5!1sAF1QipP7uFZnTITRe-7AEVAgHAfqiCL-03gvBHcYWgF3!2e10!3e12!7i5472!8i2736"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div class="card__top">
+                  <img
+                    class="card__image"
+                    srcset="
+                      ./assets/img/visiting/greek-hall/greek-hall@2x.jpg 1.25x,
+                      ./assets/img/visiting/greek-hall/greek-hall@3x.jpg 2.25x
+                    "
+                    src="./assets/img/visiting/greek-hall/greek-hall.jpg"
+                    alt="greek hall"
+                    width="440"
+                    height="285"
+                  />
+                </div>
+                <h3 class="card__title">greek hall</h3>
+                <p class="card__desc">360° Virtual Tour</p>
+                <p class="card__text">Google Street Panorama View</p>
+              </a>
+            </li>
+            <li class="visiting__item">
+              <a
+                class="card"
+                href="https://www.google.com/maps/@48.8598788,2.3355157,3a,82.2y,7.53h,94t/data=!3m7!1e1!3m5!1sAF1QipO1wkUUbyzpPjj-OR0mR5etZJT-xl-40XK8rDQ3!2e10!3e12!7i10240!8i5120"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div class="card__top">
+                  <img
+                    class="card__image"
+                    srcset="
+                      ./assets/img/visiting/mona-lisa/mona-lisa@2x.jpg 1.25x,
+                      ./assets/img/visiting/mona-lisa/mona-lisa@3x.jpg 2.25x
+                    "
+                    src="./assets/img/visiting/mona-lisa/mona-lisa.jpg"
+                    alt="mona lisa"
+                    width="440"
+                    height="285"
+                  />
+                </div>
+                <h3 class="card__title">mona lisa</h3>
+                <p class="card__desc">360° Virtual Tour</p>
+                <p class="card__text">Google Street Panorama View</p>
+              </a>
+            </li>
+            <li class="visiting__item">
+              <a
+                class="card"
+                href="https://www.google.com/maps/@48.8563254,2.3352706,3a,90y,21.26h,79.91t/data=!3m7!1e1!3m5!1sAF1QipPpGAowYatVyk3MMGnZAaQkYm2EUk-Dlca06SS5!2e10!3e12!7i11304!8i5652"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div class="card__top">
+                  <img
+                    class="card__image"
+                    srcset="
+                      ./assets/img/visiting/night-palace/night-palace@2x.jpg 1.25x,
+                      ./assets/img/visiting/night-palace/night-palace@3x.jpg 2.25x
+                    "
+                    src="./assets/img/visiting/night-palace/night-palace.jpg"
+                    alt="night palace"
+                    width="440"
+                    height="285"
+                  />
+                </div>
+                <h3 class="card__title">night palace</h3>
+                <p class="card__desc">360° Virtual Tour</p>
+                <p class="card__text">Google Street Panorama View</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section explore" id="explore">
+        <div class="container explore__container">
+          <div class="explore__col">
+            <h2 class="title border-line explore__title">picture explore</h2>
+            <p class="explore__text">
+              Las Meninas is a 1656 painting by Diego Velázquez, the leading
+              artist of the Spanish Golden Age.
+            </p>
+            <p class="explore__text">
+              It was cleaned in 1984 to remove a <span>"yellow veil"</span> of
+              dust that had gathered since the previous restoration in the 19th
+              century.
+            </p>
+            <p class="explore__text">
+              The cleaning provoked furious protests, not because the picture
+              had been damaged in any way, but because it looked different.
+            </p>
+          </div>
+          <div class="explore__col">
+            <img
+              class="explore__image"
+              srcset="
+                ./assets/img/explore/picture@2x.jpg 1.25x,
+                ./assets/img/explore/picture@3x.jpg 2.25x
+              "
+              src="./assets/img/explore/picture.jpg"
+              alt="picture explore"
+              width="720"
+              height="700"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="section video" id="video">
+        <div class="container">
+          <div class="player">
+            <div class="player__box">
+              <img
+                class="player__image"
+                src="./assets/img/video/video.jpg"
+                alt="video"
+                width="1440"
+                height="629"
+              />
+              <button class="player__play-button" type="button">
+                <svg class="player__play-icon">
+                  <use xlink:href="./assets/svg/sprite.svg#play"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="player__control">
+              <button class="player__button" type="button">
+                <svg class="player__icon">
+                  <use xlink:href="./assets/svg/sprite.svg#back"></use>
+                </svg>
+              </button>
+              <button class="player__button" type="button">
+                <svg class="player__icon">
+                  <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
+                </svg>
+              </button>
+              <button class="player__button" type="button">
+                <svg class="player__icon">
+                  <use xlink:href="./assets/svg/sprite.svg#next"></use>
+                </svg>
+              </button>
+              <input
+                class="player__progress player__progress--rewind"
+                type="range"
+                value="50"
+                min="0"
+                max="100"
+                step="1"
+              />
+              <button
+                class="player__button player__button--speaker"
+                type="button"
+              >
+                <svg class="player__icon player__icon--speaker">
+                  <use xlink:href="./assets/svg/sprite.svg#speaker"></use>
+                </svg>
+              </button>
+              <input
+                class="player__progress player__progress--volume"
+                type="range"
+              />
+              <button class="player__button" type="button">
+                <svg class="player__icon player__icon--full">
+                  <use xlink:href="./assets/svg/sprite.svg#full"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="video__content">
+            <h2 class="title video__title">video journey</h2>
+            <p class="video__text">
+              Enter and visit one of the most famous museums in the world and
+              enjoy masterpieces such as Mona Lisa or Hammurabi's Code
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section tickets" id="tickets">
+        <div class="container">
+          <h2 class="title border-line">buy tickets</h2>
+          <div class="tickets__box">
+            <div class="tickets__picture">
+              <img
+                class="tickets__image"
+                srcset="
+                  ./assets/img/tickets/picture@2x.jpg 1.25x,
+                  ./assets/img/tickets/picture@3x.jpg 2.25x
+                "
+                src="./assets/img/tickets/picture.jpg"
+                alt="picture tickets"
+                width="720"
+                height="550"
+              />
+            </div>
+            <form class="tickets__form">
+              <div class="tickets__content">
+                <div class="tickets__col-small">
+                  <h3 class="tickets__type">Ticket Type</h3>
+                  <label class="tickets__radio">
+                    <input name="radio" type="radio" checked />
+                    <span>Permanent exhibition</span>
+                  </label>
+                  <label class="tickets__radio">
+                    <input name="radio" type="radio" />
+                    <span>Temporary exhibition</span>
+                  </label>
+                  <label class="tickets__radio">
+                    <input name="radio" type="radio" />
+                    <span>Combined Admission</span>
+                  </label>
+                </div>
+                <div class="tickets__col-small">
+                  <h3 class="tickets__amount">Amount</h3>
+                  <span class="tickets__basic">Basic 18+</span>
+                  <div class="tickets__count">
+                    <button class="tickets__buttons" type="button">
+                      <svg class="tickets__icon">
+                        <use xlink:href="./assets/svg/sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                    <input
+                      class="tickets__value"
+                      type="number"
+                      min="0"
+                      max="100"
+                      value="1"
+                      readonly
+                    />
+                    <button
+                      class="tickets__buttons tickets__buttons--plus"
+                      type="button"
+                    >
+                      <svg class="tickets__icon">
+                        <use xlink:href="./assets/svg/sprite.svg#plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <span class="tickets__senior">Senior 65+</span>
+                  <div class="tickets__count tickets__count--bottom">
+                    <button class="tickets__buttons" type="button">
+                      <svg class="tickets__icon">
+                        <use xlink:href="./assets/svg/sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                    <input
+                      class="tickets__value"
+                      type="number"
+                      min="0"
+                      max="100"
+                      value="1"
+                      readonly
+                    />
+                    <button
+                      class="tickets__buttons tickets__buttons--plus"
+                      type="button"
+                    >
+                      <svg class="tickets__icon">
+                        <use xlink:href="./assets/svg/sprite.svg#plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="tickets__price">
+                    <span>Total</span>
+                    <span class="tickets__price-number">€220</span>
+                  </div>
+                </div>
+              </div>
+              <button class="tickets__button">Buy Now</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="section contacts" id="contacts">
+        <div class="container">
+          <h2 class="title border-line contacts__title">contacts</h2>
+          <div class="contacts__box">
+            <div class="contacts__col">
+              <h4 class="contacts__desc">Palais Royal Musee du Louvre</h4>
+              <address class="contacts__address">
+                <div class="contacts__text">
+                  <span>address:</span>
+                  <p>75001 Paris, France</p>
+                </div>
+                <div class="contacts__text">
+                  <span>phone:</span>
+                  <a class="contacts__link" href="tel:+330140205050"
+                    >+33(0) 1 40 20 50 50</a
+                  >
+                </div>
+                <div class="contacts__text">
+                  <span>mail:</span>
+                  <a class="contacts__link" href="mailto:info@louvre.fr"
+                    >info@louvre.fr</a
+                  >
+                </div>
+              </address>
+            </div>
+            <div class="contacts__map">
+              <img
+                src="./assets/img/contacts/map.png"
+                alt="map"
+                width="960"
+                height="620"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer__container">
+        <a href="#" class="logo">
+          <svg class="logo__icon">
+            <use xlink:href="./assets/svg/sprite.svg#logo"></use>
+          </svg>
+          <span class="logo__text">louvre</span>
+        </a>
+        <nav class="nav footer__nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#welcome">Welcome</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#visiting">Visiting</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#explore">Explore</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#video">Video</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#tickets">Tickets</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#contacts">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="social">
+          <li class="social__item">
+            <a
+              class="social__link social__link--youtube"
+              href="https://www.youtube.com/user/louvre"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="social__icon">
+                <use xlink:href="./assets/svg/sprite.svg#youtube"></use>
+              </svg>
+            </a>
           </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#visiting">Visiting</a>
+          <li class="social__item">
+            <a
+              class="social__link social__link--instagram"
+              href="https://www.instagram.com/museelouvre/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="social__icon">
+                <use xlink:href="./assets/svg/sprite.svg#instagram"></use>
+              </svg>
+            </a>
           </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#explore">Explore</a>
+          <li class="social__item">
+            <a
+              class="social__link social__link--facebook"
+              href="https://www.facebook.com/museedulouvre/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="social__icon">
+                <use xlink:href="./assets/svg/sprite.svg#facebook"></use>
+              </svg>
+            </a>
           </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#video">Video</a>
+          <li class="social__item">
+            <a
+              class="social__link social__link--telegram"
+              href="https://twitter.com/museelouvre"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="social__icon">
+                <use xlink:href="./assets/svg/sprite.svg#twitter"></use>
+              </svg>
+            </a>
           </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#tickets">Tickets</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#contacts">Contacts</a>
+          <li class="social__item">
+            <a
+              class="social__link social__link--pinterest"
+              href="https://www.pinterest.fr/museedulouvre/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="social__icon">
+                <use xlink:href="./assets/svg/sprite.svg#pinterest"></use>
+              </svg>
+            </a>
           </li>
         </ul>
-      </nav>
-      <ul class="social">
-        <li class="social__item">
-          <a class="social__link social__link--youtube" href="https://www.youtube.com/user/louvre" rel="noopener noreferrer" target="_blank">
-            <svg class="social__icon">
-              <use xlink:href="./assets/svg/sprite.svg#youtube"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link social__link--instagram" href="https://www.instagram.com/museelouvre/" rel="noopener noreferrer" target="_blank">
-            <svg class="social__icon">
-              <use xlink:href="./assets/svg/sprite.svg#instagram"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link social__link--facebook" href="https://www.facebook.com/museedulouvre/" rel="noopener noreferrer" target="_blank">
-            <svg class="social__icon">
-              <use xlink:href="./assets/svg/sprite.svg#facebook"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link social__link--telegram" href="https://twitter.com/museelouvre" rel="noopener noreferrer" target="_blank">
-            <svg class="social__icon">
-              <use xlink:href="./assets/svg/sprite.svg#twitter"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link social__link--pinterest" href="https://www.pinterest.fr/museedulouvre/" rel="noopener noreferrer" target="_blank">
-            <svg class="social__icon">
-              <use xlink:href="./assets/svg/sprite.svg#pinterest"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-  <script src="script.js"></script>
-</body>
+      </div>
+    </footer>
+    <script src="script.js" type="module"></script>
+  </body>
 </html>

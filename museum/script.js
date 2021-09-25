@@ -1,13 +1,15 @@
-function playerProgress() {
-  const playerControl = document.querySelector(".player__control");
+import {
+  playerProgress
+} from './js/player/progress.js';
 
-  playerControl.addEventListener("input", e => {
-    const target = e.target
-    if (target.classList.contains('player__progress')) {
-      const value = target.value;
-      target.style.background = `linear-gradient(to right, #24809e 0%, #24809e ${value}%, #c4c4c4 ${value}%, #c4c4c4 100%)`;
-    }
-  });
-}
+import {
+  slide
+} from './js/slider/slider.js';
 
 playerProgress();
+
+let sliderItems = document.querySelector('.slider__box'),
+  prev = document.getElementById('prev'),
+  next = document.getElementById('next');
+
+slide(sliderItems, prev, next);
