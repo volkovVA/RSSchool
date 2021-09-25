@@ -319,14 +319,23 @@
       </section>
       <section class="section video" id="video">
         <div class="container">
+          <div class="video__content">
+            <h2 class="title video__title">video journey</h2>
+            <p class="video__text">
+              Enter and visit one of the most famous museums in the world and
+              enjoy masterpieces such as Mona Lisa or Hammurabi's Code
+            </p>
+          </div>
           <div class="player">
             <div class="player__box">
+              <video
+                class="player__video"
+                src="./assets/video/video0.mp4"
+              ></video>
               <img
-                class="player__image"
-                src="./assets/img/video/video.jpg"
-                alt="video"
-                width="1440"
-                height="629"
+                class="player__poster"
+                src="./assets/img/video/poster0.jpg"
+                alt="poster"
               />
               <button class="player__play-button" type="button">
                 <svg class="player__play-icon">
@@ -337,17 +346,7 @@
             <div class="player__control">
               <button class="player__button" type="button">
                 <svg class="player__icon">
-                  <use xlink:href="./assets/svg/sprite.svg#back"></use>
-                </svg>
-              </button>
-              <button class="player__button" type="button">
-                <svg class="player__icon">
                   <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
-                </svg>
-              </button>
-              <button class="player__button" type="button">
-                <svg class="player__icon">
-                  <use xlink:href="./assets/svg/sprite.svg#next"></use>
                 </svg>
               </button>
               <input
@@ -376,13 +375,57 @@
                 </svg>
               </button>
             </div>
-          </div>
-          <div class="video__content">
-            <h2 class="title video__title">video journey</h2>
-            <p class="video__text">
-              Enter and visit one of the most famous museums in the world and
-              enjoy masterpieces such as Mona Lisa or Hammurabi's Code
-            </p>
+            <div class="player__slider">
+              <div class="player__slider_box">
+                <div class="player__slider_item">
+                  <iframe
+                    src="https://www.youtube.com/embed/zp1BXPX8jcU?controls=0"
+                    loading="lazy"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="player__slider_item">
+                  <iframe
+                    src="https://www.youtube.com/embed/Vi5D6FKhRmo?controls=0"
+                    loading="lazy"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="player__slider_item">
+                  <iframe
+                    src="https://www.youtube.com/embed/NOhDysLnTvY?controls=0"
+                    loading="lazy"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="player__nav">
+              <button class="player__nav_btn player__nav_btn--prev">
+                <svg class="player__nav_icon">
+                  <use xlink:href="./assets/svg/sprite.svg#arrow2-prev"></use>
+                </svg>
+              </button>
+              <button class="player__nav_dots active"></button>
+              <button class="player__nav_dots"></button>
+              <button class="player__nav_dots"></button>
+              <button class="player__nav_dots"></button>
+              <button class="player__nav_dots"></button>
+              <button class="player__nav_btn player__nav_btn--next">
+                <svg class="player__nav_icon">
+                  <use xlink:href="./assets/svg/sprite.svg#arrow2-next"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>

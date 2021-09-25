@@ -1,7 +1,12 @@
+.player {
+  position: relative;
+}
+
 .player__control {
   @include flex(none, center);
   height: 85px;
   padding: 2px 41px 0 40px;
+  margin-bottom: 40px;
   background-color: $default-color;
 }
 
@@ -10,7 +15,17 @@
   height: 629px;
 }
 
-.player__image {
+.player__video {
+  width: 100%;
+  height: 100%;
+}
+
+.player__poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   @include image-cover;
 }
 
@@ -128,4 +143,78 @@
 .player__progress--volume {
   width: 154px;
   margin-right: 51px;
+}
+
+$player-slider-width: 20%;
+$player-slider-height: 254px;
+
+.player__slider {
+  width: 100%;
+  height: $player-slider-height;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.player__slider_box {
+  display: flex;
+  position: relative;
+  top: 0;
+  // left: -$player-slider-width;
+  left: 0;
+  width: 157%;
+  &.shifting {
+    transition: left .2s ease-out;
+  }
+}
+
+.player__slider_item {
+  position: relative;
+  display: block;
+  width: $player-slider-width;
+  height: $player-slider-height;
+  margin-right: 42px;
+  cursor: pointer;
+  & iframe {
+    width: 100%;
+    height: 100%;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.player__nav {
+  @include flex(space-between, center);
+  width: 200px;
+  height: 12px;
+  margin: 0 auto;
+}
+
+.player__nav_dots {
+  width: 12px;
+  height: 12px;
+  background-color: $slider-dots-color;
+  border-radius: 50%;
+  cursor: pointer;
+  &.active {
+    background-color: $slider-dots-active-color;
+  }
+}
+
+.player__nav_icon {
+  width: 10px;
+  height: 12px;
+  stroke: $slider-dots-color;
+}
+
+.player__nav_btn {
+  padding-top: 2px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:active {
+    transform: scale(1);
+  }
 }

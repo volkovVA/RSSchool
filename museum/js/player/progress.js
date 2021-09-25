@@ -5,7 +5,7 @@ export function playerProgress() {
     const target = e.target;
     if (target.classList.contains('player__progress')) {
       const value = target.value;
-      target.style.background = `linear-gradient(to right, #24809e 0%, #24809e ${value}%, #c4c4c4 ${value}%, #c4c4c4 100%)`;
+      target.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #c4c4c4 ${value}%, #c4c4c4 100%)`;
     }
   });
 }
