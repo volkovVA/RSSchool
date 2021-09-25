@@ -646,6 +646,38 @@ template {
   object-position: center;
 }
 
+.gallery {
+  padding-top: 75px;
+  background-color: #030303;
+}
+
+.gallery__title {
+  margin-bottom: 77px;
+  color: #ffffff;
+}
+
+.gallery__container {
+  overflow-y: hidden;
+  height: 1898px;
+}
+
+.gallery__inner_container {
+  columns: 3;
+  column-gap: 36px;
+}
+
+.gallery__box {
+  width: 100%;
+  margin: 0 0 24px;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.gallery__image {
+  object-fit: cover;
+  object-position: center;
+}
+
 .logo {
   margin-right: 20px;
 }
