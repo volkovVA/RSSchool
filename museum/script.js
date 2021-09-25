@@ -6,6 +6,10 @@ import {
   slide
 } from './js/slider/slider.js';
 
+import {
+  setGallery
+} from './js/gallery/gallery.js';
+
 playerProgress();
 
 let sliderItems = document.querySelector('.slider__box'),
@@ -13,3 +17,5 @@ let sliderItems = document.querySelector('.slider__box'),
   next = document.getElementById('next');
 
 slide(sliderItems, prev, next);
+
+setGallery();
