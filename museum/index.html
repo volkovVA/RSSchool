@@ -39,7 +39,7 @@
           <svg class="logo__icon">
             <use xlink:href="./assets/svg/sprite.svg#logo"></use>
           </svg>
-          <h1 class="logo__text">louvre</h1>
+          <h1 class="logo__title">louvre</h1>
         </a>
         <nav class="nav">
           <ul class="nav__list">
@@ -458,7 +458,7 @@
       </section>
       <section class="section tickets" id="tickets">
         <div class="container">
-          <h2 class="title border-line">buy tickets</h2>
+          <h2 class="title tickets__title border-line">buy tickets</h2>
           <div class="tickets__box">
             <div class="tickets__picture">
               <img
@@ -588,6 +588,167 @@
           </div>
         </div>
       </section>
+      <div class="booking">
+        <div class="container">
+          <div class="booking__box">
+            <form class="form" id="form">
+              <div class="form__column">
+                <div class="logo logo--form">
+                  <svg class="logo__icon logo__icon--form">
+                    <use xlink:href="./assets/svg/sprite.svg#logo"></use>
+                  </svg>
+                  <h1 class="logo__title logo__title--form">booking tickets</h1>
+                  <h2 class="logo__text border-line">Tour to Louvre</h2>
+                </div>
+                <div class="form__box">
+                  <input
+                    class="form__date"
+                    type="date"
+                    placeholder="Date"
+                    name="date"
+                  />
+                  <input
+                    class="form__time"
+                    type="time"
+                    placeholder="Time"
+                    name="time"
+                  />
+                </div>
+                <div class="form__name">
+                  <label for="name"></label>
+                  <input type="text" id="name" placeholder="Name" name="name" />
+                </div>
+                <div class="form__email">
+                  <label for="email"></label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="E-mail"
+                    name="email"
+                  />
+                </div>
+                <div class="form__tel">
+                  <label for="tel"></label>
+                  <input type="tel" id="tel" placeholder="Phone" name="tel" />
+                </div>
+                <!-- <div class="form__select">
+                  <label for="select"></label>
+                  <select id="select" name="select" form="form" onfocus>
+                    <option value="" disabled selected hidden
+                      >Ticket type</option
+                    >
+                    <option value="volvo">Permanent exhibition</option>
+                    <option value="volvo2">Temporary exhibition</option>
+                    <option value="volvo3">Combined exhibition</option>
+                  </select>
+                </div> -->
+
+                <div class="form__select" data-state="">
+                  <div class="form__select_title" data-default="Option 0">
+                    Ticket Type
+                  </div>
+                  <div class="form__select_content">
+                    <input
+                      id="singleSelect0"
+                      class="form__select_input"
+                      type="radio"
+                      name="singleSelect"
+                      checked
+                    />
+                    <label for="singleSelect0" class="form__select_label"
+                      >Option 0</label
+                    >
+                    <input
+                      id="singleSelect1"
+                      class="form__select_input"
+                      type="radio"
+                      name="singleSelect"
+                    />
+                    <label for="singleSelect1" class="form__select_label"
+                      >Permanent exhibition</label
+                    >
+                    <input
+                      id="singleSelect2"
+                      class="form__select_input"
+                      type="radio"
+                      name="singleSelect"
+                    />
+                    <label for="singleSelect2" class="form__select_label"
+                      >Temporary exhibition</label
+                    >
+                    <input
+                      id="singleSelect3"
+                      class="form__select_input"
+                      type="radio"
+                      name="singleSelect"
+                    />
+                    <label for="singleSelect3" class="form__select_label"
+                      >Combined Admission</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form__entry">
+                  <h3 class="form__entry_title border-line">Entry Ticket</h3>
+                  <div class="form__entry_box">
+                    <div class="form__entry_text">Basic 18+ (20 &euro;)</div>
+                    <div class="form__entry_count">
+                      <button class="form__entry_buttons" type="button">
+                        <svg class="form__entry_icon">
+                          <use xlink:href="./assets/svg/sprite.svg#minus"></use>
+                        </svg>
+                      </button>
+                      <input
+                        class="form__entry_value"
+                        type="number"
+                        min="0"
+                        max="100"
+                        value="2"
+                        readonly
+                      />
+                      <button
+                        class="form__entry_buttons form__entry_buttons--plus"
+                        type="button"
+                      >
+                        <svg class="form__entry_icon">
+                          <use xlink:href="./assets/svg/sprite.svg#plus"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form__entry_box">
+                    <div class="form__entry_text">Senior 65+ (10 &euro;)</div>
+                    <div class="form__entry_count">
+                      <button class="form__entry_buttons" type="button">
+                        <svg class="form__entry_icon">
+                          <use xlink:href="./assets/svg/sprite.svg#minus"></use>
+                        </svg>
+                      </button>
+                      <input
+                        class="form__entry_value"
+                        type="number"
+                        min="0"
+                        max="100"
+                        value="2"
+                        readonly
+                      />
+                      <button
+                        class="form__entry_buttons form__entry_buttons--plus"
+                        type="button"
+                      >
+                        <svg class="form__entry_icon">
+                          <use xlink:href="./assets/svg/sprite.svg#plus"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form__column"></div>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="footer">
       <div class="container footer__container">
@@ -595,7 +756,7 @@
           <svg class="logo__icon">
             <use xlink:href="./assets/svg/sprite.svg#logo"></use>
           </svg>
-          <span class="logo__text">louvre</span>
+          <span class="logo__title">louvre</span>
         </a>
         <nav class="nav footer__nav">
           <ul class="nav__list">

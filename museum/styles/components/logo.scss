@@ -6,9 +6,13 @@
   &:hover .logo__icon {
     fill: $font-gold-color;
   }
+  &--form {
+    margin-right: 0;
+    margin-bottom: 64px;
+  }
 }
 
-.logo__text {
+.logo__title{
   display: inline-block;
   margin: 0;
   font-family: "Forum", "Times New Roman", Times, serif;
@@ -16,6 +20,13 @@
   letter-spacing: 5px;
   text-transform: uppercase;
   transition: all 0.3s;
+  &--form {
+    display: block;
+    margin-bottom: 12px;
+    @include font-source(50px, 400, $font-gold-color, 55px);
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
 }
 
 .logo__icon {
@@ -24,4 +35,14 @@
   margin-right: 18px;
   fill: $main-color;
   transition: all 0.3s;
+  &--form {
+    width: 85px;
+    height: 41px;
+    margin-right: 0;
+    fill: $font-gold-color;
+  }
+}
+
+.logo__text {
+  @include font-source(18px, 400, $dark-red-color, 21px);
 }

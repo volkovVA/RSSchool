@@ -1,6 +1,9 @@
 .tickets {
   padding: 74px 0 75px;
-  background-color: $default-color;
+}
+
+.tickets__title {
+  color: $font-gold-color;
 }
 
 .tickets__box{
@@ -31,7 +34,7 @@
 
 .tickets__type, .tickets__amount {
   margin-bottom: 50px;
-  @include font-source(28px, 700, $main-color, 33px);
+  @include font-source(28px, 700, $default-color, 33px);
 }
 
 .tickets__amount {
@@ -43,7 +46,7 @@
   position: relative;
   display: block;
   margin-bottom: 49px;
-  @include font-source(22px, 300, $main-color, 26px);
+  @include font-source(22px, 300, $default-color, 26px);
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -84,7 +87,7 @@
 .tickets__basic,
 .tickets__senior {
   margin-bottom: 13px;
-  @include font-source(22px, 300, $main-color, 26px);
+  @include font-source(22px, 300, $default-color, 26px);
 }
 
 .tickets__count {
@@ -93,7 +96,7 @@
   height: 50px;
   padding: 2px 8px 0 11px;
   margin-bottom: 36px;
-  border: 3px solid $main-color;
+  border: 3px solid $default-color;
   &--bottom {
     margin-bottom: 51px;
   }
@@ -101,7 +104,7 @@
 
 .tickets__value {
   text-align: center;
-  @include font-source(22px, 300, $main-color, 26px);
+  @include font-source(22px, 300, $default-color, 26px);
   background-color: transparent;
   border: 0;
   &::-webkit-outer-spin-button,
@@ -128,22 +131,22 @@
 .tickets__icon {
   width: 20px;
   height: 20px;
-  stroke: $main-color;
+  stroke: $default-color;
   transition: stroke 0.3s;
 }
 
 .tickets__price {
   margin-bottom: 48px;
-  @include font-source(28px, 700, $main-color, 33px);
+  @include font-source(28px, 700, $default-color, 33px);
   letter-spacing: 1.65px;
 }
 
 .tickets__button {
   padding: 12px 37px;
   margin-left: auto;
-  @include font-source(22px, 300, $default-color, 26px);
+  @include font-source(22px, 300, $main-color, 26px);
   letter-spacing: 2px;
-  background-color: $main-color;
+  background-color: $default-color;
   border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.3s;

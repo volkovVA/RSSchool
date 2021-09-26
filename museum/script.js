@@ -10,6 +10,10 @@ import {
   setGallery
 } from './js/gallery/gallery.js';
 
+import {
+  selectOptions
+} from './js/select/select.js';
+
 playerProgress();
 
 let sliderItems = document.querySelector('.slider__box'),
@@ -19,3 +23,5 @@ let sliderItems = document.querySelector('.slider__box'),
 slide(sliderItems, prev, next);
 
 setGallery();
+
+selectOptions();

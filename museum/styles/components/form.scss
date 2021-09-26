@@ -1,0 +1,310 @@
+// .booking {
+//   width: 100%;
+//   height: 845px;
+//   border: 1px solid $form-border-color;
+// }
+
+.booking__box {
+  width: 100%;
+  height: 845px;
+  padding: 91px 235px;
+  border: 1px solid $form-border-color;
+}
+
+.form {
+  @include flex(center, center);
+}
+
+.form__column {
+  flex-basis: 50%;
+  width: 50%;
+  height: 100%;
+}
+
+// Type Date, Type Time
+
+.form__box {
+  @include flex(space-between, center);
+  margin-bottom: 20px;
+}
+
+input[type="date"], input[type="time"] {
+  position: relative;
+  width: 190px;
+  height: 45px;
+  @include font-source(18px, 400, $form-main-color, 21px);
+  border: 1px solid $form-main-color;
+  &::before {
+    content: attr(placeholder);
+    padding-left: 45px;
+    background-position: 14px center;
+    background-repeat: no-repeat;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    right: 14px;
+    width: 17px;
+    height: 17px;
+    background-image: url('./assets/svg/form/arrow.svg');
+    background-size: 17px 17px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+input[type="date"]::before {
+  background-image: url('./assets/svg/form/date.svg');
+  background-size: 15px 15px;
+}
+
+input[type="time"]::before {
+  background-image: url('./assets/svg/form/time.svg');
+  background-size: 15px 15px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  -webkit-appearance: none;
+  display: none;
+}
+
+input[type="time"]::-webkit-datetime-edit-text {
+  display: none;
+}
+
+input[type="time"]::-webkit-datetime-edit-hour-field,
+input[type="time"]::-webkit-datetime-edit-minute-field,
+input[type="time"]::-webkit-datetime-edit-ampm-field,
+input[type="time"]::-webkit-clear-button,
+input[type="time"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+// Type text
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  padding-left: 43px;
+  border: 1px solid $form-main-color;
+  &::-webkit-input-placeholder {
+    @include font-source(18px, 400, $form-main-color, 21px);
+  }
+}
+
+.form__name label,
+.form__email label,
+.form__tel label {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 15px;
+    background-size: 13px 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+}
+
+.form__name label {
+  &::after {
+    background-image: url('./assets/svg/form/name.svg');
+  }
+}
+
+.form__email label {
+  &::after {
+    background-image: url('./assets/svg/form/email.svg');
+  }
+}
+
+.form__tel label {
+  &::after {
+    background-image: url('./assets/svg/form/tel.svg');
+  }
+}
+
+.form__name,
+.form__email,
+.form__tel,
+.form__select {
+  margin-bottom: 20px;
+}
+
+// Type entry
+
+.form__entry {
+  padding: 10px 15px 0;
+  border: 1px solid $form-main-color;
+}
+
+.form__entry_box {
+  margin-bottom: 20px;
+  @include flex(space-between,center);
+}
+
+.form__entry_title {
+  margin-bottom: 18px;
+  font-family: "Forum", "Times New Roman", Times, serif;
+  @include font-source(18px, 400, $font-gold-color, 20px);
+  &.border-line {
+    &::before {
+      height: 2px;
+    }
+  }
+}
+
+.form__entry_text {
+  @include font-source(18px, 400, $form-main-color, 21px);
+}
+
+.form__entry_count {
+  @include flex(space-between, center);
+  width: 105px;
+  height: 27px;
+  padding: 2px 8px 0 11px;
+  background-color: $form-main-color;
+  border-bottom: 1px solid $form-main-color;
+}
+
+.form__entry_buttons {
+  cursor: pointer;
+  &--plus {
+    padding-right: 2px;
+    padding-top: 2px;
+  }
+}
+
+.form__entry_icon {
+  width: 10px;
+  stroke: $main-color;
+  transition: stroke 0.3s;
+}
+
+.form__entry_value {
+  width: 40px;
+  text-align: center;
+  @include font-source(18px, 300, $form-main-color, 21px);
+  background-color: $main-color;
+  border: 0;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+// Type Select
+
+.form__select {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  &[data-state="active"] {
+    .form__select_title {
+      &::before {
+        transform: translate(0, -50%) rotate(-180deg);
+      }
+    }
+    .form__select_content {
+      opacity: 1;
+    }
+    .form__select_label + .form__select_input + .form__select_label {
+      max-height: 40px;
+      border-top-width: 1px;
+    }
+  }
+}
+
+.form__select_title {
+  @include flex(none, center);
+  width: 100%;
+  height: 100%;
+  padding-left: 45px;
+  border: 1px solid $form-main-color;
+  cursor: pointer;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+  &::before {
+    right: 14px;
+    width: 17px;
+    height: 17px;
+    background-image: url('./assets/svg/form/arrow.svg');
+    background-size: 16px 16px;
+  }
+  &::after {
+    left: 16px;
+    width: 15px;
+    height: 15px;
+    background-image: url('./assets/svg/form/select.svg');
+    background-size: 15px 15px;
+  }
+}
+
+.form__select_content {
+  position: absolute;
+  top: 45px;
+  left: 3px;
+  @include flex(none, none, column);
+  width: calc(100% - 6px);
+  background-color: $main-color;
+  border: 1px solid $form-main-color;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  z-index: 8;
+}
+
+.form__select_input {
+  display: none;
+  &:checked + label {
+    background-color: $option-checked-color;
+  }
+  &:disabled + label {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.form__select_label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  max-height: 0;
+  padding: 0 16px;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover {
+    background-color: $option-hover-color !important;
+  }
+}
