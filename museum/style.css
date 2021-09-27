@@ -655,14 +655,35 @@ template {
 
 .form {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .form__column {
-  flex-basis: 50%;
-  width: 50%;
   height: 100%;
+}
+.form__column:first-child {
+  flex-basis: 40%;
+  margin-right: 40px;
+}
+.form__column:last-child {
+  position: relative;
+  flex-basis: 60%;
+  padding: 25px 30px;
+  border: 1px solid #030303;
+}
+.form__column:last-child::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+  height: 120px;
+  background-image: url("./assets/img/form/form.png");
+  background-size: 150px 120px;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .form__box {
@@ -957,6 +978,322 @@ input[type=tel]::-webkit-input-placeholder {
 }
 .form__select_label:hover {
   background-color: #E7E7E7 !important;
+}
+
+.form__overview {
+  margin-bottom: 2px;
+  font-size: 32px;
+  font-weight: 500;
+  color: #272727;
+  line-height: 37px;
+}
+
+.form__tour {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #740C11;
+  line-height: 26px;
+}
+
+.form__info {
+  position: relative;
+  margin-bottom: 5px;
+  padding-left: 36px;
+  font-size: 18px;
+  font-weight: 300;
+  color: #030303;
+  line-height: 21px;
+}
+.form__info::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  left: 0;
+  width: 17px;
+  height: 17px;
+  background-size: 16px 16px;
+}
+.form__info--date::before {
+  background-image: url("./assets/svg/form/date.svg");
+}
+.form__info--time::before {
+  background-image: url("./assets/svg/form/time.svg");
+}
+.form__info--select::before {
+  background-image: url("./assets/svg/form/bird.svg");
+}
+.form__info--select {
+  margin-bottom: 22px;
+}
+
+.form__data {
+  margin-bottom: 10px;
+}
+
+.form__basic_info:last-child.border-line::before {
+  height: 2px;
+}
+
+.form__basic_info {
+  display: block;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.form__number {
+  display: block;
+  width: 32px;
+  height: 20px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: #A4A4A3;
+  line-height: 21px;
+  background-color: #030303;
+  border-radius: 5px;
+}
+
+.form__price {
+  font-size: 22px;
+  font-weight: 400;
+  color: #030303;
+  line-height: 26px;
+}
+
+.form__count {
+  margin-left: auto;
+  font-size: 22px;
+  font-weight: 400;
+  color: #030303;
+  line-height: 26px;
+}
+
+.form__total {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form__total_text {
+  font-size: 32px;
+  font-weight: 400;
+  color: #030303;
+  line-height: 37px;
+}
+
+.form__total_count {
+  margin-left: auto;
+  font-size: 32px;
+  font-weight: 500;
+  color: #030303;
+  line-height: 37px;
+}
+
+.form__card {
+  position: relative;
+}
+
+.form__card_front {
+  position: relative;
+  width: 360px;
+  padding: 15px 20px;
+  background-color: #BCBCBC;
+  border-radius: 5px;
+  z-index: 1;
+}
+.form__card_front::before, .form__card_front::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.form__card_front::before {
+  top: 43px;
+  width: 55px;
+  height: 16px;
+  background-image: url("./assets/img/form/visa.png");
+  background-size: 55px 16px;
+}
+.form__card_front::after {
+  top: 77px;
+  width: 53px;
+  height: 32px;
+  background-image: url("./assets/img/form/mastercard.png");
+  background-size: 53px 32px;
+}
+
+.form__card_number label,
+.form__card_date label,
+.form__card_name label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #161615;
+  line-height: 14px;
+}
+
+.form__card_number {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form__card_number input {
+  width: 215px;
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid #A4A4A3;
+}
+.form__card_number input:focus-visible {
+  outline: none;
+}
+
+.form__card_date {
+  margin-bottom: 10px;
+}
+
+.form__card_date input {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid #A4A4A3;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+.form__card_date input::-webkit-inner-spin-button, .form__card_date input::-webkit-outer-spin-button {
+  display: none;
+}
+.form__card_date input:focus-visible {
+  outline: none;
+}
+
+.form__card_month,
+.form__card_year {
+  position: relative;
+  display: inline-block;
+}
+.form__card_month::after,
+.form__card_year::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 32px;
+  height: 34px;
+  width: 1px;
+  background-color: #A4A4A3;
+}
+
+.form__card_month {
+  margin-right: 15px;
+}
+
+.form__card_name input {
+  padding-left: 10px;
+  border: 1px solid #A4A4A3;
+}
+.form__card_name input:focus-visible {
+  outline: none;
+}
+
+.form__card_down,
+.form__card_up {
+  position: absolute;
+  display: block;
+  right: 12px;
+  width: 8px;
+  height: 6px;
+  background-image: url("./assets/svg/form/arrow-card.svg");
+  background-size: 8px 6px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.form__card_down {
+  bottom: 10px;
+}
+
+.form__card_up {
+  transform: rotate(180deg);
+  top: 10px;
+}
+
+.form__card_back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 211px;
+  background-color: #939393;
+  border-radius: 5px;
+}
+.form__card_back::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  display: block;
+  width: 100%;
+  height: 45px;
+  background-color: #161615;
+}
+
+.form__card_cvv {
+  position: absolute;
+  right: 25px;
+  top: 70px;
+}
+
+.form__card_cvv label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  color: #161615;
+  line-height: 14px;
+}
+
+.form__card_cvv input {
+  width: 75px;
+  height: 35px;
+  border: 1px solid #A4A4A3;
+}
+
+.form__card_text {
+  position: absolute;
+  top: 137px;
+  right: 10px;
+  width: 85px;
+  font-size: 10px;
+  font-weight: 400;
+  color: #161615;
+  line-height: 12px;
+}
+
+.form__button {
+  display: block;
+  padding: 11px 85px;
+  margin-left: auto;
+  font-size: 22px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 26px;
+  background-color: #710707;
 }
 
 .gallery {

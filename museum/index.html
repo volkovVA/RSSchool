@@ -631,18 +631,6 @@
                   <label for="tel"></label>
                   <input type="tel" id="tel" placeholder="Phone" name="tel" />
                 </div>
-                <!-- <div class="form__select">
-                  <label for="select"></label>
-                  <select id="select" name="select" form="form" onfocus>
-                    <option value="" disabled selected hidden
-                      >Ticket type</option
-                    >
-                    <option value="volvo">Permanent exhibition</option>
-                    <option value="volvo2">Temporary exhibition</option>
-                    <option value="volvo3">Combined exhibition</option>
-                  </select>
-                </div> -->
-
                 <div class="form__select" data-state="">
                   <div class="form__select_title" data-default="Option 0">
                     Ticket Type
@@ -744,7 +732,94 @@
                   </div>
                 </div>
               </div>
-              <div class="form__column"></div>
+              <div class="form__column">
+                <h2 class="form__overview">Overview</h2>
+                <h3 class="form__tour">Tour to Louvre</h3>
+                <p class="form__info form__info--date">Friday, August 19</p>
+                <p class="form__info form__info--time">16 : 30</p>
+                <p class="form__info form__info--select">
+                  Temporary exhibition
+                </p>
+                <div class="form__data">
+                  <div class="form__basic_info">
+                    <span class="form__number">2</span>
+                    <span class="form__price">Basic (20 &euro;)</span>
+                    <span class="form__count">40 &euro;</span>
+                  </div>
+                  <div class="form__basic_info border-line">
+                    <span class="form__number">2</span>
+                    <span class="form__price">Senior (10 &euro;)</span>
+                    <span class="form__count">20 &euro;</span>
+                  </div>
+                  <div class="form__total">
+                    <span class="form__total_text">Total:</span>
+                    <span class="form__total_count">60 &euro;</span>
+                  </div>
+                </div>
+                <div class="form__card">
+                  <div class="form__card_front">
+                    <div class="form__card_number">
+                      <label for="number">Card number</label>
+                      <input type="text" id="number" name="number" />
+                    </div>
+                    <div class="form__card_date">
+                      <label>Expiration date</label>
+                      <div class="form__card_month">
+                        <button
+                          class="form__card_up"
+                          type="button"
+                          onclick="this.nextElementSibling.stepUp(); this.nextElementSibling.onchange();"
+                        ></button>
+                        <input
+                          type="number"
+                          name="month"
+                          step="1"
+                          min="1"
+                          max="12"
+                          value="03"
+                        />
+                        <button
+                          class="form__card_down"
+                          type="button"
+                          onclick="this.previousElementSibling.stepDown(); this.previousElementSibling.onchange();"
+                        ></button>
+                      </div>
+                      <div class="form__card_year">
+                        <button
+                          class="form__card_up"
+                          type="button"
+                          onclick="this.nextElementSibling.stepUp(); this.nextElementSibling.onchange();"
+                        ></button>
+                        <input
+                          type="number"
+                          name="year"
+                          step="1"
+                          value="2024"
+                        />
+                        <button
+                          class="form__card_down"
+                          type="button"
+                          onclick="this.previousElementSibling.stepDown(); this.previousElementSibling.onchange();"
+                        ></button>
+                      </div>
+                    </div>
+                    <div class="form__card_name">
+                      <label for="card-name">Cardholder name</label>
+                      <input type="text" id="card-name" name="card-name" />
+                    </div>
+                  </div>
+                  <div class="form__card_back">
+                    <div class="form__card_cvv">
+                      <label for="cvv">CVC/CVV</label>
+                      <input type="text" id="cvv" name="cvv" />
+                    </div>
+                    <p class="form__card_text">
+                      The last<br />3 or 4 digits on back<br />of the card
+                    </p>
+                  </div>
+                </div>
+                <button class="form__button">Book</button>
+              </div>
             </form>
           </div>
         </div>
