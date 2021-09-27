@@ -1,20 +1,21 @@
 export function initComparisons() {
-  var x, i;
+  let x, i;
+  let slider, img, clicked = 0,
+    w, h;
+
   x = document.getElementsByClassName('explore__img_overlay');
   for (i = 0; i < x.length; i++) {
     compareImages(x[i]);
   }
 
   function compareImages(img) {
-    var slider, img, clicked = 0,
-      w, h;
     w = img.offsetWidth;
     h = img.offsetHeight;
-    img.style.width = (w / 2) + 'px';
+    img.style.width = (w / 2) + 80 + 'px';
     slider = document.createElement('DIV');
     slider.setAttribute('class', 'explore__slider');
     img.parentElement.insertBefore(slider, img);
-    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + 'px';
+    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + 80 + 'px';
     slider.addEventListener('mousedown', slideReady);
     window.addEventListener('mouseup', slideFinish);
     slider.addEventListener('touchstart', slideReady);
@@ -32,7 +33,7 @@ export function initComparisons() {
     }
 
     function slideMove(e) {
-      var pos;
+      let pos;
       if (clicked == 0) return false;
       pos = getCursorPos(e)
       if (pos < 0) pos = 0;
@@ -41,7 +42,7 @@ export function initComparisons() {
     }
 
     function getCursorPos(e) {
-      var a, x = 0;
+      let a, x = 0;
       e = e || window.event;
       a = img.getBoundingClientRect();
       x = e.pageX - a.left;
