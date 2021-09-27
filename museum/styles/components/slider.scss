@@ -105,7 +105,14 @@ $slider-height: 810px;
   margin-right: 25px;
   background-color: $main-color;
   cursor: pointer;
+  transition: background-color 0.2s;
   &:nth-child(6) {
     margin-right: 61px;
+  }
+  & .active {
+    background-color: $slider-btn-active-color;
+  }
+  &:hover {
+    background-color: $font-gold-color;
   }
 }

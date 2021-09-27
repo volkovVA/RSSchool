@@ -149,8 +149,9 @@
   background-color: $default-color;
   border-radius: 2px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   &:hover {
+    color: $default-color;
     background-color: $font-gold-color;
   }
   &:active {

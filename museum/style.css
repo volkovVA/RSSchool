@@ -797,7 +797,7 @@ input[type=date], input[type=time] {
   border: 1px solid #030303;
 }
 input[type=date]::before, input[type=time]::before {
-  content: attr(placeholder);
+  content: attr(data-placeholder);
   width: 15px;
   height: 22px;
   padding-top: 2px;
@@ -1422,6 +1422,7 @@ input[type=tel]::-webkit-input-placeholder {
 }
 
 .form__button {
+  position: relative;
   display: block;
   padding: 9px 84px;
   margin-left: auto;
@@ -1432,11 +1433,28 @@ input[type=tel]::-webkit-input-placeholder {
   background-color: #710707;
   cursor: pointer;
   transition: background-color 0.2s;
+  overflow: hidden;
 }
-.form__button:hover {
-  background-color: #9d8665;
+.form__button:focus {
+  outline: none;
 }
 
+.form__button .circle {
+  position: absolute;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
 .gallery {
   padding-top: 75px;
   background-color: #030303;
@@ -1741,9 +1759,13 @@ input[type=tel]::-webkit-input-placeholder {
   background-color: #999999;
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 .player__nav_dots.active {
   background-color: #333333;
+}
+.player__nav_dots:hover {
+  background-color: #710707;
 }
 
 .player__nav_icon {
@@ -1875,9 +1897,16 @@ input[type=tel]::-webkit-input-placeholder {
   margin-right: 25px;
   background-color: #ffffff;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 .slider__key:nth-child(6) {
   margin-right: 61px;
+}
+.slider__key .active {
+  background-color: #D2B183;
+}
+.slider__key:hover {
+  background-color: #9d8665;
 }
 
 .social {
@@ -2098,9 +2127,10 @@ input[type=tel]::-webkit-input-placeholder {
   background-color: #000000;
   border-radius: 2px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 .tickets__button:hover {
+  color: #000000;
   background-color: #9d8665;
 }
 .tickets__button:active {

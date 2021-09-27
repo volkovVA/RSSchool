@@ -111,7 +111,7 @@
                 <span class="slider__counter_current">01</span>
                 <span class="slider__counter_total">05</span>
               </div>
-              <button class="slider__key"></button>
+              <button class="slider__key active"></button>
               <button class="slider__key"></button>
               <button class="slider__key"></button>
               <button class="slider__key"></button>
@@ -394,7 +394,6 @@
                     src="https://www.youtube.com/embed/zp1BXPX8jcU?controls=0"
                     loading="lazy"
                     title="YouTube video player"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                   ></iframe>
@@ -404,7 +403,6 @@
                     src="https://www.youtube.com/embed/Vi5D6FKhRmo?controls=0"
                     loading="lazy"
                     title="YouTube video player"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                   ></iframe>
@@ -414,7 +412,6 @@
                     src="https://www.youtube.com/embed/NOhDysLnTvY?controls=0"
                     loading="lazy"
                     title="YouTube video player"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                   ></iframe>
@@ -503,7 +500,11 @@
                   <h3 class="tickets__amount">Amount</h3>
                   <span class="tickets__basic">Basic 18+</span>
                   <div class="tickets__count">
-                    <button class="tickets__buttons" type="button">
+                    <button
+                      class="tickets__buttons"
+                      type="button"
+                      onclick="this.nextElementSibling.stepDown();"
+                    >
                       <svg class="tickets__icon">
                         <use xlink:href="./assets/svg/sprite.svg#minus"></use>
                       </svg>
@@ -519,6 +520,7 @@
                     <button
                       class="tickets__buttons tickets__buttons--plus"
                       type="button"
+                      onclick="this.previousElementSibling.stepUp();"
                     >
                       <svg class="tickets__icon">
                         <use xlink:href="./assets/svg/sprite.svg#plus"></use>
@@ -527,7 +529,11 @@
                   </div>
                   <span class="tickets__senior">Senior 65+</span>
                   <div class="tickets__count tickets__count--bottom">
-                    <button class="tickets__buttons" type="button">
+                    <button
+                      class="tickets__buttons"
+                      type="button"
+                      onclick="this.nextElementSibling.stepDown();"
+                    >
                       <svg class="tickets__icon">
                         <use xlink:href="./assets/svg/sprite.svg#minus"></use>
                       </svg>
@@ -543,6 +549,7 @@
                     <button
                       class="tickets__buttons tickets__buttons--plus"
                       type="button"
+                      onclick="this.previousElementSibling.stepUp();"
                     >
                       <svg class="tickets__icon">
                         <use xlink:href="./assets/svg/sprite.svg#plus"></use>
@@ -693,7 +700,7 @@
           </ul>
         </div>
         <div class="footer__row">
-          <time class="footer__copy">&copy; 2021</time>
+          <span class="footer__copy">&copy; 2021</span>
           <a
             class="footer__rsschool"
             href="https://rs.school/js/"
@@ -729,14 +736,14 @@
                 <input
                   class="form__date"
                   type="date"
-                  placeholder="Date"
+                  data-placeholder="Date"
                   name="date"
                   required
                 />
                 <input
                   class="form__time"
                   type="time"
-                  placeholder="Time"
+                  data-placeholder="Time"
                   name="time"
                   required
                 />

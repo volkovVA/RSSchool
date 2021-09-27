@@ -196,8 +196,12 @@ $player-slider-height: 254px;
   background-color: $slider-dots-color;
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.2s;
   &.active {
     background-color: $slider-dots-active-color;
+  }
+  &:hover {
+    background-color: $dark-red-color;
   }
 }
 

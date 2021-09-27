@@ -19,8 +19,13 @@ import {
 } from './js/form/modal.js';
 
 import {
+  setRipple
+} from './js/form/ripple.js';
+
+import {
   initComparisons
 } from './js/explore/comparison.js';
+
 
 playerProgress();
 
@@ -37,3 +42,5 @@ selectOptions();
 showForm();
 
 initComparisons();
+
+setRipple();
