@@ -1,0 +1,8 @@
+.header {
+  padding: 52px 0 76px;
+  background-color: $bg-dark-color;
+}
+
+.header__container {
+  @include flex(space-between, center);
+}

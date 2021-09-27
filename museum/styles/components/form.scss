@@ -1,0 +1,684 @@
+.form {
+  @include flex(center, flex-start);
+}
+
+.form__column {
+  height: 100%;
+  &:first-child {
+    flex-basis: 43.6%;
+    margin-right: 40px;
+  }
+  &:last-child {
+    position: relative;
+    flex-basis: 57%;
+    padding: 25px 30px;
+    border: 1px solid $form-main-color;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 24px;
+      right: 26px;
+      width: 150px;
+      height: 120px;
+      background-image: url('./assets/img/form/form.png');
+      background-size: 150px 120px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}
+
+// Left column
+
+// Type Date, Type Time
+
+.form__box {
+  @include flex(space-between, center);
+  margin-bottom: 20px;
+}
+
+input[type="date"], input[type="time"] {
+  position: relative;
+  width: 190px;
+  height: 45px;
+  @include font-source(18px, 400, $form-main-color, 21px);
+  border: 1px solid $form-main-color;
+  &::before {
+    content: attr(data-placeholder);
+    width: 15px;
+    height: 22px;
+    padding-top: 2px;
+    padding-left: 44px;
+    background-position: 14px center;
+    background-repeat: no-repeat;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    right: 13px;
+    width: 18px;
+    height: 18px;
+    background-image: url('./assets/svg/form/arrow.svg');
+    background-size: 18px 18px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &:focus-visible:after {
+   transform: rotate(180deg);
+  }
+}
+
+input[type="date"]::before {
+  background-image: url('./assets/svg/form/date.svg');
+  background-size: 15px 15px;
+}
+
+input[type="date"] {
+  &:focus {
+    &::before {
+      content: '';
+    }
+    &::-webkit-datetime-edit-text,
+    &::-webkit-datetime-edit-month-field,
+    &::-webkit-datetime-edit-day-field,
+    &::-webkit-datetime-edit-year-field {
+      opacity: 1;
+    }
+  }
+}
+
+input[type="time"] {
+  &:focus {
+    &::before {
+      content: '';
+    }
+    &::-webkit-datetime-edit-hour-field,
+    &::-webkit-datetime-edit-minute-field,
+    &::-webkit-datetime-edit-ampm-field,
+    &::-webkit-clear-button,
+    &::-webkit-inner-spin-button {
+      opacity: 1;
+    }
+  }
+}
+
+input[type="time"]::before {
+  background-image: url('./assets/svg/form/time.svg');
+  background-size: 15px 15px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  opacity: 0;
+}
+
+input[type="time"]::-webkit-datetime-edit-text {
+  opacity: 0;
+}
+
+input[type="time"]::-webkit-datetime-edit-hour-field,
+input[type="time"]::-webkit-datetime-edit-minute-field,
+input[type="time"]::-webkit-datetime-edit-ampm-field,
+input[type="time"]::-webkit-clear-button,
+input[type="time"]::-webkit-inner-spin-button {
+  opacity: 0;
+}
+
+// Type text
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  padding-top: 2px;
+  padding-left: 43px;
+  border: 1px solid $form-main-color;
+  &::-webkit-input-placeholder {
+    @include font-source(18px, 400, $form-main-color, 21px);
+  }
+}
+
+.form__name label,
+.form__email label,
+.form__tel label {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 15px;
+    background-size: 13px 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+}
+
+.form__name label {
+  &::after {
+    background-image: url('./assets/svg/form/name.svg');
+  }
+}
+
+.form__email label {
+  &::after {
+    background-image: url('./assets/svg/form/email.svg');
+  }
+}
+
+.form__tel label {
+  &::after {
+    left: 14px;
+    width: 18px;
+    height: 22px;
+    background-size: 18px 22px;
+    background-image: url('./assets/svg/form/tel.svg');
+  }
+}
+
+.form__name,
+.form__email,
+.form__tel,
+.form__select {
+  margin-bottom: 20px;
+}
+
+// Type entry
+
+.form__entry {
+  padding: 10px 15px 0;
+  border: 1px solid $form-main-color;
+}
+
+.form__entry_box {
+  margin-bottom: 14px;
+  @include flex(space-between,center);
+  &:nth-child(2) {
+    margin-bottom: 19px;
+  }
+}
+
+.form__entry_title {
+  margin-bottom: 22px;
+  font-family: "Forum", "Times New Roman", Times, serif;
+  @include font-source(18px, 400, $font-gold-color, 20px);
+  &.border-line {
+    &::before {
+      height: 2px;
+    }
+  }
+}
+
+.form__entry_text {
+  @include font-source(18px, 400, $form-main-color, 21px);
+}
+
+.form__entry_count {
+  @include flex(space-between, center);
+  width: 105px;
+  height: 24px;
+  padding: 2px 8px 0 11px;
+  background-color: $form-main-color;
+  border-bottom: 1px solid $form-main-color;
+}
+
+.form__entry_buttons {
+  cursor: pointer;
+  &--plus {
+    padding-right: 2px;
+    padding-top: 2px;
+  }
+}
+
+.form__entry_icon {
+  width: 12px;
+  height: 14px;
+  stroke: $main-color;
+  transition: stroke 0.3s;
+}
+
+.form__entry_value {
+  position: relative;
+  top: -1px;
+  height: 22px;
+  width: 35px;
+  text-align: center;
+  @include font-source(18px, 300, $form-main-color, 21px);
+  background-color: $main-color;
+  border: 0;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+// Type Select
+
+.form__select {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  &[data-state="active"] {
+    .form__select_title {
+      &::before {
+        transform: translate(1px, -50%) rotate(-180deg);
+      }
+    }
+    .form__select_content {
+      opacity: 1;
+    }
+    .form__select_label + .form__select_input + .form__select_label {
+      max-height: 40px;
+      border-top-width: 1px;
+    }
+  }
+}
+
+.form__select_title {
+  @include flex(none, center);
+  width: 100%;
+  height: 100%;
+  padding-left: 45px;
+  border: 1px solid $form-main-color;
+  cursor: pointer;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+  &::before {
+    right: 14px;
+    width: 17px;
+    height: 17px;
+    background-image: url('./assets/svg/form/arrow.svg');
+    background-size: 16px 16px;
+  }
+  &::after {
+    left: 16px;
+    width: 15px;
+    height: 15px;
+    background-image: url('./assets/svg/form/select.svg');
+    background-size: 15px 15px;
+  }
+}
+
+.form__select_content {
+  position: absolute;
+  top: 45px;
+  left: 3px;
+  @include flex(none, none, column);
+  width: calc(100% - 6px);
+  background-color: $main-color;
+  border: 1px solid $form-main-color;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  z-index: 8;
+}
+
+.form__select_input {
+  display: none;
+  &:checked + label {
+    background-color: $option-checked-color;
+  }
+  &:disabled + label {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.form__select_label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  max-height: 0;
+  padding: 0 16px;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover {
+    background-color: $option-hover-color !important;
+  }
+}
+
+// Right column
+
+.form__overview {
+  margin-bottom: 3px;
+  @include font-source(32px, 500, $form-overview-color, 37px);
+}
+
+.form__tour {
+  margin-bottom: 10px;
+  @include font-source(22px, 500, $form-tour-color, 26px);
+}
+
+.form__info {
+  position: relative;
+  margin-bottom: 6px;
+  padding-left: 29px;
+  @include font-source(18px, 300, $form-main-color, 21px);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -2px;
+    width: 17px;
+    height: 17px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    z-index: 1;
+  }
+  &--date::before {
+    background-image: url('./assets/svg/form/date.svg');
+  }
+  &--time::before {
+    background-image: url('./assets/svg/form/time.svg');
+  }
+  &--select::before {
+    background-image: url('./assets/svg/form/bird.svg');
+  }
+  &--select {
+    margin-bottom: 22px;
+  }
+}
+
+.form__data {
+  margin-bottom: 10px;
+}
+
+.form__basic_info:nth-child(2).border-line::before {
+  bottom: -43%;
+  height: 2px;
+}
+
+.form__basic_info {
+  display: block;
+  @include flex(none, center);
+  margin-bottom: 5px;
+}
+
+.form__number {
+  display: block;
+  width: 32px;
+  height: 20px;
+  margin-right: 10px;
+  text-align: center;
+  @include font-source(18px, 400, $form-border-color, 21px);
+  background-color: $form-main-color;
+  border-radius: 5px;
+}
+
+.form__price {
+  @include font-source(22px, 400, $form-main-color, 26px);
+}
+
+.form__count {
+  margin-left: auto;
+  @include font-source(22px, 400, $form-main-color, 26px);
+}
+
+.form__total {
+  @include flex(none, center);
+  margin-top: 22px;
+}
+
+.form__total_text {
+  @include font-source(32px, 400, $form-main-color, 37px);
+}
+
+.form__total_count {
+  margin-left: auto;
+  @include font-source(32px, 500, $form-main-color, 37px);
+}
+
+.form__card {
+  position: relative;
+  margin-bottom: 55px;
+}
+
+.form__card_front {
+  position: relative;
+  width: 77%;
+  padding: 15px 19px;
+  background-color: $card-font-color;
+  border-radius: 5px;
+  z-index: 1;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &::before {
+    top: 34px;
+    width: 55px;
+    height: 16px;
+    background-image: url('./assets/img/form/visa.png');
+    background-size: 55px 16px;
+  }
+  &::after {
+    top: 65px;
+    width: 53px;
+    height: 32px;
+    background-image: url('./assets/img/form/mastercard.png');
+    background-size: 53px 32px;
+  }
+}
+
+.form__card_number label,
+.form__card_date label,
+.form__card_name label {
+  display: block;
+  margin-bottom: 5px;
+  @include font-source(12px, 400, $card-text-color, 14px);
+}
+
+.form__card_name label {
+  margin-bottom: 4px;
+}
+
+.form__card_number {
+  @include flex(none, none, column);
+  margin-bottom: 10px;
+}
+
+.form__card_number input {
+  width: 215px;
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid $form-border-color;
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.form__card_date {
+  margin-bottom: 10px;
+}
+
+.form__card_date input {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid $form-border-color;
+  -moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    display: none;
+  }
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.form__card_month,
+.form__card_year {
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 32px;
+    height: 34px;
+    width: 1px;
+    background-color: $form-border-color;
+  }
+}
+
+.form__card_month {
+  margin-right: 10px;
+}
+
+.form__card_name input {
+  height: 36px;
+  padding-left: 10px;
+  border: 1px solid $form-border-color;
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.form__card_down,
+.form__card_up {
+  position: absolute;
+  display: block;
+  right: 12px;
+  width: 8px;
+  height: 6px;
+  background-image: url('./assets/svg/form/arrow-card.svg');
+  background-size: 8px 6px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.form__card_down {
+  bottom: 10px;
+}
+
+.form__card_up {
+  transform: rotate(180deg);
+  top: 10px;
+}
+
+.form__card_back {
+  position: absolute;
+  top: 30px;
+  right: -3px;
+  width: 77%;
+  height: 211px;
+  background-color: $card-back-color;
+  border-radius: 5px;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    display: block;
+    width: 100%;
+    height: 45px;
+    background-color: $card-text-color;
+  }
+}
+
+.form__card_cvv {
+  position: absolute;
+  right: 20px;
+  top: 86px;
+}
+
+.form__card_cvv label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+  @include font-source(12px, 400, $card-text-color, 14px);
+}
+
+.form__card_cvv input {
+  width: 75px;
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid $form-border-color;
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.form__card_text {
+  position: absolute;
+  top: 146px;
+  right: 19px;
+  width: 65px;
+  @include font-source(10px, 400, $card-text-color, 12px);
+}
+
+.form__button {
+  position: relative;
+  display: block;
+  padding: 9px 84px;
+  margin-left: auto;
+  @include font-source(22px, 400, $main-color, 26px);
+  background-color: $form-btn-color;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  overflow: hidden;
+  // &:hover {
+  //   background-color: $font-gold-color;
+  // }
+  &:focus {
+    outline: none;
+  }
+}
+
+.form__button .circle {
+  position: absolute;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}

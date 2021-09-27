@@ -1,0 +1,30 @@
+.gallery {
+  padding: 75px 0 62px;
+  background-color: $bg-dark-color;
+}
+
+.gallery__title {
+  margin-bottom: 75px;
+  color: $main-color;
+}
+
+.gallery__container {
+  overflow-y: hidden;
+  height: 1898px;
+}
+
+.gallery__inner_container {
+  columns: 3;
+  column-gap: 36px;
+}
+
+.gallery__box {
+  width: 100%;
+  margin: 0 0 24px;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.gallery__image {
+  @include image-cover;
+}

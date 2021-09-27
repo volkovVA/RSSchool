@@ -1,0 +1,160 @@
+.tickets {
+  padding: 74px 0 75px;
+}
+
+.tickets__title {
+  color: $font-gold-color;
+}
+
+.tickets__box{
+  @include flex;
+}
+
+.tickets__image {
+  @include image-cover;
+}
+
+.tickets__form {
+  flex: 1;
+  padding-left: 60px;
+  @include flex(none, none, column);
+}
+
+.tickets__content {
+  @include flex(space-between);
+}
+
+.tickets__col-small {
+  @include flex(flex-start, none, column);
+  color: $main-color;
+  &:first-child {
+    margin-right: 20px;
+  }
+}
+
+.tickets__type, .tickets__amount {
+  margin-bottom: 50px;
+  @include font-source(28px, 700, $default-color, 33px);
+}
+
+.tickets__amount {
+  margin-bottom: 26px;
+  margin-left: auto;
+}
+
+.tickets__radio {
+  position: relative;
+  display: block;
+  margin-bottom: 25px;
+  @include font-source(22px, 300, $default-color, 26px);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tickets__radio > input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.tickets__radio > span {
+  @include flex(none, center);
+  position: relative;
+  padding-left: 40px;
+  margin-left: -2px;
+}
+
+.tickets__radio > span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("./assets/img/tickets/radio-button-unchecked.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+.tickets__radio>input:checked+span::before{
+  background-image: url("./assets/img/tickets/radio-button-checked.svg");
+}
+
+.tickets__basic,
+.tickets__senior {
+  margin-bottom: 14px;
+  @include font-source(22px, 300, $default-color, 26px);
+}
+
+.tickets__count {
+  @include flex(space-between, center);
+  width: 150px;
+  height: 50px;
+  padding: 2px 8px 0 11px;
+  margin-bottom: 11px;
+  border: 3px solid $default-color;
+  &--bottom {
+    margin-bottom: 50px;
+  }
+}
+
+.tickets__value {
+  text-align: center;
+  @include font-source(22px, 300, $default-color, 26px);
+  background-color: transparent;
+  border: 0;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.tickets__buttons {
+  cursor: pointer;
+  &:hover .tickets__icon {
+    stroke: $font-gold-color;
+  }
+  &:active {
+    transform: scale(0.85);
+  }
+  &--plus {
+    padding-right: 2px;
+    padding-top: 2px;
+  }
+}
+
+.tickets__icon {
+  width: 20px;
+  height: 20px;
+  stroke: $default-color;
+  transition: stroke 0.3s;
+}
+
+.tickets__price {
+  margin-bottom: 60px;
+  @include font-source(28px, 700, $default-color, 33px);
+  letter-spacing: 1.65px;
+}
+
+.tickets__button {
+  padding: 12px 37px;
+  margin-left: auto;
+  @include font-source(22px, 300, $main-color, 26px);
+  letter-spacing: 2px;
+  background-color: $default-color;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  &:hover {
+    color: $default-color;
+    background-color: $font-gold-color;
+  }
+  &:active {
+    transform: scale(0.99);
+  }
+}

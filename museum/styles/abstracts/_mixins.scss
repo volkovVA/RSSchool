@@ -1,0 +1,81 @@
+// Font-Source
+
+@mixin font-source($size: false, $weight: false, $color: false, $lh: false, ) {
+  @if $size { font-size: $size; }
+  @if $weight { font-weight: $weight; }
+  @if $color { color: $color; }
+  @if $lh { line-height: $lh; }
+}
+
+// @2x Images (Pixel Ratio of 1.25+)
+
+@mixin bg-2x {
+  @media only screen and (-o-min-device-pixel-ratio: 5/4),
+  only screen and (-webkit-min-device-pixel-ratio: 1.25),
+  only screen and (min--moz-device-pixel-ratio: 1.25),
+  only screen and (min-device-pixel-ratio: 1.25),
+  only screen and (min-resolution: 1.25dppx) {
+    @content;
+  }
+}
+
+// @3x Images (Pixel Ratio of 2.25+)
+
+@mixin bg-3x {
+  @media only screen and (-o-min-device-pixel-ratio: 9/4),
+  only screen and (-webkit-min-device-pixel-ratio: 2.25),
+  only screen and (min--moz-device-pixel-ratio: 2.25),
+  only screen and (min-device-pixel-ratio: 2.25),
+  only screen and (min-resolution: 2.25dppx) {
+    @content;
+  }
+}
+
+// @4x Images (Pixel Ratio of 3.25+)
+
+@mixin bg-4x {
+  @media only screen and (-o-min-device-pixel-ratio: 13/4),
+    only screen and (-webkit-min-device-pixel-ratio: 3.25),
+    only screen and (min-device-pixel-ratio: 3.25),
+    only screen and (min-resolution: 3.25dppx) {
+      @content;
+  }
+}
+
+// Flex
+
+@mixin flex($justify: none, $align: none, $direction: none) {
+  display: flex;
+  @if $align != none {
+    align-items: #{$align};
+  }
+  @if $justify != none {
+    justify-content: #{$justify};
+  }
+  @if $direction != none {
+    flex-direction: #{$direction};
+  }
+}
+
+// Flex centering
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Pseudo
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+// Image
+
+@mixin image-cover{
+  object-fit: cover;
+  object-position: center;
+}
