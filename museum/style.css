@@ -697,9 +697,53 @@ template {
   color: #caaa7d;
 }
 
+.explore__img_container {
+  position: relative;
+  height: 700px;
+  width: 700px;
+}
+
+.explore__img_box {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
 .explore__image {
-  object-fit: cover;
-  object-position: center;
+  display: block;
+  height: inherit;
+  max-width: inherit;
+}
+
+.explore__slider {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 39px;
+  height: 39px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  z-index: 1;
+  cursor: ew-resize;
+}
+.explore__slider::before, .explore__slider:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 334px;
+  background-color: #ffffff;
+  z-index: 1;
+}
+.explore__slider::before {
+  top: 30px;
+}
+.explore__slider:after {
+  bottom: 30px;
 }
 
 .form {

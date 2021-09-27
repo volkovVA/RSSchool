@@ -18,6 +18,10 @@ import {
   showForm
 } from './js/form/modal.js';
 
+import {
+  initComparisons
+} from './js/explore/comparison.js';
+
 playerProgress();
 
 let sliderItems = document.querySelector('.slider__box'),
@@ -31,3 +35,5 @@ setGallery();
 selectOptions();
 
 showForm();
+
+initComparisons();

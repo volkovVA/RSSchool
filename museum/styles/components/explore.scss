@@ -33,6 +33,52 @@
   }
 }
 
+.explore__img_container {
+  position: relative;
+  height: 700px;
+  width: 700px;
+}
+
+.explore__img_box {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
 .explore__image {
-  @include image-cover;
+  display: block;
+  height: inherit;
+  max-width: inherit;
+}
+
+.explore__slider {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 39px;
+  height: 39px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 5px solid $main-color;
+  z-index: 1;
+  cursor: ew-resize;
+  &::before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 334px;
+    background-color: $main-color;
+    z-index: 1;
+  }
+  &::before {
+    top: 30px;
+  }
+  &:after {
+    bottom: 30px;
+  }
 }
