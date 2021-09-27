@@ -1,10 +1,14 @@
 .footer {
-  padding: 75px 0;
+  padding-top: 75px;
   background-color: $bg-dark-color;
 }
 
-.footer__container {
+.footer__row {
   @include flex(space-between);
+  &:nth-child(2) {
+    padding: 50px 0;
+    @include font-source(22px, 200, $main-color, 22px);
+  }
 }
 
 .footer__nav {
@@ -14,8 +18,8 @@
 
 .footer .nav__list {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .footer .nav__item {
@@ -40,5 +44,13 @@
   &:last-child {
     grid-area: 3 / 2 / 4 / 3;
     padding-left: 10px;
+  }
+}
+
+.footer__rsschool,
+.footer__github {
+  transition: color 0.2s;
+  &:hover {
+    color: $font-gold-color;
   }
 }

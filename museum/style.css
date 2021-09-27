@@ -2161,13 +2161,20 @@ input[type=tel]::-webkit-input-placeholder {
 }
 
 .footer {
-  padding: 75px 0;
+  padding-top: 75px;
   background-color: #030303;
 }
 
-.footer__container {
+.footer__row {
   display: flex;
   justify-content: space-between;
+}
+.footer__row:nth-child(2) {
+  padding: 50px 0;
+  font-size: 22px;
+  font-weight: 200;
+  color: #ffffff;
+  line-height: 22px;
 }
 
 .footer__nav {
@@ -2204,6 +2211,15 @@ input[type=tel]::-webkit-input-placeholder {
 .footer .nav__item:last-child {
   grid-area: 3/2/4/3;
   padding-left: 10px;
+}
+
+.footer__rsschool,
+.footer__github {
+  transition: color 0.2s;
+}
+.footer__rsschool:hover,
+.footer__github:hover {
+  color: #9d8665;
 }
 
 .header {
