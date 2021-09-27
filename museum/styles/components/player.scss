@@ -3,16 +3,16 @@
 }
 
 .player__control {
-  @include flex(none, center);
+  @include flex(space-between, center);
   height: 85px;
-  padding: 2px 41px 0 40px;
+  padding: 3px 29px 0 27px;
   margin-bottom: 40px;
   background-color: $default-color;
 }
 
 .player__box {
   position: relative;
-  height: 629px;
+  height: 650px;
 }
 
 .player__video {
@@ -55,19 +55,6 @@
 }
 
 .player__button {
-  margin-right: 40px;
-  &:first-child {
-    margin-right: 37px;
-  }
-  &:nth-child(2) {
-    margin-right: 36px;
-  }
-  &:nth-child(3) {
-    margin-right: 39px;
-  }
-  &:last-child {
-    margin-right: 0;
-  }
   &:hover .player__icon {
     fill: $player-hover-color;
   }
@@ -78,7 +65,6 @@
 
 .player__button--speaker {
   position: relative;
-  margin-right: 19px;
   &::after {
     @include pseudo;
     top: -4px;
@@ -105,8 +91,8 @@
   fill: $player-icon-color;
   transition: fill 0.3s;
   &--speaker, &--full {
-    width: 36px;
-    height: 36px;
+    width: 37px;
+    height: 37px;
   }
 }
 
@@ -136,22 +122,20 @@
 }
 
 .player__progress--rewind {
-  width: 820px;
-  margin-right: 40px;
+  width: 929px;
 }
 
 .player__progress--volume {
   width: 154px;
-  margin-right: 51px;
 }
 
-$player-slider-width: 20%;
-$player-slider-height: 254px;
+$player-slider-width: 20.1%;
+$player-slider-height: 256px;
 
 .player__slider {
   width: 100%;
   height: $player-slider-height;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
   overflow: hidden;
 }
 
@@ -172,7 +156,7 @@ $player-slider-height: 254px;
   display: block;
   width: $player-slider-width;
   height: $player-slider-height;
-  margin-right: 42px;
+  margin-right: 40px;
   cursor: pointer;
   & iframe {
     width: 100%;

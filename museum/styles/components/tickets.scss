@@ -16,7 +16,7 @@
 
 .tickets__form {
   flex: 1;
-  padding-left: 62px;
+  padding-left: 60px;
   @include flex(none, none, column);
 }
 
@@ -38,14 +38,14 @@
 }
 
 .tickets__amount {
-  margin-bottom: 12px;
+  margin-bottom: 26px;
   margin-left: auto;
 }
 
 .tickets__radio {
   position: relative;
   display: block;
-  margin-bottom: 49px;
+  margin-bottom: 25px;
   @include font-source(22px, 300, $default-color, 26px);
   cursor: pointer;
   -webkit-user-select: none;
@@ -86,7 +86,7 @@
 
 .tickets__basic,
 .tickets__senior {
-  margin-bottom: 13px;
+  margin-bottom: 14px;
   @include font-source(22px, 300, $default-color, 26px);
 }
 
@@ -95,10 +95,10 @@
   width: 150px;
   height: 50px;
   padding: 2px 8px 0 11px;
-  margin-bottom: 36px;
+  margin-bottom: 11px;
   border: 3px solid $default-color;
   &--bottom {
-    margin-bottom: 51px;
+    margin-bottom: 50px;
   }
 }
 
@@ -136,7 +136,7 @@
 }
 
 .tickets__price {
-  margin-bottom: 48px;
+  margin-bottom: 60px;
   @include font-source(28px, 700, $default-color, 33px);
   letter-spacing: 1.65px;
 }

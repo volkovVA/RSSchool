@@ -21,7 +21,7 @@
 }
 
 .explore__text {
-  margin-bottom: 27px;
+  margin-bottom: 26px;
   padding-right: 50px;
   @include font-source(22px, 300, $main-color, 38.5px);
   &:last-child {
@@ -36,7 +36,7 @@
 .explore__img_container {
   position: relative;
   height: 700px;
-  width: 700px;
+  width: 720px;
 }
 
 .explore__img_box {
@@ -70,7 +70,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 5px;
+    width: 4px;
     height: 334px;
     background-color: $main-color;
     z-index: 1;

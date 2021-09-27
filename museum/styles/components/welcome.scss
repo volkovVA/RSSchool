@@ -1,5 +1,5 @@
 .welcome {
-  padding: 0 0 272px;
+  padding: 0 0 273px;
   background-color: $bg-dark-color;
 }
 
@@ -16,7 +16,7 @@
 
 .welcome__text {
   position: relative;
-  margin-bottom: 75px;
+  margin-bottom: 74px;
   @include font-source(28px, 300, $main-color, 33px);
   letter-spacing: 2.2px;
   z-index: 2;

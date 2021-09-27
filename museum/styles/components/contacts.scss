@@ -1,8 +1,9 @@
 .contacts {
-  padding: 74px 0 75px;
+  padding: 74px 0 84px;
 }
 
 .contacts__title {
+  margin-bottom: 94px;
   color: $font-gold-color;
 }
 
@@ -17,11 +18,12 @@
 .contacts__map {
   flex: 2;
   height: 620px;
+  padding-top: 10px;
 }
 
 .contacts__desc {
   width: 240px;
-  margin-bottom: 38px;
+  margin-bottom: 51px;
   padding-top: 10px;
   @include font-source(28px, 500, $default-color, 33px);
 }
@@ -34,7 +36,7 @@
 
 .contacts__text {
   @include flex;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   & > span {
     margin-right: 6px;
   }
