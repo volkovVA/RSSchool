@@ -30,6 +30,10 @@ import {
   initComparisons
 } from './js/explore/comparison.js';
 
+import {
+  consoleDescription
+} from './js/console/console.js';
+
 playerProgress();
 
 let sliderItems = document.querySelector('.slider__box'),
@@ -49,3 +53,5 @@ initComparisons();
 setRipple();
 
 setInputNumber();
+
+consoleDescription();
