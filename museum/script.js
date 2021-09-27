@@ -23,9 +23,12 @@ import {
 } from './js/form/ripple.js';
 
 import {
+  setInputNumber
+} from './js/form/input.js';
+
+import {
   initComparisons
 } from './js/explore/comparison.js';
-
 
 playerProgress();
 
@@ -44,3 +47,5 @@ showForm();
 initComparisons();
 
 setRipple();
+
+setInputNumber();
