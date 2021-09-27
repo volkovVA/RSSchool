@@ -489,6 +489,62 @@ template {
   display: none;
 }
 
+.booking {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  transition: left 0.2s;
+}
+.booking.active {
+  left: 0;
+}
+
+.booking__container {
+  background-color: #ffffff;
+}
+
+.booking__box {
+  position: relative;
+  width: 100%;
+  height: 845px;
+  padding: 91px 235px;
+  border: 1px solid #A4A4A3;
+}
+
+.booking__close {
+  position: absolute;
+  right: 24px;
+  top: 26px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.booking__close:hover {
+  opacity: 1;
+}
+.booking__close::before, .booking__close::after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #030303;
+}
+.booking__close:before {
+  transform: rotate(45deg);
+}
+.booking__close:after {
+  transform: rotate(-45deg);
+}
+
 .card {
   position: relative;
   display: block;
@@ -646,13 +702,6 @@ template {
   object-position: center;
 }
 
-.booking__box {
-  width: 100%;
-  height: 845px;
-  padding: 91px 235px;
-  border: 1px solid #A4A4A3;
-}
-
 .form {
   display: flex;
   align-items: flex-start;
@@ -663,12 +712,12 @@ template {
   height: 100%;
 }
 .form__column:first-child {
-  flex-basis: 40%;
+  flex-basis: 43.6%;
   margin-right: 40px;
 }
 .form__column:last-child {
   position: relative;
-  flex-basis: 60%;
+  flex-basis: 57%;
   padding: 25px 30px;
   border: 1px solid #030303;
 }
@@ -676,8 +725,8 @@ template {
   content: "";
   display: block;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 24px;
+  right: 26px;
   width: 150px;
   height: 120px;
   background-image: url("./assets/img/form/form.png");
@@ -705,25 +754,46 @@ input[type=date], input[type=time] {
 }
 input[type=date]::before, input[type=time]::before {
   content: attr(placeholder);
-  padding-left: 45px;
+  width: 15px;
+  height: 22px;
+  padding-top: 2px;
+  padding-left: 44px;
   background-position: 14px center;
   background-repeat: no-repeat;
 }
 input[type=date]::after, input[type=time]::after {
   content: "";
   position: absolute;
-  right: 14px;
-  width: 17px;
-  height: 17px;
+  top: 14px;
+  right: 13px;
+  width: 18px;
+  height: 18px;
   background-image: url("./assets/svg/form/arrow.svg");
-  background-size: 17px 17px;
+  background-size: 18px 18px;
   background-position: center center;
   background-repeat: no-repeat;
+}
+input[type=date]:focus-visible:after, input[type=time]:focus-visible:after {
+  transform: rotate(180deg);
 }
 
 input[type=date]::before {
   background-image: url("./assets/svg/form/date.svg");
   background-size: 15px 15px;
+}
+
+input[type=date]:focus::before {
+  content: "";
+}
+input[type=date]:focus::-webkit-datetime-edit-text, input[type=date]:focus::-webkit-datetime-edit-month-field, input[type=date]:focus::-webkit-datetime-edit-day-field, input[type=date]:focus::-webkit-datetime-edit-year-field {
+  opacity: 1;
+}
+
+input[type=time]:focus::before {
+  content: "";
+}
+input[type=time]:focus::-webkit-datetime-edit-hour-field, input[type=time]:focus::-webkit-datetime-edit-minute-field, input[type=time]:focus::-webkit-datetime-edit-ampm-field, input[type=time]:focus::-webkit-clear-button, input[type=time]:focus::-webkit-inner-spin-button {
+  opacity: 1;
 }
 
 input[type=time]::before {
@@ -743,12 +813,11 @@ input[type=date]::-webkit-datetime-edit-text,
 input[type=date]::-webkit-datetime-edit-month-field,
 input[type=date]::-webkit-datetime-edit-day-field,
 input[type=date]::-webkit-datetime-edit-year-field {
-  -webkit-appearance: none;
-  display: none;
+  opacity: 0;
 }
 
 input[type=time]::-webkit-datetime-edit-text {
-  display: none;
+  opacity: 0;
 }
 
 input[type=time]::-webkit-datetime-edit-hour-field,
@@ -756,7 +825,7 @@ input[type=time]::-webkit-datetime-edit-minute-field,
 input[type=time]::-webkit-datetime-edit-ampm-field,
 input[type=time]::-webkit-clear-button,
 input[type=time]::-webkit-inner-spin-button {
-  display: none;
+  opacity: 0;
 }
 
 input[type=text],
@@ -765,6 +834,7 @@ input[type=tel] {
   position: relative;
   width: 100%;
   height: 45px;
+  padding-top: 2px;
   padding-left: 43px;
   border: 1px solid #030303;
 }
@@ -787,7 +857,7 @@ input[type=tel]::-webkit-input-placeholder {
 .form__tel label::after {
   content: "";
   position: absolute;
-  left: 18px;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
   width: 13px;
@@ -807,6 +877,10 @@ input[type=tel]::-webkit-input-placeholder {
 }
 
 .form__tel label::after {
+  left: 14px;
+  width: 18px;
+  height: 22px;
+  background-size: 18px 22px;
   background-image: url("./assets/svg/form/tel.svg");
 }
 
@@ -823,14 +897,17 @@ input[type=tel]::-webkit-input-placeholder {
 }
 
 .form__entry_box {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.form__entry_box:nth-child(2) {
+  margin-bottom: 19px;
+}
 
 .form__entry_title {
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   font-family: "Forum", "Times New Roman", Times, serif;
   font-size: 18px;
   font-weight: 400;
@@ -853,7 +930,7 @@ input[type=tel]::-webkit-input-placeholder {
   align-items: center;
   justify-content: space-between;
   width: 105px;
-  height: 27px;
+  height: 24px;
   padding: 2px 8px 0 11px;
   background-color: #030303;
   border-bottom: 1px solid #030303;
@@ -868,13 +945,17 @@ input[type=tel]::-webkit-input-placeholder {
 }
 
 .form__entry_icon {
-  width: 10px;
+  width: 12px;
+  height: 14px;
   stroke: #ffffff;
   transition: stroke 0.3s;
 }
 
 .form__entry_value {
-  width: 40px;
+  position: relative;
+  top: -1px;
+  height: 22px;
+  width: 35px;
   text-align: center;
   font-size: 18px;
   font-weight: 300;
@@ -894,7 +975,7 @@ input[type=tel]::-webkit-input-placeholder {
   height: 45px;
 }
 .form__select[data-state=active] .form__select_title::before {
-  transform: translate(0, -50%) rotate(-180deg);
+  transform: translate(1px, -50%) rotate(-180deg);
 }
 .form__select[data-state=active] .form__select_content {
   opacity: 1;
@@ -981,7 +1062,7 @@ input[type=tel]::-webkit-input-placeholder {
 }
 
 .form__overview {
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   font-size: 32px;
   font-weight: 500;
   color: #272727;
@@ -998,8 +1079,8 @@ input[type=tel]::-webkit-input-placeholder {
 
 .form__info {
   position: relative;
-  margin-bottom: 5px;
-  padding-left: 36px;
+  margin-bottom: 6px;
+  padding-left: 29px;
   font-size: 18px;
   font-weight: 300;
   color: #030303;
@@ -1010,13 +1091,13 @@ input[type=tel]::-webkit-input-placeholder {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-position: center center;
-  background-repeat: no-repeat;
-  z-index: 1;
-  left: 0;
+  left: -2px;
   width: 17px;
   height: 17px;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: 16px 16px;
+  z-index: 1;
 }
 .form__info--date::before {
   background-image: url("./assets/svg/form/date.svg");
@@ -1035,7 +1116,8 @@ input[type=tel]::-webkit-input-placeholder {
   margin-bottom: 10px;
 }
 
-.form__basic_info:last-child.border-line::before {
+.form__basic_info:nth-child(2).border-line::before {
+  bottom: -43%;
   height: 2px;
 }
 
@@ -1078,7 +1160,7 @@ input[type=tel]::-webkit-input-placeholder {
 .form__total {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 .form__total_text {
@@ -1098,12 +1180,13 @@ input[type=tel]::-webkit-input-placeholder {
 
 .form__card {
   position: relative;
+  margin-bottom: 55px;
 }
 
 .form__card_front {
   position: relative;
-  width: 360px;
-  padding: 15px 20px;
+  width: 77%;
+  padding: 15px 19px;
   background-color: #BCBCBC;
   border-radius: 5px;
   z-index: 1;
@@ -1117,14 +1200,14 @@ input[type=tel]::-webkit-input-placeholder {
   background-position: center center;
 }
 .form__card_front::before {
-  top: 43px;
+  top: 34px;
   width: 55px;
   height: 16px;
   background-image: url("./assets/img/form/visa.png");
   background-size: 55px 16px;
 }
 .form__card_front::after {
-  top: 77px;
+  top: 65px;
   width: 53px;
   height: 32px;
   background-image: url("./assets/img/form/mastercard.png");
@@ -1140,6 +1223,10 @@ input[type=tel]::-webkit-input-placeholder {
   font-weight: 400;
   color: #161615;
   line-height: 14px;
+}
+
+.form__card_name label {
+  margin-bottom: 4px;
 }
 
 .form__card_number {
@@ -1198,10 +1285,11 @@ input[type=tel]::-webkit-input-placeholder {
 }
 
 .form__card_month {
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .form__card_name input {
+  height: 36px;
   padding-left: 10px;
   border: 1px solid #A4A4A3;
 }
@@ -1235,9 +1323,9 @@ input[type=tel]::-webkit-input-placeholder {
 
 .form__card_back {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 360px;
+  top: 30px;
+  right: -3px;
+  width: 77%;
   height: 211px;
   background-color: #939393;
   border-radius: 5px;
@@ -1245,7 +1333,7 @@ input[type=tel]::-webkit-input-placeholder {
 .form__card_back::after {
   content: "";
   position: absolute;
-  top: 20px;
+  top: 24px;
   display: block;
   width: 100%;
   height: 45px;
@@ -1254,8 +1342,8 @@ input[type=tel]::-webkit-input-placeholder {
 
 .form__card_cvv {
   position: absolute;
-  right: 25px;
-  top: 70px;
+  right: 20px;
+  top: 86px;
 }
 
 .form__card_cvv label {
@@ -1271,14 +1359,18 @@ input[type=tel]::-webkit-input-placeholder {
 .form__card_cvv input {
   width: 75px;
   height: 35px;
+  padding-left: 10px;
   border: 1px solid #A4A4A3;
+}
+.form__card_cvv input:focus-visible {
+  outline: none;
 }
 
 .form__card_text {
   position: absolute;
-  top: 137px;
-  right: 10px;
-  width: 85px;
+  top: 146px;
+  right: 19px;
+  width: 65px;
   font-size: 10px;
   font-weight: 400;
   color: #161615;
@@ -1287,13 +1379,18 @@ input[type=tel]::-webkit-input-placeholder {
 
 .form__button {
   display: block;
-  padding: 11px 85px;
+  padding: 9px 84px;
   margin-left: auto;
   font-size: 22px;
   font-weight: 400;
   color: #ffffff;
   line-height: 26px;
   background-color: #710707;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.form__button:hover {
+  background-color: #9d8665;
 }
 
 .gallery {
@@ -1339,7 +1436,7 @@ input[type=tel]::-webkit-input-placeholder {
 }
 .logo--form {
   margin-right: 0;
-  margin-bottom: 64px;
+  margin-bottom: 72px;
 }
 
 .logo__title {
@@ -1356,12 +1453,12 @@ input[type=tel]::-webkit-input-placeholder {
 }
 .logo__title--form {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   font-size: 50px;
   font-weight: 400;
   color: #9d8665;
   line-height: 55px;
-  letter-spacing: 1px;
+  letter-spacing: 0;
   white-space: nowrap;
 }
 
@@ -1376,6 +1473,7 @@ input[type=tel]::-webkit-input-placeholder {
   width: 85px;
   height: 41px;
   margin-right: 0;
+  margin-bottom: -6px;
   fill: #9d8665;
 }
 
@@ -1384,6 +1482,9 @@ input[type=tel]::-webkit-input-placeholder {
   font-weight: 400;
   color: #710707;
   line-height: 21px;
+}
+.logo__text.border-line::before {
+  bottom: -55%;
 }
 
 .parallax {

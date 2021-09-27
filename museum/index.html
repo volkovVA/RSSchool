@@ -588,242 +588,6 @@
           </div>
         </div>
       </section>
-      <div class="booking">
-        <div class="container">
-          <div class="booking__box">
-            <form class="form" id="form">
-              <div class="form__column">
-                <div class="logo logo--form">
-                  <svg class="logo__icon logo__icon--form">
-                    <use xlink:href="./assets/svg/sprite.svg#logo"></use>
-                  </svg>
-                  <h1 class="logo__title logo__title--form">booking tickets</h1>
-                  <h2 class="logo__text border-line">Tour to Louvre</h2>
-                </div>
-                <div class="form__box">
-                  <input
-                    class="form__date"
-                    type="date"
-                    placeholder="Date"
-                    name="date"
-                  />
-                  <input
-                    class="form__time"
-                    type="time"
-                    placeholder="Time"
-                    name="time"
-                  />
-                </div>
-                <div class="form__name">
-                  <label for="name"></label>
-                  <input type="text" id="name" placeholder="Name" name="name" />
-                </div>
-                <div class="form__email">
-                  <label for="email"></label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="E-mail"
-                    name="email"
-                  />
-                </div>
-                <div class="form__tel">
-                  <label for="tel"></label>
-                  <input type="tel" id="tel" placeholder="Phone" name="tel" />
-                </div>
-                <div class="form__select" data-state="">
-                  <div class="form__select_title" data-default="Option 0">
-                    Ticket Type
-                  </div>
-                  <div class="form__select_content">
-                    <input
-                      id="singleSelect0"
-                      class="form__select_input"
-                      type="radio"
-                      name="singleSelect"
-                      checked
-                    />
-                    <label for="singleSelect0" class="form__select_label"
-                      >Option 0</label
-                    >
-                    <input
-                      id="singleSelect1"
-                      class="form__select_input"
-                      type="radio"
-                      name="singleSelect"
-                    />
-                    <label for="singleSelect1" class="form__select_label"
-                      >Permanent exhibition</label
-                    >
-                    <input
-                      id="singleSelect2"
-                      class="form__select_input"
-                      type="radio"
-                      name="singleSelect"
-                    />
-                    <label for="singleSelect2" class="form__select_label"
-                      >Temporary exhibition</label
-                    >
-                    <input
-                      id="singleSelect3"
-                      class="form__select_input"
-                      type="radio"
-                      name="singleSelect"
-                    />
-                    <label for="singleSelect3" class="form__select_label"
-                      >Combined Admission</label
-                    >
-                  </div>
-                </div>
-
-                <div class="form__entry">
-                  <h3 class="form__entry_title border-line">Entry Ticket</h3>
-                  <div class="form__entry_box">
-                    <div class="form__entry_text">Basic 18+ (20 &euro;)</div>
-                    <div class="form__entry_count">
-                      <button class="form__entry_buttons" type="button">
-                        <svg class="form__entry_icon">
-                          <use xlink:href="./assets/svg/sprite.svg#minus"></use>
-                        </svg>
-                      </button>
-                      <input
-                        class="form__entry_value"
-                        type="number"
-                        min="0"
-                        max="100"
-                        value="2"
-                        readonly
-                      />
-                      <button
-                        class="form__entry_buttons form__entry_buttons--plus"
-                        type="button"
-                      >
-                        <svg class="form__entry_icon">
-                          <use xlink:href="./assets/svg/sprite.svg#plus"></use>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="form__entry_box">
-                    <div class="form__entry_text">Senior 65+ (10 &euro;)</div>
-                    <div class="form__entry_count">
-                      <button class="form__entry_buttons" type="button">
-                        <svg class="form__entry_icon">
-                          <use xlink:href="./assets/svg/sprite.svg#minus"></use>
-                        </svg>
-                      </button>
-                      <input
-                        class="form__entry_value"
-                        type="number"
-                        min="0"
-                        max="100"
-                        value="2"
-                        readonly
-                      />
-                      <button
-                        class="form__entry_buttons form__entry_buttons--plus"
-                        type="button"
-                      >
-                        <svg class="form__entry_icon">
-                          <use xlink:href="./assets/svg/sprite.svg#plus"></use>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form__column">
-                <h2 class="form__overview">Overview</h2>
-                <h3 class="form__tour">Tour to Louvre</h3>
-                <p class="form__info form__info--date">Friday, August 19</p>
-                <p class="form__info form__info--time">16 : 30</p>
-                <p class="form__info form__info--select">
-                  Temporary exhibition
-                </p>
-                <div class="form__data">
-                  <div class="form__basic_info">
-                    <span class="form__number">2</span>
-                    <span class="form__price">Basic (20 &euro;)</span>
-                    <span class="form__count">40 &euro;</span>
-                  </div>
-                  <div class="form__basic_info border-line">
-                    <span class="form__number">2</span>
-                    <span class="form__price">Senior (10 &euro;)</span>
-                    <span class="form__count">20 &euro;</span>
-                  </div>
-                  <div class="form__total">
-                    <span class="form__total_text">Total:</span>
-                    <span class="form__total_count">60 &euro;</span>
-                  </div>
-                </div>
-                <div class="form__card">
-                  <div class="form__card_front">
-                    <div class="form__card_number">
-                      <label for="number">Card number</label>
-                      <input type="text" id="number" name="number" />
-                    </div>
-                    <div class="form__card_date">
-                      <label>Expiration date</label>
-                      <div class="form__card_month">
-                        <button
-                          class="form__card_up"
-                          type="button"
-                          onclick="this.nextElementSibling.stepUp(); this.nextElementSibling.onchange();"
-                        ></button>
-                        <input
-                          type="number"
-                          name="month"
-                          step="1"
-                          min="1"
-                          max="12"
-                          value="03"
-                        />
-                        <button
-                          class="form__card_down"
-                          type="button"
-                          onclick="this.previousElementSibling.stepDown(); this.previousElementSibling.onchange();"
-                        ></button>
-                      </div>
-                      <div class="form__card_year">
-                        <button
-                          class="form__card_up"
-                          type="button"
-                          onclick="this.nextElementSibling.stepUp(); this.nextElementSibling.onchange();"
-                        ></button>
-                        <input
-                          type="number"
-                          name="year"
-                          step="1"
-                          value="2024"
-                        />
-                        <button
-                          class="form__card_down"
-                          type="button"
-                          onclick="this.previousElementSibling.stepDown(); this.previousElementSibling.onchange();"
-                        ></button>
-                      </div>
-                    </div>
-                    <div class="form__card_name">
-                      <label for="card-name">Cardholder name</label>
-                      <input type="text" id="card-name" name="card-name" />
-                    </div>
-                  </div>
-                  <div class="form__card_back">
-                    <div class="form__card_cvv">
-                      <label for="cvv">CVC/CVV</label>
-                      <input type="text" id="cvv" name="cvv" />
-                    </div>
-                    <p class="form__card_text">
-                      The last<br />3 or 4 digits on back<br />of the card
-                    </p>
-                  </div>
-                </div>
-                <button class="form__button">Book</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
     </main>
     <footer class="footer">
       <div class="container footer__container">
@@ -919,6 +683,276 @@
         </ul>
       </div>
     </footer>
+    <div class="booking">
+      <div class="container booking__container">
+        <div class="booking__box">
+          <div class="booking__close"></div>
+          <form class="form" id="form">
+            <div class="form__column">
+              <div class="logo logo--form">
+                <svg class="logo__icon logo__icon--form">
+                  <use xlink:href="./assets/svg/sprite.svg#logo"></use>
+                </svg>
+                <h1 class="logo__title logo__title--form">booking tickets</h1>
+                <h2 class="logo__text border-line">Tour to Louvre</h2>
+              </div>
+              <div class="form__box">
+                <input
+                  class="form__date"
+                  type="date"
+                  placeholder="Date"
+                  name="date"
+                  required
+                />
+                <input
+                  class="form__time"
+                  type="time"
+                  placeholder="Time"
+                  name="time"
+                  required
+                />
+              </div>
+              <div class="form__name">
+                <label for="name"></label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="form__email">
+                <label for="email"></label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="E-mail"
+                  name="email"
+                  required
+                />
+              </div>
+              <div class="form__tel">
+                <label for="tel"></label>
+                <input
+                  type="tel"
+                  id="tel"
+                  placeholder="Phone"
+                  name="tel"
+                  required
+                />
+              </div>
+              <div class="form__select" data-state="">
+                <div class="form__select_title" data-default="Option 0">
+                  Ticket Type
+                </div>
+                <div class="form__select_content">
+                  <input
+                    id="singleSelect0"
+                    class="form__select_input"
+                    type="radio"
+                    name="singleSelect"
+                    checked
+                  />
+                  <label for="singleSelect0" class="form__select_label"
+                    >Option 0</label
+                  >
+                  <input
+                    id="singleSelect1"
+                    class="form__select_input"
+                    type="radio"
+                    name="singleSelect"
+                  />
+                  <label for="singleSelect1" class="form__select_label"
+                    >Permanent exhibition</label
+                  >
+                  <input
+                    id="singleSelect2"
+                    class="form__select_input"
+                    type="radio"
+                    name="singleSelect"
+                  />
+                  <label for="singleSelect2" class="form__select_label"
+                    >Temporary exhibition</label
+                  >
+                  <input
+                    id="singleSelect3"
+                    class="form__select_input"
+                    type="radio"
+                    name="singleSelect"
+                  />
+                  <label for="singleSelect3" class="form__select_label"
+                    >Combined Admission</label
+                  >
+                </div>
+              </div>
+              <div class="form__entry">
+                <h3 class="form__entry_title border-line">Entry Ticket</h3>
+                <div class="form__entry_box">
+                  <div class="form__entry_text">Basic 18+ (20 &euro;)</div>
+                  <div class="form__entry_count">
+                    <button
+                      class="form__entry_buttons"
+                      type="button"
+                      onclick="this.nextElementSibling.stepDown();"
+                    >
+                      <svg class="form__entry_icon">
+                        <use xlink:href="./assets/svg/sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                    <input
+                      class="form__entry_value"
+                      type="number"
+                      min="0"
+                      max="100"
+                      value="2"
+                      readonly
+                      required
+                    />
+                    <button
+                      class="form__entry_buttons form__entry_buttons--plus"
+                      type="button"
+                      onclick="this.previousElementSibling.stepUp();"
+                    >
+                      <svg class="form__entry_icon">
+                        <use xlink:href="./assets/svg/sprite.svg#plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="form__entry_box">
+                  <div class="form__entry_text">Senior 65+ (10 &euro;)</div>
+                  <div class="form__entry_count">
+                    <button
+                      class="form__entry_buttons"
+                      type="button"
+                      onclick="this.nextElementSibling.stepDown();"
+                    >
+                      <svg class="form__entry_icon">
+                        <use xlink:href="./assets/svg/sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                    <input
+                      class="form__entry_value"
+                      type="number"
+                      min="0"
+                      max="100"
+                      value="2"
+                      readonly
+                      required
+                    />
+                    <button
+                      class="form__entry_buttons form__entry_buttons--plus"
+                      type="button"
+                      onclick="this.previousElementSibling.stepUp();"
+                    >
+                      <svg class="form__entry_icon">
+                        <use xlink:href="./assets/svg/sprite.svg#plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__column">
+              <h2 class="form__overview">Overview</h2>
+              <h3 class="form__tour">Tour to Louvre</h3>
+              <p class="form__info form__info--date">Friday, August 19</p>
+              <p class="form__info form__info--time">16 : 30</p>
+              <p class="form__info form__info--select">
+                Temporary exhibition
+              </p>
+              <div class="form__data">
+                <div class="form__basic_info">
+                  <span class="form__number">2</span>
+                  <span class="form__price">Basic (20 &euro;)</span>
+                  <span class="form__count">40 &euro;</span>
+                </div>
+                <div class="form__basic_info border-line">
+                  <span class="form__number">2</span>
+                  <span class="form__price">Senior (10 &euro;)</span>
+                  <span class="form__count">20 &euro;</span>
+                </div>
+                <div class="form__total">
+                  <span class="form__total_text">Total:</span>
+                  <span class="form__total_count">60 &euro;</span>
+                </div>
+              </div>
+              <div class="form__card">
+                <div class="form__card_front">
+                  <div class="form__card_number">
+                    <label for="number">Card number</label>
+                    <input type="text" id="number" name="number" required />
+                  </div>
+                  <div class="form__card_date">
+                    <label>Expiration date</label>
+                    <div class="form__card_month">
+                      <button
+                        class="form__card_up"
+                        type="button"
+                        onclick="this.nextElementSibling.stepUp();"
+                      ></button>
+                      <input
+                        type="number"
+                        name="month"
+                        step="1"
+                        min="1"
+                        max="12"
+                        value="03"
+                        required
+                      />
+                      <button
+                        class="form__card_down"
+                        type="button"
+                        onclick="this.previousElementSibling.stepDown();"
+                      ></button>
+                    </div>
+                    <div class="form__card_year">
+                      <button
+                        class="form__card_up"
+                        type="button"
+                        onclick="this.nextElementSibling.stepUp();"
+                      ></button>
+                      <input
+                        type="number"
+                        name="year"
+                        step="1"
+                        value="2024"
+                        required
+                      />
+                      <button
+                        class="form__card_down"
+                        type="button"
+                        onclick="this.previousElementSibling.stepDown();"
+                      ></button>
+                    </div>
+                  </div>
+                  <div class="form__card_name">
+                    <label for="card-name">Cardholder name</label>
+                    <input
+                      type="text"
+                      id="card-name"
+                      name="card-name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form__card_back">
+                  <div class="form__card_cvv">
+                    <label for="cvv">CVC/CVV</label>
+                    <input type="text" id="cvv" name="cvv" required />
+                  </div>
+                  <p class="form__card_text">
+                    The last<br />3 or 4 digits on back<br />of the card
+                  </p>
+                </div>
+              </div>
+              <button class="form__button">Book</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <script src="script.js" type="module"></script>
   </body>
 </html>

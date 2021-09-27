@@ -1,16 +1,3 @@
-// .booking {
-//   width: 100%;
-//   height: 845px;
-//   border: 1px solid $form-border-color;
-// }
-
-.booking__box {
-  width: 100%;
-  height: 845px;
-  padding: 91px 235px;
-  border: 1px solid $form-border-color;
-}
-
 .form {
   @include flex(center, flex-start);
 }
@@ -18,20 +5,20 @@
 .form__column {
   height: 100%;
   &:first-child {
-    flex-basis: 40%;
+    flex-basis: 43.6%;
     margin-right: 40px;
   }
   &:last-child {
     position: relative;
-    flex-basis: 60%;
+    flex-basis: 57%;
     padding: 25px 30px;
     border: 1px solid $form-main-color;
     &::after {
       content: '';
       display: block;
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 24px;
+      right: 26px;
       width: 150px;
       height: 120px;
       background-image: url('./assets/img/form/form.png');
@@ -41,6 +28,8 @@
     }
   }
 }
+
+// Left column
 
 // Type Date, Type Time
 
@@ -57,26 +46,62 @@ input[type="date"], input[type="time"] {
   border: 1px solid $form-main-color;
   &::before {
     content: attr(placeholder);
-    padding-left: 45px;
+    width: 15px;
+    height: 22px;
+    padding-top: 2px;
+    padding-left: 44px;
     background-position: 14px center;
     background-repeat: no-repeat;
   }
   &::after {
     content: '';
     position: absolute;
-    right: 14px;
-    width: 17px;
-    height: 17px;
+    top: 14px;
+    right: 13px;
+    width: 18px;
+    height: 18px;
     background-image: url('./assets/svg/form/arrow.svg');
-    background-size: 17px 17px;
+    background-size: 18px 18px;
     background-position: center center;
     background-repeat: no-repeat;
+  }
+  &:focus-visible:after {
+   transform: rotate(180deg);
   }
 }
 
 input[type="date"]::before {
   background-image: url('./assets/svg/form/date.svg');
   background-size: 15px 15px;
+}
+
+input[type="date"] {
+  &:focus {
+    &::before {
+      content: '';
+    }
+    &::-webkit-datetime-edit-text,
+    &::-webkit-datetime-edit-month-field,
+    &::-webkit-datetime-edit-day-field,
+    &::-webkit-datetime-edit-year-field {
+      opacity: 1;
+    }
+  }
+}
+
+input[type="time"] {
+  &:focus {
+    &::before {
+      content: '';
+    }
+    &::-webkit-datetime-edit-hour-field,
+    &::-webkit-datetime-edit-minute-field,
+    &::-webkit-datetime-edit-ampm-field,
+    &::-webkit-clear-button,
+    &::-webkit-inner-spin-button {
+      opacity: 1;
+    }
+  }
 }
 
 input[type="time"]::before {
@@ -96,12 +121,11 @@ input[type="date"]::-webkit-datetime-edit-text,
 input[type="date"]::-webkit-datetime-edit-month-field,
 input[type="date"]::-webkit-datetime-edit-day-field,
 input[type="date"]::-webkit-datetime-edit-year-field {
-  -webkit-appearance: none;
-  display: none;
+  opacity: 0;
 }
 
 input[type="time"]::-webkit-datetime-edit-text {
-  display: none;
+  opacity: 0;
 }
 
 input[type="time"]::-webkit-datetime-edit-hour-field,
@@ -109,7 +133,7 @@ input[type="time"]::-webkit-datetime-edit-minute-field,
 input[type="time"]::-webkit-datetime-edit-ampm-field,
 input[type="time"]::-webkit-clear-button,
 input[type="time"]::-webkit-inner-spin-button {
-  display: none;
+  opacity: 0;
 }
 
 // Type text
@@ -120,6 +144,7 @@ input[type="tel"] {
   position: relative;
   width: 100%;
   height: 45px;
+  padding-top: 2px;
   padding-left: 43px;
   border: 1px solid $form-main-color;
   &::-webkit-input-placeholder {
@@ -134,7 +159,7 @@ input[type="tel"] {
   &::after {
     content: '';
     position: absolute;
-    left: 18px;
+    left: 16px;
     top: 50%;
     transform: translateY(-50%);
     width: 13px;
@@ -160,6 +185,10 @@ input[type="tel"] {
 
 .form__tel label {
   &::after {
+    left: 14px;
+    width: 18px;
+    height: 22px;
+    background-size: 18px 22px;
     background-image: url('./assets/svg/form/tel.svg');
   }
 }
@@ -179,12 +208,15 @@ input[type="tel"] {
 }
 
 .form__entry_box {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   @include flex(space-between,center);
+  &:nth-child(2) {
+    margin-bottom: 19px;
+  }
 }
 
 .form__entry_title {
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   font-family: "Forum", "Times New Roman", Times, serif;
   @include font-source(18px, 400, $font-gold-color, 20px);
   &.border-line {
@@ -201,7 +233,7 @@ input[type="tel"] {
 .form__entry_count {
   @include flex(space-between, center);
   width: 105px;
-  height: 27px;
+  height: 24px;
   padding: 2px 8px 0 11px;
   background-color: $form-main-color;
   border-bottom: 1px solid $form-main-color;
@@ -216,13 +248,17 @@ input[type="tel"] {
 }
 
 .form__entry_icon {
-  width: 10px;
+  width: 12px;
+  height: 14px;
   stroke: $main-color;
   transition: stroke 0.3s;
 }
 
 .form__entry_value {
-  width: 40px;
+  position: relative;
+  top: -1px;
+  height: 22px;
+  width: 35px;
   text-align: center;
   @include font-source(18px, 300, $form-main-color, 21px);
   background-color: $main-color;
@@ -243,7 +279,7 @@ input[type="tel"] {
   &[data-state="active"] {
     .form__select_title {
       &::before {
-        transform: translate(0, -50%) rotate(-180deg);
+        transform: translate(1px, -50%) rotate(-180deg);
       }
     }
     .form__select_content {
@@ -333,7 +369,7 @@ input[type="tel"] {
 // Right column
 
 .form__overview {
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   @include font-source(32px, 500, $form-overview-color, 37px);
 }
 
@@ -344,21 +380,21 @@ input[type="tel"] {
 
 .form__info {
   position: relative;
-  margin-bottom: 5px;
-  padding-left: 36px;
+  margin-bottom: 6px;
+  padding-left: 29px;
   @include font-source(18px, 300, $form-main-color, 21px);
   &::before {
     content: '';
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-position: center center;
-    background-repeat: no-repeat;
-    z-index: 1;
-    left: 0;
+    left: -2px;
     width: 17px;
     height: 17px;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: 16px 16px;
+    z-index: 1;
   }
   &--date::before {
     background-image: url('./assets/svg/form/date.svg');
@@ -378,7 +414,8 @@ input[type="tel"] {
   margin-bottom: 10px;
 }
 
-.form__basic_info:last-child.border-line::before {
+.form__basic_info:nth-child(2).border-line::before {
+  bottom: -43%;
   height: 2px;
 }
 
@@ -410,7 +447,7 @@ input[type="tel"] {
 
 .form__total {
   @include flex(none, center);
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 .form__total_text {
@@ -424,13 +461,13 @@ input[type="tel"] {
 
 .form__card {
   position: relative;
+  margin-bottom: 55px;
 }
 
 .form__card_front {
   position: relative;
-  width: 360px;
-  // height: 211px;
-  padding: 15px 20px;
+  width: 77%;
+  padding: 15px 19px;
   background-color: $card-font-color;
   border-radius: 5px;
   z-index: 1;
@@ -443,14 +480,14 @@ input[type="tel"] {
     background-position: center center;
   }
   &::before {
-    top: 43px;
+    top: 34px;
     width: 55px;
     height: 16px;
     background-image: url('./assets/img/form/visa.png');
     background-size: 55px 16px;
   }
   &::after {
-    top: 77px;
+    top: 65px;
     width: 53px;
     height: 32px;
     background-image: url('./assets/img/form/mastercard.png');
@@ -464,6 +501,10 @@ input[type="tel"] {
   display: block;
   margin-bottom: 5px;
   @include font-source(12px, 400, $card-text-color, 14px);
+}
+
+.form__card_name label {
+  margin-bottom: 4px;
 }
 
 .form__card_number {
@@ -521,10 +562,11 @@ input[type="tel"] {
 }
 
 .form__card_month {
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .form__card_name input {
+  height: 36px;
   padding-left: 10px;
   border: 1px solid $form-border-color;
   &:focus-visible {
@@ -558,16 +600,16 @@ input[type="tel"] {
 
 .form__card_back {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 360px;
+  top: 30px;
+  right: -3px;
+  width: 77%;
   height: 211px;
   background-color: $card-back-color;
   border-radius: 5px;
   &::after {
     content: '';
     position: absolute;
-    top: 20px;
+    top: 24px;
     display: block;
     width: 100%;
     height: 45px;
@@ -577,8 +619,8 @@ input[type="tel"] {
 
 .form__card_cvv {
   position: absolute;
-  right: 25px;
-  top: 70px;
+  right: 20px;
+  top: 86px;
 }
 
 .form__card_cvv label {
@@ -591,21 +633,30 @@ input[type="tel"] {
 .form__card_cvv input {
   width: 75px;
   height: 35px;
+  padding-left: 10px;
   border: 1px solid $form-border-color;
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .form__card_text {
   position: absolute;
-  top: 137px;
-  right: 10px;
-  width: 85px;
+  top: 146px;
+  right: 19px;
+  width: 65px;
   @include font-source(10px, 400, $card-text-color, 12px);
 }
 
 .form__button {
   display: block;
-  padding: 11px 85px;
+  padding: 9px 84px;
   margin-left: auto;
   @include font-source(22px, 400, $main-color, 26px);
   background-color: $form-btn-color;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: $font-gold-color;
+  }
 }
