@@ -12,7 +12,11 @@ import {
 
 import {
   selectOptions
-} from './js/select/select.js';
+} from './js/form/select.js';
+
+import {
+  showForm
+} from './js/form/modal.js';
 
 playerProgress();
 
@@ -25,3 +29,5 @@ slide(sliderItems, prev, next);
 setGallery();
 
 selectOptions();
+
+showForm();
