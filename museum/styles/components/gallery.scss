@@ -36,6 +36,12 @@
   margin: 0 0 24px;
   overflow: hidden;
   break-inside: avoid;
+  &:first-child {
+    padding-top: 50px;
+  }
+  &:nth-child(11) {
+    padding-top: 50px;
+  }
 }
 
 .gallery__image {

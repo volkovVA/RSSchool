@@ -1495,6 +1495,12 @@ input[type=tel]::-webkit-input-placeholder {
   overflow: hidden;
   break-inside: avoid;
 }
+.gallery__box:first-child {
+  padding-top: 50px;
+}
+.gallery__box:nth-child(11) {
+  padding-top: 50px;
+}
 
 .gallery__image {
   object-fit: cover;

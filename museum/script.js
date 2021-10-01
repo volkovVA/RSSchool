@@ -50,7 +50,7 @@ showForm();
 
 initComparisons();
 
-setRipple();
+// setRipple();
 
 setInputNumber();
 
