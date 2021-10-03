@@ -4,15 +4,15 @@
 
 .player__control {
   @include flex(space-between, center);
-  height: 85px;
-  padding: 3px 29px 0 27px;
-  margin-bottom: 40px;
+  height: rem(85);
+  padding: rem(3) rem(29) 0 rem(27);
+  margin-bottom: rem(40);
   background-color: $default-color;
 }
 
 .player__box {
   position: relative;
-  height: 650px;
+  height: rem(650);
 }
 
 .player__video {
@@ -42,8 +42,8 @@
 }
 
 .player__play-icon {
-  width: 220px;
-  height: 220px;
+  width: rem(220);
+  height: rem(220);
   fill: $main-color;
   transition: 0.1s;
   &:hover {
@@ -67,10 +67,10 @@
   position: relative;
   &::after {
     @include pseudo;
-    top: -4px;
-    left: 15px;
-    width: 4px;
-    height: 45px;
+    top: rem(-4);
+    left: rem(15);
+    width: rem(4);
+    height: rem(45);
     transform: rotate(-45deg);
     background-color: $player-icon-color;
     opacity: 0;
@@ -85,26 +85,26 @@
 }
 
 .player__icon {
-  width: 30px;
-  height: 30px;
+  width: rem(30);
+  height: rem(30);
   cursor: pointer;
   fill: $player-icon-color;
   transition: fill 0.3s;
   &--speaker, &--full {
-    width: 37px;
-    height: 37px;
+    width: rem(37);
+    height: rem(37);
   }
 }
 
 .player__progress {
-  height: 8px;
+  height: rem(8);
   -webkit-appearance: none;
-  background: linear-gradient(to right, $range-color 0%, $range-color 50%, $player-progress-color 40%, $player-progress-color 100%);
+  background: linear-gradient(to right, $dark-red-color 0%, $dark-red-color 50%, $player-progress-color 40%, $player-progress-color 100%);
   transition: background 0.4s ease-in;
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 15px;
-    width: 15px;
+    height: rem(15);
+    width: rem(15);
     border-radius: 50%;
     background-color: $main-color;
     cursor: pointer;
@@ -122,20 +122,20 @@
 }
 
 .player__progress--rewind {
-  width: 929px;
+  width: rem(929);
 }
 
 .player__progress--volume {
-  width: 154px;
+  width: rem(154);
 }
 
 $player-slider-width: 20.1%;
-$player-slider-height: 256px;
+$player-slider-height: rem(256);
 
 .player__slider {
   width: 100%;
   height: $player-slider-height;
-  margin-bottom: 38px;
+  margin-bottom: rem(38);
   overflow: hidden;
 }
 
@@ -156,7 +156,7 @@ $player-slider-height: 256px;
   display: block;
   width: $player-slider-width;
   height: $player-slider-height;
-  margin-right: 40px;
+  margin-right: rem(40);
   cursor: pointer;
   & iframe {
     width: 100%;
@@ -169,14 +169,14 @@ $player-slider-height: 256px;
 
 .player__nav {
   @include flex(space-between, center);
-  width: 200px;
-  height: 12px;
+  width: rem(200);
+  height: rem(12);
   margin: 0 auto;
 }
 
 .player__nav_dots {
-  width: 12px;
-  height: 12px;
+  width: rem(12);
+  height: rem(12);
   background-color: $slider-dots-color;
   border-radius: 50%;
   cursor: pointer;
@@ -190,13 +190,13 @@ $player-slider-height: 256px;
 }
 
 .player__nav_icon {
-  width: 10px;
-  height: 12px;
+  width: rem(10);
+  height: rem(12);
   stroke: $slider-dots-color;
 }
 
 .player__nav_btn {
-  padding-top: 2px;
+  padding-top: rem(2);
   cursor: pointer;
   transition: transform 0.2s;
   &:hover {

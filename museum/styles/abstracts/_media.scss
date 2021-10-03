@@ -1,0 +1,30 @@
+
+@import "./variables";
+
+@mixin media-tablet{
+
+  @media (max-width: $mediaWidthTablet) {
+      @content;
+  }
+}
+
+@mixin media-mobile {
+
+  @media (max-width: $mediaWidthMobile) {
+      @content;
+  }
+}
+
+@mixin media-min-mobile {
+
+  @media (max-width: $mediaWidthMinMobile) {
+      @content;
+  }
+}
+
+@mixin media-mobile-horizontal {
+
+  @media (max-width: $mediaWidthTablet) and (orientation:landscape){
+      @content;
+  }
+}

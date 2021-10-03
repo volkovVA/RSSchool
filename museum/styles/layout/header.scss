@@ -1,6 +1,6 @@
 .header {
-  padding: 52px 0 76px;
-  background-color: $bg-dark-color;
+  padding: rem(52) 0 rem(76);
+  background-color: $bg-color;
 }
 
 .header__container {

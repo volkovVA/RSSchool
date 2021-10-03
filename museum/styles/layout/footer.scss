@@ -1,14 +1,14 @@
 .footer {
   position: relative;
-  padding-top: 76px;
-  background-color: $bg-dark-color;
+  padding-top: rem(76);
+  background-color: $bg-color;
   &::after {
     content: '';
     display: block;
     position: absolute;
     top: 67.7%;
     width: 100%;
-    height: 3px;
+    height: rem(3);
     background-color: $border-color;
   }
 }
@@ -16,17 +16,17 @@
 .footer__row {
   @include flex(space-between);
   &:nth-child(1) {
-    margin-bottom: 43px;
+    margin-bottom: rem(43);
   }
   &:nth-child(2) {
-    padding: 50px 0;
-    @include font-source(22px, 200, $main-color, 22px);
+    padding: rem(50) 0;
+    @include font-source(rem(22), 200, $main-color, rem(22));
   }
 }
 
 .footer__nav {
-  width: 500px;
-  margin-right: 142px;
+  width: rem(500);
+  margin-right: rem(142);
 }
 
 .footer .nav__list {
@@ -48,20 +48,20 @@
   }
   &:nth-child(4) {
     grid-area: 1 / 2 / 2 / 3;
-    padding-left: 6px;
+    padding-left: rem(6);
   }
   &:nth-child(5) {
     grid-area: 2 / 2 / 3 / 3;
-    padding-left: 6px;
+    padding-left: rem(6);
   }
   &:last-child {
     grid-area: 3 / 2 / 4 / 3;
-    padding-left: 6px;
+    padding-left: rem(6);
   }
 }
 
 .footer__copy {
-  padding-left: 2px;
+  padding-left: rem(2);
   letter-spacing: 1.5px;
 }
 
@@ -69,7 +69,7 @@
 .footer__github {
   transition: color 0.2s;
   &:hover {
-    color: $font-gold-color;
+    color: $gold-color;
   }
 }
 

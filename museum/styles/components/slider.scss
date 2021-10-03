@@ -1,9 +1,9 @@
-$slider-width: 1000px;
-$slider-height: 810px;
+$slider-width: rem(1000);
+$slider-height: rem(810);
 
 .slider {
   position: absolute;
-  top: -28px;
+  top: rem(-28);
   right: 0;
   width: $slider-width;
   height: $slider-height;
@@ -23,7 +23,7 @@ $slider-height: 810px;
     top: 0;
     left: 0;
     background: transparent;
-    background: linear-gradient(90deg, $bg-dark-color 15%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, #030303 15%, rgba(0,0,0,0) 100%);
     z-index: 1;
   }
 }
@@ -44,7 +44,7 @@ $slider-height: 810px;
   display: block;
   width: $slider-width;
   height: $slider-height;
-  padding-bottom: 60px;
+  padding-bottom: rem(60);
   cursor: pointer;
 }
 
@@ -54,11 +54,11 @@ $slider-height: 810px;
   right: 0;
   @include flex(none, center);
   width: 100%;
-  max-width: 600px;
-  height: 120px;
-  padding-left: 74px;
-  padding-top: 1px;
-  background-color: $bg-dark-color;
+  max-width: rem(600);
+  height: rem(120);
+  padding-left: rem(74);
+  padding-top: rem(1);
+  background-color: $bg-color;
   z-index: 2;
   & .active {
     background-color: $slider-btn-active-color;
@@ -66,11 +66,11 @@ $slider-height: 810px;
 }
 
 .slider__btn {
-  margin-bottom: 4px;
+  margin-bottom: rem(4);
   cursor: pointer;
   transition: transform 0.2s;
   &--prev {
-    margin-right: 20px;
+    margin-right: rem(20);
   }
   &:hover {
     transform: scale(1.1);
@@ -81,38 +81,38 @@ $slider-height: 810px;
 }
 
 .slider__icon {
-  width: 30px;
-  height: 8px;
+  width: rem(30);
+  height: rem(8);
 }
 
 .slider__counter {
   @include flex(none, center);
-  margin-right: 56px;
-  @include font-source(22px, 400, $main-color, 44px);
+  margin-right: rem(56);
+  @include font-source(rem(22), 400, $main-color, rem(44));
 }
 
 .slider__counter_current {
-  margin-right: 10px;
+  margin-right: rem(10);
   &::after {
     content: '|';
-    padding-left: 10px;
+    padding-left: rem(10);
   }
 }
 
 .slider__key {
-  width: 16px;
-  height: 16px;
-  margin-right: 25px;
+  width: rem(16);
+  height: rem(16);
+  margin-right: rem(25);
   background-color: $main-color;
   cursor: pointer;
   transition: background-color 0.2s;
   &:nth-child(6) {
-    margin-right: 61px;
+    margin-right: rem(61);
   }
   & .active {
     background-color: $slider-btn-active-color;
   }
   &:hover {
-    background-color: $font-gold-color;
+    background-color: $gold-color;
   }
 }

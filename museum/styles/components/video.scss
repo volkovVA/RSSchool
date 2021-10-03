@@ -1,20 +1,20 @@
 .video {
-  padding: 75px 0;
+  padding: rem(75) 0;
 }
 
 .video__content {
   @include flex;
-  margin-bottom: 75px;
+  margin-bottom: rem(75);
 }
 
 .video__title {
-  margin-right: 113px;
+  margin-right: rem(113);
   margin-bottom: 0;
-  color: $font-gold-color;
+  color: $gold-color;
   white-space: nowrap;
 }
 
 .video__text {
-  padding-top: 8px;
-  @include font-source(22px, 300, $default-color, 38px);
+  padding-top: rem(8);
+  @include font-source(rem(22), 300, $default-color, rem(38));
 }

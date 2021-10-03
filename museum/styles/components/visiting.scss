@@ -1,19 +1,19 @@
 .visiting {
-  padding: 74px 0 65px;
+  padding: rem(74) 0 rem(65);
 }
 
 .visiting__title {
-  color: $font-gold-color;
+  color: $gold-color;
 }
 
 .visiting__list {
   @include flex(center);
   flex-wrap: wrap;
-  gap: 0 60px;
+  gap: 0 rem(60);
 }
 
 .visiting__item {
-  margin-bottom: 65px;
+  margin-bottom: rem(65);
   &:nth-child(4),
   &:nth-child(5),
   &:last-child {

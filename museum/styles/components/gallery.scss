@@ -1,7 +1,7 @@
 .gallery {
   position: relative;
-  padding: 75px 0 62px;
-  background-color: $bg-dark-color;
+  padding: rem(75) 0 rem(62);
+  background-color: $bg-color;
   &::after {
     content: '';
     display: block;
@@ -17,30 +17,30 @@
 }
 
 .gallery__title {
-  margin-bottom: 75px;
+  margin-bottom: rem(75);
   color: $main-color;
 }
 
 .gallery__container {
   overflow-y: hidden;
-  height: 1898px;
+  height: rem(1898);
 }
 
 .gallery__inner_container {
   columns: 3;
-  column-gap: 36px;
+  column-gap: rem(36);
 }
 
 .gallery__box {
   width: 100%;
-  margin: 0 0 24px;
+  margin-bottom: rem(24);
   overflow: hidden;
   break-inside: avoid;
   &:first-child {
-    padding-top: 50px;
+    padding-top: rem(50);
   }
   &:nth-child(11) {
-    padding-top: 50px;
+    padding-top: rem(50);
   }
 }
 

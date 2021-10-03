@@ -1,14 +1,14 @@
 .logo {
-  margin-right: 20px;
+  margin-right: rem(20);
   &:hover .logo__text {
-    color: $font-gold-color;
+    color: $gold-color;
   }
   &:hover .logo__icon {
-    fill: $font-gold-color;
+    fill: $gold-color;
   }
   &--form {
     margin-right: 0;
-    margin-bottom: 72px;
+    margin-bottom: rem(72);
   }
 }
 
@@ -16,36 +16,36 @@
   display: inline-block;
   margin: 0;
   font-family: "Forum", "Times New Roman", Times, serif;
-  @include font-source(28px, 400, $main-color, 50px);
+  @include font-source(rem(28), 400, $main-color, rem(50));
   letter-spacing: 5px;
   text-transform: uppercase;
   transition: all 0.3s;
   &--form {
     display: block;
-    margin-bottom: 14px;
-    @include font-source(50px, 400, $font-gold-color, 55px);
+    margin-bottom: rem(14);
+    @include font-source(rem(50), 400, $gold-color, rem(55));
     letter-spacing: 0;
     white-space: nowrap;
   }
 }
 
 .logo__icon {
-  width: 49px;
-  height: 26px;
-  margin-right: 21px;
+  width: rem(49);
+  height: rem(26);
+  margin-right: rem(21);
   fill: $main-color;
   transition: all 0.3s;
   &--form {
-    width: 85px;
-    height: 41px;
+    width: rem(85);
+    height: rem(41);
     margin-right: 0;
-    margin-bottom: -6px;
-    fill: $font-gold-color;
+    margin-bottom: rem(-6);
+    fill: $gold-color;
   }
 }
 
 .logo__text {
-  @include font-source(18px, 400, $dark-red-color, 21px);
+  @include font-source(rem(18), 400, $dark-red-color, rem(21));
   &.border-line::before {
     bottom: -55%;
   }

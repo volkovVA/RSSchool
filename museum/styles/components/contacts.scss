@@ -1,10 +1,10 @@
 .contacts {
-  padding: 74px 0 84px;
+  padding: rem(74) 0 rem(84);
 }
 
 .contacts__title {
-  margin-bottom: 94px;
-  color: $font-gold-color;
+  margin-bottom: rem(94);
+  color: $gold-color;
 }
 
 .contacts__box {
@@ -17,34 +17,34 @@
 
 .contacts__map {
   flex: 2;
-  height: 620px;
-  padding-top: 10px;
+  height: rem(620);
+  padding-top: rem(10);
 }
 
 .contacts__desc {
-  width: 240px;
-  margin-bottom: 51px;
-  padding-top: 10px;
-  @include font-source(28px, 500, $default-color, 33px);
+  width: rem(240);
+  margin-bottom: rem(51);
+  padding-top: rem(10);
+  @include font-source(rem(28), 500, $default-color, rem(33));
 }
 
 .contacts__address {
-  margin-right: 20px;
-  @include font-source(22px, 300, $default-color, 26px);
+  margin-right: rem(20);
+  @include font-source(rem(22), 300, $default-color, rem(26));
   font-style: normal;
 }
 
 .contacts__text {
   @include flex;
-  margin-bottom: 25px;
+  margin-bottom: rem(25);
   & > span {
-    margin-right: 6px;
+    margin-right: rem(6);
   }
 }
 
 .contacts__link {
   @extend %transition;
   &:hover {
-    color: $font-gold-color;
+    color: $gold-color;
   }
 }

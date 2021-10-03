@@ -1,6 +1,6 @@
 .welcome {
-  padding: 0 0 273px;
-  background-color: $bg-dark-color;
+  padding: 0 0 rem(273);
+  background-color: $bg-color;
 }
 
 .welcome__container {
@@ -9,29 +9,29 @@
 
 .welcome__title {
   position: relative;
-  padding-top: 122px;
-  margin-bottom: 26px;
+  padding-top: rem(122);
+  margin-bottom: rem(26);
   z-index: 2;
 }
 
 .welcome__text {
   position: relative;
-  margin-bottom: 74px;
-  @include font-source(28px, 300, $main-color, 33px);
+  margin-bottom: rem(74);
+  @include font-source(rem(28), 300, $main-color, rem(33));
   letter-spacing: 2.2px;
   z-index: 2;
 }
 
 .welcome__button {
   display: inline-block;
-  padding: 24px 68px;
-  @include font-source(22px, 200, $main-color, 26px);
+  padding: rem(24) rem(68);
+  @include font-source(rem(22), 200, $main-color, rem(26));
   letter-spacing: 2px;
   background-color: $dark-red-color;
   border-radius: 10px;
   transition: background-color 0.3s;
   &:hover {
-    background-color: $font-gold-color;
+    background-color: $gold-color;
   }
   &:active {
     transform: scale(0.99);

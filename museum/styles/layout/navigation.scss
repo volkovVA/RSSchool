@@ -4,20 +4,20 @@
 }
 
 .nav__item {
-  margin-right: 56px;
+  margin-right: rem(56);
   &:last-child {
     margin-right: 0;
   }
 }
 
 .nav__link {
-  @include font-source(22px, 200, $main-color, 50px);
+  @include font-source(rem(22), 200, $main-color, rem(50));
   letter-spacing: 2px;
   @extend %transition;
   &:hover {
-    color: $font-gold-color;
+    color: $gold-color;
   }
   &:active {
-    color: $font-gold-color;
+    color: $gold-color;
   }
 }

@@ -1,9 +1,9 @@
 .tickets {
-  padding: 74px 0 75px;
+  padding: rem(74) 0 rem(75);
 }
 
 .tickets__title {
-  color: $font-gold-color;
+  color: $gold-color;
 }
 
 .tickets__box{
@@ -16,7 +16,7 @@
 
 .tickets__form {
   flex: 1;
-  padding-left: 60px;
+  padding-left: rem(60);
   @include flex(none, none, column);
 }
 
@@ -28,25 +28,25 @@
   @include flex(flex-start, none, column);
   color: $main-color;
   &:first-child {
-    margin-right: 20px;
+    margin-right: rem(20);
   }
 }
 
 .tickets__type, .tickets__amount {
-  margin-bottom: 50px;
-  @include font-source(28px, 700, $default-color, 33px);
+  margin-bottom: rem(50);
+  @include font-source(rem(28), 700, $default-color, rem(33));
 }
 
 .tickets__amount {
-  margin-bottom: 26px;
+  margin-bottom: rem(26);
   margin-left: auto;
 }
 
 .tickets__radio {
   position: relative;
   display: block;
-  margin-bottom: 25px;
-  @include font-source(22px, 300, $default-color, 26px);
+  margin-bottom: rem(25);
+  @include font-source(rem(22), 300, $default-color, rem(26));
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -63,8 +63,8 @@
 .tickets__radio > span {
   @include flex(none, center);
   position: relative;
-  padding-left: 40px;
-  margin-left: -2px;
+  padding-left: rem(40);
+  margin-left: rem(-2);
 }
 
 .tickets__radio > span::before {
@@ -72,12 +72,12 @@
   position: absolute;
   left: 0;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: rem(20);
+  height: rem(20);
   background-image: url("./assets/img/tickets/radio-button-unchecked.svg");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 20px 20px;
+  background-size: rem(20) rem(20);
 }
 
 .tickets__radio>input:checked+span::before{
@@ -86,25 +86,25 @@
 
 .tickets__basic,
 .tickets__senior {
-  margin-bottom: 14px;
-  @include font-source(22px, 300, $default-color, 26px);
+  margin-bottom: rem(14);
+  @include font-source(rem(22), 300, $default-color, rem(26));
 }
 
 .tickets__count {
   @include flex(space-between, center);
-  width: 150px;
-  height: 50px;
-  padding: 2px 8px 0 11px;
-  margin-bottom: 11px;
+  width: rem(150);
+  height: rem(50);
+  padding: rem(2) rem(8) 0 rem(11);
+  margin-bottom: rem(11);
   border: 3px solid $default-color;
   &--bottom {
-    margin-bottom: 50px;
+    margin-bottom: rem(50);
   }
 }
 
 .tickets__value {
   text-align: center;
-  @include font-source(22px, 300, $default-color, 26px);
+  @include font-source(rem(22), 300, $default-color, rem(26));
   background-color: transparent;
   border: 0;
   &::-webkit-outer-spin-button,
@@ -117,34 +117,34 @@
 .tickets__buttons {
   cursor: pointer;
   &:hover .tickets__icon {
-    stroke: $font-gold-color;
+    stroke: $gold-color;
   }
   &:active {
     transform: scale(0.85);
   }
   &--plus {
-    padding-right: 2px;
-    padding-top: 2px;
+    padding-right: rem(2);
+    padding-top: rem(2);
   }
 }
 
 .tickets__icon {
-  width: 20px;
-  height: 20px;
+  width: rem(20);
+  height: rem(20);
   stroke: $default-color;
   transition: stroke 0.3s;
 }
 
 .tickets__price {
-  margin-bottom: 60px;
-  @include font-source(28px, 700, $default-color, 33px);
+  margin-bottom: rem(60);
+  @include font-source(rem(28), 700, $default-color, rem(33));
   letter-spacing: 1.65px;
 }
 
 .tickets__button {
-  padding: 12px 37px;
+  padding: rem(12) rem(37);
   margin-left: auto;
-  @include font-source(22px, 300, $main-color, 26px);
+  @include font-source(rem(22), 300, $main-color, rem(26));
   letter-spacing: 2px;
   background-color: $default-color;
   border-radius: 2px;
@@ -152,7 +152,7 @@
   transition: background-color 0.3s, color 0.3s;
   &:hover {
     color: $default-color;
-    background-color: $font-gold-color;
+    background-color: $gold-color;
   }
   &:active {
     transform: scale(0.99);
