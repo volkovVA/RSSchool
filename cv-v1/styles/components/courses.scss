@@ -1,0 +1,45 @@
+.courses{
+  padding: rem(36) rem(20) rem(0) rem(50);
+  @include media-mobile{
+    padding: rem(36) 0 0;
+  }
+}
+
+.courses__list {
+  position: relative;
+  padding-left: rem(34);
+  &::before {
+    @include line;
+  }
+}
+
+.courses__item {
+  position: relative;
+  margin-bottom: rem(20);
+  &::before {
+    @include circle;
+  }
+}
+
+.courses__link {
+  display: inline-block;
+  margin-bottom: rem(5);
+  transition: text-shadow 0.2s;
+  &--udemy, &--freecodecamp {
+    display: inline;
+  }
+  &--text {
+    @include font-source(rem(16), 500);
+    font-style: italic;
+    &:nth-child(4) {
+      color: var(--box-color);
+    }
+  }
+  &:hover {
+    text-shadow: 3px 3px 2px rgba(0,0,0,0.4);
+  }
+}
+
+.courses__text {
+  font-weight: 500;
+}

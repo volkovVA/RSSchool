@@ -1,0 +1,41 @@
+.references {
+  padding: rem(36) rem(20) rem(0) rem(50);
+  @include media-mobile{
+    padding: rem(36) 0 0;
+  }
+}
+
+.references__list {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding-left: rem(34);
+  &::before {
+    @include line;
+    height: 86%;
+  }
+  @include media-tablet {
+    gap: rem(50);
+  }
+}
+
+.references__item {
+  position: relative;
+  margin-bottom: rem(20);
+  &::before {
+    @include circle;
+  }
+  &:nth-child(2) {
+    &::after {
+      @include line;
+      left: rem(-34);
+      z-index: -1;
+    }
+  }
+}
+
+.references__position,
+.references__company {
+  font-weight: 500;
+}

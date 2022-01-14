@@ -1,0 +1,58 @@
+.experience {
+  padding: rem(36) rem(20) rem(0) rem(50);
+  @include media-mobile{
+    padding: rem(36) 0 0;
+  }
+}
+
+.experience__list {
+  position: relative;
+  padding-left: rem(34);
+  &::before {
+    @include line;
+  }
+}
+
+.experience__item {
+  position: relative;
+  @include flex;
+  margin-bottom: rem(20);
+  &::before {
+    @include circle;
+  }
+  @include media-tablet {
+    display: block;
+  }
+}
+
+.experience__box:first-child {
+  flex-basis: 33%;
+  @include media-tablet {
+    margin-bottom: rem(10);
+  }
+}
+
+.experience__box:last-child {
+  flex-basis: 67%;
+}
+
+.experience__position {
+  padding-top: rem(3);
+}
+
+.experience__company {
+  margin-bottom: rem(5);
+  transition: text-shadow 0.2s;
+  &:hover {
+    text-shadow: 3px 3px 2px rgba(0,0,0,0.4);
+  }
+}
+
+.experience__name {
+  color: $title-color;
+}
+
+.experience__date {
+  font-weight: 500;
+  white-space: nowrap;
+}

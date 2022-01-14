@@ -1,0 +1,36 @@
+.footer {
+  @include flex(space-around, center, none);
+  width: 100%;
+  padding: rem(36) rem(20) rem(0) rem(50);
+  margin-top: auto;
+  @include font-source(rem(18), 500);
+  @include media-mobile{
+    padding: rem(36) 0 0;
+  }
+}
+
+.footer__icon {
+  fill: $text-dark-color;
+}
+
+.footer__rsschool {
+  display: inline-block;
+  width: rem(90);
+  height: rem(34);
+  background-image: url('./assets/svg/rsschool.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.footer__rsschool,
+.footer__github {
+  transition: 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.footer__year {
+  font-size: rem(20);
+}

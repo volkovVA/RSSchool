@@ -1,0 +1,99 @@
+:root {
+  --box-color: #3a478e;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: rem(16);
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: $mainFont;
+  background-color: $main-color;
+  color: $text-dark-color;
+  line-height: $mainLineHeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px dotted $title-color;
+}
+
+aside:first-child a {
+  border-color: $main-color;
+}
+
+footer a {
+  border: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  &:active {
+    outline: none;
+  }
+}
+
+.container {
+  @include flex;
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+  box-shadow: rem(5) rem(5) rem(10) $default-color;
+  @include media-tablet {
+    width: 100%;
+    box-shadow: none;
+  }
+  @include media-mobile {
+    display: block;
+  }
+  @include media-mobile-horizontal {
+    display: block;
+  }
+}

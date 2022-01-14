@@ -1,0 +1,104 @@
+.main {
+  padding: rem(20) 0;
+  overflow: hidden;
+  @include media-tablet {
+    padding: 0;
+  }
+  @include media-mobile-horizontal {
+    padding: 0;
+  }
+}
+
+.column {
+  @include flex(none, center, column);
+  &:first-child {
+    background-color: $bg-color;
+    flex-basis: 36%;
+    @include media-mobile {
+      margin-top: 62%
+    }
+    @include media-mobile-horizontal {
+      margin-top: 32%
+    }
+  }
+  &:last-child {
+    flex-basis: 64%;
+    padding-bottom: rem(20);
+    @include media-mobile {
+      padding: 0 rem(20) rem(50);
+    }
+  }
+  &__name {
+    display: inline-block;
+    margin: auto auto rem(10) rem(50);
+    color: $text-color;
+  }
+}
+
+.section {
+  width: 100%;
+}
+
+.title {
+  position: relative;
+  display: block;
+  @include font-source(rem(26), 500, $main-color);
+  text-transform: uppercase;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 18%;
+    width: 70%;
+    height: 2px;
+    background-color: $main-color;
+  }
+  &--line {
+    &::after {
+      left: 0;
+      bottom: -5%;
+      width: 100%;
+      background-color: $title-color;
+    }
+  }
+  &--bg {
+    @include flex(none, center);
+    width: 100%;
+    height: rem(70);
+    padding: 0 rem(50);
+    background-color: var(--box-color);
+  }
+  &--color {
+    margin-bottom: rem(30);
+    color: $title-color;
+  }
+}
+
+.icon {
+  width: rem(30);
+  height: rem(30);
+  fill: $main-color;
+  &--telegram {
+    width: rem(36);
+    height: rem(36);
+  }
+  &--github {
+    width: rem(40);
+    height: rem(40);
+  }
+}
+
+.text {
+  color: $text-color;
+}
+
+.name {
+  @include font-source(rem(20), 500, $title-color);
+  &--color {
+    color: $main-color;
+  }
+  &--up {
+    margin-bottom: rem(8);
+    font-size: rem(16);
+    text-transform: uppercase;
+  }
+}
