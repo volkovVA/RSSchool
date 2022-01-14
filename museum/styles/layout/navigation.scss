@@ -1,0 +1,23 @@
+.nav__list {
+  @include flex(none, center);
+  flex-wrap: wrap;
+}
+
+.nav__item {
+  margin-right: rem(56);
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav__link {
+  @include font-source(rem(22), 200, $main-color, rem(50));
+  letter-spacing: 2px;
+  @extend %transition;
+  &:hover {
+    color: $gold-color;
+  }
+  &:active {
+    color: $gold-color;
+  }
+}
