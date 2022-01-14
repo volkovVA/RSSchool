@@ -1,0 +1,78 @@
+.footer {
+  position: relative;
+  padding-top: rem(76);
+  background-color: $bg-color;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 67.7%;
+    width: 100%;
+    height: rem(3);
+    background-color: $border-color;
+  }
+}
+
+.footer__row {
+  @include flex(space-between);
+  &:nth-child(1) {
+    margin-bottom: rem(43);
+  }
+  &:nth-child(2) {
+    padding: rem(50) 0;
+    @include font-source(rem(22), 200, $main-color, rem(22));
+  }
+}
+
+.footer__nav {
+  width: rem(500);
+  margin-right: rem(142);
+}
+
+.footer .nav__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.footer .nav__item {
+  margin-right: 0;
+  &:first-child {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  &:nth-child(2) {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  &:nth-child(3) {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  &:nth-child(4) {
+    grid-area: 1 / 2 / 2 / 3;
+    padding-left: rem(6);
+  }
+  &:nth-child(5) {
+    grid-area: 2 / 2 / 3 / 3;
+    padding-left: rem(6);
+  }
+  &:last-child {
+    grid-area: 3 / 2 / 4 / 3;
+    padding-left: rem(6);
+  }
+}
+
+.footer__copy {
+  padding-left: rem(2);
+  letter-spacing: 1.5px;
+}
+
+.footer__rsschool,
+.footer__github {
+  transition: color 0.2s;
+  &:hover {
+    color: $gold-color;
+  }
+}
+
+.footer__rsschool {
+  letter-spacing: 2px;
+}

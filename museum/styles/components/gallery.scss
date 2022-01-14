@@ -1,0 +1,49 @@
+.gallery {
+  position: relative;
+  padding: rem(75) 0 rem(62);
+  background-color: $bg-color;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 16%;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    background: linear-gradient(0deg, #030303 20%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+  }
+}
+
+.gallery__title {
+  margin-bottom: rem(75);
+  color: $main-color;
+}
+
+.gallery__container {
+  overflow-y: hidden;
+  height: rem(1898);
+}
+
+.gallery__inner_container {
+  columns: 3;
+  column-gap: rem(36);
+}
+
+.gallery__box {
+  width: 100%;
+  margin-bottom: rem(24);
+  overflow: hidden;
+  break-inside: avoid;
+  &:first-child {
+    padding-top: rem(50);
+  }
+  &:nth-child(11) {
+    padding-top: rem(50);
+  }
+}
+
+.gallery__image {
+  @include image-cover;
+}

@@ -1,0 +1,50 @@
+.card {
+  position: relative;
+  display: block;
+  width: rem(440);
+  padding-bottom: rem(10);
+  &:hover {
+    .card__title::after {
+      width: 100%;
+    }
+  }
+}
+
+.card__top {
+  margin-bottom: rem(25);
+}
+
+.card__image {
+  @include image-cover;
+}
+
+.card__title {
+  position: relative;
+  padding-bottom: rem(14);
+  margin-bottom: rem(8);
+  font-family: "Forum", "Times New Roman", Times, serif;
+  @include font-source(rem(32), 400, $default-color, rem(35));
+  white-space: nowrap;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  &::after {
+    @include pseudo;
+    bottom: rem(2);
+    width: rem(302);
+    height: rem(2);
+    background-color: $dark-red-color;
+    transition: width 0.3s;
+  }
+}
+
+.card__desc {
+  margin-bottom: rem(10);
+  @include font-source(rem(22), 200, $default-color, rem(26));
+}
+
+.card__text {
+  @include font-source(rem(18), 200, $default-color, rem(21));
+}
+.card__desc, .card__text {
+  letter-spacing: 0.2px;
+}

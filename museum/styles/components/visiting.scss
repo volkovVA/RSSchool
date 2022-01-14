@@ -1,0 +1,22 @@
+.visiting {
+  padding: rem(74) 0 rem(65);
+}
+
+.visiting__title {
+  color: $gold-color;
+}
+
+.visiting__list {
+  @include flex(center);
+  flex-wrap: wrap;
+  gap: 0 rem(60);
+}
+
+.visiting__item {
+  margin-bottom: rem(65);
+  &:nth-child(4),
+  &:nth-child(5),
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

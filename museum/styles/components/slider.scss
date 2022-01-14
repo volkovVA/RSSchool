@@ -1,0 +1,118 @@
+$slider-width: rem(1000);
+$slider-height: rem(810);
+
+.slider {
+  position: absolute;
+  top: rem(-28);
+  right: 0;
+  width: $slider-width;
+  height: $slider-height;
+  overflow: hidden;
+}
+
+.slider__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  &::after {
+    @include pseudo();
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    background: linear-gradient(90deg, #030303 15%, rgba(0,0,0,0) 100%);
+    z-index: 1;
+  }
+}
+
+.slider__box {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: -$slider-width;
+  width: $slider-width * 5;
+  &.shifting {
+    transition: left .2s ease-out;
+  }
+}
+
+.slider__item {
+  position: relative;
+  display: block;
+  width: $slider-width;
+  height: $slider-height;
+  padding-bottom: rem(60);
+  cursor: pointer;
+}
+
+.slider__control {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  @include flex(none, center);
+  width: 100%;
+  max-width: rem(600);
+  height: rem(120);
+  padding-left: rem(74);
+  padding-top: rem(1);
+  background-color: $bg-color;
+  z-index: 2;
+  & .active {
+    background-color: $slider-btn-active-color;
+  }
+}
+
+.slider__btn {
+  margin-bottom: rem(4);
+  cursor: pointer;
+  transition: transform 0.2s;
+  &--prev {
+    margin-right: rem(20);
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.slider__icon {
+  width: rem(30);
+  height: rem(8);
+}
+
+.slider__counter {
+  @include flex(none, center);
+  margin-right: rem(56);
+  @include font-source(rem(22), 400, $main-color, rem(44));
+}
+
+.slider__counter_current {
+  margin-right: rem(10);
+  &::after {
+    content: '|';
+    padding-left: rem(10);
+  }
+}
+
+.slider__key {
+  width: rem(16);
+  height: rem(16);
+  margin-right: rem(25);
+  background-color: $main-color;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:nth-child(6) {
+    margin-right: rem(61);
+  }
+  & .active {
+    background-color: $slider-btn-active-color;
+  }
+  &:hover {
+    background-color: $gold-color;
+  }
+}

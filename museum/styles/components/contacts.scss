@@ -1,0 +1,50 @@
+.contacts {
+  padding: rem(74) 0 rem(84);
+}
+
+.contacts__title {
+  margin-bottom: rem(94);
+  color: $gold-color;
+}
+
+.contacts__box {
+  @include flex;
+}
+
+.contacts__col {
+  flex: 1;
+}
+
+.contacts__map {
+  flex: 2;
+  height: rem(620);
+  padding-top: rem(10);
+}
+
+.contacts__desc {
+  width: rem(240);
+  margin-bottom: rem(51);
+  padding-top: rem(10);
+  @include font-source(rem(28), 500, $default-color, rem(33));
+}
+
+.contacts__address {
+  margin-right: rem(20);
+  @include font-source(rem(22), 300, $default-color, rem(26));
+  font-style: normal;
+}
+
+.contacts__text {
+  @include flex;
+  margin-bottom: rem(25);
+  & > span {
+    margin-right: rem(6);
+  }
+}
+
+.contacts__link {
+  @extend %transition;
+  &:hover {
+    color: $gold-color;
+  }
+}
