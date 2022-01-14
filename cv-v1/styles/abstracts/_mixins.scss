@@ -1,0 +1,76 @@
+// Font-Source
+
+@mixin font-source($size: false, $weight: false, $color: false, $lh: false, ) {
+  @if $size { font-size: $size; }
+  @if $weight { font-weight: $weight; }
+  @if $color { color: $color; }
+  @if $lh { line-height: $lh; }
+}
+
+// Flex
+
+@mixin flex($justify: none, $align: none, $direction: none) {
+  display: flex;
+  @if $align != none {
+    align-items: #{$align};
+  }
+  @if $justify != none {
+    justify-content: #{$justify};
+  }
+  @if $direction != none {
+    flex-direction: #{$direction};
+  }
+}
+
+// Flex centering
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Pseudo
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+// Image
+
+@mixin image-cover {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+// Line
+
+@mixin line {
+  content: '';
+  position: absolute;
+  top: rem(20);
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 2px;
+  background-color: $title-color;
+}
+
+// Circle
+
+@mixin circle {
+  content: '';
+  position: absolute;
+  top: rem(10);
+  left: rem(-43);
+  display: block;
+  width: rem(20);
+  height: rem(20);
+  border-radius: 50%;
+  border: 2px solid $title-color;
+  background-color: $text-color;
+}

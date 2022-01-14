@@ -1,0 +1,45 @@
+.header {
+  position: relative;
+  width: 100%;
+  background-color: var(--box-color);
+  padding: rem(20) rem(50);
+  &::after {
+    content: '';
+    position: absolute;
+    right: 4%;
+    top: rem(-34);
+    display: block;
+    background-image: url('./assets/img/html+css+js.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 130px 60px;
+    width: 130px;
+    height: 60px;
+    @include media-mobile {
+      left: 4%;
+      top: rem(-40);
+    }
+  }
+  @include media-mobile{
+    position: absolute;
+    top: 1%;
+    left: 0;
+  }
+  @include media-mobile-horizontal {
+    position: absolute;
+    top: 1%;
+    left: 0;
+  }
+}
+
+.header__title {
+  @include font-source(rem(50), 300, $main-color);
+  & span {
+    margin-left: rem(10);
+    font-weight: 500;
+  }
+}
+
+.header__text {
+  @include font-source(rem(24), 300, $main-color);
+}
