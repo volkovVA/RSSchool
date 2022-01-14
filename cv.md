@@ -2,7 +2,7 @@
 
 # Viacheslav Volkov (Frontend Developer)
 
-![avatar](images/avatar/avatar.jpg "demo avatar")
+![avatar](cv-v1/avatar/avatar.jpg "demo avatar")
 
 I’m developer in the field of Frontend development and determined to become a full-stack developer. I am originally from Russia, but now I live in Belarus, Gomel. I like to bring visual designs to life, make them functional through the use of coding.  I have a passion for excellence and I am really committed to achieving the best possible results.
 
