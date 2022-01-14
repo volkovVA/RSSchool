@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>custom-video-player</title>
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#24809e">
+  <meta name="msapplication-TileColor" content="#caaa7d">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1 class="title">louvre museum</h1>
+      <div class="player">
+        <video class="player__video" src="./assets/video/louvre1.mp4" poster='./assets/img/poster/poster1.png'></video>
+        <button class="player__bigplay player__button--play" type="button">
+          <svg class="player__bigplay-icon">
+            <use xlink:href="./assets/svg/sprite.svg#play"></use>
+          </svg>
+        </button>
+        <div class="player__controls">
+          <div class="player__main-control">
+            <div class="player__btn-box">
+              <button class="player__button player__button--play" type="button">
+                <svg class="player__icon">
+                  <use xlink:href="./assets/svg/sprite.svg#play-small"></use>
+                </svg>
+              </button>
+              <button class="player__button player__button--pause" type="button" hidden>
+                <svg class="player__icon">
+                  <use xlink:href="./assets/svg/sprite.svg#pause"></use>
+                </svg>
+              </button>
+            </div>
+            <input class="player__progress player__progress--range" type="range" name="progress" value="0" min="0" max="100" step="1">
+            <div class="player__time">
+              <span class="player__time-elapsed">00:00</span>
+              <span class="player__time-duration">00:00</span>
+            </div>
+            <button class="player__button player__button--speaker" type="button">
+              <svg class="player__icon player__icon--speaker">
+                <use xlink:href="./assets/svg/sprite.svg#speaker"></use>
+              </svg>
+            </button>
+            <input class="player__progress player__progress--volume" type="range" name="volume" value="0.5" min="0" max="1" step="0.05">
+            <div class="player__playback-rate">
+              <select class="player__speed" name="speed">
+                <option value="0.25">0.25x</option>
+                <option value="0.5">0.50x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1" selected>1.00x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.50x</option>
+                <option value="1.75">1.75x</option>
+                <option value="2">2.00x</option>
+              </select>
+            </div>
+            <a class="player__button player__button--download" href="./assets/video/louvre1.mp4" download="louvre1.mp4">
+              <svg class="player__icon player__icon--download">
+                <use xlink:href="./assets/svg/sprite.svg#download"></use>
+              </svg>
+            </a>
+            <button class="player__button player__button--full" type="button">
+              <svg class="player__icon player__icon--full">
+                <use xlink:href="./assets/svg/sprite.svg#full"></use>
+              </svg>
+              <svg class="player__icon player__icon--minimise">
+                <use xlink:href="./assets/svg/sprite.svg#minimise"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="player__slider-control">
+            <button class="player__slide player__slide--prev">
+              <svg class="player__icon">
+                <use xlink:href="./assets/svg/sprite.svg#prev"></use>
+              </svg>
+            </button>
+            <div class="player__slider-item player__slider-item--one active"></div>
+            <div class="player__slider-item player__slider-item--two"></div>
+            <div class="player__slider-item player__slider-item--three"></div>
+            <div class="player__slider-item player__slider-item--four"></div>
+            <div class="player__slider-item player__slider-item--five"></div>
+            <button class="player__slide player__slide--next">
+              <svg class="player__icon">
+                <use xlink:href="./assets/svg/sprite.svg#next"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay">
+    <div class="modal">
+      <h2 class="modal__title">Быстрые клавиши</h2>
+      <div class="modal__box">
+        <div class="modal__col">
+          <h3 class="modal__caption">Воспроизведение</h3>
+          <div class="modal__desc">
+            <p class="modal__text">Приостановить или продолжить воспроизведение</p>
+            <span class="modal__key">Space</span>
+            <p class="modal__text">Перемотать ролик на 10 секунд назад</p>
+            <span class="modal__key">j</span>
+            <p class="modal__text">Перемотать ролик на 10 секунд вперед</p>
+            <span class="modal__key">l</span>
+            <p class="modal__text">Перейти к предыдущему видео</p>
+            <span class="modal__key">P (Shift + p)</span>
+            <p class="modal__text">Перейти к следующему видео</p>
+            <span class="modal__key">N (Shift + n)</span>
+            <p class="modal__text">Уменьшить скорость воспроизведения</p>
+            <span class="modal__key">< (SHIFT + ,)</span>
+            <p class="modal__text">Увеличить скорость воспроизведения</p>
+            <span class="modal__key">< (SHIFT + .)</span>
+            <p class="modal__text">Перейти к определенному моменту видео (например, при нажатии на цифру "7" ролик будет перемотан до временной отметки, которая соответствует 70% от длительности видео)</p>
+            <span class="modal__key">0. .9</span>
+          </div>
+        </div>
+        <div class="modal__col">
+          <h3 class="modal__caption">Общие</h3>
+          <div class="modal__desc">
+            <p class="modal__text">Включить или выключить полноэкранный режим</p>
+            <span class="modal__key">f</span>
+            <p class="modal__text">Включить или отключить звук</p>
+            <span class="modal__key">m</span>
+            <p class="modal__text">Список горячих клавиш</p>
+            <span class="modal__key">Shift + /</span>
+          </div>
+        </div>
+      </div>
+      <button class="modal__close">Закрыть</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
